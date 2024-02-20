@@ -1,0 +1,121 @@
+==================================================
+Selected narrative structure: SharpBranch
+Generating story...
+Narrative structure:
+==================================================
+Generating chapter A1...
+This chapter based on previous chapter: []
+Previous content: 
+--------------------------------------------------
+
+    You are a senior reporter for The New York Times, your task is to write a fictional news report that continues from a previous one. 
+    - Your writing style is concise and clear, without rhetorical techniques, in plain english. 
+    - Avoid explicitly referencing the structure and themes; instead, integrate it subtly within the story.
+    - The story should be written in a style suitable for CEFR Level A1 and each chapter approximately take 1 minutes to read (100 words).
+    - The continuation chapter needs to be closely related to the previous one (intriguing and logically connected in narration),
+    - The theme of the story must be strikingly prominent, you can not make up new themes except the only one given below.
+    - All entities given below must be included in the story.
+    
+    Chapter ID: A1
+    Time Period: 2024-02-01 to 2024-05-02
+    Themes: Global Spread of a New Pestilence
+    Theme Context: Chronicles the onset and spread of a new pestilence, highlighting the efforts of global health organizations and the challenges faced by Dr. Jane Health.
+    Entity: World Health Organization, Global Health Crisis Conference, Dr. Jane Health
+
+    Narrative Sturcture: The narrative structure is SharpBranch, where The narrative starts with an exploration of a global health crisis, following its progression and later examining how advanced techniques are being utilized to combat it. (eg. A1 -> A2; A1 -> B2). The current chapter node is A1, which is the 1th chapter node in the narrative structure.
+
+    Previous context: None
+
+    The output should be formatted as a JSON instance that conforms to the JSON schema below.
+
+As an example, for the schema {"properties": {"foo": {"title": "Foo", "description": "a list of strings", "type": "array", "items": {"type": "string"}}}, "required": ["foo"]}}
+the object {"foo": ["bar", "baz"]} is a well-formatted instance of the schema. The object {"properties": {"foo": ["bar", "baz"]}} is not well-formatted.
+
+Here is the output schema:
+```
+{"properties": {"id": {"title": "Id", "description": "ID of the chapter .", "type": "string"}, "title": {"title": "Title", "description": "Headlines for news story chapters", "type": "string"}, "time_period": {"title": "Time Period", "description": "Time period of the chapter (start date, end date), in format YYYY-MM-DD.", "type": "array", "items": {"type": "string"}}, "themes": {"title": "Themes", "description": "Themes related within chapter.", "type": "array", "items": {"type": "string"}}, "entity": {"title": "Entity", "description": "Entity mentioned within chapter.", "type": "array", "items": {"type": "string"}}, "content": {"title": "Content", "description": "Content of the chapter(In format as news article lead paragraph).", "type": "string"}}, "required": ["id", "title", "time_period", "themes", "entity", "content"]}
+```
+    
+--------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+New chapter << New Pestilence Emerges, Global Health on High Alert >> Finished!
+On February 1, 2024, a new pestilence was reported. The World Health Organization (WHO) was quick to respond. Dr. Jane Health, a leading expert, was called to lead the fight. The Global Health Crisis Conference was held in May. The pestilence had spread to many countries. Dr. Health spoke about the challenges faced by the global health community. The world is now on high alert.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+Generating chapter A2...
+This chapter based on previous chapter: ['A1']
+Previous content: On February 1, 2024, a new pestilence was reported. The World Health Organization (WHO) was quick to respond. Dr. Jane Health, a leading expert, was called to lead the fight. The Global Health Crisis Conference was held in May. The pestilence had spread to many countries. Dr. Health spoke about the challenges faced by the global health community. The world is now on high alert.
+--------------------------------------------------
+
+    You are a senior reporter for The New York Times, your task is to write a fictional news report that continues from a previous one. 
+    - Your writing style is concise and clear, without rhetorical techniques, in plain english. 
+    - Avoid explicitly referencing the structure and themes; instead, integrate it subtly within the story.
+    - The story should be written in a style suitable for CEFR Level A1 and each chapter approximately take 1 minutes to read (100 words).
+    - The continuation chapter needs to be closely related to the previous one (intriguing and logically connected in narration),
+    - The theme of the story must be strikingly prominent, you can not make up new themes except the only one given below.
+    - All entities given below must be included in the story.
+    
+    Chapter ID: A2
+    Time Period: 2024-05-02 to 2024-08-01
+    Themes: Global Spread of a New Pestilence
+    Theme Context: Chronicles the onset and spread of a new pestilence, highlighting the efforts of global health organizations and the challenges faced by Dr. Jane Health.
+    Entity: World Health Organization, Global Health Crisis Conference, Dr. Jane Health
+
+    Narrative Sturcture: The narrative structure is SharpBranch, where The narrative starts with an exploration of a global health crisis, following its progression and later examining how advanced techniques are being utilized to combat it. (eg. A1 -> A2; A1 -> B2). The current chapter node is A2, which is the 2th chapter node in the narrative structure.
+
+    Previous context: On February 1, 2024, a new pestilence was reported. The World Health Organization (WHO) was quick to respond. Dr. Jane Health, a leading expert, was called to lead the fight. The Global Health Crisis Conference was held in May. The pestilence had spread to many countries. Dr. Health spoke about the challenges faced by the global health community. The world is now on high alert.
+
+    The output should be formatted as a JSON instance that conforms to the JSON schema below.
+
+As an example, for the schema {"properties": {"foo": {"title": "Foo", "description": "a list of strings", "type": "array", "items": {"type": "string"}}}, "required": ["foo"]}}
+the object {"foo": ["bar", "baz"]} is a well-formatted instance of the schema. The object {"properties": {"foo": ["bar", "baz"]}} is not well-formatted.
+
+Here is the output schema:
+```
+{"properties": {"id": {"title": "Id", "description": "ID of the chapter .", "type": "string"}, "title": {"title": "Title", "description": "Headlines for news story chapters", "type": "string"}, "time_period": {"title": "Time Period", "description": "Time period of the chapter (start date, end date), in format YYYY-MM-DD.", "type": "array", "items": {"type": "string"}}, "themes": {"title": "Themes", "description": "Themes related within chapter.", "type": "array", "items": {"type": "string"}}, "entity": {"title": "Entity", "description": "Entity mentioned within chapter.", "type": "array", "items": {"type": "string"}}, "content": {"title": "Content", "description": "Content of the chapter(In format as news article lead paragraph).", "type": "string"}}, "required": ["id", "title", "time_period", "themes", "entity", "content"]}
+```
+    
+--------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+New chapter << Global Pestilence Spreads, Dr. Jane Health Leads the Fight >> Finished!
+From May to August 2024, the new pestilence spread globally. The World Health Organization worked tirelessly. Dr. Jane Health, in charge of the response, faced many challenges. She spoke at the Global Health Crisis Conference in May, warning of the dangers. By August, the pestilence had reached many countries. Dr. Health urged for global cooperation. The world remains on high alert, with efforts ongoing to combat the pestilence.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+Generating chapter B2...
+This chapter based on previous chapter: ['A1']
+Previous content: On February 1, 2024, a new pestilence was reported. The World Health Organization (WHO) was quick to respond. Dr. Jane Health, a leading expert, was called to lead the fight. The Global Health Crisis Conference was held in May. The pestilence had spread to many countries. Dr. Health spoke about the challenges faced by the global health community. The world is now on high alert.
+--------------------------------------------------
+
+    You are a senior reporter for The New York Times, your task is to write a fictional news report that continues from a previous one. 
+    - Your writing style is concise and clear, without rhetorical techniques, in plain english. 
+    - Avoid explicitly referencing the structure and themes; instead, integrate it subtly within the story.
+    - The story should be written in a style suitable for CEFR Level A1 and each chapter approximately take 1 minutes to read (100 words).
+    - The continuation chapter needs to be closely related to the previous one (intriguing and logically connected in narration),
+    - The theme of the story must be strikingly prominent, you can not make up new themes except the only one given below.
+    - All entities given below must be included in the story.
+    
+    Chapter ID: B2
+    Time Period: 2024-10-16 to 2024-12-31
+    Themes: Combatting Pestilence with Modern Medicine
+    Theme Context: Explores the adaptation of advanced medical techniques and technologies to combat the pestilence, focusing on the work of Dr. Jane Health and her team.
+    Entity: International Medical Research Symposium, Dr. Jane Health, Global Medical Solutions
+
+    Narrative Sturcture: The narrative structure is SharpBranch, where The narrative starts with an exploration of a global health crisis, following its progression and later examining how advanced techniques are being utilized to combat it. (eg. A1 -> A2; A1 -> B2). The current chapter node is B2, which is the 2th chapter node in the narrative structure.
+
+    Previous context: On February 1, 2024, a new pestilence was reported. The World Health Organization (WHO) was quick to respond. Dr. Jane Health, a leading expert, was called to lead the fight. The Global Health Crisis Conference was held in May. The pestilence had spread to many countries. Dr. Health spoke about the challenges faced by the global health community. The world is now on high alert.
+
+    The output should be formatted as a JSON instance that conforms to the JSON schema below.
+
+As an example, for the schema {"properties": {"foo": {"title": "Foo", "description": "a list of strings", "type": "array", "items": {"type": "string"}}}, "required": ["foo"]}}
+the object {"foo": ["bar", "baz"]} is a well-formatted instance of the schema. The object {"properties": {"foo": ["bar", "baz"]}} is not well-formatted.
+
+Here is the output schema:
+```
+{"properties": {"id": {"title": "Id", "description": "ID of the chapter .", "type": "string"}, "title": {"title": "Title", "description": "Headlines for news story chapters", "type": "string"}, "time_period": {"title": "Time Period", "description": "Time period of the chapter (start date, end date), in format YYYY-MM-DD.", "type": "array", "items": {"type": "string"}}, "themes": {"title": "Themes", "description": "Themes related within chapter.", "type": "array", "items": {"type": "string"}}, "entity": {"title": "Entity", "description": "Entity mentioned within chapter.", "type": "array", "items": {"type": "string"}}, "content": {"title": "Content", "description": "Content of the chapter(In format as news article lead paragraph).", "type": "string"}}, "required": ["id", "title", "time_period", "themes", "entity", "content"]}
+```
+    
+--------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+New chapter << Modern Medicine Battles New Pestilence: Dr. Jane Health at the Forefront >> Finished!
+In the battle against the new pestilence, Dr. Jane Health and her team from Global Medical Solutions are leading the charge. Presenting at the International Medical Research Symposium, Dr. Health unveiled advanced techniques to combat the disease. The world is hopeful as we enter the New Year, armed with modern medicine against the pestilence.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

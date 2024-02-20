@@ -1,0 +1,60 @@
+{
+    "chapters": [
+        {
+            "id": "A1",
+            "title": "Liberal Party Launches Mayoral Campaign in MetroCity",
+            "time_period": [
+                "2023-10-01",
+                "2023-10-07"
+            ],
+            "themes": [
+                "Election"
+            ],
+            "entity": [
+                "Liberal Party",
+                "MetroCity times",
+                "MetroCity",
+                "City Central Stage"
+            ],
+            "content": "This week, Liberal Party launched its mayoral campaign in MetroCity. The kickoff event took place at the City Central Stage, drawing a large crowd. The party's candidate vowed to bring change, promising new policies for the city's pressing issues. MetroCity Times will cover the campaign in detail, providing updates on the race. The election promises to be heated, with the Liberal Party facing strong opposition. Stay tuned for more updates on the election."
+        },
+        {
+            "id": "A2",
+            "title": "Liberal Party's Mayoral Candidate Jane Doe Takes Centre Stage",
+            "time_period": [
+                "2023-10-07",
+                "2023-10-13"
+            ],
+            "themes": [
+                "Election"
+            ],
+            "entity": [
+                "Liberal Party",
+                "MetroCity",
+                "Jane Doe",
+                "City Central Stage",
+                "MetroCity times"
+            ],
+            "content": "Jane Doe, the Liberal Party's candidate, took the City Central Stage this week, addressing the crowd with her vision for MetroCity. Doe emphasised on her commitment to tackle the city's major issues. MetroCity Times will continue its detailed coverage of this heated election campaign. Stay tuned for more updates on the race."
+        },
+        {
+            "id": "B3",
+            "title": "Scandal Shocks City: Jane Doe's Involvement in Financial Scam",
+            "time_period": [
+                "2023-10-27",
+                "2023-11-01"
+            ],
+            "themes": [
+                "Scandal"
+            ],
+            "entity": [
+                "MetroCity",
+                "Jane Doe",
+                "City Central Stage",
+                "Federal Investigators",
+                "City Finance Tower"
+            ],
+            "content": "In a shocking turn of events, Jane Doe, the Liberal Party's candidate, is under investigation by Federal Investigators. Allegations of her involvement in a financial scam at the City Finance Tower have sent waves of disbelief across MetroCity. The news broke just days after Doe's passionate speech at the City Central Stage. The scandal has thrown the city into a state of uncertainty as the election campaign continues. More updates to follow."
+        }
+    ]
+}

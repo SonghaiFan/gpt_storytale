@@ -1,0 +1,58 @@
+{
+    "chapters": [
+        {
+            "id": "A1",
+            "title": "Liberal Party Kicks off Mayoral Campaign in MetroCity",
+            "time_period": [
+                "2023-10-01",
+                "2023-10-07"
+            ],
+            "themes": [
+                "Election"
+            ],
+            "entity": [
+                "MetroCity",
+                "Liberal Party",
+                "City Central Stage",
+                "MetroCity times"
+            ],
+            "content": "The Liberal Party launched its mayoral campaign at MetroCity's City Central Stage this week. The party's candidate promised to bring change and progress to the city. The event was covered by MetroCity Times, who noted the high energy and optimism in the crowd. As the election draws near, the city is buzzing with anticipation."
+        },
+        {
+            "id": "A2",
+            "title": "Liberal Party's Jane Doe Leads Mayoral Race in MetroCity",
+            "time_period": [
+                "2023-10-07",
+                "2023-10-13"
+            ],
+            "themes": [
+                "Election"
+            ],
+            "entity": [
+                "MetroCity",
+                "Jane Doe",
+                "Liberal Party",
+                "MetroCity Times"
+            ],
+            "content": "Jane Doe, the Liberal Party candidate, is leading the mayoral race in MetroCity. In a recent poll by the MetroCity Times, Doe held a significant lead over her rivals. Doe's campaign promises of change and progress have resonated with the city's residents. As the election date nears, the excitement in MetroCity continues to grow."
+        },
+        {
+            "id": "B3",
+            "title": "Mayoral Candidate Jane Doe Under Federal Investigation",
+            "time_period": [
+                "2023-10-27",
+                "2023-11-01"
+            ],
+            "themes": [
+                "Scandal"
+            ],
+            "entity": [
+                "Federal Investigators",
+                "Jane Doe",
+                "City Finance Tower",
+                "MetroCity"
+            ],
+            "content": "In a shocking twist, Jane Doe, the leading mayoral candidate in MetroCity, is now under federal investigation. The Federal Investigators announced today that they are probing Doe's involvement in a financial scam linked to the City Finance Tower. This revelation has sent shockwaves through the city, casting a shadow over Doe's campaign promises of change and progress. As the election date nears, the excitement in MetroCity has turned into anxiety and uncertainty."
+        }
+    ]
+}

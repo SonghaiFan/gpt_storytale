@@ -1,0 +1,415 @@
+[
+  {
+    "name": "story_Set_C_Linear_seed497.json",
+    "section": "Set_C",
+    "structure": "Linear",
+    "seed": 497,
+    "chapters": [
+      {
+        "id": "A1",
+        "title": "National Education Board Announces Major Education Reforms",
+        "time_period": ["2024-01-01", "2024-01-31"],
+        "themes": ["Education Reform"],
+        "entity": [
+          "National Education Board",
+          "Riverwood High School",
+          "Education Reform Bill",
+          "Minister Evans"
+        ],
+        "content": "In a press conference today, the National Education Board introduced the Education Reform Bill. The bill, championed by Minister Evans, aims to transform the education system. Among the proposed changes, a new curriculum for schools like Riverwood High School is expected. However, the bill also presents challenges, including the need for significant teacher training and infrastructure upgrades."
+      },
+      {
+        "id": "A2",
+        "title": "Education Reform Bill: A Closer Look at the Challenges",
+        "time_period": ["2024-01-31", "2024-03-01"],
+        "themes": ["Education Reform"],
+        "entity": [
+          "National Education Board",
+          "Minister Evans",
+          "Riverwood High School",
+          "Education Reform Bill"
+        ],
+        "content": "The Education Reform Bill, led by Minister Evans, faces notable challenges. The National Education Board emphasized the need for teacher training and infrastructure upgrades. Riverwood High School, among others, is expected to adapt to a new curriculum. The implementation process could be difficult and costly. However, the Board remains confident that these changes will improve the quality of education."
+      },
+      {
+        "id": "A3",
+        "title": "Education Reform Bill: A Step Towards Better Future",
+        "time_period": ["2024-03-01", "2024-03-31"],
+        "themes": ["Education Reform"],
+        "entity": [
+          "National Education Board",
+          "Minister Evans",
+          "Riverwood High School",
+          "Education Reform Bill"
+        ],
+        "content": "Despite facing challenges, the Education Reform Bill is moving forward. Minister Evans, in a public address, stated that the Bill will ensure better education for all. Riverwood High School, among others, is preparing to adapt to the new curriculum. The National Education Board is working tirelessly to ensure smooth implementation. The Board is hopeful that the proposed changes will bring a positive impact on the quality of education."
+      }
+    ]
+  },
+  {
+    "name": "story_Set_C_WideMerge_seed188.json",
+    "section": "Set_C",
+    "structure": "WideMerge",
+    "seed": 188,
+    "chapters": [
+      {
+        "id": "A1",
+        "title": "Artists Gear Up for International Exhibition",
+        "time_period": ["2024-01-01", "2024-02-15"],
+        "themes": ["Artistic Creation"],
+        "entity": [
+          "The Canvas Warehouse",
+          "Emma Gonzalez",
+          "Global Artists Studio"
+        ],
+        "content": "In preparation for the major upcoming international art exhibition, artists are working hard to create their masterpieces. Emma Gonzalez, a renowned artist, is spending many hours at The Canvas Warehouse, a popular art supply store. She is also utilizing the facilities at Global Artists Studio to perfect her work. The art world is eagerly waiting to see what these creative minds will produce."
+      },
+      {
+        "id": "C1",
+        "title": "Logistical Challenges Mark the Preparation for International Art Exhibition",
+        "time_period": ["2024-02-01", "2024-03-16"],
+        "themes": ["Logistical Challenges"],
+        "entity": [
+          "City Convention Center",
+          "Lucas Brown",
+          "International Exhibition Committee"
+        ],
+        "content": "Lucas Brown, head of the International Exhibition Committee, is facing logistical challenges. The City Convention Center is not ready yet. It needs more work. Lucas is also dealing with transportation. He needs to move art pieces from different places to the center. He is also talking with artists from all over the world. He is arranging their travel and stay. Lucas is working hard to overcome these problems before the exhibition."
+      },
+      {
+        "id": "B2",
+        "title": "Global Art Exhibition Opens Amidst High Expectations",
+        "time_period": ["2024-05-04", "2024-05-07"],
+        "themes": ["Opening of the Art Exhibition"],
+        "entity": [
+          "Global Artists Studio",
+          "Emma Gonzalez",
+          "City Convention Center",
+          "Lucas Brown",
+          "Global Art Exhibition"
+        ],
+        "content": "The Global Art Exhibition has finally opened at the City Convention Center. The event showcases the work of artists from around the world, including Emma Gonzalez. Her work, perfected at the Global Artists Studio, is a highlight of the exhibition. Despite earlier challenges, Lucas Brown, head of the International Exhibition Committee, has ensured a successful opening. The art world is buzzing with excitement over the spectacular display of creativity and coordination."
+      }
+    ]
+  },
+  {
+    "name": "story_Set_C_SharpBranch_seed364.json",
+    "section": "Set_C",
+    "structure": "SharpBranch",
+    "seed": 364,
+    "chapters": [
+      {
+        "id": "A1",
+        "title": "New Pestilence Emerges, Global Health on High Alert",
+        "time_period": ["2024-02-01", "2024-05-02"],
+        "themes": ["Global Spread of a New Pestilence"],
+        "entity": [
+          "World Health Organization",
+          "Global Health Crisis Conference",
+          "Dr. Jane Health"
+        ],
+        "content": "On February 1, 2024, a new pestilence was reported. The World Health Organization (WHO) was quick to respond. Dr. Jane Health, a leading expert, was called to lead the fight. The Global Health Crisis Conference was held in May. The pestilence had spread to many countries. Dr. Health spoke about the challenges faced by the global health community. The world is now on high alert."
+      },
+      {
+        "id": "A2",
+        "title": "Global Pestilence Spreads, Dr. Jane Health Leads the Fight",
+        "time_period": ["2024-05-02", "2024-08-01"],
+        "themes": ["Global Spread of a New Pestilence"],
+        "entity": [
+          "World Health Organization",
+          "Global Health Crisis Conference",
+          "Dr. Jane Health"
+        ],
+        "content": "From May to August 2024, the new pestilence spread globally. The World Health Organization worked tirelessly. Dr. Jane Health, in charge of the response, faced many challenges. She spoke at the Global Health Crisis Conference in May, warning of the dangers. By August, the pestilence had reached many countries. Dr. Health urged for global cooperation. The world remains on high alert, with efforts ongoing to combat the pestilence."
+      },
+      {
+        "id": "B2",
+        "title": "Modern Medicine Battles New Pestilence: Dr. Jane Health at the Forefront",
+        "time_period": ["2024-10-16", "2024-12-31"],
+        "themes": ["Combatting Pestilence with Modern Medicine"],
+        "entity": [
+          "International Medical Research Symposium",
+          "Dr. Jane Health",
+          "Global Medical Solutions"
+        ],
+        "content": "In the battle against the new pestilence, Dr. Jane Health and her team from Global Medical Solutions are leading the charge. Presenting at the International Medical Research Symposium, Dr. Health unveiled advanced techniques to combat the disease. The world is hopeful as we enter the New Year, armed with modern medicine against the pestilence."
+      }
+    ]
+  },
+  {
+    "name": "story_Set_C_ShortFork_seed526.json",
+    "section": "Set_C",
+    "structure": "ShortFork",
+    "seed": 526,
+    "chapters": [
+      {
+        "id": "A1",
+        "title": "Jordan Chase: A Surprise Announcement",
+        "time_period": ["2024-01-01", "2024-01-16"],
+        "themes": ["Celebrity Sensational News"],
+        "entity": [
+          "Jordan Chase",
+          "Celebrity Buzz Magazine",
+          "Global Entertainment Network"
+        ],
+        "content": "On New Year's Day, Jordan Chase, the beloved actor, made a surprising announcement. He told Celebrity Buzz Magazine that he will retire after his next film. This news shocked his fans worldwide. The Global Entertainment Network also reported this. They said that the news has caused a big stir in Hollywood. Everyone is now looking forward to his last movie premiere. What will happen next in this story? Keep following us for more updates."
+      },
+      {
+        "id": "B2",
+        "title": "Anticipation Builds for Jordan Chase's Final Film Premiere",
+        "time_period": ["2024-03-01", "2024-03-15"],
+        "themes": ["Film Premiere"],
+        "entity": [
+          "Jordan Chase",
+          "Shadow of Fate",
+          "Celebrity Buzz Magazine",
+          "Silver Screen Theaters"
+        ],
+        "content": "As the premiere of Jordan Chase's final film 'Shadow of Fate' draws near, anticipation is at an all-time high. Celebrity Buzz Magazine reports that fans are eager to see Chase's swan song. Silver Screen Theaters, where the premiere will take place, is preparing for a big event. The theater is planning special decorations and security measures for the big night. The film industry is keen to see how Chase's last performance will be received. Stay tuned for more updates on this much-awaited event."
+      },
+      {
+        "id": "B3",
+        "title": "The Countdown to 'Shadow of Fate' Premiere Begins",
+        "time_period": ["2024-03-15", "2024-03-31"],
+        "themes": ["Film Premiere"],
+        "entity": ["Jordan Chase", "Shadow of Fate", "Silver Screen Theaters"],
+        "content": "As the premiere of 'Shadow of Fate' nears, Silver Screen Theaters is buzzing with activity. The theater is decked out in themes from the movie, creating an immersive experience for fans. Security is tight, ensuring the event runs smoothly. The anticipation for Jordan Chase's last film is palpable. Fans are eager to see his final performance. The film industry is watching closely, curious about the impact of Chase's swan song. The countdown to the premiere has begun, and the excitement is building."
+      }
+    ]
+  },
+  {
+    "name": "story_Set_C_LongFork_seed192.json",
+    "section": "Set_C",
+    "structure": "LongFork",
+    "seed": 192,
+    "chapters": [
+      {
+        "id": "A1",
+        "title": "Candidate Johnson Announces Reform Policy for Urban Development",
+        "time_period": ["2024-02-01", "2024-04-01"],
+        "themes": ["Political Campaign and Aftermath"],
+        "entity": [
+          "Candidate Johnson",
+          "Reform Policy Announcement",
+          "City Hall",
+          "Urban Development Committee"
+        ],
+        "content": "Candidate Johnson, at City Hall, announced a new reform policy. The focus is on urban development. Johnson said he wants to improve the city's infrastructure. The Urban Development Committee will help him. Johnson's plan has been welcomed by many citizens. They believe it can make the city better. But, some are doubtful. They worry about the challenges that may come. This policy announcement marks the start of Johnson's political campaign."
+      },
+      {
+        "id": "A2",
+        "title": "Johnson Wins Mayoral Election, Faces Challenges Ahead",
+        "time_period": ["2024-04-01", "2024-05-31"],
+        "themes": ["Political Campaign and Aftermath"],
+        "entity": [
+          "Election Day",
+          "Reform Policy Announcement",
+          "City Hall",
+          "Urban Development Committee"
+        ],
+        "content": "On Election Day, Johnson won the mayoral race. The city celebrated his victory at City Hall. His reform policy on urban development was a key factor. However, Johnson now faces a tough road. He must work with the Urban Development Committee to turn his plans into reality. There are many hurdles to overcome. Johnson said he is ready to face these challenges. He promised to work hard for the city. The citizens are hopeful but also watchful. They want to see if Johnson can fulfill his promises."
+      },
+      {
+        "id": "B3",
+        "title": "Real Estate Boom: Skyline Towers Rise High",
+        "time_period": ["2024-10-20", "2024-11-30"],
+        "themes": ["Real Estate Boom"],
+        "entity": [
+          "Housing Market Expo",
+          "City Planning Office",
+          "Developer Wilson",
+          "Skyline Towers",
+          "Urban Development Committee"
+        ],
+        "content": "The Housing Market Expo showcased a boom in the city's real estate sector. Developer Wilson unveiled the Skyline Towers project. The City Planning Office praised the project for its innovative design. The Urban Development Committee also supported it. However, they voiced concerns about the rapid pace of development. They urged for a balance between growth and sustainability. The city's citizens are watching closely, hoping Johnson's reform policies will bring positive changes."
+      }
+    ]
+  },
+  {
+    "name": "Arch",
+    "description": "The narrative begins with the theme of Sports Triumph (A), shifts to Sports-Related Violence (B), and finally returns to Sports Triumph (A).",
+    "structure": "A1 -> B2 -> A3",
+    "instructions": "Contains ONLY 3 nodes and 2 edges in total.",
+    "nodes": ["A1", "B2", "A3"],
+    "edges": [
+      { "from": "A1", "to": "B2" },
+      { "from": "B2", "to": "A3" }
+    ],
+    "context": [
+      {
+        "symbol": "A",
+        "theme": "Sports Triumph",
+        "description": "The narrative begins with a local team's unexpected success in a major tournament, bringing joy and pride to the community.",
+        "time": ["2023-08-01", "2023-10-15"],
+        "entities": [
+          {
+            "name": "Victory FC",
+            "type": "organisation"
+          },
+          {
+            "name": "Coach Thompson",
+            "type": "people"
+          },
+          {
+            "name": "Hometown Stadium",
+            "type": "location"
+          }
+        ]
+      },
+      {
+        "symbol": "B",
+        "theme": "Sports-Related Violence",
+        "description": "The narrative shifts to the outbreak of violence among fans, fueled by rivalry and high emotions, leading to a citywide concern for safety.",
+        "time": ["2023-09-16", "2023-9-15"],
+        "entities": [
+          {
+            "name": "Rival Team's Fans",
+            "type": "Demographic"
+          },
+          {
+            "name": "City Police Department",
+            "type": "organisation"
+          },
+          {
+            "name": "Downtown Bars",
+            "type": "location"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "story_Set_C_Ladder_seed87.json",
+    "section": "Set_C",
+    "structure": "Ladder",
+    "seed": 87,
+    "chapters": [
+      {
+        "id": "A1",
+        "title": "Cinematic Tech Expo 2024: A New Dawn for Film Industry",
+        "time_period": ["2024-01-01", "2024-02-10"],
+        "themes": ["Film Industry Evolution"],
+        "entity": [
+          "Director Amelia",
+          "Cinematic Tech Expo",
+          "Hollywood",
+          "Epic Studios"
+        ],
+        "content": "In Hollywood, the film industry is changing. The Cinematic Tech Expo 2024 showcased this change. The Expo was held at Epic Studios. Many new technologies were shown. One key speaker was Director Amelia. She talked about how technology helps in making films. She believes that technology will shape the future of cinema. The audience was excited about the new ideas. This event shows that the film industry is ready for the future."
+      },
+      {
+        "id": "B2",
+        "title": "Wall Street Reacts to Film Industry's Tech Boom",
+        "time_period": ["2024-06-10", "2024-07-20"],
+        "themes": ["Film Industry's Economic Impact"],
+        "entity": [
+          "Hollywood",
+          "Economic Film Review",
+          "Wall Street",
+          "Stock Analyst Ethan",
+          "Epic Studios Stock"
+        ],
+        "content": "Following the Cinematic Tech Expo 2024, Wall Street is buzzing. Stock Analyst Ethan, in his Economic Film Review, noted a surge in Epic Studios Stock. The rise is linked to the new technologies showcased at the Expo. Investors are excited about the future of the film industry. This trend shows how Hollywood's tech evolution is impacting the economy."
+      },
+      {
+        "id": "C3",
+        "title": "AR Revolutionizes Filmmaking",
+        "time_period": ["2024-11-20", "2024-12-31"],
+        "themes": ["Advent of AR in Filmmaking"],
+        "entity": [
+          "Silicon Valley",
+          "AR Film Lab",
+          "Global AR Film Festival",
+          "Stock Analyst Ethan",
+          "Tech Innovator Zoe"
+        ],
+        "content": "Silicon Valley's AR Film Lab has become a game-changer in the film industry. Tech Innovator Zoe, the brains behind the Lab, has unveiled new AR techniques that are reshaping filmmaking. The Global AR Film Festival showcased these innovations, creating a buzz in Hollywood. Stock Analyst Ethan predicts a continued rise in Epic Studios' stock due to this AR revolution. The future of the film industry is here, and it's augmented."
+      }
+    ]
+  },
+  {
+    "name": "story_Set_C_SharpMerge_seed641.json",
+    "section": "Set_C",
+    "structure": "SharpMerge",
+    "seed": 641,
+    "chapters": [
+      {
+        "id": "A1",
+        "title": "Rising Tensions Between Zephyria and Gallistan",
+        "time_period": ["2024-03-01", "2024-04-07"],
+        "themes": ["Rising Tensions"],
+        "entity": ["United Nations", "General Bravo", "Zephyria", "Gallistan"],
+        "content": "In the last month, tensions between Zephyria and Gallistan have escalated. The United Nations called for calm, but both sides remain firm. Zephyria's military leader, General Bravo, warned of a strong response if Gallistan continues its aggressive acts. This situation is causing worry around the world. The next weeks will be crucial for peace."
+      },
+      {
+        "id": "B1",
+        "title": "Peace Talks Initiated Between Zephyria and General Bravo's Nation",
+        "time_period": ["2024-05-16", "2024-07-08"],
+        "themes": ["Peace Negotiations"],
+        "entity": [
+          "United Nations",
+          "General Bravo",
+          "Zephyria",
+          "President Alpha"
+        ],
+        "content": "In an attempt to resolve ongoing tensions, the United Nations has initiated peace talks between Zephyria and General Bravo's nation. President Alpha of Zephyria has agreed to participate, expressing optimism about the potential for resolution. However, the road to peace is fraught with challenges, as both nations grapple with internal and external pressures. The world watches with bated breath, hoping for a peaceful outcome."
+      },
+      {
+        "id": "B2",
+        "title": "Peace Talks Initiated Between Zephyria and Gallistan",
+        "time_period": ["2024-07-08", "2024-08-31"],
+        "themes": ["Peace Negotiations"],
+        "entity": ["General Bravo", "Gallistan", "Zephyria", "President Alpha"],
+        "content": "The United Nations has initiated peace negotiations between Zephyria and Gallistan in an attempt to deescalate the tensions. President Alpha of Zephyria, alongside General Bravo, has agreed to participate in these talks. Despite the optimism, the path towards peace is filled with hurdles as both nations face internal and external pressures. The world eagerly anticipates the outcome of these talks, hoping for a peaceful resolution."
+      }
+    ]
+  },
+  {
+    "name": "story_Set_C_WideBranch_seed272.json",
+    "section": "Set_C",
+    "structure": "WideBranch",
+    "seed": 272,
+    "chapters": [
+      {
+        "id": "B1",
+        "title": "AutoInnovate Unveils Revolutionary Electric Vehicle: EV-X1",
+        "time_period": ["2024-01-01", "2024-01-31"],
+        "themes": ["Automotive New Product Launch"],
+        "entity": [
+          "EV-X1",
+          "AutoInnovate",
+          "Global Auto Show",
+          "CEO Angela Martinez"
+        ],
+        "content": "AutoInnovate, a leading player in the automotive industry, has unveiled its latest creation, the EV-X1, at the Global Auto Show. The EV-X1 is a groundbreaking electric vehicle that is expected to set new standards in the industry. CEO Angela Martinez introduced the vehicle, expressing confidence that it will revolutionize the automotive world."
+      },
+      {
+        "id": "C2",
+        "title": "EV-X1: A Game Changer in Global Economy",
+        "time_period": ["2024-04-16", "2024-06-01"],
+        "themes": ["Economic Impact"],
+        "entity": [
+          "Market Analyst Emma Chen",
+          "EV-X1",
+          "Global Auto Show",
+          "AutoInnovate",
+          "World Economic Forum"
+        ],
+        "content": "Market Analyst Emma Chen commented on the economic impact of the EV-X1 at the World Economic Forum. She predicted a boost in job creation due to the new technology. The ripple effect of the EV-X1 on the global automotive market is also expected to be significant. Chen said, 'AutoInnovate's EV-X1 could reshape the economic landscape of local economies, driving growth and innovation.'"
+      },
+      {
+        "id": "A2",
+        "title": "AutoInnovate's EV-X1: A Step Towards Eco-Friendly Future",
+        "time_period": ["2024-04-01", "2024-05-01"],
+        "themes": ["Environmental Impact"],
+        "entity": [
+          "GreenTech Alliance",
+          "AutoInnovate",
+          "EV-X1",
+          "Eco-Drive Expo"
+        ],
+        "content": "AutoInnovate's EV-X1, the latest electric vehicle, is making waves in the GreenTech Alliance. The company's commitment to sustainability is evident in the eco-friendly technology used in the EV-X1. It's not just about speed and style, but also about reducing environmental impact. The EV-X1 will be showcased at the upcoming Eco-Drive Expo, where attendees can learn more about AutoInnovate's efforts in promoting sustainable transportation."
+      }
+    ]
+  }
+]

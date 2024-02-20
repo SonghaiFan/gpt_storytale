@@ -1,0 +1,121 @@
+==================================================
+Selected narrative structure: SharpBranch
+Generating story...
+Narrative structure:
+==================================================
+Generating chapter A1...
+This chapter based on previous chapter: []
+Previous content: 
+--------------------------------------------------
+
+    You are a senior reporter for The New York Times, your task is to write a fictional news report that continues from a previous one. 
+    - Your writing style is concise and clear, without rhetorical techniques, in plain english. 
+    - Avoid explicitly referencing the structure and themes; instead, integrate it subtly within the story.
+    - The story should be written in a style suitable for CEFR Level A1 and each chapter approximately take 1 minutes to read (100 words).
+    - The continuation chapter needs to be closely related to the previous one (intriguing and logically connected in narration),
+    - The theme of the story must be strikingly prominent, you can not make up new themes except the only one given below.
+    - All entities given below must be included in the story.
+    
+    Chapter ID: A1
+    Time Period: 2024-02-01 to 2024-05-02
+    Themes: Advanced Robotics Techniques
+    Theme Context: An exploration of breakthroughs in robotics, focusing on advanced control techniques and their applications in various industries.
+    Entity: Dr. Mia Chen, RoboTech Inc., International Robotics Symposium
+
+    Narrative Sturcture: The narrative structure is SharpBranch, where The narrative starts with a focus on a specific technique, exploring its application and impact initially, before diverging into examining its adaptation in different fields. (eg. A1 -> A2; A1 -> B2). The current chapter node is A1, which is the 1th chapter node in the narrative structure.
+
+    Previous context: None
+
+    The output should be formatted as a JSON instance that conforms to the JSON schema below.
+
+As an example, for the schema {"properties": {"foo": {"title": "Foo", "description": "a list of strings", "type": "array", "items": {"type": "string"}}}, "required": ["foo"]}}
+the object {"foo": ["bar", "baz"]} is a well-formatted instance of the schema. The object {"properties": {"foo": ["bar", "baz"]}} is not well-formatted.
+
+Here is the output schema:
+```
+{"properties": {"id": {"title": "Id", "description": "ID of the chapter .", "type": "string"}, "title": {"title": "Title", "description": "Headlines for news story chapters", "type": "string"}, "time_period": {"title": "Time Period", "description": "Time period of the chapter (start date, end date), in format YYYY-MM-DD.", "type": "array", "items": {"type": "string"}}, "themes": {"title": "Themes", "description": "Themes related within chapter.", "type": "array", "items": {"type": "string"}}, "entity": {"title": "Entity", "description": "Entity mentioned within chapter.", "type": "array", "items": {"type": "string"}}, "content": {"title": "Content", "description": "Content of the chapter(In format as news article lead paragraph).", "type": "string"}}, "required": ["id", "title", "time_period", "themes", "entity", "content"]}
+```
+    
+--------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+New chapter << RoboTech Inc. Unveils Advanced Robotics Control Techniques >> Finished!
+RoboTech Inc., led by renowned scientist Dr. Mia Chen, announced a breakthrough in advanced robotics control techniques. The new technology, debuted at the International Robotics Symposium, promises to revolutionize various industries. Dr. Chen's team has developed a unique control system that allows robots to perform complex tasks with unprecedented precision and efficiency. This innovation is expected to have a significant impact, from manufacturing to healthcare. The details of this breakthrough are set to be explored in the coming chapters.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+Generating chapter A2...
+This chapter based on previous chapter: ['A1']
+Previous content: RoboTech Inc., led by renowned scientist Dr. Mia Chen, announced a breakthrough in advanced robotics control techniques. The new technology, debuted at the International Robotics Symposium, promises to revolutionize various industries. Dr. Chen's team has developed a unique control system that allows robots to perform complex tasks with unprecedented precision and efficiency. This innovation is expected to have a significant impact, from manufacturing to healthcare. The details of this breakthrough are set to be explored in the coming chapters.
+--------------------------------------------------
+
+    You are a senior reporter for The New York Times, your task is to write a fictional news report that continues from a previous one. 
+    - Your writing style is concise and clear, without rhetorical techniques, in plain english. 
+    - Avoid explicitly referencing the structure and themes; instead, integrate it subtly within the story.
+    - The story should be written in a style suitable for CEFR Level A1 and each chapter approximately take 1 minutes to read (100 words).
+    - The continuation chapter needs to be closely related to the previous one (intriguing and logically connected in narration),
+    - The theme of the story must be strikingly prominent, you can not make up new themes except the only one given below.
+    - All entities given below must be included in the story.
+    
+    Chapter ID: A2
+    Time Period: 2024-05-02 to 2024-08-01
+    Themes: Advanced Robotics Techniques
+    Theme Context: An exploration of breakthroughs in robotics, focusing on advanced control techniques and their applications in various industries.
+    Entity: Dr. Mia Chen, RoboTech Inc., International Robotics Symposium
+
+    Narrative Sturcture: The narrative structure is SharpBranch, where The narrative starts with a focus on a specific technique, exploring its application and impact initially, before diverging into examining its adaptation in different fields. (eg. A1 -> A2; A1 -> B2). The current chapter node is A2, which is the 2th chapter node in the narrative structure.
+
+    Previous context: RoboTech Inc., led by renowned scientist Dr. Mia Chen, announced a breakthrough in advanced robotics control techniques. The new technology, debuted at the International Robotics Symposium, promises to revolutionize various industries. Dr. Chen's team has developed a unique control system that allows robots to perform complex tasks with unprecedented precision and efficiency. This innovation is expected to have a significant impact, from manufacturing to healthcare. The details of this breakthrough are set to be explored in the coming chapters.
+
+    The output should be formatted as a JSON instance that conforms to the JSON schema below.
+
+As an example, for the schema {"properties": {"foo": {"title": "Foo", "description": "a list of strings", "type": "array", "items": {"type": "string"}}}, "required": ["foo"]}}
+the object {"foo": ["bar", "baz"]} is a well-formatted instance of the schema. The object {"properties": {"foo": ["bar", "baz"]}} is not well-formatted.
+
+Here is the output schema:
+```
+{"properties": {"id": {"title": "Id", "description": "ID of the chapter .", "type": "string"}, "title": {"title": "Title", "description": "Headlines for news story chapters", "type": "string"}, "time_period": {"title": "Time Period", "description": "Time period of the chapter (start date, end date), in format YYYY-MM-DD.", "type": "array", "items": {"type": "string"}}, "themes": {"title": "Themes", "description": "Themes related within chapter.", "type": "array", "items": {"type": "string"}}, "entity": {"title": "Entity", "description": "Entity mentioned within chapter.", "type": "array", "items": {"type": "string"}}, "content": {"title": "Content", "description": "Content of the chapter(In format as news article lead paragraph).", "type": "string"}}, "required": ["id", "title", "time_period", "themes", "entity", "content"]}
+```
+    
+--------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+New chapter << RoboTech Inc.'s Advanced Robotics Control Techniques Transforming Industries >> Finished!
+In the months following the International Robotics Symposium, Dr. Mia Chen's advanced robotics control techniques have begun to show their transformative potential. Industries are rapidly adapting this technology, with RoboTech Inc.'s unique control system being implemented in manufacturing and healthcare sectors. Factories are reporting increased precision in production lines, while hospitals are noting enhanced efficiency in robotic-assisted surgeries. The impact of Dr. Chen's innovation is proving to be as significant as predicted, setting new standards in robotics applications across multiple fields.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+Generating chapter B2...
+This chapter based on previous chapter: ['A1']
+Previous content: RoboTech Inc., led by renowned scientist Dr. Mia Chen, announced a breakthrough in advanced robotics control techniques. The new technology, debuted at the International Robotics Symposium, promises to revolutionize various industries. Dr. Chen's team has developed a unique control system that allows robots to perform complex tasks with unprecedented precision and efficiency. This innovation is expected to have a significant impact, from manufacturing to healthcare. The details of this breakthrough are set to be explored in the coming chapters.
+--------------------------------------------------
+
+    You are a senior reporter for The New York Times, your task is to write a fictional news report that continues from a previous one. 
+    - Your writing style is concise and clear, without rhetorical techniques, in plain english. 
+    - Avoid explicitly referencing the structure and themes; instead, integrate it subtly within the story.
+    - The story should be written in a style suitable for CEFR Level A1 and each chapter approximately take 1 minutes to read (100 words).
+    - The continuation chapter needs to be closely related to the previous one (intriguing and logically connected in narration),
+    - The theme of the story must be strikingly prominent, you can not make up new themes except the only one given below.
+    - All entities given below must be included in the story.
+    
+    Chapter ID: B2
+    Time Period: 2024-10-16 to 2024-12-31
+    Themes: Techniques in Sustainable Agriculture
+    Theme Context: Investigating how advanced robotics control techniques are adapted for sustainable agriculture, including precision farming and automated crop management.
+    Entity: Dr. Mia Chen, RoboTech Inc., GreenFarm Solutions, AgriTech Expo
+
+    Narrative Sturcture: The narrative structure is SharpBranch, where The narrative starts with a focus on a specific technique, exploring its application and impact initially, before diverging into examining its adaptation in different fields. (eg. A1 -> A2; A1 -> B2). The current chapter node is B2, which is the 2th chapter node in the narrative structure.
+
+    Previous context: RoboTech Inc., led by renowned scientist Dr. Mia Chen, announced a breakthrough in advanced robotics control techniques. The new technology, debuted at the International Robotics Symposium, promises to revolutionize various industries. Dr. Chen's team has developed a unique control system that allows robots to perform complex tasks with unprecedented precision and efficiency. This innovation is expected to have a significant impact, from manufacturing to healthcare. The details of this breakthrough are set to be explored in the coming chapters.
+
+    The output should be formatted as a JSON instance that conforms to the JSON schema below.
+
+As an example, for the schema {"properties": {"foo": {"title": "Foo", "description": "a list of strings", "type": "array", "items": {"type": "string"}}}, "required": ["foo"]}}
+the object {"foo": ["bar", "baz"]} is a well-formatted instance of the schema. The object {"properties": {"foo": ["bar", "baz"]}} is not well-formatted.
+
+Here is the output schema:
+```
+{"properties": {"id": {"title": "Id", "description": "ID of the chapter .", "type": "string"}, "title": {"title": "Title", "description": "Headlines for news story chapters", "type": "string"}, "time_period": {"title": "Time Period", "description": "Time period of the chapter (start date, end date), in format YYYY-MM-DD.", "type": "array", "items": {"type": "string"}}, "themes": {"title": "Themes", "description": "Themes related within chapter.", "type": "array", "items": {"type": "string"}}, "entity": {"title": "Entity", "description": "Entity mentioned within chapter.", "type": "array", "items": {"type": "string"}}, "content": {"title": "Content", "description": "Content of the chapter(In format as news article lead paragraph).", "type": "string"}}, "required": ["id", "title", "time_period", "themes", "entity", "content"]}
+```
+    
+--------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+New chapter << RoboTech Inc. Revolutionizing Sustainable Agriculture >> Finished!
+In a bid to revolutionize agriculture, RoboTech Inc., led by Dr. Mia Chen, is applying their advanced robotics control techniques to sustainable farming. Partnering with GreenFarm Solutions, they aim to bring precision farming and automated crop management to a new level. Using their innovative control system, robots can perform complex farming tasks with unparalleled precision and efficiency. The details of this exciting venture will be unveiled at the upcoming AgriTech Expo. This adaptation of robotics technology is expected to significantly enhance sustainable agriculture practices.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

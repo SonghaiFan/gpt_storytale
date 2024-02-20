@@ -1,0 +1,121 @@
+==================================================
+Selected narrative structure: Arch
+Generating story...
+Narrative structure:
+==================================================
+Generating chapter A1...
+This chapter based on previous chapter: []
+Previous content: 
+--------------------------------------------------
+
+    You are a senior reporter for The New York Times, your task is to write a fictional news report that continues from a previous one. 
+    - Your writing style is concise and clear, without rhetorical techniques, in plain english. 
+    - Avoid explicitly referencing the structure and themes; instead, integrate it subtly within the story.
+    - The story should be written in a style suitable for CEFR Level A1 and each chapter approximately take 1 minutes to read (100 words).
+    - The continuation chapter needs to be closely related to the previous one (intriguing and logically connected in narration),
+    - The theme of the story must be strikingly prominent, you can not make up new themes except the only one given below.
+    - All entities given below must be included in the story.
+    
+    Chapter ID: A1
+    Time Period: 2023-01-01 to 2023-05-02
+    Themes: Economic Boom
+    Theme Context: The city experiences an unprecedented economic rise but faces a sudden ecological challenge before finding a sustainable economic solution.
+    Entity: Mayor Lina, Economic Council, Downtown District
+
+    Narrative Sturcture: The narrative structure is Arch, where The narrative begins with Theme A, then shifts to Theme B, and finally returns to Theme A. (eg. A1 -> B2 -> A3). The current chapter node is A1, which is the 1th chapter node in the narrative structure.
+
+    Previous context: None
+
+    The output should be formatted as a JSON instance that conforms to the JSON schema below.
+
+As an example, for the schema {"properties": {"foo": {"title": "Foo", "description": "a list of strings", "type": "array", "items": {"type": "string"}}}, "required": ["foo"]}}
+the object {"foo": ["bar", "baz"]} is a well-formatted instance of the schema. The object {"properties": {"foo": ["bar", "baz"]}} is not well-formatted.
+
+Here is the output schema:
+```
+{"properties": {"id": {"title": "Id", "description": "ID of the chapter .", "type": "string"}, "title": {"title": "Title", "description": "Headlines for news story chapters", "type": "string"}, "time_period": {"title": "Time Period", "description": "Time period of the chapter (start date, end date), in format YYYY-MM-DD.", "type": "array", "items": {"type": "string"}}, "themes": {"title": "Themes", "description": "Themes related within chapter.", "type": "array", "items": {"type": "string"}}, "entity": {"title": "Entity", "description": "Entity mentioned within chapter.", "type": "array", "items": {"type": "string"}}, "content": {"title": "Content", "description": "Content of the chapter(In format as news article lead paragraph).", "type": "string"}}, "required": ["id", "title", "time_period", "themes", "entity", "content"]}
+```
+    
+--------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+New chapter << Unprecedented Economic Boom Hits the City >> Finished!
+Mayor Lina and the Economic Council announced a remarkable economic boom in the city today. Downtown District, long known for its quiet streets, is now a bustling hub of new businesses and jobs. This sudden growth is creating a vibrant city full of opportunities. Yet, this rapid expansion also brings an unexpected ecological challenge. The city is now faced with finding a sustainable economic solution to balance growth and preserve the environment.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+Generating chapter B2...
+This chapter based on previous chapter: ['A1']
+Previous content: Mayor Lina and the Economic Council announced a remarkable economic boom in the city today. Downtown District, long known for its quiet streets, is now a bustling hub of new businesses and jobs. This sudden growth is creating a vibrant city full of opportunities. Yet, this rapid expansion also brings an unexpected ecological challenge. The city is now faced with finding a sustainable economic solution to balance growth and preserve the environment.
+--------------------------------------------------
+
+    You are a senior reporter for The New York Times, your task is to write a fictional news report that continues from a previous one. 
+    - Your writing style is concise and clear, without rhetorical techniques, in plain english. 
+    - Avoid explicitly referencing the structure and themes; instead, integrate it subtly within the story.
+    - The story should be written in a style suitable for CEFR Level A1 and each chapter approximately take 1 minutes to read (100 words).
+    - The continuation chapter needs to be closely related to the previous one (intriguing and logically connected in narration),
+    - The theme of the story must be strikingly prominent, you can not make up new themes except the only one given below.
+    - All entities given below must be included in the story.
+    
+    Chapter ID: B2
+    Time Period: 2023-07-01 to 2023-07-31
+    Themes: Ecological Crisis
+    Theme Context: Due to the rapid economic growth, the city faces an environmental crisis, leading to debates on the city's future.
+    Entity: Riverstone Park, Eco Summit, GreenLife, Downtown District, City Media
+
+    Narrative Sturcture: The narrative structure is Arch, where The narrative begins with Theme A, then shifts to Theme B, and finally returns to Theme A. (eg. A1 -> B2 -> A3). The current chapter node is B2, which is the 2th chapter node in the narrative structure.
+
+    Previous context: Mayor Lina and the Economic Council announced a remarkable economic boom in the city today. Downtown District, long known for its quiet streets, is now a bustling hub of new businesses and jobs. This sudden growth is creating a vibrant city full of opportunities. Yet, this rapid expansion also brings an unexpected ecological challenge. The city is now faced with finding a sustainable economic solution to balance growth and preserve the environment.
+
+    The output should be formatted as a JSON instance that conforms to the JSON schema below.
+
+As an example, for the schema {"properties": {"foo": {"title": "Foo", "description": "a list of strings", "type": "array", "items": {"type": "string"}}}, "required": ["foo"]}}
+the object {"foo": ["bar", "baz"]} is a well-formatted instance of the schema. The object {"properties": {"foo": ["bar", "baz"]}} is not well-formatted.
+
+Here is the output schema:
+```
+{"properties": {"id": {"title": "Id", "description": "ID of the chapter .", "type": "string"}, "title": {"title": "Title", "description": "Headlines for news story chapters", "type": "string"}, "time_period": {"title": "Time Period", "description": "Time period of the chapter (start date, end date), in format YYYY-MM-DD.", "type": "array", "items": {"type": "string"}}, "themes": {"title": "Themes", "description": "Themes related within chapter.", "type": "array", "items": {"type": "string"}}, "entity": {"title": "Entity", "description": "Entity mentioned within chapter.", "type": "array", "items": {"type": "string"}}, "content": {"title": "Content", "description": "Content of the chapter(In format as news article lead paragraph).", "type": "string"}}, "required": ["id", "title", "time_period", "themes", "entity", "content"]}
+```
+    
+--------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+New chapter << City Faces Environmental Crisis Amid Economic Boom >> Finished!
+The city's rapid economic growth has brought an unexpected ecological crisis. Riverstone Park, once a green oasis, is now threatened by pollution. An Eco Summit, hosted by GreenLife, will take place in the Downtown District to discuss the city's future. City Media will broadcast the event. The city must find a balance between growth and environmental preservation.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+Generating chapter A3...
+This chapter based on previous chapter: ['B2']
+Previous content: The city's rapid economic growth has brought an unexpected ecological crisis. Riverstone Park, once a green oasis, is now threatened by pollution. An Eco Summit, hosted by GreenLife, will take place in the Downtown District to discuss the city's future. City Media will broadcast the event. The city must find a balance between growth and environmental preservation.
+--------------------------------------------------
+
+    You are a senior reporter for The New York Times, your task is to write a fictional news report that continues from a previous one. 
+    - Your writing style is concise and clear, without rhetorical techniques, in plain english. 
+    - Avoid explicitly referencing the structure and themes; instead, integrate it subtly within the story.
+    - The story should be written in a style suitable for CEFR Level A1 and each chapter approximately take 1 minutes to read (100 words).
+    - The continuation chapter needs to be closely related to the previous one (intriguing and logically connected in narration),
+    - The theme of the story must be strikingly prominent, you can not make up new themes except the only one given below.
+    - All entities given below must be included in the story.
+    
+    Chapter ID: A3
+    Time Period: 2023-08-31 to 2023-12-31
+    Themes: Economic Boom
+    Theme Context: The city experiences an unprecedented economic rise but faces a sudden ecological challenge before finding a sustainable economic solution.
+    Entity: Mayor Lina, Economic Council, GreenLife, Downtown District
+
+    Narrative Sturcture: The narrative structure is Arch, where The narrative begins with Theme A, then shifts to Theme B, and finally returns to Theme A. (eg. A1 -> B2 -> A3). The current chapter node is A3, which is the 3th chapter node in the narrative structure.
+
+    Previous context: The city's rapid economic growth has brought an unexpected ecological crisis. Riverstone Park, once a green oasis, is now threatened by pollution. An Eco Summit, hosted by GreenLife, will take place in the Downtown District to discuss the city's future. City Media will broadcast the event. The city must find a balance between growth and environmental preservation.
+
+    The output should be formatted as a JSON instance that conforms to the JSON schema below.
+
+As an example, for the schema {"properties": {"foo": {"title": "Foo", "description": "a list of strings", "type": "array", "items": {"type": "string"}}}, "required": ["foo"]}}
+the object {"foo": ["bar", "baz"]} is a well-formatted instance of the schema. The object {"properties": {"foo": ["bar", "baz"]}} is not well-formatted.
+
+Here is the output schema:
+```
+{"properties": {"id": {"title": "Id", "description": "ID of the chapter .", "type": "string"}, "title": {"title": "Title", "description": "Headlines for news story chapters", "type": "string"}, "time_period": {"title": "Time Period", "description": "Time period of the chapter (start date, end date), in format YYYY-MM-DD.", "type": "array", "items": {"type": "string"}}, "themes": {"title": "Themes", "description": "Themes related within chapter.", "type": "array", "items": {"type": "string"}}, "entity": {"title": "Entity", "description": "Entity mentioned within chapter.", "type": "array", "items": {"type": "string"}}, "content": {"title": "Content", "description": "Content of the chapter(In format as news article lead paragraph).", "type": "string"}}, "required": ["id", "title", "time_period", "themes", "entity", "content"]}
+```
+    
+--------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+New chapter << City Finds Sustainable Solution Amid Economic Boom and Ecological Crisis >> Finished!
+In a remarkable turn of events, the city, under the leadership of Mayor Lina and the Economic Council, has found a sustainable solution to balance its economic boom and ecological challenges. The solution came to light during the Eco Summit, hosted by GreenLife in the Downtown District. The city plans to invest in green technologies and enforce stricter pollution controls. This decision marks a significant step towards ensuring the city's prosperity without compromising its ecological integrity.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

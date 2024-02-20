@@ -1,0 +1,121 @@
+==================================================
+Selected narrative structure: WideBranch
+Generating story...
+Narrative structure:
+==================================================
+Generating chapter B1...
+This chapter based on previous chapter: []
+Previous content: 
+--------------------------------------------------
+
+    You are a senior reporter for The New York Times, your task is to write a fictional news report that continues from a previous one. 
+    - Your writing style is concise and clear, without rhetorical techniques, in plain english. 
+    - Avoid explicitly referencing the structure and themes; instead, integrate it subtly within the story.
+    - The story should be written in a style suitable for CEFR Level A1 and each chapter approximately take 1 minutes to read (100 words).
+    - The continuation chapter needs to be closely related to the previous one (intriguing and logically connected in narration),
+    - The theme of the story must be strikingly prominent, you can not make up new themes except the only one given below.
+    - All entities given below must be included in the story.
+    
+    Chapter ID: B1
+    Time Period: 2024-01-01 to 2024-01-31
+    Themes: Automotive New Product Launch
+    Theme Context: The central theme revolves around the launch of a revolutionary electric vehicle by AutoInnovate, capturing global attention and setting new standards in the automotive industry.
+    Entity: EV-X1, AutoInnovate, Global Auto Show, CEO Angela Martinez
+
+    Narrative Sturcture: The narrative structure is WideBranch, where The narrative begins with the central theme of an Automotive New Product Launch, then branches into two separate themes exploring different aspects of this event. (eg. B1 -> A2; B1 -> C2). The current chapter node is B1, which is the 1th chapter node in the narrative structure.
+
+    Previous context: None
+
+    The output should be formatted as a JSON instance that conforms to the JSON schema below.
+
+As an example, for the schema {"properties": {"foo": {"title": "Foo", "description": "a list of strings", "type": "array", "items": {"type": "string"}}}, "required": ["foo"]}}
+the object {"foo": ["bar", "baz"]} is a well-formatted instance of the schema. The object {"properties": {"foo": ["bar", "baz"]}} is not well-formatted.
+
+Here is the output schema:
+```
+{"properties": {"id": {"title": "Id", "description": "ID of the chapter .", "type": "string"}, "title": {"title": "Title", "description": "Headlines for news story chapters", "type": "string"}, "time_period": {"title": "Time Period", "description": "Time period of the chapter (start date, end date), in format YYYY-MM-DD.", "type": "array", "items": {"type": "string"}}, "themes": {"title": "Themes", "description": "Themes related within chapter.", "type": "array", "items": {"type": "string"}}, "entity": {"title": "Entity", "description": "Entity mentioned within chapter.", "type": "array", "items": {"type": "string"}}, "content": {"title": "Content", "description": "Content of the chapter(In format as news article lead paragraph).", "type": "string"}}, "required": ["id", "title", "time_period", "themes", "entity", "content"]}
+```
+    
+--------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+New chapter << AutoInnovate Unveils Revolutionary Electric Vehicle: EV-X1 >> Finished!
+AutoInnovate, a leading player in the automotive industry, has unveiled its latest creation, the EV-X1, at the Global Auto Show. The EV-X1 is a groundbreaking electric vehicle that is expected to set new standards in the industry. CEO Angela Martinez introduced the vehicle, expressing confidence that it will revolutionize the automotive world.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+Generating chapter C2...
+This chapter based on previous chapter: ['B1']
+Previous content: AutoInnovate, a leading player in the automotive industry, has unveiled its latest creation, the EV-X1, at the Global Auto Show. The EV-X1 is a groundbreaking electric vehicle that is expected to set new standards in the industry. CEO Angela Martinez introduced the vehicle, expressing confidence that it will revolutionize the automotive world.
+--------------------------------------------------
+
+    You are a senior reporter for The New York Times, your task is to write a fictional news report that continues from a previous one. 
+    - Your writing style is concise and clear, without rhetorical techniques, in plain english. 
+    - Avoid explicitly referencing the structure and themes; instead, integrate it subtly within the story.
+    - The story should be written in a style suitable for CEFR Level A1 and each chapter approximately take 1 minutes to read (100 words).
+    - The continuation chapter needs to be closely related to the previous one (intriguing and logically connected in narration),
+    - The theme of the story must be strikingly prominent, you can not make up new themes except the only one given below.
+    - All entities given below must be included in the story.
+    
+    Chapter ID: C2
+    Time Period: 2024-04-16 to 2024-06-01
+    Themes: Economic Impact
+    Theme Context: This theme examines the economic ripple effects of the new EV-X1, from job creation to the impact on the global automotive market and local economies.
+    Entity: Market Analyst Emma Chen, EV-X1, Global Auto Show, AutoInnovate, World Economic Forum
+
+    Narrative Sturcture: The narrative structure is WideBranch, where The narrative begins with the central theme of an Automotive New Product Launch, then branches into two separate themes exploring different aspects of this event. (eg. B1 -> A2; B1 -> C2). The current chapter node is C2, which is the 2th chapter node in the narrative structure.
+
+    Previous context: AutoInnovate, a leading player in the automotive industry, has unveiled its latest creation, the EV-X1, at the Global Auto Show. The EV-X1 is a groundbreaking electric vehicle that is expected to set new standards in the industry. CEO Angela Martinez introduced the vehicle, expressing confidence that it will revolutionize the automotive world.
+
+    The output should be formatted as a JSON instance that conforms to the JSON schema below.
+
+As an example, for the schema {"properties": {"foo": {"title": "Foo", "description": "a list of strings", "type": "array", "items": {"type": "string"}}}, "required": ["foo"]}}
+the object {"foo": ["bar", "baz"]} is a well-formatted instance of the schema. The object {"properties": {"foo": ["bar", "baz"]}} is not well-formatted.
+
+Here is the output schema:
+```
+{"properties": {"id": {"title": "Id", "description": "ID of the chapter .", "type": "string"}, "title": {"title": "Title", "description": "Headlines for news story chapters", "type": "string"}, "time_period": {"title": "Time Period", "description": "Time period of the chapter (start date, end date), in format YYYY-MM-DD.", "type": "array", "items": {"type": "string"}}, "themes": {"title": "Themes", "description": "Themes related within chapter.", "type": "array", "items": {"type": "string"}}, "entity": {"title": "Entity", "description": "Entity mentioned within chapter.", "type": "array", "items": {"type": "string"}}, "content": {"title": "Content", "description": "Content of the chapter(In format as news article lead paragraph).", "type": "string"}}, "required": ["id", "title", "time_period", "themes", "entity", "content"]}
+```
+    
+--------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+New chapter << EV-X1: A Game Changer in Global Economy >> Finished!
+Market Analyst Emma Chen commented on the economic impact of the EV-X1 at the World Economic Forum. She predicted a boost in job creation due to the new technology. The ripple effect of the EV-X1 on the global automotive market is also expected to be significant. Chen said, 'AutoInnovate's EV-X1 could reshape the economic landscape of local economies, driving growth and innovation.'
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+Generating chapter A2...
+This chapter based on previous chapter: ['B1']
+Previous content: AutoInnovate, a leading player in the automotive industry, has unveiled its latest creation, the EV-X1, at the Global Auto Show. The EV-X1 is a groundbreaking electric vehicle that is expected to set new standards in the industry. CEO Angela Martinez introduced the vehicle, expressing confidence that it will revolutionize the automotive world.
+--------------------------------------------------
+
+    You are a senior reporter for The New York Times, your task is to write a fictional news report that continues from a previous one. 
+    - Your writing style is concise and clear, without rhetorical techniques, in plain english. 
+    - Avoid explicitly referencing the structure and themes; instead, integrate it subtly within the story.
+    - The story should be written in a style suitable for CEFR Level A1 and each chapter approximately take 1 minutes to read (100 words).
+    - The continuation chapter needs to be closely related to the previous one (intriguing and logically connected in narration),
+    - The theme of the story must be strikingly prominent, you can not make up new themes except the only one given below.
+    - All entities given below must be included in the story.
+    
+    Chapter ID: A2
+    Time Period: 2024-04-01 to 2024-05-01
+    Themes: Environmental Impact
+    Theme Context: Following the launch, this theme explores the environmental implications of the new EV-X1, highlighting its eco-friendly technology and the company's commitment to sustainability.
+    Entity: GreenTech Alliance, AutoInnovate, EV-X1, Eco-Drive Expo
+
+    Narrative Sturcture: The narrative structure is WideBranch, where The narrative begins with the central theme of an Automotive New Product Launch, then branches into two separate themes exploring different aspects of this event. (eg. B1 -> A2; B1 -> C2). The current chapter node is A2, which is the 2th chapter node in the narrative structure.
+
+    Previous context: AutoInnovate, a leading player in the automotive industry, has unveiled its latest creation, the EV-X1, at the Global Auto Show. The EV-X1 is a groundbreaking electric vehicle that is expected to set new standards in the industry. CEO Angela Martinez introduced the vehicle, expressing confidence that it will revolutionize the automotive world.
+
+    The output should be formatted as a JSON instance that conforms to the JSON schema below.
+
+As an example, for the schema {"properties": {"foo": {"title": "Foo", "description": "a list of strings", "type": "array", "items": {"type": "string"}}}, "required": ["foo"]}}
+the object {"foo": ["bar", "baz"]} is a well-formatted instance of the schema. The object {"properties": {"foo": ["bar", "baz"]}} is not well-formatted.
+
+Here is the output schema:
+```
+{"properties": {"id": {"title": "Id", "description": "ID of the chapter .", "type": "string"}, "title": {"title": "Title", "description": "Headlines for news story chapters", "type": "string"}, "time_period": {"title": "Time Period", "description": "Time period of the chapter (start date, end date), in format YYYY-MM-DD.", "type": "array", "items": {"type": "string"}}, "themes": {"title": "Themes", "description": "Themes related within chapter.", "type": "array", "items": {"type": "string"}}, "entity": {"title": "Entity", "description": "Entity mentioned within chapter.", "type": "array", "items": {"type": "string"}}, "content": {"title": "Content", "description": "Content of the chapter(In format as news article lead paragraph).", "type": "string"}}, "required": ["id", "title", "time_period", "themes", "entity", "content"]}
+```
+    
+--------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+New chapter << AutoInnovate's EV-X1: A Step Towards Eco-Friendly Future >> Finished!
+AutoInnovate's EV-X1, the latest electric vehicle, is making waves in the GreenTech Alliance. The company's commitment to sustainability is evident in the eco-friendly technology used in the EV-X1. It's not just about speed and style, but also about reducing environmental impact. The EV-X1 will be showcased at the upcoming Eco-Drive Expo, where attendees can learn more about AutoInnovate's efforts in promoting sustainable transportation.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

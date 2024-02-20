@@ -1,0 +1,121 @@
+==================================================
+Selected narrative structure: Arch
+Generating story...
+Narrative structure:
+==================================================
+Generating chapter A1...
+This chapter based on previous chapter: []
+Previous content: 
+--------------------------------------------------
+
+    You are a senior reporter for The New York Times, your task is to write a fictional news report that continues from a previous one. 
+    - Your writing style is concise and clear, without rhetorical techniques, in plain english. 
+    - Avoid explicitly referencing the structure and themes; instead, integrate it subtly within the story.
+    - The story should be written in a style suitable for CEFR Level A1 and each chapter approximately take 1 minutes to read (100 words).
+    - The continuation chapter needs to be closely related to the previous one (intriguing and logically connected in narration),
+    - The theme of the story must be strikingly prominent, you can not make up new themes except the only one given below.
+    - All entities given below must be included in the story.
+    
+    Chapter ID: A1
+    Time Period: 2023-01-01 to 2023-03-02
+    Themes: Corporate Expansion
+    Theme Context: The narrative begins with a corporation, Globex, experiencing rapid growth and expansion into new markets.
+    Entity: Metro City, CEO Johnson, Globex
+
+    Narrative Sturcture: The narrative structure is Arch, where The narrative begins with a focus on rapid corporate expansion, shifts to ethical challenges faced by the corporation, and concludes with the adoption of sustainable practices. (eg. A1 -> B2 -> A3). The current chapter node is A1, which is the 1th chapter node in the narrative structure.
+
+    Previous context: None
+
+    The output should be formatted as a JSON instance that conforms to the JSON schema below.
+
+As an example, for the schema {"properties": {"foo": {"title": "Foo", "description": "a list of strings", "type": "array", "items": {"type": "string"}}}, "required": ["foo"]}}
+the object {"foo": ["bar", "baz"]} is a well-formatted instance of the schema. The object {"properties": {"foo": ["bar", "baz"]}} is not well-formatted.
+
+Here is the output schema:
+```
+{"properties": {"id": {"title": "Id", "description": "ID of the chapter .", "type": "string"}, "title": {"title": "Title", "description": "Headlines for news story chapters", "type": "string"}, "time_period": {"title": "Time Period", "description": "Time period of the chapter (start date, end date), in format YYYY-MM-DD.", "type": "array", "items": {"type": "string"}}, "themes": {"title": "Themes", "description": "Themes related within chapter.", "type": "array", "items": {"type": "string"}}, "entity": {"title": "Entity", "description": "Entity mentioned within chapter.", "type": "array", "items": {"type": "string"}}, "content": {"title": "Content", "description": "Content of the chapter(In format as news article lead paragraph).", "type": "string"}}, "required": ["id", "title", "time_period", "themes", "entity", "content"]}
+```
+    
+--------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+New chapter << Globex's Rapid Expansion >> Finished!
+In the first quarter of 2023, Globex, under the leadership of CEO Johnson, has seen a rapid expansion. The corporation has successfully entered new markets, particularly in Metro City. This expansion has resulted in significant growth for Globex, setting a promising outlook for the rest of the year.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+Generating chapter B2...
+This chapter based on previous chapter: ['A1']
+Previous content: In the first quarter of 2023, Globex, under the leadership of CEO Johnson, has seen a rapid expansion. The corporation has successfully entered new markets, particularly in Metro City. This expansion has resulted in significant growth for Globex, setting a promising outlook for the rest of the year.
+--------------------------------------------------
+
+    You are a senior reporter for The New York Times, your task is to write a fictional news report that continues from a previous one. 
+    - Your writing style is concise and clear, without rhetorical techniques, in plain english. 
+    - Avoid explicitly referencing the structure and themes; instead, integrate it subtly within the story.
+    - The story should be written in a style suitable for CEFR Level A1 and each chapter approximately take 1 minutes to read (100 words).
+    - The continuation chapter needs to be closely related to the previous one (intriguing and logically connected in narration),
+    - The theme of the story must be strikingly prominent, you can not make up new themes except the only one given below.
+    - All entities given below must be included in the story.
+    
+    Chapter ID: B2
+    Time Period: 2023-07-31 to 2023-08-30
+    Themes: Ethical Challenges
+    Theme Context: Globex faces ethical challenges regarding labor practices and environmental impact, leading to public outcry and a need for change.
+    Entity: Greenfield Industrial Zone, CEO Johnson, Activist Group EarthFirst, Globex
+
+    Narrative Sturcture: The narrative structure is Arch, where The narrative begins with a focus on rapid corporate expansion, shifts to ethical challenges faced by the corporation, and concludes with the adoption of sustainable practices. (eg. A1 -> B2 -> A3). The current chapter node is B2, which is the 2th chapter node in the narrative structure.
+
+    Previous context: In the first quarter of 2023, Globex, under the leadership of CEO Johnson, has seen a rapid expansion. The corporation has successfully entered new markets, particularly in Metro City. This expansion has resulted in significant growth for Globex, setting a promising outlook for the rest of the year.
+
+    The output should be formatted as a JSON instance that conforms to the JSON schema below.
+
+As an example, for the schema {"properties": {"foo": {"title": "Foo", "description": "a list of strings", "type": "array", "items": {"type": "string"}}}, "required": ["foo"]}}
+the object {"foo": ["bar", "baz"]} is a well-formatted instance of the schema. The object {"properties": {"foo": ["bar", "baz"]}} is not well-formatted.
+
+Here is the output schema:
+```
+{"properties": {"id": {"title": "Id", "description": "ID of the chapter .", "type": "string"}, "title": {"title": "Title", "description": "Headlines for news story chapters", "type": "string"}, "time_period": {"title": "Time Period", "description": "Time period of the chapter (start date, end date), in format YYYY-MM-DD.", "type": "array", "items": {"type": "string"}}, "themes": {"title": "Themes", "description": "Themes related within chapter.", "type": "array", "items": {"type": "string"}}, "entity": {"title": "Entity", "description": "Entity mentioned within chapter.", "type": "array", "items": {"type": "string"}}, "content": {"title": "Content", "description": "Content of the chapter(In format as news article lead paragraph).", "type": "string"}}, "required": ["id", "title", "time_period", "themes", "entity", "content"]}
+```
+    
+--------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+New chapter << Globex Faces Backlash Over Labor and Environmental Concerns >> Finished!
+As Globex's expansion continues, the company is facing ethical challenges. Activist Group EarthFirst has raised concerns about Globex's labor practices and environmental impact in the Greenfield Industrial Zone. Public outcry is growing, with calls for CEO Johnson to address these issues. The company's rapid growth is now shadowed by these allegations, placing Globex's reputation at stake. The next steps taken by CEO Johnson could define the future of Globex.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+Generating chapter A3...
+This chapter based on previous chapter: ['B2']
+Previous content: As Globex's expansion continues, the company is facing ethical challenges. Activist Group EarthFirst has raised concerns about Globex's labor practices and environmental impact in the Greenfield Industrial Zone. Public outcry is growing, with calls for CEO Johnson to address these issues. The company's rapid growth is now shadowed by these allegations, placing Globex's reputation at stake. The next steps taken by CEO Johnson could define the future of Globex.
+--------------------------------------------------
+
+    You are a senior reporter for The New York Times, your task is to write a fictional news report that continues from a previous one. 
+    - Your writing style is concise and clear, without rhetorical techniques, in plain english. 
+    - Avoid explicitly referencing the structure and themes; instead, integrate it subtly within the story.
+    - The story should be written in a style suitable for CEFR Level A1 and each chapter approximately take 1 minutes to read (100 words).
+    - The continuation chapter needs to be closely related to the previous one (intriguing and logically connected in narration),
+    - The theme of the story must be strikingly prominent, you can not make up new themes except the only one given below.
+    - All entities given below must be included in the story.
+    
+    Chapter ID: A3
+    Time Period: 2023-05-01 to 2023-06-30
+    Themes: Corporate Expansion
+    Theme Context: The narrative begins with a corporation, Globex, experiencing rapid growth and expansion into new markets.
+    Entity: Metro City, CEO Johnson, Globex
+
+    Narrative Sturcture: The narrative structure is Arch, where The narrative begins with a focus on rapid corporate expansion, shifts to ethical challenges faced by the corporation, and concludes with the adoption of sustainable practices. (eg. A1 -> B2 -> A3). The current chapter node is A3, which is the 3th chapter node in the narrative structure.
+
+    Previous context: As Globex's expansion continues, the company is facing ethical challenges. Activist Group EarthFirst has raised concerns about Globex's labor practices and environmental impact in the Greenfield Industrial Zone. Public outcry is growing, with calls for CEO Johnson to address these issues. The company's rapid growth is now shadowed by these allegations, placing Globex's reputation at stake. The next steps taken by CEO Johnson could define the future of Globex.
+
+    The output should be formatted as a JSON instance that conforms to the JSON schema below.
+
+As an example, for the schema {"properties": {"foo": {"title": "Foo", "description": "a list of strings", "type": "array", "items": {"type": "string"}}}, "required": ["foo"]}}
+the object {"foo": ["bar", "baz"]} is a well-formatted instance of the schema. The object {"properties": {"foo": ["bar", "baz"]}} is not well-formatted.
+
+Here is the output schema:
+```
+{"properties": {"id": {"title": "Id", "description": "ID of the chapter .", "type": "string"}, "title": {"title": "Title", "description": "Headlines for news story chapters", "type": "string"}, "time_period": {"title": "Time Period", "description": "Time period of the chapter (start date, end date), in format YYYY-MM-DD.", "type": "array", "items": {"type": "string"}}, "themes": {"title": "Themes", "description": "Themes related within chapter.", "type": "array", "items": {"type": "string"}}, "entity": {"title": "Entity", "description": "Entity mentioned within chapter.", "type": "array", "items": {"type": "string"}}, "content": {"title": "Content", "description": "Content of the chapter(In format as news article lead paragraph).", "type": "string"}}, "required": ["id", "title", "time_period", "themes", "entity", "content"]}
+```
+    
+--------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+New chapter << Globex Adopts Sustainable Practices Amid Controversy >> Finished!
+In response to the recent controversy, Globex, under the leadership of CEO Johnson, has announced a shift towards sustainable practices. The company plans to improve labor conditions and reduce its environmental impact in Metro City's Greenfield Industrial Zone. This move is seen as a strategic attempt to regain public trust while ensuring continued growth. The success of this initiative will determine the future of Globex's expansion and its standing in the corporate world.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

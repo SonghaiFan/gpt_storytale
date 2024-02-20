@@ -1,0 +1,64 @@
+mode,reason,selection,rightSelection,prolificId,story,timestamp
+task,al the three stories are realted to each other and have 3 timelines. ,Linear,Arch,Naomi,story_Muddle_Puddle_Arch_seed928.json,2023-10-17 01:57:21.742000 UTC
+task,The narrative follows one theme for two chapters - Unexpected ecological crisis. then shifts to a second theme for the final chapter - Find a solution to fix the crisis.,LongFork,Arch,organgefetcher,story_Muddle_Puddle_Arch_seed928.json,2023-10-17 02:54:14.809000 UTC
+task,"From the first chapter, the next two different themes are developed.",WideBranch,Arch,Jayana,story_Muddle_Puddle_Arch_seed928.json,2023-10-17 01:54:41.332000 UTC
+task,"From the first chapter, the next two different themes are developed.",WideBranch,Arch,Jayana,story_Muddle_Puddle_Arch_seed928.json,2023-10-17 01:54:42.575000 UTC
+task,"Frist chapter: Economic growth
+Second chapter: financial crisis
+Third chapter; Residents against ",Ladder,Ladder,organgefetcher,story_Muddle_Puddle_Ladder_seed241.json,2023-10-17 02:37:20.605000 UTC
+task,Three events that happened in three time periods,Ladder,Ladder,Jayana,story_Muddle_Puddle_Ladder_seed241.json,2023-10-17 01:25:41.012000 UTC
+task,"The three paragraphs all deal with the same theme, which is the tech boom and the economic crisis in Silicon Park.",Linear,Ladder,organgefetcher,story_Muddle_Puddle_Ladder_seed241.json,2023-10-17 02:12:11.293000 UTC
+task,"The first story introduces the Startups and why there is a tech boom wich is related to the 2nd story. The tech boom attracts investement, then boom the economy, so the 2nd and 3rd stories are related. ",Linear,Ladder,Naomi,story_Muddle_Puddle_Ladder_seed241.json,2023-10-17 01:47:56.192000 UTC
+task,The all belongs to the same theme about Silicon Park,Linear,Ladder,mason,story_Muddle_Puddle_Ladder_seed241.json,2023-10-17 01:22:22.259000 UTC
+task,"The first story introduces the Startups and why there is a tech boom wich is related to the 2nd story. The tech boom attracts investement, then boom the economy, so the 2nd and 3rd stories are related. ",Linear,Ladder,Naomi,story_Muddle_Puddle_Ladder_seed241.json,2023-10-17 01:47:55.281000 UTC
+task,They are all about issues that Silicon Park busintss are facing ,Linear,Ladder,mason,story_Muddle_Puddle_Ladder_seed565.json,2023-10-17 01:31:36.772000 UTC
+task,"3 sotries have three timelines, the 2nd and 3rd story is about one thing",ShortFork,Ladder,Naomi,story_Muddle_Puddle_Ladder_seed241.json,2023-10-17 01:40:44.336000 UTC
+task,2nd and 3rd stories are linked to each other. ,ShortFork,Ladder,Naomi,story_Muddle_Puddle_Ladder_seed565.json,2023-10-17 02:04:39.083000 UTC
+task,ABB,SharpBranch,Ladder,Maggie,story_Muddle_Puddle_Ladder_seed241.json,2023-10-17 02:38:34.331000 UTC
+task,ABB,SharpBranch,Ladder,Maggie,story_Muddle_Puddle_Ladder_seed241.json,2023-10-17 02:38:35.238000 UTC
+task,They are all about a rebel activity organized by James,Linear,Linear,mason,story_Muddle_Puddle_Linear_seed986.json,2023-10-17 01:30:24.675000 UTC
+task,3 stories are related to each other. ,Linear,Linear,Naomi,story_Muddle_Puddle_Linear_seed986.json,2023-10-17 02:03:24.094000 UTC
+task,The same theme is narrated in three chapters according to the chronological order of development.,Linear,Linear,Jayana,story_Muddle_Puddle_Linear_seed986.json,2023-10-17 01:58:56.111000 UTC
+task,The same theme is narrated in three chapters according to the chronological order of development.,Linear,Linear,Jayana,story_Muddle_Puddle_Linear_seed986.json,2023-10-17 01:58:53.922000 UTC
+task,"First: introduce a revolution
+Second: The revolution status from May-July
+Third: The revolution status from July - Sept",WideBranch,Linear,organgefetcher,story_Muddle_Puddle_Linear_seed986.json,2023-10-17 03:00:09.171000 UTC
+task,"First: introduce a revolution
+Second: The revolution status from May-July
+Third: The revolution status from July - Sept",WideBranch,Linear,organgefetcher,story_Muddle_Puddle_Linear_seed986.json,2023-10-17 03:00:13.635000 UTC
+task,All about the Jane Doe party race,Linear,LongFork,mason,story_Muddle_Puddle_LongFork_seed288.json,2023-10-17 01:26:45.067000 UTC
+task,"3 stories have three timelines, and the first 2 stories are linked. The 3rd story is somewhat reversed",LongFork,LongFork,Naomi,story_Muddle_Puddle_LongFork_seed288.json,2023-10-17 01:54:44.879000 UTC
+task,The theme shifts to another for the last two chapters,ShortFork,LongFork,Jayana,story_Muddle_Puddle_LongFork_seed288.json,2023-10-17 01:46:57.802000 UTC
+task,"First chapter: Liberal party election
+Second & Third chapter: two different candidates",WideBranch,LongFork,organgefetcher,story_Muddle_Puddle_LongFork_seed288.json,2023-10-17 02:45:49.868000 UTC
+task,The first paragraph introduced the liberal party election. The second and third ones introduced the different candidates respectively. ,WideBranch,LongFork,organgefetcher,story_Muddle_Puddle_LongFork_seed288.json,2023-10-17 02:30:14.981000 UTC
+task,"First & Second chapters: TechPulse brings the Economic growth.
+Third chapter: Cultural change
+",LongFork,SharpBranch,organgefetcher,story_Muddle_Puddle_SharpBranch_seed178.json,2023-10-17 02:42:36.827000 UTC
+task,"The first and second chapters talk talking the same topic, which is TechPulse's tech advancements and their positive characteristics on economic growth, The last paragraph transited the topic to the cultural perspective,",LongFork,SharpBranch,organgefetcher,story_Muddle_Puddle_SharpBranch_seed178.json,2023-10-17 02:22:55.167000 UTC
+task,"The 2nd and the 3rd stories have overlapping timelines, and the 1st sotry is linked to the 2nd sotry, but the 3rd story is not totally linked to the 1st story, so SharpBranch should be the correct answer",SharpBranch,SharpBranch,Naomi,story_Muddle_Puddle_SharpBranch_seed178.json,2023-10-17 01:52:01.529000 UTC
+task,Sort of two sides of the same topic from chapter one,SharpBranch,SharpBranch,Jayana,story_Muddle_Puddle_SharpBranch_seed178.json,2023-10-17 01:36:56.077000 UTC
+task,"The 2nd and the 3rd stories have overlapping timelines, and the 1st sotry is linked to the 2nd sotry, but the 3rd story is not totally linked to the 1st story, so SharpBranch should be the correct answer",SharpBranch,SharpBranch,Naomi,story_Muddle_Puddle_SharpBranch_seed178.json,2023-10-17 01:51:59.700000 UTC
+task,The themes of the first chapter and the last two chapters are different. The last two chapters both emphasize the same content。,ShortFork,SharpMerge,Jayana,story_Muddle_Puddle_SharpMerge_seed632.json,2023-10-17 01:29:54.106000 UTC
+task,The first chapter introduced EcoTech and mainly talked about their innovations and the potential impact on the environment. The second chapter and third chapter talked about how clean energy impact economic growth.,ShortFork,SharpMerge,organgefetcher,story_Muddle_Puddle_SharpMerge_seed632.json,2023-10-17 02:18:26.929000 UTC
+task,The first theme is talking about the tech company. The rest two also related to this eco tech company but more about politics issues for the eco economy,ShortFork,SharpMerge,mason,story_Muddle_Puddle_SharpMerge_seed632.json,2023-10-17 01:24:18.164000 UTC
+task,The first theme is talking about the tech company. The rest two also related to this eco tech company but more about politics issues for the eco economy,ShortFork,SharpMerge,mason,story_Muddle_Puddle_SharpMerge_seed632.json,2023-10-17 01:24:19.065000 UTC
+task,"First Chapter: Introduced the new tech and the potential impact.
+Second & Third chapters: Focused on the positive economic growth brought by Greeninvest & EcoTech.",ShortFork,SharpMerge,organgefetcher,story_Muddle_Puddle_SharpMerge_seed632.json,2023-10-17 02:40:37.521000 UTC
+task,tell a story about Lauren Reynolds followed by the timeline structure,Ladder,ShortFork,organgefetcher,story_Muddle_Puddle_ShortFork_seed158.json,2023-10-17 02:48:20.144000 UTC
+task,Three chapters cover the same topic in sequence,Linear,ShortFork,Jayana,story_Muddle_Puddle_ShortFork_seed158.json,2023-10-17 01:50:32.448000 UTC
+task,"3 stories have 3 timelines, the 2nd one is linked to the 3rd one. ",ShortFork,ShortFork,Naomi,story_Muddle_Puddle_ShortFork_seed158.json,2023-10-17 01:55:59.911000 UTC
+task,The first one is about a electoral activity. The last two is about the investigation of Laura Reynolds.,ShortFork,ShortFork,mason,story_Muddle_Puddle_ShortFork_seed158.json,2023-10-17 01:28:05.391000 UTC
+task,The first one is about a electoral activity. The last two is about the investigation of Laura Reynolds.,ShortFork,ShortFork,mason,story_Muddle_Puddle_ShortFork_seed158.json,2023-10-17 01:28:04.691000 UTC
+task,Those are all about economic crisis.,Linear,WideBranch,mason,story_Muddle_Puddle_WideBranch_seed496.json,2023-10-17 01:29:42.108000 UTC
+task,"First chapter: Economic turndown affects the tech sector & community sector.
+Second: Community Resilience during the turndown
+Third: Tech resilience during the turndown.",WideBranch,WideBranch,organgefetcher,story_Muddle_Puddle_WideBranch_seed496.json,2023-10-17 02:58:04.693000 UTC
+task,"The 2nd and 3rd sotries have overlapping timelines, but different stories. 
+The 2nd story is a follow-up to the first one. ",SharpBranch,WideBranch,Naomi,story_Muddle_Puddle_WideBranch_seed496.json,2023-10-17 02:01:42.695000 UTC
+task,Three topics are discussed in sequence at one time,Ladder,WideMerge,Jayana,story_Muddle_Puddle_WideMerge_seed854.json,2023-10-17 01:41:29.440000 UTC
+task,The first one is about Economy down and second one is about a river flood. Then the third one connect the river and economy downturn,WideMerge,WideMerge,mason,story_Muddle_Puddle_WideMerge_seed854.json,2023-10-17 01:25:59.064000 UTC
+task,The first chapter emphasized the economic downturn and the second chapter talked about the natural disaster and the city damage. The last chapter summarizes both themes.,WideMerge,WideMerge,organgefetcher,story_Muddle_Puddle_WideMerge_seed854.json,2023-10-17 02:27:24.318000 UTC
+task,"First chapter: Economic downturn.
+Second chapter: Nature disaster
+Third chapter: Summarize the first two chapters",WideMerge,WideMerge,organgefetcher,story_Muddle_Puddle_WideMerge_seed854.json,2023-10-17 02:44:38.842000 UTC

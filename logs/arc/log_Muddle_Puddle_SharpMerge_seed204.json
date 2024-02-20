@@ -1,0 +1,125 @@
+==================================================
+Selected narrative structure: SharpMerge
+Generating story...
+Narrative structure:
+==================================================
+Generating chapter A1...
+This chapter based on previous chapter: []
+Previous content: 
+--------------------------------------------------
+
+    You are a senior reporter for The New York Times, your task is to write a fictional news report that continues from a previous one. 
+    - Your writing style is concise and clear, without rhetorical techniques, in plain english. 
+    - Avoid explicitly referencing the structure and themes; instead, integrate it subtly within the story.
+    - The story should be written in a style suitable for CEFR Level A1 and each chapter approximately take 1 minutes to read (100 words).
+    - The continuation chapter needs to be closely related to the previous one (intriguing and logically connected in narration),
+    - The theme of the story must be strikingly prominent, you can not make up new themes except the only one given below.
+    - All entities given below must be included in the story.
+    
+    Chapter ID: A1
+    Time Period: 2023-01-01 to 2023-01-30
+    Themes: Tech Advancement
+    Theme Context: Innovations in clean energy technology revolutionize a city's infrastructure.
+    Entity: EcoTech, Solar Hub, Dr. Ellen Hayes
+
+    Narrative Sturcture: The narrative structure is SharpMerge, where A chapter from Theme A and another from Theme B converge into a single chapter under Theme B. (eg. A1 -> B2; B1 -> B2). The current chapter node is A1, which is the 1th chapter node in the narrative structure.
+
+    Previous context: None
+
+    The output should be formatted as a JSON instance that conforms to the JSON schema below.
+
+As an example, for the schema {"properties": {"foo": {"title": "Foo", "description": "a list of strings", "type": "array", "items": {"type": "string"}}}, "required": ["foo"]}}
+the object {"foo": ["bar", "baz"]} is a well-formatted instance of the schema. The object {"properties": {"foo": ["bar", "baz"]}} is not well-formatted.
+
+Here is the output schema:
+```
+{"properties": {"id": {"title": "Id", "description": "ID of the chapter .", "type": "string"}, "title": {"title": "Title", "description": "Headlines for news story chapters", "type": "string"}, "time_period": {"title": "Time Period", "description": "Time period of the chapter (start date, end date), in format YYYY-MM-DD.", "type": "array", "items": {"type": "string"}}, "themes": {"title": "Themes", "description": "Themes related within chapter.", "type": "array", "items": {"type": "string"}}, "entity": {"title": "Entity", "description": "Entity mentioned within chapter.", "type": "array", "items": {"type": "string"}}, "content": {"title": "Content", "description": "Content of the chapter(In format as news article lead paragraph).", "type": "string"}}, "required": ["id", "title", "time_period", "themes", "entity", "content"]}
+```
+    
+--------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+New chapter << EcoTech's Solar Hub: A New Dawn for Clean Energy >> Finished!
+In a major tech advancement, EcoTech unveiled its Solar Hub, a revolutionary clean energy innovation. Dr. Ellen Hayes, EcoTech's lead scientist, stated that the Solar Hub will transform the city's infrastructure by providing reliable, renewable energy. The Solar Hub harnesses sunlight and converts it into electricity, reducing dependency on fossil fuels. This marks a significant step towards a sustainable future.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+Generating chapter B1...
+This chapter based on previous chapter: []
+Previous content: 
+--------------------------------------------------
+
+    You are a senior reporter for The New York Times, your task is to write a fictional news report that continues from a previous one. 
+    - Your writing style is concise and clear, without rhetorical techniques, in plain english. 
+    - Avoid explicitly referencing the structure and themes; instead, integrate it subtly within the story.
+    - The story should be written in a style suitable for CEFR Level A1 and each chapter approximately take 1 minutes to read (100 words).
+    - The continuation chapter needs to be closely related to the previous one (intriguing and logically connected in narration),
+    - The theme of the story must be strikingly prominent, you can not make up new themes except the only one given below.
+    - All entities given below must be included in the story.
+    
+    Chapter ID: B1
+    Time Period: 2023-02-01 to 2023-04-02
+    Themes: Economic Boom
+    Theme Context: A surge in the economy due to significant investments in clean energy startups.
+    Entity: EcoTech, Mayor Laura Gibson, GreenInvest, Market Street
+
+    Narrative Sturcture: The narrative structure is SharpMerge, where A chapter from Theme A and another from Theme B converge into a single chapter under Theme B. (eg. A1 -> B2; B1 -> B2). The current chapter node is B1, which is the 1th chapter node in the narrative structure.
+
+    Previous context: None
+
+    The output should be formatted as a JSON instance that conforms to the JSON schema below.
+
+As an example, for the schema {"properties": {"foo": {"title": "Foo", "description": "a list of strings", "type": "array", "items": {"type": "string"}}}, "required": ["foo"]}}
+the object {"foo": ["bar", "baz"]} is a well-formatted instance of the schema. The object {"properties": {"foo": ["bar", "baz"]}} is not well-formatted.
+
+Here is the output schema:
+```
+{"properties": {"id": {"title": "Id", "description": "ID of the chapter .", "type": "string"}, "title": {"title": "Title", "description": "Headlines for news story chapters", "type": "string"}, "time_period": {"title": "Time Period", "description": "Time period of the chapter (start date, end date), in format YYYY-MM-DD.", "type": "array", "items": {"type": "string"}}, "themes": {"title": "Themes", "description": "Themes related within chapter.", "type": "array", "items": {"type": "string"}}, "entity": {"title": "Entity", "description": "Entity mentioned within chapter.", "type": "array", "items": {"type": "string"}}, "content": {"title": "Content", "description": "Content of the chapter(In format as news article lead paragraph).", "type": "string"}}, "required": ["id", "title", "time_period", "themes", "entity", "content"]}
+```
+    
+--------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+New chapter << Economic Boom Ignites on Market Street >> Finished!
+A wave of economic growth has swept across Market Street, thanks to a surge in clean energy startups. At the heart of this boom is EcoTech, a promising new enterprise. GreenInvest, a major investment firm, has shown interest in EcoTech, further boosting the local economy. Mayor Laura Gibson praised the green energy sector for revitalizing the city's economy and creating jobs.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+Generating chapter B2...
+This chapter based on previous chapter: ['A1', 'B1']
+Previous content: In a major tech advancement, EcoTech unveiled its Solar Hub, a revolutionary clean energy innovation. Dr. Ellen Hayes, EcoTech's lead scientist, stated that the Solar Hub will transform the city's infrastructure by providing reliable, renewable energy. The Solar Hub harnesses sunlight and converts it into electricity, reducing dependency on fossil fuels. This marks a significant step towards a sustainable future.
+
+A wave of economic growth has swept across Market Street, thanks to a surge in clean energy startups. At the heart of this boom is EcoTech, a promising new enterprise. GreenInvest, a major investment firm, has shown interest in EcoTech, further boosting the local economy. Mayor Laura Gibson praised the green energy sector for revitalizing the city's economy and creating jobs.
+--------------------------------------------------
+
+    You are a senior reporter for The New York Times, your task is to write a fictional news report that continues from a previous one. 
+    - Your writing style is concise and clear, without rhetorical techniques, in plain english. 
+    - Avoid explicitly referencing the structure and themes; instead, integrate it subtly within the story.
+    - The story should be written in a style suitable for CEFR Level A1 and each chapter approximately take 1 minutes to read (100 words).
+    - The continuation chapter needs to be closely related to the previous one (intriguing and logically connected in narration),
+    - The theme of the story must be strikingly prominent, you can not make up new themes except the only one given below.
+    - All entities given below must be included in the story.
+    
+    Chapter ID: B2
+    Time Period: 2023-04-02 to 2023-06-01
+    Themes: Economic Boom
+    Theme Context: A surge in the economy due to significant investments in clean energy startups.
+    Entity: EcoTech, GreenInvest, Market Street, Mayor Laura Gibson
+
+    Narrative Sturcture: The narrative structure is SharpMerge, where A chapter from Theme A and another from Theme B converge into a single chapter under Theme B. (eg. A1 -> B2; B1 -> B2). The current chapter node is B2, which is the 2th chapter node in the narrative structure.
+
+    Previous context: In a major tech advancement, EcoTech unveiled its Solar Hub, a revolutionary clean energy innovation. Dr. Ellen Hayes, EcoTech's lead scientist, stated that the Solar Hub will transform the city's infrastructure by providing reliable, renewable energy. The Solar Hub harnesses sunlight and converts it into electricity, reducing dependency on fossil fuels. This marks a significant step towards a sustainable future.
+
+A wave of economic growth has swept across Market Street, thanks to a surge in clean energy startups. At the heart of this boom is EcoTech, a promising new enterprise. GreenInvest, a major investment firm, has shown interest in EcoTech, further boosting the local economy. Mayor Laura Gibson praised the green energy sector for revitalizing the city's economy and creating jobs.
+
+    The output should be formatted as a JSON instance that conforms to the JSON schema below.
+
+As an example, for the schema {"properties": {"foo": {"title": "Foo", "description": "a list of strings", "type": "array", "items": {"type": "string"}}}, "required": ["foo"]}}
+the object {"foo": ["bar", "baz"]} is a well-formatted instance of the schema. The object {"properties": {"foo": ["bar", "baz"]}} is not well-formatted.
+
+Here is the output schema:
+```
+{"properties": {"id": {"title": "Id", "description": "ID of the chapter .", "type": "string"}, "title": {"title": "Title", "description": "Headlines for news story chapters", "type": "string"}, "time_period": {"title": "Time Period", "description": "Time period of the chapter (start date, end date), in format YYYY-MM-DD.", "type": "array", "items": {"type": "string"}}, "themes": {"title": "Themes", "description": "Themes related within chapter.", "type": "array", "items": {"type": "string"}}, "entity": {"title": "Entity", "description": "Entity mentioned within chapter.", "type": "array", "items": {"type": "string"}}, "content": {"title": "Content", "description": "Content of the chapter(In format as news article lead paragraph).", "type": "string"}}, "required": ["id", "title", "time_period", "themes", "entity", "content"]}
+```
+    
+--------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+New chapter << Clean Energy Startups Ignite Economic Boom >> Finished!
+Market Street is experiencing an economic boom, driven by the surge in clean energy startups, particularly EcoTech. Their revolutionary Solar Hub has attracted significant investment from GreenInvest, a leading investment firm. This has stimulated the local economy, creating jobs and generating wealth. Mayor Laura Gibson has lauded the green energy sector for its role in revitalizing the city's economy.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

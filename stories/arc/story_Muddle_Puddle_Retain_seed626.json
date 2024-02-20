@@ -1,0 +1,41 @@
+{
+    "chapters": [
+        {
+            "id": "A1",
+            "title": "Elon Musk Unveils SpaceX's Starship at International Astronautical Congress",
+            "time_period": [
+                "2023-02-01",
+                "2023-05-02"
+            ],
+            "themes": [
+                "Space Exploration"
+            ],
+            "entity": [
+                "International Astronautical Congress",
+                "Elon Musk",
+                "Mars",
+                "Starship"
+            ],
+            "content": "Elon Musk, the CEO of SpaceX, has unveiled the Starship at the International Astronautical Congress. The spacecraft is designed to carry humans to Mars. Musk stated that SpaceX aims to make life multiplanetary, starting with Mars. The Starship is a key part of this plan."
+        },
+        {
+            "id": "A2",
+            "title": "SpaceX Starship: The Journey to Mars Begins",
+            "time_period": [
+                "2023-05-02",
+                "2023-08-01"
+            ],
+            "themes": [
+                "Space Exploration"
+            ],
+            "entity": [
+                "Mars",
+                "Starship",
+                "SpaceX",
+                "International Astronautical Congress",
+                "Elon Musk"
+            ],
+            "content": "After the unveiling at the International Astronautical Congress, SpaceX's Starship is now set for its first mission to Mars. Elon Musk confirmed that the spacecraft is ready for the journey. He stated that this is a big step towards their goal of making life multiplanetary. The Starship's mission is to explore the possibility of human life on Mars. This is a new chapter in the history of space exploration."
+        }
+    ]
+}

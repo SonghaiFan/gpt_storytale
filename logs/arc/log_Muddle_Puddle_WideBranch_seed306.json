@@ -1,0 +1,121 @@
+==================================================
+Selected narrative structure: WideBranch
+Generating story...
+Narrative structure:
+==================================================
+Generating chapter B1...
+This chapter based on previous chapter: []
+Previous content: 
+--------------------------------------------------
+
+    You are a senior reporter for The New York Times, your task is to write a fictional news report that continues from a previous one. 
+    - Your writing style is concise and clear, without rhetorical techniques, in plain english. 
+    - Avoid explicitly referencing the structure and themes; instead, integrate it subtly within the story.
+    - The story should be written in a style suitable for CEFR Level A1 and each chapter approximately take 1 minutes to read (100 words).
+    - The continuation chapter needs to be closely related to the previous one (intriguing and logically connected in narration),
+    - The theme of the story must be strikingly prominent, you can not make up new themes except the only one given below.
+    - All entities given below must be included in the story.
+    
+    Chapter ID: B1
+    Time Period: 2023-10-01 to 2023-10-21
+    Themes: Economic Downturn
+    Theme Context: The financial crisis engulfs the city, leading to different effects in the technology sector and the local communities.
+    Entity: Downtown District, Martin, Central Bank
+
+    Narrative Sturcture: The narrative structure is WideBranch, where From Theme B, the narrative branches out to both Themes A and C in the following chapters. (eg. B1 -> A2; B1 -> C2). The current chapter node is B1, which is the 1th chapter node in the narrative structure.
+
+    Previous context: None
+
+    The output should be formatted as a JSON instance that conforms to the JSON schema below.
+
+As an example, for the schema {"properties": {"foo": {"title": "Foo", "description": "a list of strings", "type": "array", "items": {"type": "string"}}}, "required": ["foo"]}}
+the object {"foo": ["bar", "baz"]} is a well-formatted instance of the schema. The object {"properties": {"foo": ["bar", "baz"]}} is not well-formatted.
+
+Here is the output schema:
+```
+{"properties": {"id": {"title": "Id", "description": "ID of the chapter .", "type": "string"}, "title": {"title": "Title", "description": "Headlines for news story chapters", "type": "string"}, "time_period": {"title": "Time Period", "description": "Time period of the chapter (start date, end date), in format YYYY-MM-DD.", "type": "array", "items": {"type": "string"}}, "themes": {"title": "Themes", "description": "Themes related within chapter.", "type": "array", "items": {"type": "string"}}, "entity": {"title": "Entity", "description": "Entity mentioned within chapter.", "type": "array", "items": {"type": "string"}}, "content": {"title": "Content", "description": "Content of the chapter(In format as news article lead paragraph).", "type": "string"}}, "required": ["id", "title", "time_period", "themes", "entity", "content"]}
+```
+    
+--------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+New chapter << Economic Downturn Sweeps the City >> Finished!
+As October begins, the city is hit by a financial crisis. The Downtown District is feeling the effects. Local shops are closing. People are losing jobs. Martin, a shop owner, says, 'It's hard to keep the doors open.' The Central Bank warns of more trouble ahead. The technology sector is also affected. Some tech firms are cutting back. Others are trying to find new ways to survive. The city is in a tough spot. But, people are hopeful things will get better.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+Generating chapter C2...
+This chapter based on previous chapter: ['B1']
+Previous content: As October begins, the city is hit by a financial crisis. The Downtown District is feeling the effects. Local shops are closing. People are losing jobs. Martin, a shop owner, says, 'It's hard to keep the doors open.' The Central Bank warns of more trouble ahead. The technology sector is also affected. Some tech firms are cutting back. Others are trying to find new ways to survive. The city is in a tough spot. But, people are hopeful things will get better.
+--------------------------------------------------
+
+    You are a senior reporter for The New York Times, your task is to write a fictional news report that continues from a previous one. 
+    - Your writing style is concise and clear, without rhetorical techniques, in plain english. 
+    - Avoid explicitly referencing the structure and themes; instead, integrate it subtly within the story.
+    - The story should be written in a style suitable for CEFR Level A1 and each chapter approximately take 1 minutes to read (100 words).
+    - The continuation chapter needs to be closely related to the previous one (intriguing and logically connected in narration),
+    - The theme of the story must be strikingly prominent, you can not make up new themes except the only one given below.
+    - All entities given below must be included in the story.
+    
+    Chapter ID: C2
+    Time Period: 2023-11-14 to 2023-12-14
+    Themes: Community Resilience
+    Theme Context: Local communities band together, finding grassroots solutions to face the economic hardships.
+    Entity: Downtown District, Martin, Community Alliance, Central Bank
+
+    Narrative Sturcture: The narrative structure is WideBranch, where From Theme B, the narrative branches out to both Themes A and C in the following chapters. (eg. B1 -> A2; B1 -> C2). The current chapter node is C2, which is the 2th chapter node in the narrative structure.
+
+    Previous context: As October begins, the city is hit by a financial crisis. The Downtown District is feeling the effects. Local shops are closing. People are losing jobs. Martin, a shop owner, says, 'It's hard to keep the doors open.' The Central Bank warns of more trouble ahead. The technology sector is also affected. Some tech firms are cutting back. Others are trying to find new ways to survive. The city is in a tough spot. But, people are hopeful things will get better.
+
+    The output should be formatted as a JSON instance that conforms to the JSON schema below.
+
+As an example, for the schema {"properties": {"foo": {"title": "Foo", "description": "a list of strings", "type": "array", "items": {"type": "string"}}}, "required": ["foo"]}}
+the object {"foo": ["bar", "baz"]} is a well-formatted instance of the schema. The object {"properties": {"foo": ["bar", "baz"]}} is not well-formatted.
+
+Here is the output schema:
+```
+{"properties": {"id": {"title": "Id", "description": "ID of the chapter .", "type": "string"}, "title": {"title": "Title", "description": "Headlines for news story chapters", "type": "string"}, "time_period": {"title": "Time Period", "description": "Time period of the chapter (start date, end date), in format YYYY-MM-DD.", "type": "array", "items": {"type": "string"}}, "themes": {"title": "Themes", "description": "Themes related within chapter.", "type": "array", "items": {"type": "string"}}, "entity": {"title": "Entity", "description": "Entity mentioned within chapter.", "type": "array", "items": {"type": "string"}}, "content": {"title": "Content", "description": "Content of the chapter(In format as news article lead paragraph).", "type": "string"}}, "required": ["id", "title", "time_period", "themes", "entity", "content"]}
+```
+    
+--------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+New chapter << Community Alliance: A Beacon of Hope Amid Economic Hardship >> Finished!
+As the economic hardship continues, the Downtown District finds hope in unity. The Community Alliance, led by Martin, emerges as a grassroots solution. They start a local fund, supported by small donations. This helps local shops to stay open. The Central Bank praises this effort as a model for other communities. Despite the crisis, the spirit of resilience keeps the district alive. The people are not just waiting for things to get better, they are making them better.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+Generating chapter A2...
+This chapter based on previous chapter: ['B1']
+Previous content: As October begins, the city is hit by a financial crisis. The Downtown District is feeling the effects. Local shops are closing. People are losing jobs. Martin, a shop owner, says, 'It's hard to keep the doors open.' The Central Bank warns of more trouble ahead. The technology sector is also affected. Some tech firms are cutting back. Others are trying to find new ways to survive. The city is in a tough spot. But, people are hopeful things will get better.
+--------------------------------------------------
+
+    You are a senior reporter for The New York Times, your task is to write a fictional news report that continues from a previous one. 
+    - Your writing style is concise and clear, without rhetorical techniques, in plain english. 
+    - Avoid explicitly referencing the structure and themes; instead, integrate it subtly within the story.
+    - The story should be written in a style suitable for CEFR Level A1 and each chapter approximately take 1 minutes to read (100 words).
+    - The continuation chapter needs to be closely related to the previous one (intriguing and logically connected in narration),
+    - The theme of the story must be strikingly prominent, you can not make up new themes except the only one given below.
+    - All entities given below must be included in the story.
+    
+    Chapter ID: A2
+    Time Period: 2023-12-11 to 2024-01-20
+    Themes: Tech Boom
+    Theme Context: Despite the economic crisis, tech startups experience a surge due to innovative solutions for the new economy.
+    Entity: TechPulse Inc., Martin, Silicon Street
+
+    Narrative Sturcture: The narrative structure is WideBranch, where From Theme B, the narrative branches out to both Themes A and C in the following chapters. (eg. B1 -> A2; B1 -> C2). The current chapter node is A2, which is the 2th chapter node in the narrative structure.
+
+    Previous context: As October begins, the city is hit by a financial crisis. The Downtown District is feeling the effects. Local shops are closing. People are losing jobs. Martin, a shop owner, says, 'It's hard to keep the doors open.' The Central Bank warns of more trouble ahead. The technology sector is also affected. Some tech firms are cutting back. Others are trying to find new ways to survive. The city is in a tough spot. But, people are hopeful things will get better.
+
+    The output should be formatted as a JSON instance that conforms to the JSON schema below.
+
+As an example, for the schema {"properties": {"foo": {"title": "Foo", "description": "a list of strings", "type": "array", "items": {"type": "string"}}}, "required": ["foo"]}}
+the object {"foo": ["bar", "baz"]} is a well-formatted instance of the schema. The object {"properties": {"foo": ["bar", "baz"]}} is not well-formatted.
+
+Here is the output schema:
+```
+{"properties": {"id": {"title": "Id", "description": "ID of the chapter .", "type": "string"}, "title": {"title": "Title", "description": "Headlines for news story chapters", "type": "string"}, "time_period": {"title": "Time Period", "description": "Time period of the chapter (start date, end date), in format YYYY-MM-DD.", "type": "array", "items": {"type": "string"}}, "themes": {"title": "Themes", "description": "Themes related within chapter.", "type": "array", "items": {"type": "string"}}, "entity": {"title": "Entity", "description": "Entity mentioned within chapter.", "type": "array", "items": {"type": "string"}}, "content": {"title": "Content", "description": "Content of the chapter(In format as news article lead paragraph).", "type": "string"}}, "required": ["id", "title", "time_period", "themes", "entity", "content"]}
+```
+    
+--------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+New chapter << Tech Boom Amidst Economic Crisis: TechPulse Inc. Leading the Charge >> Finished!
+Despite the economic downturn, Silicon Street is buzzing. TechPulse Inc., a startup, is leading the tech boom. They are creating new jobs and solutions for the new economy. Martin, the shop owner, says, 'It's a ray of hope in these tough times.' The tech sector's resilience is a silver lining in the city's cloud of financial woes. The future looks brighter on Silicon Street.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

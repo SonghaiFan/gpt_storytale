@@ -1,0 +1,125 @@
+==================================================
+Selected narrative structure: SharpMerge
+Generating story...
+Narrative structure:
+==================================================
+Generating chapter A1...
+This chapter based on previous chapter: []
+Previous content: 
+--------------------------------------------------
+
+    You are a senior reporter for The New York Times, your task is to write a fictional news report that continues from a previous one. 
+    - Your writing style is concise and clear, without rhetorical techniques, in plain english. 
+    - Avoid explicitly referencing the structure and themes; instead, integrate it subtly within the story.
+    - The story should be written in a style suitable for CEFR Level A1 and each chapter approximately take 1 minutes to read (100 words).
+    - The continuation chapter needs to be closely related to the previous one (intriguing and logically connected in narration),
+    - The theme of the story must be strikingly prominent, you can not make up new themes except the only one given below.
+    - All entities given below must be included in the story.
+    
+    Chapter ID: A1
+    Time Period: 2024-03-01 to 2024-04-07
+    Themes: Political Campaign
+    Theme Context: The narrative begins with a focus on the intense political campaign for the national election, highlighting strategies, debates, and key figures.
+    Entity: Governor Barnes, Nationalist Party, Liberal Alliance, Capital City
+
+    Narrative Sturcture: The narrative structure is SharpMerge, where A chapter from Theme A and another from Theme B converge into a single chapter under Theme B. (eg. A1 -> B2; B1 -> B2). The current chapter node is A1, which is the 1th chapter node in the narrative structure.
+
+    Previous context: None
+
+    The output should be formatted as a JSON instance that conforms to the JSON schema below.
+
+As an example, for the schema {"properties": {"foo": {"title": "Foo", "description": "a list of strings", "type": "array", "items": {"type": "string"}}}, "required": ["foo"]}}
+the object {"foo": ["bar", "baz"]} is a well-formatted instance of the schema. The object {"properties": {"foo": ["bar", "baz"]}} is not well-formatted.
+
+Here is the output schema:
+```
+{"properties": {"id": {"title": "Id", "description": "ID of the chapter .", "type": "string"}, "title": {"title": "Title", "description": "Headlines for news story chapters", "type": "string"}, "time_period": {"title": "Time Period", "description": "Time period of the chapter (start date, end date), in format YYYY-MM-DD.", "type": "array", "items": {"type": "string"}}, "themes": {"title": "Themes", "description": "Themes related within chapter.", "type": "array", "items": {"type": "string"}}, "entity": {"title": "Entity", "description": "Entity mentioned within chapter.", "type": "array", "items": {"type": "string"}}, "content": {"title": "Content", "description": "Content of the chapter(In format as news article lead paragraph).", "type": "string"}}, "required": ["id", "title", "time_period", "themes", "entity", "content"]}
+```
+    
+--------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+New chapter << Election Fever Heats Up: Governor Barnes Leads Nationalist Party's Charge >> Finished!
+In the heat of the national election, Governor Barnes emerges as the Nationalist Party's key figure. His strategies and debates have been the highlight of the political campaign. Meanwhile, the Liberal Alliance is also stepping up its game in Capital City. The race is on.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+Generating chapter B1...
+This chapter based on previous chapter: []
+Previous content: 
+--------------------------------------------------
+
+    You are a senior reporter for The New York Times, your task is to write a fictional news report that continues from a previous one. 
+    - Your writing style is concise and clear, without rhetorical techniques, in plain english. 
+    - Avoid explicitly referencing the structure and themes; instead, integrate it subtly within the story.
+    - The story should be written in a style suitable for CEFR Level A1 and each chapter approximately take 1 minutes to read (100 words).
+    - The continuation chapter needs to be closely related to the previous one (intriguing and logically connected in narration),
+    - The theme of the story must be strikingly prominent, you can not make up new themes except the only one given below.
+    - All entities given below must be included in the story.
+    
+    Chapter ID: B1
+    Time Period: 2024-05-16 to 2024-07-08
+    Themes: Legislative Reform
+    Theme Context: Following the election, the focus shifts to the newly elected government's efforts to pass significant legislative reforms, facing both support and opposition.
+    Entity: Governor Barnes, Nationalist Party, Parliament House, Civic Union Group
+
+    Narrative Sturcture: The narrative structure is SharpMerge, where A chapter from Theme A and another from Theme B converge into a single chapter under Theme B. (eg. A1 -> B2; B1 -> B2). The current chapter node is B1, which is the 1th chapter node in the narrative structure.
+
+    Previous context: None
+
+    The output should be formatted as a JSON instance that conforms to the JSON schema below.
+
+As an example, for the schema {"properties": {"foo": {"title": "Foo", "description": "a list of strings", "type": "array", "items": {"type": "string"}}}, "required": ["foo"]}}
+the object {"foo": ["bar", "baz"]} is a well-formatted instance of the schema. The object {"properties": {"foo": ["bar", "baz"]}} is not well-formatted.
+
+Here is the output schema:
+```
+{"properties": {"id": {"title": "Id", "description": "ID of the chapter .", "type": "string"}, "title": {"title": "Title", "description": "Headlines for news story chapters", "type": "string"}, "time_period": {"title": "Time Period", "description": "Time period of the chapter (start date, end date), in format YYYY-MM-DD.", "type": "array", "items": {"type": "string"}}, "themes": {"title": "Themes", "description": "Themes related within chapter.", "type": "array", "items": {"type": "string"}}, "entity": {"title": "Entity", "description": "Entity mentioned within chapter.", "type": "array", "items": {"type": "string"}}, "content": {"title": "Content", "description": "Content of the chapter(In format as news article lead paragraph).", "type": "string"}}, "required": ["id", "title", "time_period", "themes", "entity", "content"]}
+```
+    
+--------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+New chapter << Newly Elected Government Takes on Legislative Reform >> Finished!
+With the Nationalist Party's recent victory, Governor Barnes has announced plans for significant legislative reforms. The proposed changes, aimed at improving economic stability, have sparked heated debates in the Parliament House. The Civic Union Group, a prominent opposition party, has raised concerns about the potential impact of these reforms on social equity. Despite the opposition, Governor Barnes remains confident that the reforms will pass and benefit the nation. The coming weeks will be crucial in shaping the future of these legislative changes.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+Generating chapter B2...
+This chapter based on previous chapter: ['A1', 'B1']
+Previous content: In the heat of the national election, Governor Barnes emerges as the Nationalist Party's key figure. His strategies and debates have been the highlight of the political campaign. Meanwhile, the Liberal Alliance is also stepping up its game in Capital City. The race is on.
+
+With the Nationalist Party's recent victory, Governor Barnes has announced plans for significant legislative reforms. The proposed changes, aimed at improving economic stability, have sparked heated debates in the Parliament House. The Civic Union Group, a prominent opposition party, has raised concerns about the potential impact of these reforms on social equity. Despite the opposition, Governor Barnes remains confident that the reforms will pass and benefit the nation. The coming weeks will be crucial in shaping the future of these legislative changes.
+--------------------------------------------------
+
+    You are a senior reporter for The New York Times, your task is to write a fictional news report that continues from a previous one. 
+    - Your writing style is concise and clear, without rhetorical techniques, in plain english. 
+    - Avoid explicitly referencing the structure and themes; instead, integrate it subtly within the story.
+    - The story should be written in a style suitable for CEFR Level A1 and each chapter approximately take 1 minutes to read (100 words).
+    - The continuation chapter needs to be closely related to the previous one (intriguing and logically connected in narration),
+    - The theme of the story must be strikingly prominent, you can not make up new themes except the only one given below.
+    - All entities given below must be included in the story.
+    
+    Chapter ID: B2
+    Time Period: 2024-07-08 to 2024-08-31
+    Themes: Legislative Reform
+    Theme Context: Following the election, the focus shifts to the newly elected government's efforts to pass significant legislative reforms, facing both support and opposition.
+    Entity: Parliament House, Nationalist Party, Senator Johnson, Civic Union Group
+
+    Narrative Sturcture: The narrative structure is SharpMerge, where A chapter from Theme A and another from Theme B converge into a single chapter under Theme B. (eg. A1 -> B2; B1 -> B2). The current chapter node is B2, which is the 2th chapter node in the narrative structure.
+
+    Previous context: In the heat of the national election, Governor Barnes emerges as the Nationalist Party's key figure. His strategies and debates have been the highlight of the political campaign. Meanwhile, the Liberal Alliance is also stepping up its game in Capital City. The race is on.
+
+With the Nationalist Party's recent victory, Governor Barnes has announced plans for significant legislative reforms. The proposed changes, aimed at improving economic stability, have sparked heated debates in the Parliament House. The Civic Union Group, a prominent opposition party, has raised concerns about the potential impact of these reforms on social equity. Despite the opposition, Governor Barnes remains confident that the reforms will pass and benefit the nation. The coming weeks will be crucial in shaping the future of these legislative changes.
+
+    The output should be formatted as a JSON instance that conforms to the JSON schema below.
+
+As an example, for the schema {"properties": {"foo": {"title": "Foo", "description": "a list of strings", "type": "array", "items": {"type": "string"}}}, "required": ["foo"]}}
+the object {"foo": ["bar", "baz"]} is a well-formatted instance of the schema. The object {"properties": {"foo": ["bar", "baz"]}} is not well-formatted.
+
+Here is the output schema:
+```
+{"properties": {"id": {"title": "Id", "description": "ID of the chapter .", "type": "string"}, "title": {"title": "Title", "description": "Headlines for news story chapters", "type": "string"}, "time_period": {"title": "Time Period", "description": "Time period of the chapter (start date, end date), in format YYYY-MM-DD.", "type": "array", "items": {"type": "string"}}, "themes": {"title": "Themes", "description": "Themes related within chapter.", "type": "array", "items": {"type": "string"}}, "entity": {"title": "Entity", "description": "Entity mentioned within chapter.", "type": "array", "items": {"type": "string"}}, "content": {"title": "Content", "description": "Content of the chapter(In format as news article lead paragraph).", "type": "string"}}, "required": ["id", "title", "time_period", "themes", "entity", "content"]}
+```
+    
+--------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+New chapter << Nationalist Party's Legislative Reforms Spark Heated Debates >> Finished!
+The Nationalist Party, under the leadership of Governor Barnes, has proposed significant legislative reforms aimed at bolstering the nation's economy. The plans, however, have ignited intense debates in the Parliament House. The Civic Union Group, a key opposition party, has voiced concerns over the reforms' potential effects on social equity. Despite the opposition, Governor Barnes remains optimistic about the passage and positive impact of the reforms. The upcoming weeks will be pivotal in determining the fate of these legislative changes.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

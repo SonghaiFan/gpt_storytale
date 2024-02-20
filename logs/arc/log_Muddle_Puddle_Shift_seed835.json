@@ -1,0 +1,82 @@
+==================================================
+Selected narrative structure: Shift
+Generating story...
+Narrative structure:
+==================================================
+Generating chapter A1...
+This chapter based on previous chapter: []
+Previous content: 
+--------------------------------------------------
+
+    You are a senior reporter for The New York Times, your task is to write a fictional news report that continues from a previous one. 
+    - Your writing style is concise and clear, without rhetorical techniques, in plain english. 
+    - Avoid explicitly referencing the structure and themes; instead, integrate it subtly within the story.
+    - The story should be written in a style suitable for CEFR Level A1 and each chapter approximately take 1 minutes to read (100 words).
+    - The continuation chapter needs to be closely related to the previous one (intriguing and logically connected in narration),
+    - The theme of the story must be strikingly prominent, you can not make up new themes except the only one given below.
+    - All entities given below must be included in the story.
+    
+    Chapter ID: A1
+    Time Period: 2023-02-01 to 2023-03-17
+    Themes: Political Ambitions
+    Theme Context: Donald Trump, utilizing the Tweet Company as his primary communication platform, hints at potential participation in future political events, causing widespread speculation and media frenzy. He shares a new 2024 campaign sign on the platform, sketches out a second-term agenda on the campaign trail, and addresses the audience in several campaign events.
+    Entity: Donald Trump, Political Analysts, Public, Tweet Company
+
+    Narrative Sturcture: The narrative structure is Shift, where Theme A shifts to Theme B (eg. A1 -> B2). The current chapter node is A1, which is the 1th chapter node in the narrative structure.
+
+    Previous context: None
+
+    The output should be formatted as a JSON instance that conforms to the JSON schema below.
+
+As an example, for the schema {"properties": {"foo": {"title": "Foo", "description": "a list of strings", "type": "array", "items": {"type": "string"}}}, "required": ["foo"]}}
+the object {"foo": ["bar", "baz"]} is a well-formatted instance of the schema. The object {"properties": {"foo": ["bar", "baz"]}} is not well-formatted.
+
+Here is the output schema:
+```
+{"properties": {"id": {"title": "Id", "description": "ID of the chapter .", "type": "string"}, "title": {"title": "Title", "description": "Headlines for news story chapters", "type": "string"}, "time_period": {"title": "Time Period", "description": "Time period of the chapter (start date, end date), in format YYYY-MM-DD.", "type": "array", "items": {"type": "string"}}, "themes": {"title": "Themes", "description": "Themes related within chapter.", "type": "array", "items": {"type": "string"}}, "entity": {"title": "Entity", "description": "Entity mentioned within chapter.", "type": "array", "items": {"type": "string"}}, "content": {"title": "Content", "description": "Content of the chapter(In format as news article lead paragraph).", "type": "string"}}, "required": ["id", "title", "time_period", "themes", "entity", "content"]}
+```
+    
+--------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+New chapter << Trump Teases 2024 Run, Stirring Media Frenzy >> Finished!
+Donald Trump, using Tweet Company as his main communication tool, hinted at a possible return to politics. The former president shared a new 2024 campaign sign, sparking widespread speculation. Political analysts are now dissecting his second-term agenda, as he continues to address the public in campaign events. The media frenzy around Trump's potential run is palpable, with the public eagerly awaiting his next move.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+==================================================
+Generating chapter B2...
+This chapter based on previous chapter: ['A1']
+Previous content: Donald Trump, using Tweet Company as his main communication tool, hinted at a possible return to politics. The former president shared a new 2024 campaign sign, sparking widespread speculation. Political analysts are now dissecting his second-term agenda, as he continues to address the public in campaign events. The media frenzy around Trump's potential run is palpable, with the public eagerly awaiting his next move.
+--------------------------------------------------
+
+    You are a senior reporter for The New York Times, your task is to write a fictional news report that continues from a previous one. 
+    - Your writing style is concise and clear, without rhetorical techniques, in plain english. 
+    - Avoid explicitly referencing the structure and themes; instead, integrate it subtly within the story.
+    - The story should be written in a style suitable for CEFR Level A1 and each chapter approximately take 1 minutes to read (100 words).
+    - The continuation chapter needs to be closely related to the previous one (intriguing and logically connected in narration),
+    - The theme of the story must be strikingly prominent, you can not make up new themes except the only one given below.
+    - All entities given below must be included in the story.
+    
+    Chapter ID: B2
+    Time Period: 2023-07-19 to 2023-10-05
+    Themes: Social Media Transformation
+    Theme Context: Elon Musk, after acquiring a significant stake in the Tweet Company (now rebranded as X), embarks on a mission to transform the platform into an 'everything app'. This drastic rebranding erases a recognizable brand overnight but sets the stage for Musk's vision of X being a superapp akin to China's WeChat. Several new features are projected to be introduced to differentiate X from its predecessor and to enhance user engagement.
+    Entity: WeChat, Brand Experts, Users, Tweet Company, X (formerly Tweet Company)
+
+    Narrative Sturcture: The narrative structure is Shift, where Theme A shifts to Theme B (eg. A1 -> B2). The current chapter node is B2, which is the 2th chapter node in the narrative structure.
+
+    Previous context: Donald Trump, using Tweet Company as his main communication tool, hinted at a possible return to politics. The former president shared a new 2024 campaign sign, sparking widespread speculation. Political analysts are now dissecting his second-term agenda, as he continues to address the public in campaign events. The media frenzy around Trump's potential run is palpable, with the public eagerly awaiting his next move.
+
+    The output should be formatted as a JSON instance that conforms to the JSON schema below.
+
+As an example, for the schema {"properties": {"foo": {"title": "Foo", "description": "a list of strings", "type": "array", "items": {"type": "string"}}}, "required": ["foo"]}}
+the object {"foo": ["bar", "baz"]} is a well-formatted instance of the schema. The object {"properties": {"foo": ["bar", "baz"]}} is not well-formatted.
+
+Here is the output schema:
+```
+{"properties": {"id": {"title": "Id", "description": "ID of the chapter .", "type": "string"}, "title": {"title": "Title", "description": "Headlines for news story chapters", "type": "string"}, "time_period": {"title": "Time Period", "description": "Time period of the chapter (start date, end date), in format YYYY-MM-DD.", "type": "array", "items": {"type": "string"}}, "themes": {"title": "Themes", "description": "Themes related within chapter.", "type": "array", "items": {"type": "string"}}, "entity": {"title": "Entity", "description": "Entity mentioned within chapter.", "type": "array", "items": {"type": "string"}}, "content": {"title": "Content", "description": "Content of the chapter(In format as news article lead paragraph).", "type": "string"}}, "required": ["id", "title", "time_period", "themes", "entity", "content"]}
+```
+    
+--------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+New chapter << Elon Musk Transforms Tweet Company into Superapp X >> Finished!
+Elon Musk, having acquired a significant stake in the Tweet Company, has rebranded it as X. Musk's vision is to transform X into a superapp akin to China's WeChat. This drastic change has erased a recognizable brand overnight, causing a stir among users and brand experts. Despite the shock, Musk plans to introduce several new features to enhance user engagement and differentiate X from its predecessor. The public eagerly awaits the unveiling of these features, marking a new era in social media.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
