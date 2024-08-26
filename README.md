@@ -6,6 +6,8 @@ Create controllable story sequences with transformers that can be used in user-e
 
 &#x1F58B; By:
 
+![Overview of the Graph-to-Text-Pipeline](figs/overview.png)
+
 ## Getting started
 
 GPT Storytale has been tested on python 3.10. You will need to install the required packages. Using a virtual environment is recommended. e.g.
