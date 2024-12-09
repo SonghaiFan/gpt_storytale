@@ -15,22 +15,117 @@
         </header>
 
         <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <div>
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="num-tracks">
-                        Number of Tracks
-                    </label>
-                    <input type="number" id="num-tracks" min="1" max="5" value="3" 
-                           class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            <!-- Basic Configuration -->
+            <div class="mb-8">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">Basic Configuration</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="num-tracks">
+                            Number of Tracks
+                        </label>
+                        <input type="number" id="num-tracks" min="1" max="5" value="3" 
+                               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="num-timepoints">
+                            Number of Timepoints
+                        </label>
+                        <input type="number" id="num-timepoints" min="2" max="5" value="2"
+                               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
                 </div>
-                <div>
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="num-timepoints">
-                        Number of Timepoints
-                    </label>
-                    <input type="number" id="num-timepoints" min="2" max="5" value="2"
-                           class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="organizing-attribute">
+                            Organizing Attribute
+                        </label>
+                        <select id="organizing-attribute" 
+                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            <option value="entity">Entity</option>
+                            <option value="event">Event</option>
+                            <option value="topic">Topic</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="graph-genre">
+                            Graph Genre
+                        </label>
+                        <select id="graph-genre" 
+                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            <option value="thread">Thread (deg ≤ 2)</option>
+                            <option value="tree">Tree (in-deg ≤ 1)</option>
+                            <option value="map">Map (unrestricted)</option>
+                        </select>
+                    </div>
                 </div>
             </div>
+
+            <!-- Story Attributes -->
+            <div class="mb-8">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">Story Attributes</h3>
+                <div class="grid grid-cols-1 gap-6">
+                    <!-- Entities -->
+                    <div>
+                        <label class="block text-gray-700 text-sm font-bold mb-2">
+                            Custom Entities
+                            <span class="text-sm font-normal text-gray-500">(comma-separated)</span>
+                        </label>
+                        <input type="text" id="custom-entities" placeholder="e.g., Tech Companies, Environmental Groups, Research Labs"
+                               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+                    <!-- Events -->
+                    <div>
+                        <label class="block text-gray-700 text-sm font-bold mb-2">
+                            Custom Events
+                            <span class="text-sm font-normal text-gray-500">(comma-separated)</span>
+                        </label>
+                        <input type="text" id="custom-events" placeholder="e.g., Technology Breakthrough, Global Summit, Market Disruption"
+                               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+                    <!-- Topics -->
+                    <div>
+                        <label class="block text-gray-700 text-sm font-bold mb-2">
+                            Custom Topics
+                            <span class="text-sm font-normal text-gray-500">(comma-separated)</span>
+                        </label>
+                        <input type="text" id="custom-topics" placeholder="e.g., AI Ethics, Climate Innovation, Digital Privacy"
+                               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Story Style -->
+            <div class="mb-8">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">Story Style</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="narrative-style">
+                            Narrative Style
+                        </label>
+                        <select id="narrative-style" 
+                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            <option value="journalistic">Journalistic</option>
+                            <option value="analytical">Analytical</option>
+                            <option value="descriptive">Descriptive</option>
+                            <option value="academic">Academic</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="tone">
+                            Tone
+                        </label>
+                        <select id="tone" 
+                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            <option value="neutral">Neutral</option>
+                            <option value="optimistic">Optimistic</option>
+                            <option value="critical">Critical</option>
+                            <option value="balanced">Balanced</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
             <button id="generate-btn" 
                     class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300">
                 Generate Story
