@@ -2,12 +2,12 @@
     "chapters": [
         {
             "id": "A1",
-            "title": "Liberal Party Kicks off Mayoral Campaign in MetroCity",
+            "event": "Liberal Party Kicks off Mayoral Campaign in MetroCity",
             "time_period": [
                 "2023-10-01",
                 "2023-10-07"
             ],
-            "themes": [
+            "topics": [
                 "Election"
             ],
             "entity": [
@@ -20,12 +20,12 @@
         },
         {
             "id": "A2",
-            "title": "Liberal Party's Jane Doe Leads Mayoral Race in MetroCity",
+            "event": "Liberal Party's Jane Doe Leads Mayoral Race in MetroCity",
             "time_period": [
                 "2023-10-07",
                 "2023-10-13"
             ],
-            "themes": [
+            "topics": [
                 "Election"
             ],
             "entity": [
@@ -38,12 +38,12 @@
         },
         {
             "id": "B3",
-            "title": "Mayoral Candidate Jane Doe Under Federal Investigation",
+            "event": "Mayoral Candidate Jane Doe Under Federal Investigation",
             "time_period": [
                 "2023-10-27",
                 "2023-11-01"
             ],
-            "themes": [
+            "topics": [
                 "Scandal"
             ],
             "entity": [

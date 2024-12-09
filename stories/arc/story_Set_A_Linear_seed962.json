@@ -2,12 +2,12 @@
     "chapters": [
         {
             "id": "A1",
-            "title": "City on the Brink: Rebellion Sparks in West End Park",
+            "event": "City on the Brink: Rebellion Sparks in West End Park",
             "time_period": [
                 "2023-04-01",
                 "2023-05-22"
             ],
-            "themes": [
+            "topics": [
                 "Revolution"
             ],
             "entity": [
@@ -20,12 +20,12 @@
         },
         {
             "id": "A2",
-            "title": "City Square Erupts: Independence Cry Grows Louder",
+            "event": "City Square Erupts: Independence Cry Grows Louder",
             "time_period": [
                 "2023-05-22",
                 "2023-07-12"
             ],
-            "themes": [
+            "topics": [
                 "Revolution"
             ],
             "entity": [
@@ -38,12 +38,12 @@
         },
         {
             "id": "A3",
-            "title": "City on the Brink: The Battle for Independence Intensifies",
+            "event": "City on the Brink: The Battle for Independence Intensifies",
             "time_period": [
                 "2023-07-12",
                 "2023-09-01"
             ],
-            "themes": [
+            "topics": [
                 "Revolution"
             ],
             "entity": [

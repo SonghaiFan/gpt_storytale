@@ -13,7 +13,7 @@ class Node(BaseModel):
     time_period: List[str] = Field(
         description="Time period of the chapter (start date, end date), in format YYYY-MM-DD."
     )
-    themes: List[str] = Field(description="Themes related within chapter.")
+    Topic: List[str] = Field(description="Themes related within chapter.")
     entity: List[str] = Field(description="Entity mentioned within chapter.")
     context: str = Field(
         description="Context of chapter. Simple summary of the context of chapter."
@@ -41,7 +41,7 @@ class Chapter(BaseModel):
     time_period: List[str] = Field(
         description="Time period of the chapter (start date, end date), in format YYYY-MM-DD."
     )
-    themes: List[str] = Field(description="Themes related within chapter.")
+    Topic: List[str] = Field(description="Themes related within chapter.")
     entity: List[str] = Field(description="Entity mentioned within chapter.")
     content: str = Field(
         description="Content of the chapter(In format as news article lead paragraph)."
@@ -60,7 +60,7 @@ class Article(BaseModel):
         description="Published date of the news article in date format."
     )
     headline: str = Field(description="Headline of the news article.")
-    themes: List[str] = Field(description="Themes of the news article.")
+    Topic: List[str] = Field(description="Themes of the news article.")
     entity: List[str] = Field(description="Entity of the news article.")
     keywords: List[str] = Field(
         description="Key words of the news article, avoiding repetition with themes and entities."

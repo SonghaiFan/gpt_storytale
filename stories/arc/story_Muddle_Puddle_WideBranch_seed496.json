@@ -2,12 +2,12 @@
     "chapters": [
         {
             "id": "B1",
-            "title": "Financial Crisis Strikes City's Tech Sector and Local Communities",
+            "event": "Financial Crisis Strikes City's Tech Sector and Local Communities",
             "time_period": [
                 "2023-10-01",
                 "2023-10-31"
             ],
-            "themes": [
+            "topics": [
                 "Economic Downturn"
             ],
             "entity": [
@@ -19,12 +19,12 @@
         },
         {
             "id": "C2",
-            "title": "Community Alliance Fights Economic Crisis",
+            "event": "Community Alliance Fights Economic Crisis",
             "time_period": [
                 "2023-11-30",
                 "2024-01-15"
             ],
-            "themes": [
+            "topics": [
                 "Community Resilience"
             ],
             "entity": [
@@ -37,12 +37,12 @@
         },
         {
             "id": "A2",
-            "title": "TechPulse Inc. Thrives Amid Economic Crisis",
+            "event": "TechPulse Inc. Thrives Amid Economic Crisis",
             "time_period": [
                 "2023-12-31",
                 "2024-03-01"
             ],
-            "themes": [
+            "topics": [
                 "Tech Boom"
             ],
             "entity": [

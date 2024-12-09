@@ -2,12 +2,12 @@
     "chapters": [
         {
             "id": "A1",
-            "title": "International Summit: Preparations Underway",
+            "event": "International Summit: Preparations Underway",
             "time_period": [
                 "2024-06-01",
                 "2024-06-05"
             ],
-            "themes": [
+            "topics": [
                 "International Summit"
             ],
             "entity": [
@@ -20,12 +20,12 @@
         },
         {
             "id": "A2",
-            "title": "International Summit Begins with Climate Change at the Forefront",
+            "event": "International Summit Begins with Climate Change at the Forefront",
             "time_period": [
                 "2024-06-05",
                 "2024-06-09"
             ],
-            "themes": [
+            "topics": [
                 "International Summit"
             ],
             "entity": [
@@ -39,12 +39,12 @@
         },
         {
             "id": "A3",
-            "title": "Climate Summit Concludes with Major Agreement",
+            "event": "Climate Summit Concludes with Major Agreement",
             "time_period": [
                 "2024-06-09",
                 "2024-06-15"
             ],
-            "themes": [
+            "topics": [
                 "International Summit"
             ],
             "entity": [

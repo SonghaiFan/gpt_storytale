@@ -2,12 +2,12 @@
     "chapters": [
         {
             "id": "A1",
-            "title": "Laura Reynolds Takes the Stage at Downtown Rally",
+            "event": "Laura Reynolds Takes the Stage at Downtown Rally",
             "time_period": [
                 "2023-10-01",
                 "2023-10-16"
             ],
-            "themes": [
+            "topics": [
                 "Election"
             ],
             "entity": [
@@ -19,12 +19,12 @@
         },
         {
             "id": "B2",
-            "title": "Financial Scandal Hits Laura Reynolds' Campaign",
+            "event": "Financial Scandal Hits Laura Reynolds' Campaign",
             "time_period": [
                 "2023-11-22",
                 "2023-11-28"
             ],
-            "themes": [
+            "topics": [
                 "Scandal"
             ],
             "entity": [
@@ -38,12 +38,12 @@
         },
         {
             "id": "B3",
-            "title": "Reynolds' Scandal Takes a Dramatic Turn",
+            "event": "Reynolds' Scandal Takes a Dramatic Turn",
             "time_period": [
                 "2023-11-28",
                 "2023-12-05"
             ],
-            "themes": [
+            "topics": [
                 "Scandal"
             ],
             "entity": [

@@ -2,12 +2,12 @@
     "chapters": [
         {
             "id": "A1",
-            "title": "New Pestilence Emerges, Global Health on High Alert",
+            "event": "New Pestilence Emerges, Global Health on High Alert",
             "time_period": [
                 "2024-02-01",
                 "2024-05-02"
             ],
-            "themes": [
+            "topics": [
                 "Global Spread of a New Pestilence"
             ],
             "entity": [
@@ -19,12 +19,12 @@
         },
         {
             "id": "A2",
-            "title": "Global Pestilence Spreads, Dr. Jane Health Leads the Fight",
+            "event": "Global Pestilence Spreads, Dr. Jane Health Leads the Fight",
             "time_period": [
                 "2024-05-02",
                 "2024-08-01"
             ],
-            "themes": [
+            "topics": [
                 "Global Spread of a New Pestilence"
             ],
             "entity": [
@@ -36,12 +36,12 @@
         },
         {
             "id": "B2",
-            "title": "Modern Medicine Battles New Pestilence: Dr. Jane Health at the Forefront",
+            "event": "Modern Medicine Battles New Pestilence: Dr. Jane Health at the Forefront",
             "time_period": [
                 "2024-10-16",
                 "2024-12-31"
             ],
-            "themes": [
+            "topics": [
                 "Combatting Pestilence with Modern Medicine"
             ],
             "entity": [

@@ -2,12 +2,12 @@
     "chapters": [
         {
             "id": "A1",
-            "title": "Unprecedented Economic Boom Sweeps the City",
+            "event": "Unprecedented Economic Boom Sweeps the City",
             "time_period": [
                 "2023-01-01",
                 "2023-05-02"
             ],
-            "themes": [
+            "topics": [
                 "Economic Boom"
             ],
             "entity": [
@@ -19,12 +19,12 @@
         },
         {
             "id": "B2",
-            "title": "GreenLife vs Economic Growth: A City in Crisis",
+            "event": "GreenLife vs Economic Growth: A City in Crisis",
             "time_period": [
                 "2023-07-01",
                 "2023-07-31"
             ],
-            "themes": [
+            "topics": [
                 "Ecological Crisis"
             ],
             "entity": [
@@ -38,12 +38,12 @@
         },
         {
             "id": "A3",
-            "title": "City Finds Balance in Economic Boom Amidst Ecological Challenge",
+            "event": "City Finds Balance in Economic Boom Amidst Ecological Challenge",
             "time_period": [
                 "2023-08-31",
                 "2023-12-31"
             ],
-            "themes": [
+            "topics": [
                 "Economic Boom"
             ],
             "entity": [

@@ -2,12 +2,12 @@
     "chapters": [
         {
             "id": "A1",
-            "title": "EcoTech Unveils Revolutionary Solar Hub",
+            "event": "EcoTech Unveils Revolutionary Solar Hub",
             "time_period": [
                 "2023-01-01",
                 "2023-01-30"
             ],
-            "themes": [
+            "topics": [
                 "Tech Advancement"
             ],
             "entity": [
@@ -19,12 +19,12 @@
         },
         {
             "id": "B1",
-            "title": "EcoTech Fuels Economic Surge",
+            "event": "EcoTech Fuels Economic Surge",
             "time_period": [
                 "2023-02-01",
                 "2023-04-02"
             ],
-            "themes": [
+            "topics": [
                 "Economic Boom"
             ],
             "entity": [
@@ -37,12 +37,12 @@
         },
         {
             "id": "B2",
-            "title": "Economic Boom Sparked by Clean Energy Startups",
+            "event": "Economic Boom Sparked by Clean Energy Startups",
             "time_period": [
                 "2023-04-02",
                 "2023-06-01"
             ],
-            "themes": [
+            "topics": [
                 "Economic Boom"
             ],
             "entity": [

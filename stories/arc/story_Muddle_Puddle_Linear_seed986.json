@@ -2,12 +2,12 @@
     "chapters": [
         {
             "id": "A1",
-            "title": "Uprising in the City: The Birth of a Rebellion",
+            "event": "Uprising in the City: The Birth of a Rebellion",
             "time_period": [
                 "2023-04-01",
                 "2023-05-22"
             ],
-            "themes": [
+            "topics": [
                 "Revolution"
             ],
             "entity": [
@@ -20,12 +20,12 @@
         },
         {
             "id": "A2",
-            "title": "City Hall in Crossfire: The Struggle for Independence",
+            "event": "City Hall in Crossfire: The Struggle for Independence",
             "time_period": [
                 "2023-05-22",
                 "2023-07-12"
             ],
-            "themes": [
+            "topics": [
                 "Revolution"
             ],
             "entity": [
@@ -39,12 +39,12 @@
         },
         {
             "id": "A3",
-            "title": "City Square Turns Battlefield; Rebels Stand Firm",
+            "event": "City Square Turns Battlefield; Rebels Stand Firm",
             "time_period": [
                 "2023-07-12",
                 "2023-09-01"
             ],
-            "themes": [
+            "topics": [
                 "Revolution"
             ],
             "entity": [

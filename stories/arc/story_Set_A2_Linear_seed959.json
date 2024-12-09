@@ -2,12 +2,12 @@
     "chapters": [
         {
             "id": "A1",
-            "title": "City's Fight For Independence Begins",
+            "event": "City's Fight For Independence Begins",
             "time_period": [
                 "2023-04-01",
                 "2023-05-22"
             ],
-            "themes": [
+            "topics": [
                 "Revolution"
             ],
             "entity": [
@@ -20,12 +20,12 @@
         },
         {
             "id": "A2",
-            "title": "City's Fight for Independence Intensifies",
+            "event": "City's Fight for Independence Intensifies",
             "time_period": [
                 "2023-05-22",
                 "2023-07-12"
             ],
-            "themes": [
+            "topics": [
                 "Revolution"
             ],
             "entity": [
@@ -38,12 +38,12 @@
         },
         {
             "id": "A3",
-            "title": "City's Fight for Independence Intensifies",
+            "event": "City's Fight for Independence Intensifies",
             "time_period": [
                 "2023-07-12",
                 "2023-09-01"
             ],
-            "themes": [
+            "topics": [
                 "Revolution"
             ],
             "entity": [

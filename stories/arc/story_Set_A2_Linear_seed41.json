@@ -2,12 +2,12 @@
     "chapters": [
         {
             "id": "A1",
-            "title": "City on the Brink: The Fight for Independence Begins",
+            "event": "City on the Brink: The Fight for Independence Begins",
             "time_period": [
                 "2023-04-01",
                 "2023-05-22"
             ],
-            "themes": [
+            "topics": [
                 "Revolution"
             ],
             "entity": [
@@ -20,12 +20,12 @@
         },
         {
             "id": "A2",
-            "title": "City Hall: The Heart of Revolution",
+            "event": "City Hall: The Heart of Revolution",
             "time_period": [
                 "2023-05-22",
                 "2023-07-12"
             ],
-            "themes": [
+            "topics": [
                 "Revolution"
             ],
             "entity": [
@@ -38,12 +38,12 @@
         },
         {
             "id": "A3",
-            "title": "Freedom Radio Strikes Back: The Battle of West End Park",
+            "event": "Freedom Radio Strikes Back: The Battle of West End Park",
             "time_period": [
                 "2023-07-12",
                 "2023-09-01"
             ],
-            "themes": [
+            "topics": [
                 "Revolution"
             ],
             "entity": [

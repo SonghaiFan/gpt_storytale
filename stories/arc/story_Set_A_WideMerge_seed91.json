@@ -2,12 +2,12 @@
     "chapters": [
         {
             "id": "A1",
-            "title": "Economic Crisis Hits the City",
+            "event": "Economic Crisis Hits the City",
             "time_period": [
                 "2023-10-01",
                 "2023-10-31"
             ],
-            "themes": [
+            "topics": [
                 "Economic Crisis"
             ],
             "entity": [
@@ -19,12 +19,12 @@
         },
         {
             "id": "C1",
-            "title": "Unexpected Flooding Devastates River Dale",
+            "event": "Unexpected Flooding Devastates River Dale",
             "time_period": [
                 "2023-10-01",
                 "2023-10-31"
             ],
-            "themes": [
+            "topics": [
                 "Environmental Catastrophe"
             ],
             "entity": [
@@ -36,12 +36,12 @@
         },
         {
             "id": "B2",
-            "title": "Local Businesses and Infrastructure Department Team Up for Relief Efforts",
+            "event": "Local Businesses and Infrastructure Department Team Up for Relief Efforts",
             "time_period": [
                 "2023-12-23",
                 "2024-01-15"
             ],
-            "themes": [
+            "topics": [
                 "Humanitarian Aid"
             ],
             "entity": [

@@ -2,12 +2,12 @@
     "chapters": [
         {
             "id": "A1",
-            "title": "Laura Reynolds Gains Momentum in Mayoral Race",
+            "event": "Laura Reynolds Gains Momentum in Mayoral Race",
             "time_period": [
                 "2023-10-01",
                 "2023-10-16"
             ],
-            "themes": [
+            "topics": [
                 "Election"
             ],
             "entity": [
@@ -19,12 +19,12 @@
         },
         {
             "id": "B2",
-            "title": "Scandal Hits Laura Reynolds' Campaign",
+            "event": "Scandal Hits Laura Reynolds' Campaign",
             "time_period": [
                 "2023-11-22",
                 "2023-11-28"
             ],
-            "themes": [
+            "topics": [
                 "Scandal"
             ],
             "entity": [
@@ -37,12 +37,12 @@
         },
         {
             "id": "B3",
-            "title": "Reynolds' Mayoral Campaign in Turmoil Amid Financial Scandal",
+            "event": "Reynolds' Mayoral Campaign in Turmoil Amid Financial Scandal",
             "time_period": [
                 "2023-11-28",
                 "2023-12-05"
             ],
-            "themes": [
+            "topics": [
                 "Scandal"
             ],
             "entity": [

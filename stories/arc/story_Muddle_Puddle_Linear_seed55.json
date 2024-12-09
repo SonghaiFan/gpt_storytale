@@ -2,12 +2,12 @@
     "chapters": [
         {
             "id": "A1",
-            "title": "Riverdale Mayoral Race Heats Up",
+            "event": "Riverdale Mayoral Race Heats Up",
             "time_period": [
                 "2023-11-01",
                 "2023-11-03"
             ],
-            "themes": [
+            "topics": [
                 "Election"
             ],
             "entity": [
@@ -20,12 +20,12 @@
         },
         {
             "id": "A2",
-            "title": "Riverdale Election Day: Mayor Green vs Challenger Smith",
+            "event": "Riverdale Election Day: Mayor Green vs Challenger Smith",
             "time_period": [
                 "2023-11-03",
                 "2023-11-05"
             ],
-            "themes": [
+            "topics": [
                 "Election"
             ],
             "entity": [
@@ -38,12 +38,12 @@
         },
         {
             "id": "A3",
-            "title": "Riverdale Elects New Mayor",
+            "event": "Riverdale Elects New Mayor",
             "time_period": [
                 "2023-11-05",
                 "2023-11-08"
             ],
-            "themes": [
+            "topics": [
                 "Election"
             ],
             "entity": [

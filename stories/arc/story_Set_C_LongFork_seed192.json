@@ -2,12 +2,12 @@
     "chapters": [
         {
             "id": "A1",
-            "title": "Candidate Johnson Announces Reform Policy for Urban Development",
+            "event": "Candidate Johnson Announces Reform Policy for Urban Development",
             "time_period": [
                 "2024-02-01",
                 "2024-04-01"
             ],
-            "themes": [
+            "topics": [
                 "Political Campaign and Aftermath"
             ],
             "entity": [
@@ -20,12 +20,12 @@
         },
         {
             "id": "A2",
-            "title": "Johnson Wins Mayoral Election, Faces Challenges Ahead",
+            "event": "Johnson Wins Mayoral Election, Faces Challenges Ahead",
             "time_period": [
                 "2024-04-01",
                 "2024-05-31"
             ],
-            "themes": [
+            "topics": [
                 "Political Campaign and Aftermath"
             ],
             "entity": [
@@ -38,12 +38,12 @@
         },
         {
             "id": "B3",
-            "title": "Real Estate Boom: Skyline Towers Rise High",
+            "event": "Real Estate Boom: Skyline Towers Rise High",
             "time_period": [
                 "2024-10-20",
                 "2024-11-30"
             ],
-            "themes": [
+            "topics": [
                 "Real Estate Boom"
             ],
             "entity": [

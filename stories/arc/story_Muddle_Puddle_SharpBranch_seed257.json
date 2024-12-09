@@ -2,12 +2,12 @@
     "chapters": [
         {
             "id": "A1",
-            "title": "TechPulse Fuels Economic Boom in Downtown District",
+            "event": "TechPulse Fuels Economic Boom in Downtown District",
             "time_period": [
                 "2023-10-01",
                 "2023-10-31"
             ],
-            "themes": [
+            "topics": [
                 "Economic Boom"
             ],
             "entity": [
@@ -19,12 +19,12 @@
         },
         {
             "id": "A2",
-            "title": "TechPulse's Innovations Fuel Economic Boom",
+            "event": "TechPulse's Innovations Fuel Economic Boom",
             "time_period": [
                 "2023-10-31",
                 "2023-11-30"
             ],
-            "themes": [
+            "topics": [
                 "Economic Boom"
             ],
             "entity": [
@@ -36,12 +36,12 @@
         },
         {
             "id": "B2",
-            "title": "Cultural Renaissance Blooms in Downtown District",
+            "event": "Cultural Renaissance Blooms in Downtown District",
             "time_period": [
                 "2023-11-20",
                 "2024-01-09"
             ],
-            "themes": [
+            "topics": [
                 "Cultural Renaissance"
             ],
             "entity": [

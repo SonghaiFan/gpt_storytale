@@ -2,12 +2,12 @@
     "chapters": [
         {
             "id": "A1",
-            "title": "Mayoral Race Heats Up in MetroCity",
+            "event": "Mayoral Race Heats Up in MetroCity",
             "time_period": [
                 "2023-10-01",
                 "2023-10-07"
             ],
-            "themes": [
+            "topics": [
                 "Election"
             ],
             "entity": [
@@ -20,12 +20,12 @@
         },
         {
             "id": "A2",
-            "title": "MetroCity Election Heats Up: Liberal Party Takes Center Stage",
+            "event": "MetroCity Election Heats Up: Liberal Party Takes Center Stage",
             "time_period": [
                 "2023-10-07",
                 "2023-10-13"
             ],
-            "themes": [
+            "topics": [
                 "Election"
             ],
             "entity": [
@@ -38,12 +38,12 @@
         },
         {
             "id": "B3",
-            "title": "Jane Doe's Scandalous Financial Involvement Revealed",
+            "event": "Jane Doe's Scandalous Financial Involvement Revealed",
             "time_period": [
                 "2023-10-27",
                 "2023-11-01"
             ],
-            "themes": [
+            "topics": [
                 "Scandal"
             ],
             "entity": [

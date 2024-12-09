@@ -2,12 +2,12 @@
     "chapters": [
         {
             "id": "A1",
-            "title": "Jordan Chase: A Surprise Announcement",
+            "event": "Jordan Chase: A Surprise Announcement",
             "time_period": [
                 "2024-01-01",
                 "2024-01-16"
             ],
-            "themes": [
+            "topics": [
                 "Celebrity Sensational News"
             ],
             "entity": [
@@ -19,12 +19,12 @@
         },
         {
             "id": "B2",
-            "title": "Anticipation Builds for Jordan Chase's Final Film Premiere",
+            "event": "Anticipation Builds for Jordan Chase's Final Film Premiere",
             "time_period": [
                 "2024-03-01",
                 "2024-03-15"
             ],
-            "themes": [
+            "topics": [
                 "Film Premiere"
             ],
             "entity": [
@@ -37,12 +37,12 @@
         },
         {
             "id": "B3",
-            "title": "The Countdown to 'Shadow of Fate' Premiere Begins",
+            "event": "The Countdown to 'Shadow of Fate' Premiere Begins",
             "time_period": [
                 "2024-03-15",
                 "2024-03-31"
             ],
-            "themes": [
+            "topics": [
                 "Film Premiere"
             ],
             "entity": [

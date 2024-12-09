@@ -2,12 +2,12 @@
     "chapters": [
         {
             "id": "A1",
-            "title": "Rising Tensions Between Zephyria and Gallistan",
+            "event": "Rising Tensions Between Zephyria and Gallistan",
             "time_period": [
                 "2024-03-01",
                 "2024-04-07"
             ],
-            "themes": [
+            "topics": [
                 "Rising Tensions"
             ],
             "entity": [
@@ -20,12 +20,12 @@
         },
         {
             "id": "B1",
-            "title": "Peace Talks Initiated Between Zephyria and General Bravo's Nation",
+            "event": "Peace Talks Initiated Between Zephyria and General Bravo's Nation",
             "time_period": [
                 "2024-05-16",
                 "2024-07-08"
             ],
-            "themes": [
+            "topics": [
                 "Peace Negotiations"
             ],
             "entity": [
@@ -38,12 +38,12 @@
         },
         {
             "id": "B2",
-            "title": "Peace Talks Initiated Between Zephyria and Gallistan",
+            "event": "Peace Talks Initiated Between Zephyria and Gallistan",
             "time_period": [
                 "2024-07-08",
                 "2024-08-31"
             ],
-            "themes": [
+            "topics": [
                 "Peace Negotiations"
             ],
             "entity": [

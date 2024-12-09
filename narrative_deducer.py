@@ -17,7 +17,7 @@ warnings.filterwarnings("ignore")
 
 def make_chapter(
     id: str,
-    theme: str,
+    topic: str,
     theme_context: str,
     entity: List[str],
     time_period: List[str],
@@ -48,7 +48,7 @@ def make_chapter(
     
     Chapter ID: {id}
     Time Period: {time_period_str}
-    Themes: {theme}
+    Topic: {topic}
     Theme Context: {theme_context}
     Entity: {', '.join(entity)}
 

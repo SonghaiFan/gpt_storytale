@@ -2,12 +2,12 @@
     "chapters": [
         {
             "id": "A1",
-            "title": "Laura Reynolds Rises in Mayoral Race",
+            "event": "Laura Reynolds Rises in Mayoral Race",
             "time_period": [
                 "2023-10-01",
                 "2023-10-16"
             ],
-            "themes": [
+            "topics": [
                 "Election"
             ],
             "entity": [
@@ -19,12 +19,12 @@
         },
         {
             "id": "B2",
-            "title": "Mayoral Candidate Laura Reynolds Faces Financial Misconduct Allegations",
+            "event": "Mayoral Candidate Laura Reynolds Faces Financial Misconduct Allegations",
             "time_period": [
                 "2023-11-22",
                 "2023-11-28"
             ],
-            "themes": [
+            "topics": [
                 "Scandal"
             ],
             "entity": [
@@ -38,12 +38,12 @@
         },
         {
             "id": "B3",
-            "title": "Mayoral Candidate Laura Reynolds Faces Allegations of Financial Misconduct",
+            "event": "Mayoral Candidate Laura Reynolds Faces Allegations of Financial Misconduct",
             "time_period": [
                 "2023-11-28",
                 "2023-12-05"
             ],
-            "themes": [
+            "topics": [
                 "Scandal"
             ],
             "entity": [

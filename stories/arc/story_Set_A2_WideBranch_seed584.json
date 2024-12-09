@@ -2,12 +2,12 @@
     "chapters": [
         {
             "id": "B1",
-            "title": "Financial Crisis Hits The City",
+            "event": "Financial Crisis Hits The City",
             "time_period": [
                 "2023-10-01",
                 "2023-10-31"
             ],
-            "themes": [
+            "topics": [
                 "Economic Downturn"
             ],
             "entity": [
@@ -19,12 +19,12 @@
         },
         {
             "id": "C2",
-            "title": "Community Alliance: A Beacon of Hope Amid Economic Crisis",
+            "event": "Community Alliance: A Beacon of Hope Amid Economic Crisis",
             "time_period": [
                 "2023-11-30",
                 "2024-01-15"
             ],
-            "themes": [
+            "topics": [
                 "Community Resilience"
             ],
             "entity": [
@@ -37,12 +37,12 @@
         },
         {
             "id": "A2",
-            "title": "TechPulse Inc. Ignites Tech Boom Amid Economic Crisis",
+            "event": "TechPulse Inc. Ignites Tech Boom Amid Economic Crisis",
             "time_period": [
                 "2023-12-31",
                 "2024-03-01"
             ],
-            "themes": [
+            "topics": [
                 "Tech Boom"
             ],
             "entity": [

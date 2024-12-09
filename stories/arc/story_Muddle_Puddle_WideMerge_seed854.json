@@ -2,12 +2,12 @@
     "chapters": [
         {
             "id": "A1",
-            "title": "Sudden Economic Downturn Hits City's Local Businesses",
+            "event": "Sudden Economic Downturn Hits City's Local Businesses",
             "time_period": [
                 "2023-10-01",
                 "2023-10-31"
             ],
-            "themes": [
+            "topics": [
                 "Economic Crisis"
             ],
             "entity": [
@@ -19,12 +19,12 @@
         },
         {
             "id": "C1",
-            "title": "Sudden Floods Devastate River Dale",
+            "event": "Sudden Floods Devastate River Dale",
             "time_period": [
                 "2023-10-01",
                 "2023-10-31"
             ],
-            "themes": [
+            "topics": [
                 "Environmental Catastrophe"
             ],
             "entity": [
@@ -36,12 +36,12 @@
         },
         {
             "id": "B2",
-            "title": "Local Businesses and Infrastructure Department Unite for Relief Efforts",
+            "event": "Local Businesses and Infrastructure Department Unite for Relief Efforts",
             "time_period": [
                 "2023-12-23",
                 "2024-01-15"
             ],
-            "themes": [
+            "topics": [
                 "Humanitarian Aid"
             ],
             "entity": [

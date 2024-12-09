@@ -2,12 +2,12 @@
     "chapters": [
         {
             "id": "A1",
-            "title": "National Education Board Announces Major Education Reforms",
+            "event": "National Education Board Announces Major Education Reforms",
             "time_period": [
                 "2024-01-01",
                 "2024-01-31"
             ],
-            "themes": [
+            "topics": [
                 "Education Reform"
             ],
             "entity": [
@@ -20,12 +20,12 @@
         },
         {
             "id": "A2",
-            "title": "Education Reform Bill: A Closer Look at the Challenges",
+            "event": "Education Reform Bill: A Closer Look at the Challenges",
             "time_period": [
                 "2024-01-31",
                 "2024-03-01"
             ],
-            "themes": [
+            "topics": [
                 "Education Reform"
             ],
             "entity": [
@@ -38,12 +38,12 @@
         },
         {
             "id": "A3",
-            "title": "Education Reform Bill: A Step Towards Better Future",
+            "event": "Education Reform Bill: A Step Towards Better Future",
             "time_period": [
                 "2024-03-01",
                 "2024-03-31"
             ],
-            "themes": [
+            "topics": [
                 "Education Reform"
             ],
             "entity": [

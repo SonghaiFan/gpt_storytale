@@ -2,12 +2,12 @@
     "chapters": [
         {
             "id": "A1",
-            "title": "Global War Outbreak: Alliance of Free States Declares War",
+            "event": "Global War Outbreak: Alliance of Free States Declares War",
             "time_period": [
                 "2024-07-01",
                 "2024-07-26"
             ],
-            "themes": [
+            "topics": [
                 "War Outbreak"
             ],
             "entity": [
@@ -20,12 +20,12 @@
         },
         {
             "id": "B2",
-            "title": "Humanitarian Crisis Unfolds Amidst Global War",
+            "event": "Humanitarian Crisis Unfolds Amidst Global War",
             "time_period": [
                 "2024-10-21",
                 "2024-11-25"
             ],
-            "themes": [
+            "topics": [
                 "Humanitarian Crisis"
             ],
             "entity": [
@@ -39,12 +39,12 @@
         },
         {
             "id": "B3",
-            "title": "United Nations Assembly Responds to Eldoria Crisis",
+            "event": "United Nations Assembly Responds to Eldoria Crisis",
             "time_period": [
                 "2024-11-25",
                 "2024-12-31"
             ],
-            "themes": [
+            "topics": [
                 "Humanitarian Crisis"
             ],
             "entity": [

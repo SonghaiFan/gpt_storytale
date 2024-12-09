@@ -2,12 +2,12 @@
     "chapters": [
         {
             "id": "A1",
-            "title": "The Dawn of Revolution: West End Park's Fight for Independence",
+            "event": "The Dawn of Revolution: West End Park's Fight for Independence",
             "time_period": [
                 "2023-04-01",
                 "2023-09-01"
             ],
-            "themes": [
+            "topics": [
                 "Revolution"
             ],
             "entity": [
@@ -20,12 +20,12 @@
         },
         {
             "id": "A2",
-            "title": "Revolution Gains Momentum in West End Park",
+            "event": "Revolution Gains Momentum in West End Park",
             "time_period": [
                 "2023-04-01",
                 "2023-09-01"
             ],
-            "themes": [
+            "topics": [
                 "Revolution"
             ],
             "entity": [
@@ -38,12 +38,12 @@
         },
         {
             "id": "A3",
-            "title": "City's Fight for Independence Intensifies",
+            "event": "City's Fight for Independence Intensifies",
             "time_period": [
                 "2023-04-01",
                 "2023-09-01"
             ],
-            "themes": [
+            "topics": [
                 "Revolution"
             ],
             "entity": [

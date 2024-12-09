@@ -2,12 +2,12 @@
     "chapters": [
         {
             "id": "A1",
-            "title": "Tech Boom Ignites at Silicon Park",
+            "event": "Tech Boom Ignites at Silicon Park",
             "time_period": [
                 "2023-10-01",
                 "2023-11-11"
             ],
-            "themes": [
+            "topics": [
                 "Tech Boom"
             ],
             "entity": [
@@ -18,12 +18,12 @@
         },
         {
             "id": "B2",
-            "title": "Economic Disparity Shadows Silicon Park's Tech Boom",
+            "event": "Economic Disparity Shadows Silicon Park's Tech Boom",
             "time_period": [
                 "2024-03-31",
                 "2024-04-30"
             ],
-            "themes": [
+            "topics": [
                 "Economic Disparity"
             ],
             "entity": [
@@ -35,12 +35,12 @@
         },
         {
             "id": "C3",
-            "title": "Silicon Park Outskirts Residents Rally for Economic Equality",
+            "event": "Silicon Park Outskirts Residents Rally for Economic Equality",
             "time_period": [
                 "2024-10-11",
                 "2024-12-01"
             ],
-            "themes": [
+            "topics": [
                 "Social Revolution"
             ],
             "entity": [

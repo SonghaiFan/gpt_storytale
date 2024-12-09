@@ -2,12 +2,12 @@
     "chapters": [
         {
             "id": "A1",
-            "title": "Jane Doe Takes Center Stage in MetroCity Election",
+            "event": "Jane Doe Takes Center Stage in MetroCity Election",
             "time_period": [
                 "2023-10-01",
                 "2023-10-07"
             ],
-            "themes": [
+            "topics": [
                 "Election"
             ],
             "entity": [
@@ -20,12 +20,12 @@
         },
         {
             "id": "A2",
-            "title": "Liberal Party's Response to Doe's Campaign",
+            "event": "Liberal Party's Response to Doe's Campaign",
             "time_period": [
                 "2023-10-07",
                 "2023-10-13"
             ],
-            "themes": [
+            "topics": [
                 "Election"
             ],
             "entity": [
@@ -38,12 +38,12 @@
         },
         {
             "id": "B3",
-            "title": "Jane Doe's Financial Scandal Shocks MetroCity",
+            "event": "Jane Doe's Financial Scandal Shocks MetroCity",
             "time_period": [
                 "2023-10-27",
                 "2023-11-01"
             ],
-            "themes": [
+            "topics": [
                 "Scandal"
             ],
             "entity": [

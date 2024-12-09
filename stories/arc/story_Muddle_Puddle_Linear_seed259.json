@@ -2,12 +2,12 @@
     "chapters": [
         {
             "id": "A1",
-            "title": "A City Stirs: The Spark of Revolution",
+            "event": "A City Stirs: The Spark of Revolution",
             "time_period": [
                 "2023-04-01",
                 "2023-05-22"
             ],
-            "themes": [
+            "topics": [
                 "Revolution"
             ],
             "entity": [
@@ -20,12 +20,12 @@
         },
         {
             "id": "A2",
-            "title": "City Square: The New Battleground",
+            "event": "City Square: The New Battleground",
             "time_period": [
                 "2023-05-22",
                 "2023-07-12"
             ],
-            "themes": [
+            "topics": [
                 "Revolution"
             ],
             "entity": [
@@ -39,12 +39,12 @@
         },
         {
             "id": "A3",
-            "title": "Rebel Group Emerges as City's Hope for Independence",
+            "event": "Rebel Group Emerges as City's Hope for Independence",
             "time_period": [
                 "2023-07-12",
                 "2023-09-01"
             ],
-            "themes": [
+            "topics": [
                 "Revolution"
             ],
             "entity": [

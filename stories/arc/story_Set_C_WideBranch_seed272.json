@@ -2,12 +2,12 @@
     "chapters": [
         {
             "id": "B1",
-            "title": "AutoInnovate Unveils Revolutionary Electric Vehicle: EV-X1",
+            "event": "AutoInnovate Unveils Revolutionary Electric Vehicle: EV-X1",
             "time_period": [
                 "2024-01-01",
                 "2024-01-31"
             ],
-            "themes": [
+            "topics": [
                 "Automotive New Product Launch"
             ],
             "entity": [
@@ -20,12 +20,12 @@
         },
         {
             "id": "C2",
-            "title": "EV-X1: A Game Changer in Global Economy",
+            "event": "EV-X1: A Game Changer in Global Economy",
             "time_period": [
                 "2024-04-16",
                 "2024-06-01"
             ],
-            "themes": [
+            "topics": [
                 "Economic Impact"
             ],
             "entity": [
@@ -39,12 +39,12 @@
         },
         {
             "id": "A2",
-            "title": "AutoInnovate's EV-X1: A Step Towards Eco-Friendly Future",
+            "event": "AutoInnovate's EV-X1: A Step Towards Eco-Friendly Future",
             "time_period": [
                 "2024-04-01",
                 "2024-05-01"
             ],
-            "themes": [
+            "topics": [
                 "Environmental Impact"
             ],
             "entity": [

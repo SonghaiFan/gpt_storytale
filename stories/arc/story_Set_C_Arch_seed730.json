@@ -2,12 +2,12 @@
     "chapters": [
         {
             "id": "A1",
-            "title": "River City Raiders Begin Their Championship Journey",
+            "event": "River City Raiders Begin Their Championship Journey",
             "time_period": [
                 "2024-04-01",
                 "2024-06-11"
             ],
-            "themes": [
+            "topics": [
                 "Sports Journey"
             ],
             "entity": [
@@ -20,12 +20,12 @@
         },
         {
             "id": "B2",
-            "title": "Star Player Jordan Injured: Crisis Strikes River City Raiders",
+            "event": "Star Player Jordan Injured: Crisis Strikes River City Raiders",
             "time_period": [
                 "2024-07-21",
                 "2024-08-10"
             ],
-            "themes": [
+            "topics": [
                 "Injury Setback"
             ],
             "entity": [
@@ -38,12 +38,12 @@
         },
         {
             "id": "A3",
-            "title": "River City Raiders: A Comeback to Remember",
+            "event": "River City Raiders: A Comeback to Remember",
             "time_period": [
                 "2024-08-21",
                 "2024-10-31"
             ],
-            "themes": [
+            "topics": [
                 "Sports Journey"
             ],
             "entity": [

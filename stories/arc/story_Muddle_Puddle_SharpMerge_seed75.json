@@ -2,12 +2,12 @@
     "chapters": [
         {
             "id": "A1",
-            "title": "EcoTech Unveils Solar Hub, Revolutionizing City's Energy",
+            "event": "EcoTech Unveils Solar Hub, Revolutionizing City's Energy",
             "time_period": [
                 "2023-01-01",
                 "2023-01-20"
             ],
-            "themes": [
+            "topics": [
                 "Tech Advancement"
             ],
             "entity": [
@@ -19,12 +19,12 @@
         },
         {
             "id": "B1",
-            "title": "EcoTech Fuels Economic Boom",
+            "event": "EcoTech Fuels Economic Boom",
             "time_period": [
                 "2023-02-01",
                 "2023-03-13"
             ],
-            "themes": [
+            "topics": [
                 "Economic Boom"
             ],
             "entity": [
@@ -37,12 +37,12 @@
         },
         {
             "id": "B2",
-            "title": "Economic Boom in the City",
+            "event": "Economic Boom in the City",
             "time_period": [
                 "2023-03-13",
                 "2023-04-22"
             ],
-            "themes": [
+            "topics": [
                 "Economic Boom"
             ],
             "entity": [

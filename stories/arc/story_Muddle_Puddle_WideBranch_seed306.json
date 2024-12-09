@@ -2,12 +2,12 @@
     "chapters": [
         {
             "id": "B1",
-            "title": "Economic Downturn Sweeps the City",
+            "event": "Economic Downturn Sweeps the City",
             "time_period": [
                 "2023-10-01",
                 "2023-10-21"
             ],
-            "themes": [
+            "topics": [
                 "Economic Downturn"
             ],
             "entity": [
@@ -19,12 +19,12 @@
         },
         {
             "id": "C2",
-            "title": "Community Alliance: A Beacon of Hope Amid Economic Hardship",
+            "event": "Community Alliance: A Beacon of Hope Amid Economic Hardship",
             "time_period": [
                 "2023-11-14",
                 "2023-12-14"
             ],
-            "themes": [
+            "topics": [
                 "Community Resilience"
             ],
             "entity": [
@@ -37,12 +37,12 @@
         },
         {
             "id": "A2",
-            "title": "Tech Boom Amidst Economic Crisis: TechPulse Inc. Leading the Charge",
+            "event": "Tech Boom Amidst Economic Crisis: TechPulse Inc. Leading the Charge",
             "time_period": [
                 "2023-12-11",
                 "2024-01-20"
             ],
-            "themes": [
+            "topics": [
                 "Tech Boom"
             ],
             "entity": [

@@ -2,12 +2,12 @@
     "chapters": [
         {
             "id": "A1",
-            "title": "Groundbreaking Tech Emerges in Silicon Valley",
+            "event": "Groundbreaking Tech Emerges in Silicon Valley",
             "time_period": [
                 "2023-04-01",
                 "2023-04-16"
             ],
-            "themes": [
+            "topics": [
                 "TechInnovation"
             ],
             "entity": [
@@ -19,12 +19,12 @@
         },
         {
             "id": "C1",
-            "title": "GreenFront's Rise in River City",
+            "event": "GreenFront's Rise in River City",
             "time_period": [
                 "2023-02-01",
                 "2023-03-17"
             ],
-            "themes": [
+            "topics": [
                 "EcoMovement"
             ],
             "entity": [
@@ -36,12 +36,12 @@
         },
         {
             "id": "B2",
-            "title": "Innovatech Commits to Sustainability at Global Summit",
+            "event": "Innovatech Commits to Sustainability at Global Summit",
             "time_period": [
                 "2023-05-17",
                 "2023-06-01"
             ],
-            "themes": [
+            "topics": [
                 "CorporateResponsibility"
             ],
             "entity": [

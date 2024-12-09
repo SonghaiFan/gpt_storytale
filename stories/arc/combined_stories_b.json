@@ -9,7 +9,7 @@
         "id": "A1",
         "title": "Revival of Ancient Art Techniques in Modern City",
         "time_period": ["2023-09-01", "2023-10-16"],
-        "themes": ["Artistic Renaissance"],
+        "topics": ["Artistic Renaissance"],
         "entity": [
           "The Artisans' Guild",
           "Evelyn Rivera",
@@ -21,7 +21,7 @@
         "id": "A2",
         "title": "Artistic Renaissance Continues to Flourish",
         "time_period": ["2023-10-16", "2023-11-30"],
-        "themes": ["Artistic Renaissance"],
+        "topics": ["Artistic Renaissance"],
         "entity": [
           "The Artisans' Guild",
           "Evelyn Rivera",
@@ -33,7 +33,7 @@
         "id": "B3",
         "title": "Fusion Arts Collective: A New Cultural Movement",
         "time_period": ["2024-05-05", "2024-06-30"],
-        "themes": ["Cultural Fusion"],
+        "topics": ["Cultural Fusion"],
         "entity": [
           "Old Town Gallery",
           "City Art Festival",
@@ -54,7 +54,7 @@
         "id": "A1",
         "title": "RoboTech Inc. Unveils Advanced Robotics Control Techniques",
         "time_period": ["2024-02-01", "2024-05-02"],
-        "themes": ["Advanced Robotics Techniques"],
+        "topics": ["Advanced Robotics Techniques"],
         "entity": [
           "Dr. Mia Chen",
           "RoboTech Inc.",
@@ -66,7 +66,7 @@
         "id": "A2",
         "title": "RoboTech Inc.'s Advanced Robotics Control Techniques Transforming Industries",
         "time_period": ["2024-05-02", "2024-08-01"],
-        "themes": ["Advanced Robotics Techniques"],
+        "topics": ["Advanced Robotics Techniques"],
         "entity": [
           "Dr. Mia Chen",
           "RoboTech Inc.",
@@ -78,7 +78,7 @@
         "id": "B2",
         "title": "RoboTech Inc. Revolutionizing Sustainable Agriculture",
         "time_period": ["2024-10-16", "2024-12-31"],
-        "themes": ["Techniques in Sustainable Agriculture"],
+        "topics": ["Techniques in Sustainable Agriculture"],
         "entity": [
           "Dr. Mia Chen",
           "RoboTech Inc.",
@@ -99,7 +99,7 @@
         "id": "A1",
         "title": "Global War Outbreak: Alliance of Free States Declares War",
         "time_period": ["2024-07-01", "2024-07-26"],
-        "themes": ["War Outbreak"],
+        "topics": ["War Outbreak"],
         "entity": [
           "Alliance of Free States",
           "General Lee",
@@ -112,7 +112,7 @@
         "id": "B2",
         "title": "Humanitarian Crisis Unfolds Amidst Global War",
         "time_period": ["2024-10-21", "2024-11-25"],
-        "themes": ["Humanitarian Crisis"],
+        "topics": ["Humanitarian Crisis"],
         "entity": [
           "Alliance of Free States",
           "Dr. Emily Chen",
@@ -126,7 +126,7 @@
         "id": "B3",
         "title": "United Nations Assembly Responds to Eldoria Crisis",
         "time_period": ["2024-11-25", "2024-12-31"],
-        "themes": ["Humanitarian Crisis"],
+        "topics": ["Humanitarian Crisis"],
         "entity": [
           "United Nations Assembly",
           "Dr. Emily Chen",
@@ -147,7 +147,7 @@
         "id": "B1",
         "title": "Revolutionary Education Reform Bill Introduced",
         "time_period": ["2024-01-01", "2024-03-31"],
-        "themes": ["Educational Reform"],
+        "topics": ["Educational Reform"],
         "entity": [
           "Education Reform Bill",
           "Ministry of Education",
@@ -159,7 +159,7 @@
         "id": "A2",
         "title": "Virtual Learning Conference Showcases Future of Education",
         "time_period": ["2024-09-30", "2024-12-31"],
-        "themes": ["Technology in Education"],
+        "topics": ["Technology in Education"],
         "entity": [
           "Virtual Learning Conference",
           "CyberEdTech",
@@ -171,7 +171,7 @@
         "id": "C2",
         "title": "National Student Alliance Leads Campus Protests Against Education Reform",
         "time_period": ["2024-10-23", "2025-01-15"],
-        "themes": ["Student Movements and Activism"],
+        "topics": ["Student Movements and Activism"],
         "entity": [
           "Ministry of Education",
           "National Student Alliance",
@@ -191,7 +191,7 @@
         "id": "A1",
         "title": "Globex's Rapid Expansion",
         "time_period": ["2023-01-01", "2023-03-02"],
-        "themes": ["Corporate Expansion"],
+        "topics": ["Corporate Expansion"],
         "entity": ["Metro City", "CEO Johnson", "Globex"],
         "content": "In the first quarter of 2023, Globex, under the leadership of CEO Johnson, has seen a rapid expansion. The corporation has successfully entered new markets, particularly in Metro City. This expansion has resulted in significant growth for Globex, setting a promising outlook for the rest of the year."
       },
@@ -199,7 +199,7 @@
         "id": "B2",
         "title": "Globex Faces Backlash Over Labor and Environmental Concerns",
         "time_period": ["2023-07-31", "2023-08-30"],
-        "themes": ["Ethical Challenges"],
+        "topics": ["Ethical Challenges"],
         "entity": [
           "Greenfield Industrial Zone",
           "CEO Johnson",
@@ -212,7 +212,7 @@
         "id": "A3",
         "title": "Globex Adopts Sustainable Practices Amid Controversy",
         "time_period": ["2023-05-01", "2023-06-30"],
-        "themes": ["Corporate Expansion"],
+        "topics": ["Corporate Expansion"],
         "entity": ["Metro City", "CEO Johnson", "Globex"],
         "content": "In response to the recent controversy, Globex, under the leadership of CEO Johnson, has announced a shift towards sustainable practices. The company plans to improve labor conditions and reduce its environmental impact in Metro City's Greenfield Industrial Zone. This move is seen as a strategic attempt to regain public trust while ensuring continued growth. The success of this initiative will determine the future of Globex's expansion and its standing in the corporate world."
       }
@@ -228,7 +228,7 @@
         "id": "A1",
         "title": "Small-Town Team, Hometown Heroes, Wins Regional Championship",
         "time_period": ["2024-02-01", "2024-02-10"],
-        "themes": ["Underdog Victory"],
+        "topics": ["Underdog Victory"],
         "entity": [
           "Coach Thompson",
           "Regional Championship",
@@ -240,7 +240,7 @@
         "id": "B2",
         "title": "Hometown Heroes' Victory Draws National Attention",
         "time_period": ["2024-03-11", "2024-03-21"],
-        "themes": ["National Spotlight"],
+        "topics": ["National Spotlight"],
         "entity": [
           "Sports Analyst Emma",
           "Coach Thompson",
@@ -253,7 +253,7 @@
         "id": "C3",
         "title": "Hometown Heroes' Legacy: Inspiring the Next Generation",
         "time_period": ["2024-04-19", "2024-04-30"],
-        "themes": ["Legacy", "Community Impact"],
+        "topics": ["Legacy", "Community Impact"],
         "entity": [
           "National Sports Network",
           "Mayor Johnson",
@@ -274,7 +274,7 @@
         "id": "A1",
         "title": "DreamFrame Studios Announces Groundbreaking Film Production",
         "time_period": ["2023-08-01", "2023-08-31"],
-        "themes": ["Film Production"],
+        "topics": ["Film Production"],
         "entity": ["Hollywood", "DreamFrame Studios", "Director Amy"],
         "content": "In Hollywood, DreamFrame Studios is making a new film. Director Amy is in charge. She is known for her creative ideas. The film is said to be groundbreaking. It is a big challenge for the team. They are working hard to make it a success. The world is waiting to see what they will do."
       },
@@ -282,7 +282,7 @@
         "id": "C1",
         "title": "Global Beats Festival Plans Unveiled",
         "time_period": ["2023-06-01", "2023-07-01"],
-        "themes": ["Music Festival"],
+        "topics": ["Music Festival"],
         "entity": ["Global Beats Festival", "City Park", "DJ Marco"],
         "content": "The Global Beats Festival, to be held at City Park, has revealed its line-up. DJ Marco, a renowned international artist, will be headlining the event. Organizers are working hard to ensure a smooth festival. They are facing several challenges, including diverse talent coordination and logistical issues. Despite these hurdles, they are confident that the festival will be a success."
       },
@@ -290,7 +290,7 @@
         "id": "B2",
         "title": "Cultural Impacts: DreamFrame Studios and Global Beats Festival",
         "time_period": ["2023-11-01", "2023-12-01"],
-        "themes": ["Cultural Impact"],
+        "topics": ["Cultural Impact"],
         "entity": [
           "DJ Marco",
           "Cultural Analyst Jordan",
@@ -312,7 +312,7 @@
         "id": "A1",
         "title": "International Summit: Preparations Underway",
         "time_period": ["2024-06-01", "2024-06-05"],
-        "themes": ["International Summit"],
+        "topics": ["International Summit"],
         "entity": [
           "International Press",
           "United Nations",
@@ -325,7 +325,7 @@
         "id": "A2",
         "title": "International Summit Begins with Climate Change at the Forefront",
         "time_period": ["2024-06-05", "2024-06-09"],
-        "themes": ["International Summit"],
+        "topics": ["International Summit"],
         "entity": [
           "President Bob",
           "International Press",
@@ -339,7 +339,7 @@
         "id": "A3",
         "title": "Climate Summit Concludes with Major Agreement",
         "time_period": ["2024-06-09", "2024-06-15"],
-        "themes": ["International Summit"],
+        "topics": ["International Summit"],
         "entity": [
           "President Bob",
           "International Press",
@@ -361,7 +361,7 @@
         "id": "A1",
         "title": "Political Showdown Begins: Governor Barnes vs Senator Johnson",
         "time_period": ["2024-03-01", "2024-04-07"],
-        "themes": ["Political Campaign"],
+        "topics": ["Political Campaign"],
         "entity": [
           "Governor Barnes",
           "Capital City",
@@ -374,7 +374,7 @@
         "id": "B1",
         "title": "Newly Elected Government Begins Legislative Reform",
         "time_period": ["2024-05-16", "2024-07-08"],
-        "themes": ["Legislative Reform"],
+        "topics": ["Legislative Reform"],
         "entity": [
           "Governor Barnes",
           "Senator Johnson",
@@ -387,7 +387,7 @@
         "id": "B2",
         "title": "Nationalist Party's Legislative Reforms Face Opposition",
         "time_period": ["2024-07-08", "2024-08-31"],
-        "themes": ["Legislative Reform"],
+        "topics": ["Legislative Reform"],
         "entity": [
           "Governor Barnes",
           "Senator Johnson",

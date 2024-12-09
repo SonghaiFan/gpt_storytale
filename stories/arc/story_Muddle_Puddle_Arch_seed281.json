@@ -2,12 +2,12 @@
     "chapters": [
         {
             "id": "A1",
-            "title": "Downtown District Witnesses Economic Surge",
+            "event": "Downtown District Witnesses Economic Surge",
             "time_period": [
                 "2023-01-01",
                 "2023-05-02"
             ],
-            "themes": [
+            "topics": [
                 "Economic Boom"
             ],
             "entity": [
@@ -19,12 +19,12 @@
         },
         {
             "id": "B2",
-            "title": "Ecological Crisis Looms Amid City's Economic Boom",
+            "event": "Ecological Crisis Looms Amid City's Economic Boom",
             "time_period": [
                 "2023-07-01",
                 "2023-07-31"
             ],
-            "themes": [
+            "topics": [
                 "Ecological Crisis"
             ],
             "entity": [
@@ -38,12 +38,12 @@
         },
         {
             "id": "A3",
-            "title": "Eco Summit Leads to Sustainable Economic Boom",
+            "event": "Eco Summit Leads to Sustainable Economic Boom",
             "time_period": [
                 "2023-08-31",
                 "2023-12-31"
             ],
-            "themes": [
+            "topics": [
                 "Economic Boom"
             ],
             "entity": [

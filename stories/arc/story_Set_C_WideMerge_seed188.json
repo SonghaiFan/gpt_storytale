@@ -2,12 +2,12 @@
     "chapters": [
         {
             "id": "A1",
-            "title": "Artists Gear Up for International Exhibition",
+            "event": "Artists Gear Up for International Exhibition",
             "time_period": [
                 "2024-01-01",
                 "2024-02-15"
             ],
-            "themes": [
+            "topics": [
                 "Artistic Creation"
             ],
             "entity": [
@@ -19,12 +19,12 @@
         },
         {
             "id": "C1",
-            "title": "Logistical Challenges Mark the Preparation for International Art Exhibition",
+            "event": "Logistical Challenges Mark the Preparation for International Art Exhibition",
             "time_period": [
                 "2024-02-01",
                 "2024-03-16"
             ],
-            "themes": [
+            "topics": [
                 "Logistical Challenges"
             ],
             "entity": [
@@ -36,12 +36,12 @@
         },
         {
             "id": "B2",
-            "title": "Global Art Exhibition Opens Amidst High Expectations",
+            "event": "Global Art Exhibition Opens Amidst High Expectations",
             "time_period": [
                 "2024-05-04",
                 "2024-05-07"
             ],
-            "themes": [
+            "topics": [
                 "Opening of the Art Exhibition"
             ],
             "entity": [

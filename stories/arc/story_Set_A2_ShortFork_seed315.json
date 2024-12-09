@@ -2,12 +2,12 @@
     "chapters": [
         {
             "id": "A1",
-            "title": "Laura Reynolds Leads Downtown Rally",
+            "event": "Laura Reynolds Leads Downtown Rally",
             "time_period": [
                 "2023-10-01",
                 "2023-10-16"
             ],
-            "themes": [
+            "topics": [
                 "Election"
             ],
             "entity": [
@@ -19,12 +19,12 @@
         },
         {
             "id": "B2",
-            "title": "Mayoral Candidate Laura Reynolds Faces Financial Scandal",
+            "event": "Mayoral Candidate Laura Reynolds Faces Financial Scandal",
             "time_period": [
                 "2023-11-22",
                 "2023-11-28"
             ],
-            "themes": [
+            "topics": [
                 "Scandal"
             ],
             "entity": [
@@ -37,12 +37,12 @@
         },
         {
             "id": "B3",
-            "title": "Reynolds' Scandal: Financial Misconduct Investigation Intensifies",
+            "event": "Reynolds' Scandal: Financial Misconduct Investigation Intensifies",
             "time_period": [
                 "2023-11-28",
                 "2023-12-05"
             ],
-            "themes": [
+            "topics": [
                 "Scandal"
             ],
             "entity": [

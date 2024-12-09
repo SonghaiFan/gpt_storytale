@@ -2,12 +2,12 @@
     "chapters": [
         {
             "id": "A1",
-            "title": "Revival of Ancient Art Techniques in Modern City",
+            "event": "Revival of Ancient Art Techniques in Modern City",
             "time_period": [
                 "2023-09-01",
                 "2023-10-16"
             ],
-            "themes": [
+            "topics": [
                 "Artistic Renaissance"
             ],
             "entity": [
@@ -19,12 +19,12 @@
         },
         {
             "id": "A2",
-            "title": "Artistic Renaissance Continues to Flourish",
+            "event": "Artistic Renaissance Continues to Flourish",
             "time_period": [
                 "2023-10-16",
                 "2023-11-30"
             ],
-            "themes": [
+            "topics": [
                 "Artistic Renaissance"
             ],
             "entity": [
@@ -36,12 +36,12 @@
         },
         {
             "id": "B3",
-            "title": "Fusion Arts Collective: A New Cultural Movement",
+            "event": "Fusion Arts Collective: A New Cultural Movement",
             "time_period": [
                 "2024-05-05",
                 "2024-06-30"
             ],
-            "themes": [
+            "topics": [
                 "Cultural Fusion"
             ],
             "entity": [

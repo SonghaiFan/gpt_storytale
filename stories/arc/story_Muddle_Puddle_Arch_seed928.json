@@ -2,12 +2,12 @@
     "chapters": [
         {
             "id": "A1",
-            "title": "Unprecedented Economic Boom Hits the City",
+            "event": "Unprecedented Economic Boom Hits the City",
             "time_period": [
                 "2023-01-01",
                 "2023-05-02"
             ],
-            "themes": [
+            "topics": [
                 "Economic Boom"
             ],
             "entity": [
@@ -19,12 +19,12 @@
         },
         {
             "id": "B2",
-            "title": "City Faces Environmental Crisis Amid Economic Boom",
+            "event": "City Faces Environmental Crisis Amid Economic Boom",
             "time_period": [
                 "2023-07-01",
                 "2023-07-31"
             ],
-            "themes": [
+            "topics": [
                 "Ecological Crisis"
             ],
             "entity": [
@@ -38,12 +38,12 @@
         },
         {
             "id": "A3",
-            "title": "City Finds Sustainable Solution Amid Economic Boom and Ecological Crisis",
+            "event": "City Finds Sustainable Solution Amid Economic Boom and Ecological Crisis",
             "time_period": [
                 "2023-08-31",
                 "2023-12-31"
             ],
-            "themes": [
+            "topics": [
                 "Economic Boom"
             ],
             "entity": [

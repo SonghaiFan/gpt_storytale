@@ -2,12 +2,12 @@
     "chapters": [
         {
             "id": "A1",
-            "title": "Trump's New Business Venture Stirs the Pot",
+            "event": "Trump's New Business Venture Stirs the Pot",
             "time_period": [
                 "2023-02-01",
                 "2023-03-17"
             ],
-            "themes": [
+            "topics": [
                 "Political Tensions"
             ],
             "entity": [
@@ -20,12 +20,12 @@
         },
         {
             "id": "B2",
-            "title": "Elon Musk Teams up with Trump Organization for Groundbreaking Tech Venture",
+            "event": "Elon Musk Teams up with Trump Organization for Groundbreaking Tech Venture",
             "time_period": [
                 "2023-07-16",
                 "2023-09-30"
             ],
-            "themes": [
+            "topics": [
                 "Technological Advancement"
             ],
             "entity": [

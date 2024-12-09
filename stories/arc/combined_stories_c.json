@@ -9,7 +9,7 @@
         "id": "A1",
         "title": "National Education Board Announces Major Education Reforms",
         "time_period": ["2024-01-01", "2024-01-31"],
-        "themes": ["Education Reform"],
+        "topics": ["Education Reform"],
         "entity": [
           "National Education Board",
           "Riverwood High School",
@@ -22,7 +22,7 @@
         "id": "A2",
         "title": "Education Reform Bill: A Closer Look at the Challenges",
         "time_period": ["2024-01-31", "2024-03-01"],
-        "themes": ["Education Reform"],
+        "topics": ["Education Reform"],
         "entity": [
           "National Education Board",
           "Minister Evans",
@@ -35,7 +35,7 @@
         "id": "A3",
         "title": "Education Reform Bill: A Step Towards Better Future",
         "time_period": ["2024-03-01", "2024-03-31"],
-        "themes": ["Education Reform"],
+        "topics": ["Education Reform"],
         "entity": [
           "National Education Board",
           "Minister Evans",
@@ -56,7 +56,7 @@
         "id": "A1",
         "title": "Artists Gear Up for International Exhibition",
         "time_period": ["2024-01-01", "2024-02-15"],
-        "themes": ["Artistic Creation"],
+        "topics": ["Artistic Creation"],
         "entity": [
           "The Canvas Warehouse",
           "Emma Gonzalez",
@@ -68,7 +68,7 @@
         "id": "C1",
         "title": "Logistical Challenges Mark the Preparation for International Art Exhibition",
         "time_period": ["2024-02-01", "2024-03-16"],
-        "themes": ["Logistical Challenges"],
+        "topics": ["Logistical Challenges"],
         "entity": [
           "City Convention Center",
           "Lucas Brown",
@@ -80,7 +80,7 @@
         "id": "B2",
         "title": "Global Art Exhibition Opens Amidst High Expectations",
         "time_period": ["2024-05-04", "2024-05-07"],
-        "themes": ["Opening of the Art Exhibition"],
+        "topics": ["Opening of the Art Exhibition"],
         "entity": [
           "Global Artists Studio",
           "Emma Gonzalez",
@@ -102,7 +102,7 @@
         "id": "A1",
         "title": "New Pestilence Emerges, Global Health on High Alert",
         "time_period": ["2024-02-01", "2024-05-02"],
-        "themes": ["Global Spread of a New Pestilence"],
+        "topics": ["Global Spread of a New Pestilence"],
         "entity": [
           "World Health Organization",
           "Global Health Crisis Conference",
@@ -114,7 +114,7 @@
         "id": "A2",
         "title": "Global Pestilence Spreads, Dr. Jane Health Leads the Fight",
         "time_period": ["2024-05-02", "2024-08-01"],
-        "themes": ["Global Spread of a New Pestilence"],
+        "topics": ["Global Spread of a New Pestilence"],
         "entity": [
           "World Health Organization",
           "Global Health Crisis Conference",
@@ -126,7 +126,7 @@
         "id": "B2",
         "title": "Modern Medicine Battles New Pestilence: Dr. Jane Health at the Forefront",
         "time_period": ["2024-10-16", "2024-12-31"],
-        "themes": ["Combatting Pestilence with Modern Medicine"],
+        "topics": ["Combatting Pestilence with Modern Medicine"],
         "entity": [
           "International Medical Research Symposium",
           "Dr. Jane Health",
@@ -146,7 +146,7 @@
         "id": "A1",
         "title": "Jordan Chase: A Surprise Announcement",
         "time_period": ["2024-01-01", "2024-01-16"],
-        "themes": ["Celebrity Sensational News"],
+        "topics": ["Celebrity Sensational News"],
         "entity": [
           "Jordan Chase",
           "Celebrity Buzz Magazine",
@@ -158,7 +158,7 @@
         "id": "B2",
         "title": "Anticipation Builds for Jordan Chase's Final Film Premiere",
         "time_period": ["2024-03-01", "2024-03-15"],
-        "themes": ["Film Premiere"],
+        "topics": ["Film Premiere"],
         "entity": [
           "Jordan Chase",
           "Shadow of Fate",
@@ -171,7 +171,7 @@
         "id": "B3",
         "title": "The Countdown to 'Shadow of Fate' Premiere Begins",
         "time_period": ["2024-03-15", "2024-03-31"],
-        "themes": ["Film Premiere"],
+        "topics": ["Film Premiere"],
         "entity": ["Jordan Chase", "Shadow of Fate", "Silver Screen Theaters"],
         "content": "As the premiere of 'Shadow of Fate' nears, Silver Screen Theaters is buzzing with activity. The theater is decked out in themes from the movie, creating an immersive experience for fans. Security is tight, ensuring the event runs smoothly. The anticipation for Jordan Chase's last film is palpable. Fans are eager to see his final performance. The film industry is watching closely, curious about the impact of Chase's swan song. The countdown to the premiere has begun, and the excitement is building."
       }
@@ -187,7 +187,7 @@
         "id": "A1",
         "title": "Candidate Johnson Announces Reform Policy for Urban Development",
         "time_period": ["2024-02-01", "2024-04-01"],
-        "themes": ["Political Campaign and Aftermath"],
+        "topics": ["Political Campaign and Aftermath"],
         "entity": [
           "Candidate Johnson",
           "Reform Policy Announcement",
@@ -200,7 +200,7 @@
         "id": "A2",
         "title": "Johnson Wins Mayoral Election, Faces Challenges Ahead",
         "time_period": ["2024-04-01", "2024-05-31"],
-        "themes": ["Political Campaign and Aftermath"],
+        "topics": ["Political Campaign and Aftermath"],
         "entity": [
           "Election Day",
           "Reform Policy Announcement",
@@ -213,7 +213,7 @@
         "id": "B3",
         "title": "Real Estate Boom: Skyline Towers Rise High",
         "time_period": ["2024-10-20", "2024-11-30"],
-        "themes": ["Real Estate Boom"],
+        "topics": ["Real Estate Boom"],
         "entity": [
           "Housing Market Expo",
           "City Planning Office",
@@ -288,7 +288,7 @@
         "id": "A1",
         "title": "Cinematic Tech Expo 2024: A New Dawn for Film Industry",
         "time_period": ["2024-01-01", "2024-02-10"],
-        "themes": ["Film Industry Evolution"],
+        "topics": ["Film Industry Evolution"],
         "entity": [
           "Director Amelia",
           "Cinematic Tech Expo",
@@ -301,7 +301,7 @@
         "id": "B2",
         "title": "Wall Street Reacts to Film Industry's Tech Boom",
         "time_period": ["2024-06-10", "2024-07-20"],
-        "themes": ["Film Industry's Economic Impact"],
+        "topics": ["Film Industry's Economic Impact"],
         "entity": [
           "Hollywood",
           "Economic Film Review",
@@ -315,7 +315,7 @@
         "id": "C3",
         "title": "AR Revolutionizes Filmmaking",
         "time_period": ["2024-11-20", "2024-12-31"],
-        "themes": ["Advent of AR in Filmmaking"],
+        "topics": ["Advent of AR in Filmmaking"],
         "entity": [
           "Silicon Valley",
           "AR Film Lab",
@@ -337,7 +337,7 @@
         "id": "A1",
         "title": "Rising Tensions Between Zephyria and Gallistan",
         "time_period": ["2024-03-01", "2024-04-07"],
-        "themes": ["Rising Tensions"],
+        "topics": ["Rising Tensions"],
         "entity": ["United Nations", "General Bravo", "Zephyria", "Gallistan"],
         "content": "In the last month, tensions between Zephyria and Gallistan have escalated. The United Nations called for calm, but both sides remain firm. Zephyria's military leader, General Bravo, warned of a strong response if Gallistan continues its aggressive acts. This situation is causing worry around the world. The next weeks will be crucial for peace."
       },
@@ -345,7 +345,7 @@
         "id": "B1",
         "title": "Peace Talks Initiated Between Zephyria and General Bravo's Nation",
         "time_period": ["2024-05-16", "2024-07-08"],
-        "themes": ["Peace Negotiations"],
+        "topics": ["Peace Negotiations"],
         "entity": [
           "United Nations",
           "General Bravo",
@@ -358,7 +358,7 @@
         "id": "B2",
         "title": "Peace Talks Initiated Between Zephyria and Gallistan",
         "time_period": ["2024-07-08", "2024-08-31"],
-        "themes": ["Peace Negotiations"],
+        "topics": ["Peace Negotiations"],
         "entity": ["General Bravo", "Gallistan", "Zephyria", "President Alpha"],
         "content": "The United Nations has initiated peace negotiations between Zephyria and Gallistan in an attempt to deescalate the tensions. President Alpha of Zephyria, alongside General Bravo, has agreed to participate in these talks. Despite the optimism, the path towards peace is filled with hurdles as both nations face internal and external pressures. The world eagerly anticipates the outcome of these talks, hoping for a peaceful resolution."
       }
@@ -374,7 +374,7 @@
         "id": "B1",
         "title": "AutoInnovate Unveils Revolutionary Electric Vehicle: EV-X1",
         "time_period": ["2024-01-01", "2024-01-31"],
-        "themes": ["Automotive New Product Launch"],
+        "topics": ["Automotive New Product Launch"],
         "entity": [
           "EV-X1",
           "AutoInnovate",
@@ -387,7 +387,7 @@
         "id": "C2",
         "title": "EV-X1: A Game Changer in Global Economy",
         "time_period": ["2024-04-16", "2024-06-01"],
-        "themes": ["Economic Impact"],
+        "topics": ["Economic Impact"],
         "entity": [
           "Market Analyst Emma Chen",
           "EV-X1",
@@ -401,7 +401,7 @@
         "id": "A2",
         "title": "AutoInnovate's EV-X1: A Step Towards Eco-Friendly Future",
         "time_period": ["2024-04-01", "2024-05-01"],
-        "themes": ["Environmental Impact"],
+        "topics": ["Environmental Impact"],
         "entity": [
           "GreenTech Alliance",
           "AutoInnovate",

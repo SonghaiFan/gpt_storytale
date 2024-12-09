@@ -2,12 +2,12 @@
     "chapters": [
         {
             "id": "A1",
-            "title": "EcoTech's Solar Hub: A Revolution in Clean Energy",
+            "event": "EcoTech's Solar Hub: A Revolution in Clean Energy",
             "time_period": [
                 "2023-01-01",
                 "2023-01-30"
             ],
-            "themes": [
+            "topics": [
                 "Tech Advancement"
             ],
             "entity": [
@@ -19,12 +19,12 @@
         },
         {
             "id": "B1",
-            "title": "Economic Boom in Clean Energy Startups",
+            "event": "Economic Boom in Clean Energy Startups",
             "time_period": [
                 "2023-02-01",
                 "2023-04-02"
             ],
-            "themes": [
+            "topics": [
                 "Economic Boom"
             ],
             "entity": [
@@ -37,12 +37,12 @@
         },
         {
             "id": "B2",
-            "title": "Market Street Startups Fuel Economic Boom",
+            "event": "Market Street Startups Fuel Economic Boom",
             "time_period": [
                 "2023-04-02",
                 "2023-06-01"
             ],
-            "themes": [
+            "topics": [
                 "Economic Boom"
             ],
             "entity": [

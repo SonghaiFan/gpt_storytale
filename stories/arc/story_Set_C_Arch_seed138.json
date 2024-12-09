@@ -2,12 +2,12 @@
     "chapters": [
         {
             "id": "A1",
-            "title": "Unexpected Triumph for Victory FC at Hometown Stadium",
+            "event": "Unexpected Triumph for Victory FC at Hometown Stadium",
             "time_period": [
                 "2023-08-01",
                 "2023-08-26"
             ],
-            "themes": [
+            "topics": [
                 "Sports Triumph"
             ],
             "entity": [
@@ -19,12 +19,12 @@
         },
         {
             "id": "B2",
-            "title": "Citywide Concern for Safety Amid Sports-Related Violence",
+            "event": "Citywide Concern for Safety Amid Sports-Related Violence",
             "time_period": [
                 "2023-09-06",
                 "2023-09-10"
             ],
-            "themes": [
+            "topics": [
                 "Sports-Related Violence"
             ],
             "entity": [
@@ -37,12 +37,12 @@
         },
         {
             "id": "A3",
-            "title": "Victory FC Triumphs Again, Uniting the City",
+            "event": "Victory FC Triumphs Again, Uniting the City",
             "time_period": [
                 "2023-09-20",
                 "2023-10-15"
             ],
-            "themes": [
+            "topics": [
                 "Sports Triumph"
             ],
             "entity": [

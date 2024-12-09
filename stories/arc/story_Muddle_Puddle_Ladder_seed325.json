@@ -2,12 +2,12 @@
     "chapters": [
         {
             "id": "A1",
-            "title": "Scandal Erupts: TechCorp Under Investigation",
+            "event": "Scandal Erupts: TechCorp Under Investigation",
             "time_period": [
                 "2023-01-15",
                 "2023-01-29"
             ],
-            "themes": [
+            "topics": [
                 "Scandal"
             ],
             "entity": [
@@ -19,12 +19,12 @@
         },
         {
             "id": "B2",
-            "title": "TechCorp CEO Trial Commences",
+            "event": "TechCorp CEO Trial Commences",
             "time_period": [
                 "2023-03-21",
                 "2023-04-10"
             ],
-            "themes": [
+            "topics": [
                 "Trial"
             ],
             "entity": [
@@ -38,12 +38,12 @@
         },
         {
             "id": "C3",
-            "title": "Tech Industry to Face New Regulations",
+            "event": "Tech Industry to Face New Regulations",
             "time_period": [
                 "2023-06-10",
                 "2023-06-30"
             ],
-            "themes": [
+            "topics": [
                 "Reform"
             ],
             "entity": [

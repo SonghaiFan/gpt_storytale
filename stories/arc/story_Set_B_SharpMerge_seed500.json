@@ -2,12 +2,12 @@
     "chapters": [
         {
             "id": "A1",
-            "title": "Political Showdown Begins: Governor Barnes vs Senator Johnson",
+            "event": "Political Showdown Begins: Governor Barnes vs Senator Johnson",
             "time_period": [
                 "2024-03-01",
                 "2024-04-07"
             ],
-            "themes": [
+            "topics": [
                 "Political Campaign"
             ],
             "entity": [
@@ -20,12 +20,12 @@
         },
         {
             "id": "B1",
-            "title": "Newly Elected Government Begins Legislative Reform",
+            "event": "Newly Elected Government Begins Legislative Reform",
             "time_period": [
                 "2024-05-16",
                 "2024-07-08"
             ],
-            "themes": [
+            "topics": [
                 "Legislative Reform"
             ],
             "entity": [
@@ -38,12 +38,12 @@
         },
         {
             "id": "B2",
-            "title": "Nationalist Party's Legislative Reforms Face Opposition",
+            "event": "Nationalist Party's Legislative Reforms Face Opposition",
             "time_period": [
                 "2024-07-08",
                 "2024-08-31"
             ],
-            "themes": [
+            "topics": [
                 "Legislative Reform"
             ],
             "entity": [

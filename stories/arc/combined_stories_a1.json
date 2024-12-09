@@ -9,7 +9,7 @@
         "id": "A1",
         "title": "Unprecedented Economic Boom Sweeps the City",
         "time_period": ["2023-01-01", "2023-05-02"],
-        "themes": ["Economic Boom"],
+        "topics": ["Economic Boom"],
         "entity": ["Mayor Lina", "Economic Council", "Downtown District"],
         "content": "The city, under the leadership of Mayor Lina and the Economic Council, is witnessing an unprecedented economic boom. The Downtown District, previously a quiet area, is now a bustling hub of activity. Shops are thriving, and new businesses are opening every week. However, this rapid growth has also brought a sudden ecological challenge. The city's green spaces are shrinking, and air quality is worsening. The Economic Council is now tasked with finding a sustainable solution to balance the city's economic growth and ecological health."
       },
@@ -17,7 +17,7 @@
         "id": "B2",
         "title": "GreenLife vs Economic Growth: A City in Crisis",
         "time_period": ["2023-07-01", "2023-07-31"],
-        "themes": ["Ecological Crisis"],
+        "topics": ["Ecological Crisis"],
         "entity": [
           "Mayor Lina",
           "GreenLife",
@@ -31,7 +31,7 @@
         "id": "A3",
         "title": "City Finds Balance in Economic Boom Amidst Ecological Challenge",
         "time_period": ["2023-08-31", "2023-12-31"],
-        "themes": ["Economic Boom"],
+        "topics": ["Economic Boom"],
         "entity": ["Mayor Lina", "Economic Council", "Downtown District"],
         "content": "As the year ends, the city finds a sustainable solution to its economic boom and ecological challenge. Mayor Lina, with the Economic Council, launches the 'Green Economy' initiative. This plan focuses on creating green spaces in the Downtown District while promoting economic growth. The initiative is a success. Businesses continue to thrive and the air quality improves. Riverstone Park is saved and even expanded. The city ends the year on a high note, achieving a balance between economic growth and environmental health."
       }
@@ -47,7 +47,7 @@
         "id": "A1",
         "title": "Tech Boom Ignites in Silicon Park",
         "time_period": ["2023-10-01", "2023-11-11"],
-        "themes": ["Tech Boom"],
+        "topics": ["Tech Boom"],
         "entity": ["Silicon Park", "NanoTech Corp."],
         "content": "Silicon Park is witnessing a tech boom. Startups and established firms alike are innovating at a rapid pace. Leading the charge is NanoTech Corp., whose groundbreaking work in nanotechnology has sparked a surge in economic growth. The company's success is inspiring others, leading to a proliferation of tech startups in the area. The tech boom has transformed Silicon Park into a bustling hub of innovation and economic activity."
       },
@@ -55,7 +55,7 @@
         "id": "B2",
         "title": "Silicon Park Boom Leaves Outskirts Behind",
         "time_period": ["2024-03-31", "2024-04-30"],
-        "themes": ["Economic Disparity"],
+        "topics": ["Economic Disparity"],
         "entity": [
           "Silicon Park Outskirts",
           "Silicon Park",
@@ -68,7 +68,7 @@
         "id": "C3",
         "title": "People's Union Leads Outskirts Residents in Protest",
         "time_period": ["2024-10-11", "2024-12-01"],
-        "themes": ["Social Revolution"],
+        "topics": ["Social Revolution"],
         "entity": [
           "Mayor Davidson",
           "Silicon Park Outskirts",
@@ -88,7 +88,7 @@
         "id": "A1",
         "title": "Jane Doe Takes Center Stage in MetroCity Election",
         "time_period": ["2023-10-01", "2023-10-07"],
-        "themes": ["Election"],
+        "topics": ["Election"],
         "entity": [
           "MetroCity times",
           "MetroCity",
@@ -101,7 +101,7 @@
         "id": "A2",
         "title": "Liberal Party's Response to Doe's Campaign",
         "time_period": ["2023-10-07", "2023-10-13"],
-        "themes": ["Election"],
+        "topics": ["Election"],
         "entity": [
           "MetroCity times",
           "Liberal Party",
@@ -114,7 +114,7 @@
         "id": "B3",
         "title": "Jane Doe's Financial Scandal Shocks MetroCity",
         "time_period": ["2023-10-27", "2023-11-01"],
-        "themes": ["Scandal"],
+        "topics": ["Scandal"],
         "entity": [
           "Liberal Party",
           "Jane Doe",
@@ -136,7 +136,7 @@
         "id": "A1",
         "title": "City's Fight For Independence Begins",
         "time_period": ["2023-04-01", "2023-05-22"],
-        "themes": ["Revolution"],
+        "topics": ["Revolution"],
         "entity": ["West End Park", "City Square", "James", "City Hall"],
         "content": "On April 1, 2023, a city began its fight for independence. James, a local leader, led a large gathering at West End Park. He spoke about the need for freedom and self-rule. The crowd moved to City Square, chanting slogans. They marched towards City Hall, demanding change. The city's journey towards independence had begun. Challenges lay ahead, but the spirit of revolution was strong."
       },
@@ -144,7 +144,7 @@
         "id": "A2",
         "title": "City's Fight for Independence Intensifies",
         "time_period": ["2023-05-22", "2023-07-12"],
-        "themes": ["Revolution"],
+        "topics": ["Revolution"],
         "entity": ["City Square", "James", "City Hall", "Governor Mitchell"],
         "content": "From May 22 to July 12, 2023, the city's fight for independence grew stronger. James and his followers continued their protest at City Square. They faced many challenges, including harsh weather and police resistance. Despite this, they remained determined. On June 15, they marched to City Hall. They wanted to speak with Governor Mitchell about their demands. Unfortunately, they were not allowed to meet him. The city's journey towards independence was not easy. But the spirit of revolution was still strong."
       },
@@ -152,7 +152,7 @@
         "id": "A3",
         "title": "City's Fight for Independence Intensifies",
         "time_period": ["2023-07-12", "2023-09-01"],
-        "themes": ["Revolution"],
+        "topics": ["Revolution"],
         "entity": [
           "City Hall",
           "James",
@@ -174,7 +174,7 @@
         "id": "A1",
         "title": "TechPulse Sparks Economic Boom in City",
         "time_period": ["2023-10-01", "2023-11-16"],
-        "themes": ["Economic Boom"],
+        "topics": ["Economic Boom"],
         "entity": ["TechPulse", "Downtown District", "Mayor Laura"],
         "content": "Mayor Laura announced an unexpected economic boom in the city, primarily due to TechPulse's advancements. The tech company's new project in the Downtown District has created jobs and increased local spending."
       },
@@ -182,7 +182,7 @@
         "id": "A2",
         "title": "TechPulse's Innovations Fuel City's Economic Boom",
         "time_period": ["2023-11-16", "2024-01-01"],
-        "themes": ["Economic Boom"],
+        "topics": ["Economic Boom"],
         "entity": ["Downtown District", "TechPulse", "Mayor Laura"],
         "content": "TechPulse's new project in the Downtown District is the heartbeat of the city's economic boom. Mayor Laura reported an increase in jobs and local spending. The project, a high-tech hub, has attracted other businesses. It has also brought more people downtown, boosting local shops and restaurants. The city's future looks bright with TechPulse leading the way."
       },
@@ -190,7 +190,7 @@
         "id": "B2",
         "title": "Cultural Renaissance Blooms in Downtown District",
         "time_period": ["2023-12-16", "2024-03-01"],
-        "themes": ["Cultural Renaissance"],
+        "topics": ["Cultural Renaissance"],
         "entity": [
           "TechPulse",
           "Elaine",
@@ -212,7 +212,7 @@
         "id": "A1",
         "title": "Downtown Markets Face Unprecedented Economic Downturn",
         "time_period": ["2023-10-01", "2023-10-31"],
-        "themes": ["Economic Crisis"],
+        "topics": ["Economic Crisis"],
         "entity": ["Downtown Markets", "Central Bank", "Eleanor Thompson"],
         "content": "In October, the Downtown Markets faced a sudden economic downturn. This has directly impacted local businesses. The Central Bank reports show a steep drop in the city's economic growth. Eleanor Thompson, a local business owner, has expressed her concerns regarding the situation. She is worried about the future of her business."
       },
@@ -220,7 +220,7 @@
         "id": "C1",
         "title": "Unprecedented Flooding Ravages River Dale",
         "time_period": ["2023-10-01", "2023-10-31"],
-        "themes": ["Environmental Catastrophe"],
+        "topics": ["Environmental Catastrophe"],
         "entity": [
           "River Dale",
           "City Infrastructure Department",
@@ -232,7 +232,7 @@
         "id": "B2",
         "title": "Local Businesses and Infrastructure Department Join Hands for Relief Efforts",
         "time_period": ["2023-12-23", "2024-01-15"],
-        "themes": ["Humanitarian Aid"],
+        "topics": ["Humanitarian Aid"],
         "entity": [
           "Downtown Markets",
           "Helping Hands Foundation",
@@ -253,7 +253,7 @@
         "id": "B1",
         "title": "Financial Crisis Hits The City",
         "time_period": ["2023-10-01", "2023-10-31"],
-        "themes": ["Economic Downturn"],
+        "topics": ["Economic Downturn"],
         "entity": ["Martin", "Downtown District", "Central Bank"],
         "content": "October 2023 has seen a severe economic downturn, hitting the city hard. The Central Bank reports that the economy is in crisis. Martin, a local tech entrepreneur, says his business in the Downtown District is struggling. The tech sector is suffering, but so are local communities. Many businesses are closing. People are worried. The city needs to find a solution."
       },
@@ -261,7 +261,7 @@
         "id": "C2",
         "title": "Community Alliance: A Beacon of Hope Amid Economic Crisis",
         "time_period": ["2023-11-30", "2024-01-15"],
-        "themes": ["Community Resilience"],
+        "topics": ["Community Resilience"],
         "entity": [
           "Martin",
           "Community Alliance",
@@ -274,7 +274,7 @@
         "id": "A2",
         "title": "TechPulse Inc. Ignites Tech Boom Amid Economic Crisis",
         "time_period": ["2023-12-31", "2024-03-01"],
-        "themes": ["Tech Boom"],
+        "topics": ["Tech Boom"],
         "entity": ["Martin", "TechPulse Inc.", "Silicon Street"],
         "content": "Despite the economic crisis, Silicon Street is buzzing. Martin's TechPulse Inc. is leading a tech boom. Innovative solutions are their key to success. They are creating new jobs and helping the economy. The city is hopeful again. This tech boom could be the solution we need."
       }
@@ -290,7 +290,7 @@
         "id": "A1",
         "title": "Laura Reynolds Gains Momentum in Mayoral Race",
         "time_period": ["2023-10-01", "2023-10-16"],
-        "themes": ["Election"],
+        "topics": ["Election"],
         "entity": [
           "Laura Reynolds",
           "City Electoral Commission",
@@ -302,7 +302,7 @@
         "id": "B2",
         "title": "Scandal Hits Laura Reynolds' Campaign",
         "time_period": ["2023-11-22", "2023-11-28"],
-        "themes": ["Scandal"],
+        "topics": ["Scandal"],
         "entity": [
           "Local Bank",
           "Municipal Courthouse",
@@ -315,7 +315,7 @@
         "id": "B3",
         "title": "Reynolds' Mayoral Campaign in Turmoil Amid Financial Scandal",
         "time_period": ["2023-11-28", "2023-12-05"],
-        "themes": ["Scandal"],
+        "topics": ["Scandal"],
         "entity": [
           "Local Bank",
           "Laura Reynolds",
@@ -336,7 +336,7 @@
         "id": "A1",
         "title": "Solar Hub Powers Up New York City",
         "time_period": ["2023-01-01", "2023-01-30"],
-        "themes": ["Tech Advancement"],
+        "topics": ["Tech Advancement"],
         "entity": ["Dr. Ellen Hayes", "Solar Hub", "EcoTech"],
         "content": "Dr. Ellen Hayes, a leading scientist at EcoTech, announced a breakthrough in clean energy technology. The Solar Hub, a revolutionary power station, has begun supplying New York City with clean, renewable energy. This marks a major shift in the city's infrastructure, moving away from traditional energy sources. The Solar Hub promises to drastically reduce the city's carbon footprint, setting a new standard for urban sustainability."
       },
@@ -344,7 +344,7 @@
         "id": "B1",
         "title": "Clean Energy Startups Fuel Economic Boom",
         "time_period": ["2023-02-01", "2023-04-02"],
-        "themes": ["Economic Boom"],
+        "topics": ["Economic Boom"],
         "entity": [
           "Market Street",
           "GreenInvest",
@@ -357,7 +357,7 @@
         "id": "B2",
         "title": "Economic Boom Hits Market Street with Clean Energy Investments",
         "time_period": ["2023-04-02", "2023-06-01"],
-        "themes": ["Economic Boom"],
+        "topics": ["Economic Boom"],
         "entity": [
           "Market Street",
           "Dr. Ellen Hayes",

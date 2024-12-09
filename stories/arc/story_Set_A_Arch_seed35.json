@@ -2,12 +2,12 @@
     "chapters": [
         {
             "id": "A1",
-            "title": "Economic Boom in Downtown District: Mayor Lina's Vision",
+            "event": "Economic Boom in Downtown District: Mayor Lina's Vision",
             "time_period": [
                 "2023-01-01",
                 "2023-05-02"
             ],
-            "themes": [
+            "topics": [
                 "Economic Boom"
             ],
             "entity": [
@@ -19,12 +19,12 @@
         },
         {
             "id": "B2",
-            "title": "City Debates Future Amidst Ecological Crisis",
+            "event": "City Debates Future Amidst Ecological Crisis",
             "time_period": [
                 "2023-07-01",
                 "2023-07-31"
             ],
-            "themes": [
+            "topics": [
                 "Ecological Crisis"
             ],
             "entity": [
@@ -38,12 +38,12 @@
         },
         {
             "id": "A3",
-            "title": "Sustainable Economic Solution Emerges from Eco Summit",
+            "event": "Sustainable Economic Solution Emerges from Eco Summit",
             "time_period": [
                 "2023-08-31",
                 "2023-12-31"
             ],
-            "themes": [
+            "topics": [
                 "Economic Boom"
             ],
             "entity": [

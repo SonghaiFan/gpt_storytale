@@ -2,12 +2,12 @@
     "chapters": [
         {
             "id": "A1",
-            "title": "Economic Boom Uplifts Downtown District",
+            "event": "Economic Boom Uplifts Downtown District",
             "time_period": [
                 "2023-01-01",
                 "2023-05-02"
             ],
-            "themes": [
+            "topics": [
                 "Economic Boom"
             ],
             "entity": [
@@ -19,12 +19,12 @@
         },
         {
             "id": "B2",
-            "title": "Eco Summit: A Step Towards Sustainable Solutions",
+            "event": "Eco Summit: A Step Towards Sustainable Solutions",
             "time_period": [
                 "2023-07-01",
                 "2023-07-31"
             ],
-            "themes": [
+            "topics": [
                 "Ecological Crisis"
             ],
             "entity": [
@@ -38,12 +38,12 @@
         },
         {
             "id": "A3",
-            "title": "City Finds Sustainable Economic Solution Amidst Ecological Crisis",
+            "event": "City Finds Sustainable Economic Solution Amidst Ecological Crisis",
             "time_period": [
                 "2023-08-31",
                 "2023-12-31"
             ],
-            "themes": [
+            "topics": [
                 "Economic Boom"
             ],
             "entity": [

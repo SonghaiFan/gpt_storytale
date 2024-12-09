@@ -2,12 +2,12 @@
     "chapters": [
         {
             "id": "A1",
-            "title": "RoboTech Inc. Unveils Advanced Robotics Control Techniques",
+            "event": "RoboTech Inc. Unveils Advanced Robotics Control Techniques",
             "time_period": [
                 "2024-02-01",
                 "2024-05-02"
             ],
-            "themes": [
+            "topics": [
                 "Advanced Robotics Techniques"
             ],
             "entity": [
@@ -19,12 +19,12 @@
         },
         {
             "id": "A2",
-            "title": "RoboTech Inc.'s Advanced Robotics Control Techniques Transforming Industries",
+            "event": "RoboTech Inc.'s Advanced Robotics Control Techniques Transforming Industries",
             "time_period": [
                 "2024-05-02",
                 "2024-08-01"
             ],
-            "themes": [
+            "topics": [
                 "Advanced Robotics Techniques"
             ],
             "entity": [
@@ -36,12 +36,12 @@
         },
         {
             "id": "B2",
-            "title": "RoboTech Inc. Revolutionizing Sustainable Agriculture",
+            "event": "RoboTech Inc. Revolutionizing Sustainable Agriculture",
             "time_period": [
                 "2024-10-16",
                 "2024-12-31"
             ],
-            "themes": [
+            "topics": [
                 "Techniques in Sustainable Agriculture"
             ],
             "entity": [

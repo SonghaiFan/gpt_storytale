@@ -2,12 +2,12 @@
     "chapters": [
         {
             "id": "B1",
-            "title": "Revolutionary Education Reform Bill Introduced",
+            "event": "Revolutionary Education Reform Bill Introduced",
             "time_period": [
                 "2024-01-01",
                 "2024-03-31"
             ],
-            "themes": [
+            "topics": [
                 "Educational Reform"
             ],
             "entity": [
@@ -19,12 +19,12 @@
         },
         {
             "id": "A2",
-            "title": "Virtual Learning Conference Showcases Future of Education",
+            "event": "Virtual Learning Conference Showcases Future of Education",
             "time_period": [
                 "2024-09-30",
                 "2024-12-31"
             ],
-            "themes": [
+            "topics": [
                 "Technology in Education"
             ],
             "entity": [
@@ -36,12 +36,12 @@
         },
         {
             "id": "C2",
-            "title": "National Student Alliance Leads Campus Protests Against Education Reform",
+            "event": "National Student Alliance Leads Campus Protests Against Education Reform",
             "time_period": [
                 "2024-10-23",
                 "2025-01-15"
             ],
-            "themes": [
+            "topics": [
                 "Student Movements and Activism"
             ],
             "entity": [
