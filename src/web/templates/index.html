@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPT Storytale - Story Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-800 mb-2">GPT Storytale</h1>
+            <p class="text-gray-600">Generate controllable story sequences with AI</p>
+        </header>
+
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div>
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="num-tracks">
+                        Number of Tracks
+                    </label>
+                    <input type="number" id="num-tracks" min="1" max="5" value="3" 
+                           class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                </div>
+                <div>
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="num-timepoints">
+                        Number of Timepoints
+                    </label>
+                    <input type="number" id="num-timepoints" min="2" max="5" value="2"
+                           class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                </div>
+            </div>
+            <button id="generate-btn" 
+                    class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300">
+                Generate Story
+            </button>
+        </div>
+
+        <div id="loading" class="hidden text-center py-8">
+            <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto"></div>
+            <p class="mt-4 text-gray-600">Generating your story...</p>
+        </div>
+
+        <div id="story-output" class="hidden">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Generated Story</h2>
+            <div id="story-grid" class="grid gap-4">
+                <!-- Story nodes will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html> 

@@ -1,0 +1,28 @@
+2024-12-09 16:57:05,015 - src.web.app - INFO - Starting Flask application
+2024-12-09 16:57:05,065 - werkzeug - WARNING -  * Debugger is active!
+2024-12-09 16:57:05,081 - werkzeug - INFO -  * Debugger PIN: 122-189-593
+2024-12-09 16:57:14,646 - src.web.app - INFO - Generating story with 2 tracks and 2 timepoints
+2024-12-09 16:57:14,648 - src.web.app - INFO - Successfully initialized model and pipeline
+2024-12-09 16:57:15,878 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-09 16:57:17,027 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-09 16:57:18,287 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-09 16:57:19,624 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-09 16:57:19,626 - src.web.app - INFO - Successfully generated complete story
+2024-12-09 16:57:19,626 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2024 16:57:19] "POST /generate_story HTTP/1.1" 200 -
+2024-12-09 16:59:18,336 - werkzeug - INFO -  * Detected change in '/Users/songhaifan/Documents/GitHub/gpt_storytale/src/web/app.py', reloading
+2024-12-09 16:59:19,712 - src.web.app - INFO - Starting Flask application
+2024-12-09 16:59:19,769 - werkzeug - WARNING -  * Debugger is active!
+2024-12-09 16:59:19,814 - werkzeug - INFO -  * Debugger PIN: 122-189-593
+2024-12-09 16:59:36,716 - src.web.app - INFO - Homepage accessed
+2024-12-09 16:59:36,726 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2024 16:59:36] "GET / HTTP/1.1" 200 -
+2024-12-09 16:59:36,793 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2024 16:59:36] "GET /static/css/style.css HTTP/1.1" 200 -
+2024-12-09 16:59:36,800 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2024 16:59:36] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-12-09 16:59:42,004 - src.web.app - INFO - Generating story with 2 tracks and 2 timepoints
+2024-12-09 16:59:42,006 - src.web.app - INFO - Successfully initialized model and pipeline
+2024-12-09 16:59:43,388 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-09 16:59:44,515 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-09 16:59:45,933 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-09 16:59:47,279 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-09 16:59:47,282 - src.web.app - INFO - Story saved to story_2tracks_2timepoints_20241209_165947.json
+2024-12-09 16:59:47,283 - src.web.app - INFO - Successfully generated complete story
+2024-12-09 16:59:47,283 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2024 16:59:47] "POST /generate_story HTTP/1.1" 200 -
