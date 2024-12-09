@@ -7,6 +7,28 @@ document.addEventListener('DOMContentLoaded', () => {
     generateBtn.addEventListener('click', async () => {
         const numTracks = document.getElementById('num-tracks').value;
         const numTimepoints = document.getElementById('num-timepoints').value;
+        const organizingAttribute = document.getElementById('organizing-attribute').value;
+        const graphGenre = document.getElementById('graph-genre').value;
+        
+        // Get custom attributes
+        const customEntities = document.getElementById('custom-entities').value
+            .split(',')
+            .map(item => item.trim())
+            .filter(item => item.length > 0);
+        
+        const customEvents = document.getElementById('custom-events').value
+            .split(',')
+            .map(item => item.trim())
+            .filter(item => item.length > 0);
+        
+        const customTopics = document.getElementById('custom-topics').value
+            .split(',')
+            .map(item => item.trim())
+            .filter(item => item.length > 0);
+
+        // Get story style preferences
+        const cefrLevel = document.getElementById('cefr-level').value;
+        const tone = document.getElementById('tone').value;
 
         // Show loading state
         loadingDiv.classList.remove('hidden');
@@ -22,7 +44,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 body: JSON.stringify({
                     num_tracks: numTracks,
-                    num_timepoints: numTimepoints
+                    num_timepoints: numTimepoints,
+                    organizing_attribute: organizingAttribute,
+                    graph_genre: graphGenre,
+                    custom_attributes: {
+                        entities: customEntities,
+                        events: customEvents,
+                        topics: customTopics
+                    },
+                    style: {
+                        cefr_level: cefrLevel,
+                        tone: tone
+                    }
                 })
             });
 

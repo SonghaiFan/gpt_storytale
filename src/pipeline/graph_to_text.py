@@ -105,9 +105,9 @@ class GraphToTextPipeline:
             prev_node_idx = track_nodes.index(node) - 1 if node in track_nodes else -1
             prev_node = track_nodes[prev_node_idx] if prev_node_idx >= 0 else None
 
-            # Create a context-aware prompt with style preferences
-            prompt = self._create_narrative_prompt(node, prev_node, style)
+            # Create prompts
             system_prompt = self._create_system_prompt(style)
+            user_prompt = self._create_narrative_prompt(node, prev_node, style)
 
             try:
                 # Call OpenAI API with the latest client version
@@ -115,17 +115,24 @@ class GraphToTextPipeline:
                     model="gpt-3.5-turbo",
                     messages=[
                         {"role": "system", "content": system_prompt},
-                        {"role": "user", "content": prompt}
+                        {"role": "user", "content": user_prompt}
                     ],
-                    max_tokens=150,
+                    max_tokens=200,  # Increased for headline and formatting
                     temperature=0.7,
                     presence_penalty=0.3,  # Encourage diverse content
                     frequency_penalty=0.3,  # Reduce repetition
                     response_format={"type": "text"}  # Ensure text response
                 )
                 
-                # Extract the generated text from the response
-                return completion.choices[0].message.content.strip()
+                # Extract and clean the generated text
+                text = completion.choices[0].message.content.strip()
+                
+                # Ensure the text is not too long (aim for ~100 words)
+                words = text.split()
+                if len(words) > 120:  # Allow some flexibility
+                    text = ' '.join(words[:100]) + '...'
+                
+                return text
 
             except Exception as api_error:
                 raise Exception(f"OpenAI API error: {str(api_error)}")
@@ -135,50 +142,136 @@ class GraphToTextPipeline:
 
     def _create_system_prompt(self, style: dict = None) -> str:
         """Create a system prompt based on style preferences"""
-        if not style:
-            return "You are a professional storyteller creating coherent narrative sequences."
+        base_prompt = """You are a senior reporter for The New York Times, tasked with writing fictional news reports 
+        that form a coherent narrative sequence. Your writing should be:
+        - Concise and clear, using plain English
+        - Logically connected between segments with intriguing continuity
+        - Approximately 100 words per segment (1-minute read)
+        - Subtle in theme integration, avoiding explicit structural references"""
 
-        narrative_style = style.get('narrative_style', 'journalistic')
+        if not style:
+            return base_prompt
+
+        cefr_level = style.get('cefr_level', 'A1')
         tone = style.get('tone', 'neutral')
 
-        style_descriptions = {
-            'journalistic': "Write in a clear, factual style focusing on the who, what, when, where, and why.",
-            'analytical': "Present information with detailed analysis and logical connections.",
-            'descriptive': "Use rich, vivid language to paint a detailed picture of events and situations.",
-            'academic': "Write in a formal, scholarly tone with precise terminology and structured arguments."
+        cefr_guidelines = {
+            'A1': """
+            - Use very basic phrases and everyday vocabulary
+            - Write simple, short sentences
+            - Focus on concrete, familiar topics
+            - Use present tense predominantly
+            - Avoid complex grammar structures""",
+            
+            'A2': """
+            - Use basic phrases and common vocabulary
+            - Write simple but connected sentences
+            - Include some simple past tense
+            - Describe simple aspects of daily life
+            - Use basic connectors (and, but, because)""",
+            
+            'B1': """
+            - Use common everyday vocabulary
+            - Connect ideas in a simple sequence
+            - Include main tenses (present, past, future)
+            - Describe experiences and events
+            - Use common linking words effectively""",
+            
+            'B2': """
+            - Use clear, detailed language
+            - Express viewpoints and explain advantages/disadvantages
+            - Use a range of linking words
+            - Include some complex sentences
+            - Maintain good grammatical control""",
+            
+            'C1': """
+            - Use precise and natural language
+            - Express ideas fluently and spontaneously
+            - Use complex sentence structures
+            - Include idiomatic expressions where appropriate
+            - Maintain consistent grammatical control"""
         }
 
-        tone_descriptions = {
-            'neutral': "Maintain an objective and balanced perspective.",
-            'optimistic': "Emphasize positive developments and potential opportunities.",
-            'critical': "Examine challenges and potential issues with careful scrutiny.",
-            'balanced': "Present multiple perspectives while maintaining objectivity."
+        tone_guidelines = {
+            'neutral': "Report facts objectively without bias.",
+            'optimistic': "Highlight constructive developments while staying factual.",
+            'critical': "Examine issues carefully while remaining accessible.",
+            'balanced': "Present multiple viewpoints in a clear, understandable way."
         }
 
-        return f"""You are a professional storyteller specializing in {narrative_style} writing.
-{style_descriptions.get(narrative_style, '')}
-{tone_descriptions.get(tone, '')}
-Focus on creating coherent narrative sequences that maintain continuity."""
+        return f"""{base_prompt}
+{cefr_guidelines.get(cefr_level, cefr_guidelines['A1'])}
+{tone_guidelines.get(tone, tone_guidelines['neutral'])}"""
 
     def _create_narrative_prompt(self, node: Node, prev_node: Optional[Node] = None, style: dict = None) -> str:
         """Create a context-aware prompt for text generation"""
-        narrative_style = style.get('narrative_style', 'journalistic') if style else 'journalistic'
+        # Format time period
+        time_period = node.time.strftime("%B %d, %Y")
         
-        style_prompts = {
-            'journalistic': f"Write a news-style paragraph about {node.attributes.topics[0]} involving {node.attributes.entities[0]} and a {node.attributes.events[0]}.",
-            'analytical': f"Analyze the implications of a {node.attributes.events[0]} in {node.attributes.topics[0]}, focusing on {node.attributes.entities[0]}.",
-            'descriptive': f"Describe in detail how {node.attributes.entities[0]} is involved in a {node.attributes.events[0]} related to {node.attributes.topics[0]}.",
-            'academic': f"Examine the significance of {node.attributes.entities[0]}'s involvement in a {node.attributes.events[0]} within the context of {node.attributes.topics[0]}."
+        # Get node ID and track information
+        node_id = f"Node {node.track_id}"
+        
+        # Get CEFR level
+        cefr_level = style.get('cefr_level', 'A1') if style else 'A1'
+        
+        # Build the prompt template
+        prompt = f"""
+        Chapter ID: {node_id}
+        Time Period: {time_period}
+        Topic: {node.attributes.topics[0]}
+        Entity: {node.attributes.entities[0]}
+        Event: {node.attributes.events[0]}
+        Language Level: CEFR {cefr_level}
+        
+        Requirements:
+        - Write a news report that incorporates all the elements above
+        - Keep the language at CEFR {cefr_level} level
+        - Aim for approximately 100 words
+        - Make the theme strikingly prominent without explicitly stating it
+        - Include all specified entities naturally in the story
+        """
+
+        # Add previous context if available
+        if prev_node:
+            prev_time = prev_node.time.strftime("%B %d, %Y")
+            prompt += f"""
+            Previous Context:
+            Time: {prev_time}
+            Entity: {prev_node.attributes.entities[0]}
+            Event: {prev_node.attributes.events[0]}
+            
+            Ensure strong narrative continuity with the previous event while maintaining independence.
+            """
+
+        # Add CEFR-specific writing guidelines
+        cefr_writing_tips = {
+            'A1': "Use very simple sentences with basic present tense and common words.",
+            'A2': "Use simple sentences with basic past tense and everyday vocabulary.",
+            'B1': "Write clear sequences with common linking words and main tenses.",
+            'B2': "Include some complex sentences and explain relationships between ideas.",
+            'C1': "Use sophisticated language while maintaining clarity and natural flow."
         }
 
-        prompt = style_prompts.get(narrative_style, style_prompts['journalistic'])
-        prompt += "\nMaintain a professional and coherent narrative."
+        prompt += f"""
+        Writing Guidelines:
+        {cefr_writing_tips.get(cefr_level, cefr_writing_tips['A1'])}
+        Keep sentences {self._get_sentence_length_guide(cefr_level)}.
+        Use vocabulary appropriate for {cefr_level} level.
+        
+        Write a clear, engaging news report following these guidelines."""
 
-        if prev_node:
-            prompt += f"\nEnsure continuity with the previous event involving {prev_node.attributes.entities[0]}."
-
-        prompt += "\nKeep the response under 100 words while preserving key details and maintaining the specified tone."
         return prompt
+
+    def _get_sentence_length_guide(self, cefr_level: str) -> str:
+        """Get sentence length guidelines based on CEFR level"""
+        guides = {
+            'A1': "very short (5-7 words)",
+            'A2': "short (7-10 words)",
+            'B1': "moderate (10-15 words)",
+            'B2': "varied (10-20 words)",
+            'C1': "natural and varied (no strict limit)"
+        }
+        return guides.get(cefr_level, guides['A1'])
 
     def _expand_entities(self, base_entities: List[str]) -> List[str]:
         """Expand entity list with more specific examples"""

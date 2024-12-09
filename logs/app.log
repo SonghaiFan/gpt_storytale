@@ -53,3 +53,11 @@
 2024-12-09 17:15:08,431 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2024 17:15:08] "GET / HTTP/1.1" 200 -
 2024-12-09 17:15:08,500 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2024 17:15:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
 2024-12-09 17:15:08,504 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2024 17:15:08] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2024-12-09 17:19:13,737 - werkzeug - INFO -  * Detected change in '/Users/songhaifan/Documents/GitHub/gpt_storytale/src/pipeline/graph_to_text.py', reloading
+2024-12-09 17:19:15,168 - src.web.app - INFO - Starting Flask application
+2024-12-09 17:19:15,229 - werkzeug - WARNING -  * Debugger is active!
+2024-12-09 17:19:15,252 - werkzeug - INFO -  * Debugger PIN: 122-189-593
+2024-12-09 17:19:53,548 - werkzeug - INFO -  * Detected change in '/Users/songhaifan/Documents/GitHub/gpt_storytale/src/pipeline/graph_to_text.py', reloading
+2024-12-09 17:19:54,457 - src.web.app - INFO - Starting Flask application
+2024-12-09 17:19:54,499 - werkzeug - WARNING -  * Debugger is active!
+2024-12-09 17:19:54,516 - werkzeug - INFO -  * Debugger PIN: 122-189-593

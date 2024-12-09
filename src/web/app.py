@@ -7,6 +7,7 @@ import json
 import os
 import logging
 from logging.handlers import RotatingFileHandler
+from ..models.ttng import OrganizingAttribute, GraphGenre
 
 def setup_logging():
     """Set up logging configuration"""
@@ -121,20 +122,40 @@ def generate_story():
         data = request.get_json()
         num_tracks = int(data.get('num_tracks', 3))
         num_timepoints = int(data.get('num_timepoints', 2))
+        organizing_attribute = data.get('organizing_attribute', 'entity')
+        graph_genre = data.get('graph_genre', 'thread')
+        custom_attributes = data.get('custom_attributes', {})
+        style = data.get('style', {})
         
         logger.info(f"Generating story with {num_tracks} tracks and {num_timepoints} timepoints")
+        logger.info(f"Using organizing attribute: {organizing_attribute}, genre: {graph_genre}")
         
         # Initialize the model and pipeline
         try:
-            model = TTNGModel()
+            # Convert string parameters to enums
+            org_attr = OrganizingAttribute(organizing_attribute)
+            genre = GraphGenre(graph_genre)
+            
+            model = TTNGModel(genre=genre, organizing_attribute=org_attr)
             pipeline = GraphToTextPipeline(model)
-            context = pipeline.craft_narrative_context()
+            
+            # Initialize context with custom attributes if provided
+            context = pipeline.craft_narrative_context(org_attr)
+            if custom_attributes:
+                if custom_attributes.get('entities'):
+                    context['entities'].extend(custom_attributes['entities'])
+                if custom_attributes.get('events'):
+                    context['events'].extend(custom_attributes['events'])
+                if custom_attributes.get('topics'):
+                    context['topics'].extend(custom_attributes['topics'])
+            
             logger.info("Successfully initialized model and pipeline")
         except Exception as e:
             logger.error(f"Error initializing model: {str(e)}", exc_info=True)
             return jsonify({'success': False, 'error': f"Failed to initialize model: {str(e)}"})
         
-        base_time = datetime.now()
+        # Calculate time periods
+        time_periods = pipeline.calculate_time_periods(num_timepoints)
         story_data = {'nodes': [], 'edges': []}
         
         # Generate nodes for each timepoint and track
@@ -144,13 +165,21 @@ def generate_story():
                     node_id = f"t{t+1}_track{track}"
                     logger.debug(f"Generating node {node_id}")
                     
-                    # Create node context
-                    node_context = pipeline.map_attributes(node_id, context)
-                    model.add_node(node_id, base_time + timedelta(days=t), node_context, str(track))
+                    # Get previous node in the same track
+                    prev_node = None
+                    if t > 0:
+                        prev_node = f"t{t}_track{track}"
+                    
+                    # Create node context with continuity
+                    node_context = pipeline.map_attributes(node_id, context, prev_node)
+                    model.add_node(node_id, time_periods[t], node_context, str(track))
                     logger.debug(f"Added node {node_id} to model")
                     
-                    # Generate text for the node
-                    text = pipeline.generate_text(model.nodes[node_id])
+                    # Generate text for the node with style preferences
+                    text = pipeline.generate_text(
+                        model.nodes[node_id],
+                        style=style
+                    )
                     if not text:
                         raise ValueError(f"Generated text is empty for node {node_id}")
                     logger.debug(f"Generated text for node {node_id}: {text[:50]}...")
@@ -159,7 +188,12 @@ def generate_story():
                         'id': node_id,
                         'text': text,
                         'track': track,
-                        'timepoint': t+1
+                        'timepoint': t+1,
+                        'attributes': {
+                            'topics': node_context.topics,
+                            'entities': node_context.entities,
+                            'events': node_context.events
+                        }
                     })
                 except Exception as e:
                     logger.error(f"Error generating node {node_id}: {str(e)}", exc_info=True)
@@ -173,12 +207,16 @@ def generate_story():
             for track in range(1, num_tracks + 1):
                 from_node = f"t{t+1}_track{track}"
                 to_node = f"t{t+2}_track{track}"
-                model.add_edge(from_node, to_node)
-                story_data['edges'].append({
-                    'from': from_node,
-                    'to': to_node
-                })
-                logger.debug(f"Added edge from {from_node} to {to_node}")
+                try:
+                    model.add_edge(from_node, to_node)
+                    story_data['edges'].append({
+                        'from': from_node,
+                        'to': to_node
+                    })
+                    logger.debug(f"Added edge from {from_node} to {to_node}")
+                except ValueError as e:
+                    logger.warning(f"Could not add edge: {str(e)}")
+                    # Continue even if edge can't be added due to constraints
         
         # Save the generated story
         try:
