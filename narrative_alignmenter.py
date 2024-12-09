@@ -100,7 +100,7 @@ def align_theme_entity(narrative_obj, seed=None):
             entities_for_node.append(random.choice(shared_entities))
 
         alignment[node] = {
-            "Theme": node_context["theme"],
+            "Topic": node_context["theme"],
             "ThemeDescription": node_context["description"],
             "Entity": list(set(entities_for_node)),
             # Use the pre-calculated time period for the node

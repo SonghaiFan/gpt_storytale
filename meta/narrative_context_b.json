@@ -12,7 +12,7 @@
     "context": [
       {
         "symbol": "A",
-        "theme": "Advanced Robotics Techniques",
+        "Topic": "Advanced Robotics Techniques",
         "description": "An exploration of breakthroughs in robotics, focusing on advanced control techniques and their applications in various industries.",
         "time": ["2024-02-01", "2024-08-01"],
         "entities": [
@@ -32,7 +32,7 @@
       },
       {
         "symbol": "B",
-        "theme": "Techniques in Sustainable Agriculture",
+        "Topic": "Techniques in Sustainable Agriculture",
         "description": "Investigating how advanced robotics control techniques are adapted for sustainable agriculture, including precision farming and automated crop management.",
         "time": ["2024-08-02", "2024-12-31"],
         "entities": [
@@ -65,7 +65,7 @@
     "context": [
       {
         "symbol": "A",
-        "theme": "Rising Tensions",
+        "Topic": "Rising Tensions",
         "description": "The narrative begins with an escalation in geopolitical tensions between two major powers, focusing on the diplomatic exchanges, military posturing, and key figures.",
         "time": ["2024-03-01", "2024-05-15"],
         "entities": [
@@ -93,7 +93,7 @@
       },
       {
         "symbol": "B",
-        "theme": "Peace Negotiations",
+        "Topic": "Peace Negotiations",
         "description": "As tensions persist, the narrative shifts towards the efforts to broker peace negotiations between the two nations, with various internal and external challenges.",
         "time": ["2024-05-16", "2024-08-31"],
         "entities": [

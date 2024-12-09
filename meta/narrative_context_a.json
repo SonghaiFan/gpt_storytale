@@ -12,7 +12,7 @@
     "context": [
       {
         "symbol": "A",
-        "theme": "Revolution",
+        "Topic": "Revolution",
         "description": "A city's fight for independence and the challenges faced in its journey.",
         "time": ["2023-04-01", "2023-09-01"],
         "entities": [
@@ -61,7 +61,7 @@
     "context": [
       {
         "symbol": "A",
-        "theme": "Economic Boom",
+        "Topic": "Economic Boom",
         "description": "The city experiences an unprecedented economic rise but faces a sudden ecological challenge before finding a sustainable economic solution.",
         "time": ["2023-01-01", "2023-12-31"],
         "entities": [
@@ -81,7 +81,7 @@
       },
       {
         "symbol": "B",
-        "theme": "Ecological Crisis",
+        "Topic": "Ecological Crisis",
         "description": "Due to the rapid economic growth, the city faces an environmental crisis, leading to debates on the city's future.",
         "time": ["2023-06-01", "2023-09-01"],
         "entities": [
@@ -122,7 +122,7 @@
     "context": [
       {
         "symbol": "A",
-        "theme": "Tech Boom",
+        "Topic": "Tech Boom",
         "description": "A surge in technological innovations and startups in Silicon Park, leading to economic growth.",
         "time": ["2023-10-01", "2024-02-01"],
         "entities": [
@@ -138,7 +138,7 @@
       },
       {
         "symbol": "B",
-        "theme": "Economic Disparity",
+        "Topic": "Economic Disparity",
         "description": "Despite the tech boom, economic disparity rises, with the outskirts of Silicon Park facing financial challenges.",
         "time": ["2024-03-01", "2024-06-01"],
         "entities": [
@@ -158,7 +158,7 @@
       },
       {
         "symbol": "C",
-        "theme": "Social Revolution",
+        "Topic": "Social Revolution",
         "description": "The residents of Silicon Park's outskirts, led by the People's Union, rally against the inequalities, aiming for reforms.",
         "time": ["2024-07-01", "2024-12-01"],
         "entities": [
@@ -191,7 +191,7 @@
     "context": [
       {
         "symbol": "A",
-        "theme": "Election",
+        "Topic": "Election",
         "description": "The city is undergoing a heated mayoral election, where the central figure is the popular candidate, Laura Reynolds.",
         "time": ["2023-10-01", "2023-11-15"],
         "entities": [
@@ -211,7 +211,7 @@
       },
       {
         "symbol": "B",
-        "theme": "Scandal",
+        "Topic": "Scandal",
         "description": "A scandal emerges surrounding Laura Reynolds involving potential financial misconduct, leading to significant consequences for her campaign.",
         "time": ["2023-11-16", "2023-12-05"],
         "entities": [
@@ -248,7 +248,7 @@
     "context": [
       {
         "symbol": "A",
-        "theme": "Election",
+        "Topic": "Election",
         "description": "A detailed coverage of the heated mayoral election campaigns in MetroCity.",
         "time": ["2023-10-01", "2023-10-20"],
         "entities": [
@@ -276,7 +276,7 @@
       },
       {
         "symbol": "B",
-        "theme": "Scandal",
+        "Topic": "Scandal",
         "description": "Revelations about Jane Doe's involvement in a financial scam shock the city.",
         "time": ["2023-10-21", "2023-11-01"],
         "entities": [
@@ -317,7 +317,7 @@
     "context": [
       {
         "symbol": "B",
-        "theme": "Economic Downturn",
+        "Topic": "Economic Downturn",
         "description": "The financial crisis engulfs the city, leading to different effects in the technology sector and the local communities.",
         "time": ["2023-10-01", "2023-12-01"],
         "entities": [
@@ -337,7 +337,7 @@
       },
       {
         "symbol": "A",
-        "theme": "Tech Boom",
+        "Topic": "Tech Boom",
         "description": "Despite the economic crisis, tech startups experience a surge due to innovative solutions for the new economy.",
         "time": ["2023-11-01", "2024-03-01"],
         "entities": [
@@ -357,7 +357,7 @@
       },
       {
         "symbol": "C",
-        "theme": "Community Resilience",
+        "Topic": "Community Resilience",
         "description": "Local communities band together, finding grassroots solutions to face the economic hardships.",
         "time": ["2023-10-15", "2024-01-15"],
         "entities": [
@@ -390,7 +390,7 @@
     "context": [
       {
         "symbol": "A",
-        "theme": "Economic Crisis",
+        "Topic": "Economic Crisis",
         "description": "A detailed analysis of the sudden economic downturn in the city and its direct impact on local businesses.",
         "time": ["2023-10-01", "2023-12-01"],
         "entities": [
@@ -410,7 +410,7 @@
       },
       {
         "symbol": "C",
-        "theme": "Environmental Catastrophe",
+        "Topic": "Environmental Catastrophe",
         "description": "A report on the sudden flooding events and their devastation on urban infrastructure.",
         "time": ["2023-10-01", "2023-12-01"],
         "entities": [
@@ -430,7 +430,7 @@
       },
       {
         "symbol": "B",
-        "theme": "Humanitarian Aid",
+        "Topic": "Humanitarian Aid",
         "description": "How local businesses and the infrastructure department are collaborating to provide relief and aid to the affected citizens after the twin crises.",
         "time": ["2023-12-01", "2024-01-15"],
         "entities": [
@@ -475,7 +475,7 @@
     "context": [
       {
         "symbol": "A",
-        "theme": "Tech Advancement",
+        "Topic": "Tech Advancement",
         "description": "Innovations in clean energy technology revolutionize a city's infrastructure.",
         "time": ["2023-01-01", "2023-03-01"],
         "entities": [
@@ -495,7 +495,7 @@
       },
       {
         "symbol": "B",
-        "theme": "Economic Boom",
+        "Topic": "Economic Boom",
         "description": "A surge in the economy due to significant investments in clean energy startups.",
         "time": ["2023-02-01", "2023-06-01"],
         "entities": [
@@ -532,7 +532,7 @@
     "context": [
       {
         "symbol": "A",
-        "theme": "Economic Boom",
+        "Topic": "Economic Boom",
         "description": "An unexpected surge in the city's economy, primarily due to technological advancements spearheaded by the tech company, TechPulse.",
         "time": ["2023-10-01", "2024-01-01"],
         "entities": [
@@ -552,7 +552,7 @@
       },
       {
         "symbol": "B",
-        "theme": "Cultural Renaissance",
+        "Topic": "Cultural Renaissance",
         "description": "Parallel to the economic growth, Downtown District experiences a cultural rebirth, with art installations, music fests, and the involvement of historical society, Culturama.",
         "time": ["2023-10-01", "2024-03-01"],
         "entities": [

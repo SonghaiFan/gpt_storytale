@@ -12,7 +12,7 @@
     "context": [
       {
         "symbol": "A",
-        "theme": "Education Reform",
+        "Topic": "Education Reform",
         "description": "The first chapter focuses on the initiatives for reforming the education system, highlighting the challenges and proposed changes.",
         "time": ["2024-01-01", "2024-03-31"],
         "entities": [
@@ -36,7 +36,7 @@
       },
       {
         "symbol": "A",
-        "theme": "Implementation of New Policies",
+        "Topic": "Implementation of New Policies",
         "description": "The second chapter delves into the implementation of the new education policies, focusing on their impact on schools and teachers.",
         "time": ["2024-04-01", "2024-06-30"],
         "entities": [
@@ -60,7 +60,7 @@
       },
       {
         "symbol": "A",
-        "theme": "Outcomes and Reflections",
+        "Topic": "Outcomes and Reflections",
         "description": "The final chapter assesses the outcomes of the educational reforms and reflects on the future directions and challenges.",
         "time": ["2024-07-01", "2024-09-30"],
         "entities": [
@@ -97,7 +97,7 @@
     "context": [
       {
         "symbol": "A",
-        "theme": "Sports Triumph",
+        "Topic": "Sports Triumph",
         "description": "The narrative begins with a local team's unexpected success in a major tournament, bringing joy and pride to the community.",
         "time": ["2023-08-01", "2023-10-15"],
         "entities": [
@@ -117,7 +117,7 @@
       },
       {
         "symbol": "B",
-        "theme": "Sports-Related Violence",
+        "Topic": "Sports-Related Violence",
         "description": "The narrative shifts to the outbreak of violence among fans, fueled by rivalry and high emotions, leading to a citywide concern for safety.",
         "time": ["2023-09-02", "2023-09-15"],
         "entities": [
@@ -150,7 +150,7 @@
     "context": [
       {
         "symbol": "A",
-        "theme": "Film Industry Evolution",
+        "Topic": "Film Industry Evolution",
         "description": "The first chapter focuses on the evolution of the film industry, highlighting new technological advancements and their impact on filmmaking.",
         "time": ["2024-01-01", "2024-04-30"],
         "entities": [
@@ -174,7 +174,7 @@
       },
       {
         "symbol": "B",
-        "theme": "Film Industry's Economic Impact",
+        "Topic": "Film Industry's Economic Impact",
         "description": "The second chapter shifts to the economic aspects, analyzing the stock market's response to the film industry's latest technological trends.",
         "time": ["2024-05-01", "2024-08-31"],
         "entities": [
@@ -198,7 +198,7 @@
       },
       {
         "symbol": "C",
-        "theme": "Advent of AR in Filmmaking",
+        "Topic": "Advent of AR in Filmmaking",
         "description": "The final chapter discusses the integration of AR techniques in filmmaking, exploring how these technologies are reshaping the industry's future.",
         "time": ["2024-09-01", "2024-12-31"],
         "entities": [
@@ -235,7 +235,7 @@
     "context": [
       {
         "symbol": "A",
-        "theme": "Celebrity Sensational News",
+        "Topic": "Celebrity Sensational News",
         "description": "The narrative opens with a famous actor, Jordan Chase, involved in a sensational news story that captivates the public and media.",
         "time": ["2024-01-01", "2024-02-15"],
         "entities": [
@@ -255,7 +255,7 @@
       },
       {
         "symbol": "B",
-        "theme": "Film Premiere",
+        "Topic": "Film Premiere",
         "description": "Transitioning from the scandal, the focus shifts to the premiere of Jordan Chase's latest movie, 'Shadow of Fate', covering the event's preparation and public anticipation.",
         "time": ["2024-02-16", "2024-03-31"],
         "entities": [
@@ -288,7 +288,7 @@
     "context": [
       {
         "symbol": "A",
-        "theme": "Political Campaign and Aftermath",
+        "Topic": "Political Campaign and Aftermath",
         "description": "The narrative encapsulates a mayoral campaign centered on urban development , followed by the newly elected mayor's struggle to actualize these reforms amidst various obstacles.",
         "time": ["2024-02-01", "2024-07-31"],
         "entities": [
@@ -324,7 +324,7 @@
       },
       {
         "symbol": "B",
-        "theme": "Real Estate Boom",
+        "Topic": "Real Estate Boom",
         "description": "The third chapter diverges into the effects of the new policies on the real estate market, showcasing a boom in construction and new developments, along with associated challenges.",
         "time": ["2024-08-01", "2024-11-30"],
         "entities": [
@@ -361,7 +361,7 @@
     "context": [
       {
         "symbol": "A",
-        "theme": "Artistic Creation",
+        "Topic": "Artistic Creation",
         "description": "This chapter focuses on the journey of artists creating their masterpieces for a major upcoming international art exhibition.",
         "time": ["2024-01-01", "2024-03-31"],
         "entities": [
@@ -381,7 +381,7 @@
       },
       {
         "symbol": "C",
-        "theme": "Logistical Challenges",
+        "Topic": "Logistical Challenges",
         "description": "This chapter explores the logistical challenges faced by the exhibition organizers, including securing venues, managing transportation, and coordinating with artists.",
         "time": ["2024-02-01", "2024-04-30"],
         "entities": [
@@ -401,7 +401,7 @@
       },
       {
         "symbol": "B",
-        "theme": "Opening of the Art Exhibition",
+        "Topic": "Opening of the Art Exhibition",
         "description": "This chapter depicts the grand opening of the art exhibition, where the efforts of both the artists and the organizers culminate in a spectacular display of creativity and coordination.",
         "time": ["2024-05-01", "2024-05-07"],
         "entities": [
@@ -439,7 +439,7 @@
     "context": [
       {
         "symbol": "B",
-        "theme": "Automotive New Product Launch",
+        "Topic": "Automotive New Product Launch",
         "description": "The central theme revolves around the launch of a revolutionary electric vehicle by AutoInnovate, capturing global attention and setting new standards in the automotive industry.",
         "time": ["2024-01-01", "2024-03-01"],
         "entities": [
@@ -463,7 +463,7 @@
       },
       {
         "symbol": "A",
-        "theme": "Environmental Impact",
+        "Topic": "Environmental Impact",
         "description": "Following the launch, this theme explores the environmental implications of the new EV-X1, highlighting its eco-friendly technology and the company's commitment to sustainability.",
         "time": ["2024-03-02", "2024-05-01"],
         "entities": [
@@ -487,7 +487,7 @@
       },
       {
         "symbol": "C",
-        "theme": "Economic Impact",
+        "Topic": "Economic Impact",
         "description": "This theme examines the economic ripple effects of the new EV-X1, from job creation to the impact on the global automotive market and local economies.",
         "time": ["2024-03-02", "2024-06-01"],
         "entities": [
@@ -524,7 +524,7 @@
     "context": [
       {
         "symbol": "A",
-        "theme": "International Summit",
+        "Topic": "International Summit",
         "description": "The narrative covers the unfolding events of a major international summit, detailing the preparations, key discussions during the summit, and the aftermath, including global reactions and policy changes.",
         "time": ["2024-06-01", "2024-06-15"],
         "entities": [
@@ -569,7 +569,7 @@
     "context": [
       {
         "symbol": "A",
-        "theme": "Corporate Expansion",
+        "Topic": "Corporate Expansion",
         "description": "The narrative begins with a corporation, Globex, experiencing rapid growth and expansion into new markets.",
         "time": ["2023-01-01", "2023-06-30"],
         "entities": [
@@ -589,7 +589,7 @@
       },
       {
         "symbol": "B",
-        "theme": "Ethical Challenges",
+        "Topic": "Ethical Challenges",
         "description": "Globex faces ethical challenges regarding labor practices and environmental impact, leading to public outcry and a need for change.",
         "time": ["2023-07-01", "2023-09-30"],
         "entities": [
@@ -609,7 +609,7 @@
       },
       {
         "symbol": "A",
-        "theme": "Sustainable Business Practices",
+        "Topic": "Sustainable Business Practices",
         "description": "In response to the challenges, Globex adopts sustainable business practices, focusing on ethical labor and environmental stewardship.",
         "time": ["2023-10-01", "2023-12-31"],
         "entities": [
@@ -646,7 +646,7 @@
     "context": [
       {
         "symbol": "A",
-        "theme": "Underdog Victory",
+        "Topic": "Underdog Victory",
         "description": "The story begins with a small-town basketball team's unexpected victory in a regional championship, highlighting their journey, challenges, and triumph.",
         "time": ["2024-02-01", "2024-02-28"],
         "entities": [
@@ -666,7 +666,7 @@
       },
       {
         "symbol": "B",
-        "theme": "National Spotlight",
+        "Topic": "National Spotlight",
         "description": "Following their victory, the team gains national attention, leading to media coverage and increased scrutiny from the sports community.",
         "time": ["2024-03-01", "2024-03-31"],
         "entities": [
@@ -686,7 +686,7 @@
       },
       {
         "symbol": "C",
-        "theme": "Legacy and Community Impact",
+        "Topic": "Legacy and Community Impact",
         "description": "The narrative concludes by exploring the team's impact on their hometown and the legacy they've created, focusing on community involvement and the inspiration they've provided to young athletes.",
         "time": ["2024-04-01", "2024-04-30"],
         "entities": [
@@ -719,7 +719,7 @@
     "context": [
       {
         "symbol": "A",
-        "theme": "War Outbreak",
+        "Topic": "War Outbreak",
         "description": "The initial focus is on the sudden outbreak of a global war, highlighting its causes, key players, and immediate impacts.",
         "time": ["2024-07-01", "2024-09-15"],
         "entities": [
@@ -747,7 +747,7 @@
       },
       {
         "symbol": "B",
-        "theme": "Humanitarian Crisis",
+        "Topic": "Humanitarian Crisis",
         "description": "The story shifts to the humanitarian crisis resulting from the war, including refugee situations, international aid efforts, and the role of global organizations.",
         "time": ["2024-09-16", "2024-12-31"],
         "entities": [
@@ -788,7 +788,7 @@
     "context": [
       {
         "symbol": "A",
-        "theme": "Artistic Renaissance",
+        "Topic": "Artistic Renaissance",
         "description": "A renaissance in traditional arts, focusing on the revival of ancient artistic techniques in a modern city.",
         "time": ["2023-09-01", "2024-01-15"],
         "entities": [
@@ -808,7 +808,7 @@
       },
       {
         "symbol": "B",
-        "theme": "Cultural Fusion",
+        "Topic": "Cultural Fusion",
         "description": "The emergence of a new cultural movement, blending traditional art with contemporary forms, leading to both conflict and collaboration between generations of artists.",
         "time": ["2024-01-16", "2024-06-30"],
         "entities": [
@@ -845,7 +845,7 @@
     "context": [
       {
         "symbol": "B",
-        "theme": "Educational Reform",
+        "Topic": "Educational Reform",
         "description": "The introduction of significant reforms in the national education system, aiming to modernize and make education more accessible.",
         "time": ["2024-01-01", "2024-06-30"],
         "entities": [
@@ -865,7 +865,7 @@
       },
       {
         "symbol": "A",
-        "theme": "Technology in Education",
+        "Topic": "Technology in Education",
         "description": "Exploration of the role of emerging technologies in education, including e-learning platforms and virtual classrooms.",
         "time": ["2024-07-01", "2024-12-31"],
         "entities": [
@@ -885,7 +885,7 @@
       },
       {
         "symbol": "C",
-        "theme": "Student Movements and Activism",
+        "Topic": "Student Movements and Activism",
         "description": "Focus on the rise of student-led movements advocating for various social, environmental, and political causes within the educational environment.",
         "time": ["2024-08-01", "2025-01-15"],
         "entities": [
@@ -918,7 +918,7 @@
     "context": [
       {
         "symbol": "A",
-        "theme": "Film Production",
+        "Topic": "Film Production",
         "description": "The emergence of a groundbreaking film production, capturing the behind-the-scenes challenges and triumphs.",
         "time": ["2023-08-01", "2023-10-01"],
         "entities": [
@@ -938,7 +938,7 @@
       },
       {
         "symbol": "C",
-        "theme": "Music Festival",
+        "Topic": "Music Festival",
         "description": "The planning and execution of a major international music festival, showcasing diverse talents and organizational challenges.",
         "time": ["2023-06-01", "2023-08-01"],
         "entities": [
@@ -958,7 +958,7 @@
       },
       {
         "symbol": "B",
-        "theme": "Cultural Impact",
+        "Topic": "Cultural Impact",
         "description": "A focus on how both the film and the music festival influence global culture, trends, and societal values.",
         "time": ["2023-10-02", "2023-12-01"],
         "entities": [
@@ -995,7 +995,7 @@
     "context": [
       {
         "symbol": "A",
-        "theme": "Rising Tensions",
+        "Topic": "Rising Tensions",
         "description": "The narrative begins with an escalation in geopolitical tensions between two major powers, focusing on the diplomatic exchanges, military posturing, and key figures.",
         "time": ["2024-03-01", "2024-05-15"],
         "entities": [
@@ -1023,7 +1023,7 @@
       },
       {
         "symbol": "B",
-        "theme": "Peace Negotiations",
+        "Topic": "Peace Negotiations",
         "description": "As tensions persist, the narrative shifts towards the efforts to broker peace negotiations between the two nations, with various internal and external challenges.",
         "time": ["2024-05-16", "2024-08-31"],
         "entities": [
@@ -1064,7 +1064,7 @@
     "context": [
       {
         "symbol": "A",
-        "theme": "Global Spread of a New Pestilence",
+        "Topic": "Global Spread of a New Pestilence",
         "description": "Chronicles the onset and spread of a new pestilence, highlighting the efforts of global health organizations and the challenges faced by Dr. Jane Health.",
         "time": ["2024-02-01", "2024-12-31"],
         "entities": [
@@ -1084,7 +1084,7 @@
       },
       {
         "symbol": "B",
-        "theme": "Combatting Pestilence with Modern Medicine",
+        "Topic": "Combatting Pestilence with Modern Medicine",
         "description": "Explores the adaptation of advanced medical techniques and technologies to combat the pestilence, focusing on the work of Dr. Jane Health and her team.",
         "time": ["2024-08-02", "2024-12-31"],
         "entities": [

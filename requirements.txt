@@ -1,3 +1,5 @@
 # requirements.txt for GPT Storytale
 langchain
 python-dotenv
+openai>=1.0.0
+pytest>=7.0.0
