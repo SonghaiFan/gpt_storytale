@@ -1,0 +1,8 @@
+2024-12-09 17:41:18,899 - src.web.app - ERROR - Error visualizing graph: Edges must follow temporal order
+Traceback (most recent call last):
+  File "/Users/songhaifan/Documents/GitHub/gpt_storytale/src/web/app.py", line 266, in visualize_graph
+    model.add_edge(edge['from'], edge['to'])
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/songhaifan/Documents/GitHub/gpt_storytale/src/models/ttng.py", line 62, in add_edge
+    raise ValueError("Edges must follow temporal order")
+ValueError: Edges must follow temporal order

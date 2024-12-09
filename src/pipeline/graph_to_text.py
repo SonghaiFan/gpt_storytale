@@ -6,6 +6,9 @@ import os
 from dotenv import load_dotenv
 from datetime import datetime, timedelta
 import random
+import networkx as nx
+import matplotlib.pyplot as plt
+import json
 
 class GraphToTextPipeline:
     """Pipeline for generating narrative text from TTNG following the paper's architecture"""
@@ -95,6 +98,140 @@ class GraphToTextPipeline:
             events=events,
             topics=topics
         )
+
+    def visualize_story_graph(self, output_path: str = None, show: bool = True) -> None:
+        """
+        Visualize the story graph structure using NetworkX and Matplotlib.
+        
+        Args:
+            output_path: Optional path to save the visualization
+            show: Whether to display the graph interactively
+        """
+        # Create a new directed graph
+        G = nx.DiGraph()
+        
+        # Add nodes with attributes
+        for node_id, node in self.model.nodes.items():
+            # Create label with key information
+            label = f"Track {node.track_id}\n{node.time.strftime('%Y-%m-%d')}\n"
+            label += f"Topic: {node.attributes.topics[0]}\n"
+            label += f"Entity: {node.attributes.entities[0]}"
+            
+            # Add node with attributes
+            G.add_node(node_id, 
+                      label=label,
+                      track=int(node.track_id),
+                      time=node.time)
+
+        # Add edges
+        for edge in self.model.edges:
+            G.add_edge(edge[0], edge[1])
+
+        # Create the plot
+        plt.figure(figsize=(15, 10))
+        
+        # Calculate node positions using a custom layout
+        pos = self._calculate_node_positions(G)
+        
+        # Draw nodes
+        nx.draw_networkx_nodes(G, pos,
+                             node_color='lightblue',
+                             node_size=2000,
+                             alpha=0.7)
+        
+        # Draw edges with arrows
+        nx.draw_networkx_edges(G, pos,
+                             edge_color='gray',
+                             arrows=True,
+                             arrowsize=20)
+        
+        # Add labels
+        labels = nx.get_node_attributes(G, 'label')
+        nx.draw_networkx_labels(G, pos, labels,
+                              font_size=8,
+                              font_family='sans-serif')
+        
+        # Set title and remove axes
+        plt.title("Story Graph Structure", pad=20, size=16)
+        plt.axis('off')
+        
+        # Save if output path is provided
+        if output_path:
+            plt.savefig(output_path, bbox_inches='tight', dpi=300)
+        
+        # Show if requested
+        if show:
+            plt.show()
+        else:
+            plt.close()
+
+    def _calculate_node_positions(self, G: nx.DiGraph) -> Dict:
+        """
+        Calculate node positions for visualization based on tracks and time.
+        """
+        pos = {}
+        track_nodes = {}
+        
+        # Group nodes by track
+        for node in G.nodes():
+            track = G.nodes[node]['track']
+            if track not in track_nodes:
+                track_nodes[track] = []
+            track_nodes[track].append(node)
+        
+        # Calculate positions
+        num_tracks = len(track_nodes)
+        for track, nodes in track_nodes.items():
+            # Sort nodes by time
+            nodes.sort(key=lambda x: G.nodes[x]['time'])
+            
+            # Calculate y position (track)
+            y = (track - 1) * 2  # Space tracks vertically
+            
+            # Calculate x positions (time)
+            for i, node in enumerate(nodes):
+                x = i * 3  # Space nodes horizontally
+                pos[node] = (x, y)
+        
+        return pos
+
+    def export_graph_data(self, output_path: str) -> None:
+        """
+        Export the graph data as JSON for external visualization.
+        
+        Args:
+            output_path: Path to save the JSON file
+        """
+        graph_data = {
+            'nodes': [],
+            'edges': []
+        }
+        
+        # Add nodes with attributes
+        for node_id, node in self.model.nodes.items():
+            node_data = {
+                'id': node_id,
+                'track': node.track_id,
+                'time': node.time.isoformat(),
+                'attributes': {
+                    'topics': node.attributes.topics,
+                    'entities': node.attributes.entities,
+                    'events': node.attributes.events
+                }
+            }
+            graph_data['nodes'].append(node_data)
+        
+        # Add edges
+        for edge in self.model.edges:
+            edge_data = {
+                'source': edge[0],
+                'target': edge[1]
+            }
+            graph_data['edges'].append(edge_data)
+        
+        # Save to file
+        with open(output_path, 'w', encoding='utf-8') as f:
+            json.dump(graph_data, f, indent=2)
 
     def generate_text(self, node: Node, style: dict = None) -> str:
         """Component 3: Writer - Generate coherent narrative text"""

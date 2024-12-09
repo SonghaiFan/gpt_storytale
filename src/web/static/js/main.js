@@ -1,8 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     const generateBtn = document.getElementById('generate-btn');
     const loadingDiv = document.getElementById('loading');
-    const storyOutput = document.getElementById('story-output');
-    const storyGrid = document.getElementById('story-grid');
+    const storyOutput = document.getElementById('storyOutput');
+    const storyGrid = document.getElementById('storyGrid');
+    
+    let currentStoryFile = null;
 
     generateBtn.addEventListener('click', async () => {
         const numTracks = document.getElementById('num-tracks').value;
@@ -76,7 +78,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function displayStory(story) {
+        currentStoryFile = story.saved_file;
         storyGrid.innerHTML = '';
+        storyOutput.classList.remove('hidden');
         const tracks = {};
 
         // Group nodes by track
@@ -157,7 +161,5 @@ document.addEventListener('DOMContentLoaded', () => {
             saveInfo.textContent = `Story saved as: ${story.saved_file}`;
             storyGrid.appendChild(saveInfo);
         }
-
-        storyOutput.classList.remove('hidden');
     }
 }); 

@@ -1,13 +1,11 @@
 from flask import Flask, render_template, request, jsonify
-from ..models.ttng import TTNGModel
-from ..models.narrative_context import NarrativeContext
+from ..models.ttng import TTNGModel, OrganizingAttribute, GraphGenre
 from ..pipeline.graph_to_text import GraphToTextPipeline
-from datetime import datetime, timedelta
-import json
-import os
 import logging
+import os
+import json
+from datetime import datetime
 from logging.handlers import RotatingFileHandler
-from ..models.ttng import OrganizingAttribute, GraphGenre
 
 def setup_logging():
     """Set up logging configuration"""

@@ -1,1 +1,7 @@
 .env
+logs/
+stories/
+__pycache__/
+*.pyc
+.DS_Store
+venv/

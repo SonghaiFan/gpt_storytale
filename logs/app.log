@@ -99,3 +99,118 @@
 2024-12-09 17:23:31,229 - src.web.app - INFO - Story saved to story_3tracks_2timepoints_20241209_172331.json
 2024-12-09 17:23:31,229 - src.web.app - INFO - Successfully generated complete story
 2024-12-09 17:23:31,230 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2024 17:23:31] "POST /generate_story HTTP/1.1" 200 -
+2024-12-09 17:31:01,910 - werkzeug - INFO -  * Detected change in '/Users/songhaifan/Documents/GitHub/gpt_storytale/src/visualization/graph_visualizer.py', reloading
+2024-12-09 17:31:03,073 - src.web.app - INFO - Starting Flask application
+2024-12-09 17:31:03,126 - werkzeug - WARNING -  * Debugger is active!
+2024-12-09 17:31:03,145 - werkzeug - INFO -  * Debugger PIN: 122-189-593
+2024-12-09 17:32:40,862 - werkzeug - INFO -  * Detected change in '/Users/songhaifan/Documents/GitHub/gpt_storytale/src/pipeline/graph_to_text.py', reloading
+2024-12-09 17:35:05,074 - src.web.app - INFO - Starting Flask application
+2024-12-09 17:35:09,400 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-09 17:35:09,400 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-12-09 17:35:09,402 - werkzeug - INFO -  * Restarting with stat
+2024-12-09 17:35:11,320 - src.web.app - INFO - Starting Flask application
+2024-12-09 17:35:11,393 - werkzeug - WARNING -  * Debugger is active!
+2024-12-09 17:35:11,426 - werkzeug - INFO -  * Debugger PIN: 717-597-659
+2024-12-09 17:35:13,292 - src.web.app - INFO - Homepage accessed
+2024-12-09 17:35:13,308 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2024 17:35:13] "GET / HTTP/1.1" 200 -
+2024-12-09 17:35:13,377 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2024 17:35:13] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2024-12-09 17:35:13,385 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2024 17:35:13] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-12-09 17:35:18,824 - src.web.app - INFO - Generating story with 3 tracks and 2 timepoints
+2024-12-09 17:35:18,824 - src.web.app - INFO - Using organizing attribute: entity, genre: thread
+2024-12-09 17:35:18,899 - src.web.app - INFO - Successfully initialized model and pipeline
+2024-12-09 17:35:20,264 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-09 17:35:21,286 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-09 17:35:22,391 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-09 17:35:23,510 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-09 17:35:24,682 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-09 17:35:25,895 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-09 17:35:25,898 - src.web.app - INFO - Story saved to story_3tracks_2timepoints_20241209_173525.json
+2024-12-09 17:35:25,898 - src.web.app - INFO - Successfully generated complete story
+2024-12-09 17:35:25,899 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2024 17:35:25] "POST /generate_story HTTP/1.1" 200 -
+2024-12-09 17:37:36,482 - werkzeug - INFO -  * Detected change in '/Users/songhaifan/Documents/GitHub/gpt_storytale/src/web/app.py', reloading
+2024-12-09 17:37:36,712 - werkzeug - INFO -  * Restarting with stat
+2024-12-09 17:37:38,687 - src.web.app - INFO - Starting Flask application
+2024-12-09 17:37:38,757 - werkzeug - WARNING -  * Debugger is active!
+2024-12-09 17:37:38,794 - werkzeug - INFO -  * Debugger PIN: 717-597-659
+2024-12-09 17:37:43,285 - src.web.app - INFO - Homepage accessed
+2024-12-09 17:37:43,296 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2024 17:37:43] "GET / HTTP/1.1" 200 -
+2024-12-09 17:37:43,349 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2024 17:37:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-12-09 17:37:43,351 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2024 17:37:43] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-12-09 17:37:46,237 - src.web.app - INFO - Homepage accessed
+2024-12-09 17:37:46,238 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2024 17:37:46] "GET / HTTP/1.1" 200 -
+2024-12-09 17:37:46,270 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2024 17:37:46] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-12-09 17:37:46,270 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2024 17:37:46] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2024-12-09 17:37:53,234 - src.web.app - INFO - Homepage accessed
+2024-12-09 17:37:53,234 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2024 17:37:53] "GET / HTTP/1.1" 200 -
+2024-12-09 17:37:53,268 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2024 17:37:53] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2024-12-09 17:37:53,268 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2024 17:37:53] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-12-09 17:39:32,044 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2024 17:39:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-12-09 17:40:57,725 - src.web.app - INFO - Homepage accessed
+2024-12-09 17:40:57,727 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2024 17:40:57] "GET / HTTP/1.1" 200 -
+2024-12-09 17:40:57,783 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2024 17:40:57] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-12-09 17:40:57,801 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2024 17:40:57] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-12-09 17:41:06,421 - src.web.app - INFO - Homepage accessed
+2024-12-09 17:41:06,422 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2024 17:41:06] "GET / HTTP/1.1" 200 -
+2024-12-09 17:41:06,469 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2024 17:41:06] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-12-09 17:41:06,470 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2024 17:41:06] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2024-12-09 17:41:13,341 - src.web.app - INFO - Generating story with 1 tracks and 2 timepoints
+2024-12-09 17:41:13,342 - src.web.app - INFO - Using organizing attribute: entity, genre: thread
+2024-12-09 17:41:13,431 - src.web.app - INFO - Successfully initialized model and pipeline
+2024-12-09 17:41:14,791 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-09 17:41:16,004 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-09 17:41:16,007 - src.web.app - INFO - Story saved to story_1tracks_2timepoints_20241209_174116.json
+2024-12-09 17:41:16,007 - src.web.app - INFO - Successfully generated complete story
+2024-12-09 17:41:16,008 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2024 17:41:16] "POST /generate_story HTTP/1.1" 200 -
+2024-12-09 17:41:18,899 - src.web.app - ERROR - Error visualizing graph: Edges must follow temporal order
+Traceback (most recent call last):
+  File "/Users/songhaifan/Documents/GitHub/gpt_storytale/src/web/app.py", line 266, in visualize_graph
+    model.add_edge(edge['from'], edge['to'])
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/songhaifan/Documents/GitHub/gpt_storytale/src/models/ttng.py", line 62, in add_edge
+    raise ValueError("Edges must follow temporal order")
+ValueError: Edges must follow temporal order
+2024-12-09 17:41:18,903 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2024 17:41:18] "GET /visualize_graph/story_1tracks_2timepoints_20241209_174116.json HTTP/1.1" 200 -
+2024-12-09 17:44:35,969 - werkzeug - INFO -  * Detected change in '/Users/songhaifan/Documents/GitHub/gpt_storytale/src/web/app.py', reloading
+2024-12-09 17:44:36,253 - werkzeug - INFO -  * Restarting with stat
+2024-12-09 17:44:38,238 - src.web.app - INFO - Starting Flask application
+2024-12-09 17:44:38,292 - werkzeug - WARNING -  * Debugger is active!
+2024-12-09 17:44:38,315 - werkzeug - INFO -  * Debugger PIN: 717-597-659
+2024-12-09 17:44:41,934 - src.web.app - WARNING - Could not add edge {'from': 't1_track1', 'to': 't2_track1'}: Edges must follow temporal order
+2024-12-09 17:45:33,044 - src.web.app - INFO - Starting Flask application
+2024-12-09 17:45:33,104 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-09 17:45:33,104 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-12-09 17:45:33,105 - werkzeug - INFO -  * Restarting with stat
+2024-12-09 17:45:34,251 - src.web.app - INFO - Starting Flask application
+2024-12-09 17:45:34,295 - werkzeug - WARNING -  * Debugger is active!
+2024-12-09 17:45:34,314 - werkzeug - INFO -  * Debugger PIN: 717-597-659
+2024-12-09 17:48:59,222 - werkzeug - INFO -  * Detected change in '/Users/songhaifan/Documents/GitHub/gpt_storytale/src/web/app.py', reloading
+2024-12-09 17:48:59,417 - werkzeug - INFO -  * Restarting with stat
+2024-12-09 17:49:01,048 - src.web.app - INFO - Starting Flask application
+2024-12-09 17:49:01,103 - werkzeug - WARNING -  * Debugger is active!
+2024-12-09 17:49:01,123 - werkzeug - INFO -  * Debugger PIN: 717-597-659
+2024-12-09 17:49:38,043 - src.web.app - INFO - Starting Flask application
+2024-12-09 17:49:38,093 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-09 17:49:38,093 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-12-09 17:49:38,094 - werkzeug - INFO -  * Restarting with stat
+2024-12-09 17:49:39,379 - src.web.app - INFO - Starting Flask application
+2024-12-09 17:49:39,423 - werkzeug - WARNING -  * Debugger is active!
+2024-12-09 17:49:39,443 - werkzeug - INFO -  * Debugger PIN: 717-597-659
+2024-12-09 17:49:45,209 - src.web.app - INFO - Homepage accessed
+2024-12-09 17:49:45,232 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2024 17:49:45] "GET / HTTP/1.1" 200 -
+2024-12-09 17:49:45,361 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2024 17:49:45] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-12-09 17:49:45,370 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2024 17:49:45] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-12-09 17:49:49,451 - src.web.app - INFO - Generating story with 3 tracks and 2 timepoints
+2024-12-09 17:49:49,451 - src.web.app - INFO - Using organizing attribute: entity, genre: thread
+2024-12-09 17:49:49,527 - src.web.app - INFO - Successfully initialized model and pipeline
+2024-12-09 17:49:50,946 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-09 17:49:52,367 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-09 17:49:54,265 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-09 17:49:55,508 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-09 17:49:56,928 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-09 17:49:58,194 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-09 17:49:58,197 - src.web.app - INFO - Story saved to story_3tracks_2timepoints_20241209_174958.json
+2024-12-09 17:49:58,197 - src.web.app - INFO - Successfully generated complete story
+2024-12-09 17:49:58,198 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2024 17:49:58] "POST /generate_story HTTP/1.1" 200 -
