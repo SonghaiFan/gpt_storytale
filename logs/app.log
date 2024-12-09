@@ -61,3 +61,41 @@
 2024-12-09 17:19:54,457 - src.web.app - INFO - Starting Flask application
 2024-12-09 17:19:54,499 - werkzeug - WARNING -  * Debugger is active!
 2024-12-09 17:19:54,516 - werkzeug - INFO -  * Debugger PIN: 122-189-593
+2024-12-09 17:20:24,625 - src.web.app - INFO - Homepage accessed
+2024-12-09 17:20:24,640 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2024 17:20:24] "GET / HTTP/1.1" 200 -
+2024-12-09 17:20:24,741 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2024 17:20:24] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-12-09 17:20:24,746 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2024 17:20:24] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-12-09 17:20:27,336 - src.web.app - INFO - Homepage accessed
+2024-12-09 17:20:27,337 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2024 17:20:27] "GET / HTTP/1.1" 200 -
+2024-12-09 17:20:27,380 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2024 17:20:27] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-12-09 17:20:27,386 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2024 17:20:27] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2024-12-09 17:20:47,760 - src.web.app - INFO - Generating story with 2 tracks and 2 timepoints
+2024-12-09 17:20:47,760 - src.web.app - INFO - Using organizing attribute: entity, genre: thread
+2024-12-09 17:20:47,794 - src.web.app - INFO - Successfully initialized model and pipeline
+2024-12-09 17:20:48,402 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-09 17:20:49,206 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-09 17:20:50,059 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-09 17:20:50,823 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-09 17:20:50,828 - src.web.app - INFO - Story saved to story_2tracks_2timepoints_20241209_172050.json
+2024-12-09 17:20:50,828 - src.web.app - INFO - Successfully generated complete story
+2024-12-09 17:20:50,829 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2024 17:20:50] "POST /generate_story HTTP/1.1" 200 -
+2024-12-09 17:23:19,186 - werkzeug - INFO -  * Detected change in '/Users/songhaifan/Documents/GitHub/gpt_storytale/src/pipeline/graph_to_text.py', reloading
+2024-12-09 17:23:20,455 - src.web.app - INFO - Starting Flask application
+2024-12-09 17:23:20,508 - werkzeug - WARNING -  * Debugger is active!
+2024-12-09 17:23:20,526 - werkzeug - INFO -  * Debugger PIN: 122-189-593
+2024-12-09 17:23:21,278 - src.web.app - INFO - Homepage accessed
+2024-12-09 17:23:21,290 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2024 17:23:21] "GET / HTTP/1.1" 200 -
+2024-12-09 17:23:21,351 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2024 17:23:21] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-12-09 17:23:21,356 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2024 17:23:21] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2024-12-09 17:23:24,706 - src.web.app - INFO - Generating story with 3 tracks and 2 timepoints
+2024-12-09 17:23:24,707 - src.web.app - INFO - Using organizing attribute: entity, genre: thread
+2024-12-09 17:23:24,736 - src.web.app - INFO - Successfully initialized model and pipeline
+2024-12-09 17:23:25,852 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-09 17:23:27,218 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-09 17:23:28,181 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-09 17:23:29,258 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-09 17:23:30,312 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-09 17:23:31,225 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-09 17:23:31,229 - src.web.app - INFO - Story saved to story_3tracks_2timepoints_20241209_172331.json
+2024-12-09 17:23:31,229 - src.web.app - INFO - Successfully generated complete story
+2024-12-09 17:23:31,230 - werkzeug - INFO - 127.0.0.1 - - [09/Dec/2024 17:23:31] "POST /generate_story HTTP/1.1" 200 -

@@ -142,12 +142,22 @@ class GraphToTextPipeline:
 
     def _create_system_prompt(self, style: dict = None) -> str:
         """Create a system prompt based on style preferences"""
-        base_prompt = """You are a senior reporter for The New York Times, tasked with writing fictional news reports 
-        that form a coherent narrative sequence. Your writing should be:
-        - Concise and clear, using plain English
-        - Logically connected between segments with intriguing continuity
-        - Approximately 100 words per segment (1-minute read)
-        - Subtle in theme integration, avoiding explicit structural references"""
+        base_prompt = """You are a senior hard news reporter for The New York Times, specializing in factual, 
+        objective reporting of significant events. Your writing should follow these principles:
+        - Use the inverted pyramid structure (most important information first)
+        - Focus on facts, figures, and verifiable information
+        - Maintain strict objectivity and journalistic neutrality
+        - Emphasize the impact and significance of events
+        - Connect local events to broader regional or global implications
+        - Use authoritative and precise language
+        - Follow AP style guidelines for news writing
+        
+        Key elements to include:
+        - Strong, factual lead paragraph answering who, what, when, where, why, and how
+        - Clear attribution of information
+        - Relevant context and background
+        - Impact on stakeholders and broader community
+        - Direct quotes or statements (when available)"""
 
         if not style:
             return base_prompt
@@ -157,46 +167,51 @@ class GraphToTextPipeline:
 
         cefr_guidelines = {
             'A1': """
-            - Use very basic phrases and everyday vocabulary
-            - Write simple, short sentences
-            - Focus on concrete, familiar topics
-            - Use present tense predominantly
-            - Avoid complex grammar structures""",
+            While maintaining hard news standards:
+            - Use basic subject-verb-object sentence structure
+            - Stick to present tense and simple past tense
+            - Use high-frequency words and basic news vocabulary
+            - Keep sentences very short and direct
+            - Focus on concrete, observable facts""",
             
             'A2': """
-            - Use basic phrases and common vocabulary
-            - Write simple but connected sentences
-            - Include some simple past tense
-            - Describe simple aspects of daily life
-            - Use basic connectors (and, but, because)""",
+            While maintaining hard news standards:
+            - Use simple but varied sentence structures
+            - Include basic time expressions and sequences
+            - Expand vocabulary with common news terms
+            - Connect ideas with basic conjunctions
+            - Introduce simple supporting details""",
             
             'B1': """
-            - Use common everyday vocabulary
-            - Connect ideas in a simple sequence
-            - Include main tenses (present, past, future)
-            - Describe experiences and events
-            - Use common linking words effectively""",
+            While maintaining hard news standards:
+            - Use clear chronological sequences
+            - Include cause and effect relationships
+            - Expand news-specific vocabulary
+            - Add relevant statistical information
+            - Provide broader context with simple explanations""",
             
             'B2': """
-            - Use clear, detailed language
-            - Express viewpoints and explain advantages/disadvantages
-            - Use a range of linking words
-            - Include some complex sentences
-            - Maintain good grammatical control""",
+            While maintaining hard news standards:
+            - Include multiple perspectives and sources
+            - Use more sophisticated news terminology
+            - Add detailed background information
+            - Explain complex relationships between events
+            - Incorporate relevant data and analysis""",
             
             'C1': """
-            - Use precise and natural language
-            - Express ideas fluently and spontaneously
-            - Use complex sentence structures
-            - Include idiomatic expressions where appropriate
-            - Maintain consistent grammatical control"""
+            While maintaining hard news standards:
+            - Use full range of journalistic techniques
+            - Include nuanced analysis and context
+            - Handle complex political/economic concepts
+            - Maintain sophisticated news register
+            - Provide comprehensive background and implications"""
         }
 
         tone_guidelines = {
-            'neutral': "Report facts objectively without bias.",
-            'optimistic': "Highlight constructive developments while staying factual.",
-            'critical': "Examine issues carefully while remaining accessible.",
-            'balanced': "Present multiple viewpoints in a clear, understandable way."
+            'neutral': "Maintain strict journalistic objectivity, focusing solely on verifiable facts.",
+            'optimistic': "While maintaining objectivity, include relevant positive developments and constructive responses.",
+            'critical': "Maintain objectivity while thoroughly examining challenges and potential issues.",
+            'balanced': "Present multiple perspectives with equal weight, supported by concrete evidence."
         }
 
         return f"""{base_prompt}
@@ -216,49 +231,109 @@ class GraphToTextPipeline:
         
         # Build the prompt template
         prompt = f"""
-        Chapter ID: {node_id}
-        Time Period: {time_period}
-        Topic: {node.attributes.topics[0]}
-        Entity: {node.attributes.entities[0]}
-        Event: {node.attributes.events[0]}
+        Write a hard news article with the following specifications:
+
+        KEY INFORMATION:
+        Date: {time_period}
+        Primary Topic: {node.attributes.topics[0]}
+        Key Entity: {node.attributes.entities[0]}
+        Main Event: {node.attributes.events[0]}
         Language Level: CEFR {cefr_level}
-        
-        Requirements:
-        - Write a news report that incorporates all the elements above
-        - Keep the language at CEFR {cefr_level} level
-        - Aim for approximately 100 words
-        - Make the theme strikingly prominent without explicitly stating it
-        - Include all specified entities naturally in the story
+
+        STRUCTURAL REQUIREMENTS:
+        1. Lead Paragraph:
+           - Start with a strong news lead (first 35 words)
+           - Answer who, what, when, where, why, and how
+           - Emphasize the most newsworthy aspect
+
+        2. Supporting Paragraphs:
+           - Follow inverted pyramid structure
+           - Include relevant context and background
+           - Connect to broader implications
+           - Maintain clear attribution
+
+        3. Language Requirements:
+           - Use appropriate CEFR {cefr_level} vocabulary and grammar
+           - Maintain professional news register
+           - Follow AP style guidelines
+           - Keep total length around 100 words
+
+        4. Focus Areas:
+           - Emphasize factual reporting
+           - Include relevant data or statistics
+           - Connect local impact to broader significance
+           - Maintain strict journalistic objectivity
         """
 
         # Add previous context if available
         if prev_node:
             prev_time = prev_node.time.strftime("%B %d, %Y")
             prompt += f"""
-            Previous Context:
-            Time: {prev_time}
-            Entity: {prev_node.attributes.entities[0]}
-            Event: {prev_node.attributes.events[0]}
+            PREVIOUS COVERAGE:
+            Date: {prev_time}
+            Related Entity: {prev_node.attributes.entities[0]}
+            Previous Event: {prev_node.attributes.events[0]}
             
-            Ensure strong narrative continuity with the previous event while maintaining independence.
+            Requirements for Continuity:
+            - Reference relevant background from previous coverage
+            - Show development of the ongoing story
+            - Maintain clear chronological progression
+            - Connect current events to previous developments
             """
 
         # Add CEFR-specific writing guidelines
         cefr_writing_tips = {
-            'A1': "Use very simple sentences with basic present tense and common words.",
-            'A2': "Use simple sentences with basic past tense and everyday vocabulary.",
-            'B1': "Write clear sequences with common linking words and main tenses.",
-            'B2': "Include some complex sentences and explain relationships between ideas.",
-            'C1': "Use sophisticated language while maintaining clarity and natural flow."
+            'A1': """
+            Writing Guidelines:
+            - Use simple present and past tense
+            - Focus on basic factual statements
+            - Keep sentences very short (5-7 words)
+            - Use only the most common news vocabulary
+            - Avoid complex explanations""",
+            
+            'A2': """
+            Writing Guidelines:
+            - Use simple but clear sentence structures
+            - Include basic time expressions
+            - Keep sentences short (7-10 words)
+            - Use common journalistic phrases
+            - Add simple supporting details""",
+            
+            'B1': """
+            Writing Guidelines:
+            - Use clear chronological markers
+            - Include cause and effect relationships
+            - Write moderate length sentences (10-15 words)
+            - Use standard news terminology
+            - Add relevant context""",
+            
+            'B2': """
+            Writing Guidelines:
+            - Use varied sentence structures
+            - Include multiple perspectives
+            - Write varied length sentences (10-20 words)
+            - Use professional news vocabulary
+            - Add detailed background""",
+            
+            'C1': """
+            Writing Guidelines:
+            - Use sophisticated news writing techniques
+            - Include nuanced analysis
+            - Write natural length sentences
+            - Use advanced journalistic vocabulary
+            - Provide comprehensive context"""
         }
 
         prompt += f"""
-        Writing Guidelines:
         {cefr_writing_tips.get(cefr_level, cefr_writing_tips['A1'])}
-        Keep sentences {self._get_sentence_length_guide(cefr_level)}.
-        Use vocabulary appropriate for {cefr_level} level.
-        
-        Write a clear, engaging news report following these guidelines."""
+
+        FINAL CHECKS:
+        - Verify all facts are clearly stated
+        - Ensure objective tone throughout
+        - Maintain professional news style
+        - Follow specified language level guidelines
+        - Keep focus on hard news reporting
+        """
 
         return prompt
 

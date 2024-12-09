@@ -1,0 +1,121 @@
+{
+  "metadata": {
+    "generated_at": "20241209_172050",
+    "num_tracks": 2,
+    "num_timepoints": 2,
+    "available_attributes": {
+      "topics": [
+        "Technology",
+        "Politics",
+        "Environment",
+        "Business",
+        "Healthcare",
+        "Education",
+        "Science"
+      ],
+      "events": [
+        "Product Launch",
+        "Policy Change",
+        "Natural Disaster",
+        "Merger",
+        "Research Breakthrough",
+        "Market Shift"
+      ],
+      "entities": [
+        "Tech Startups",
+        "Fortune 500 Companies",
+        "Small Businesses",
+        "World Leaders",
+        "Local Officials",
+        "Policy Makers",
+        "Organizations",
+        "Researchers",
+        "Institutions",
+        "Communities",
+        "Products"
+      ]
+    }
+  },
+  "story": {
+    "nodes": [
+      {
+        "id": "t1_track1",
+        "text": "Fortune 500 companies support new policy. Impact on politics expected.",
+        "track": 1,
+        "timepoint": 1,
+        "attributes": {
+          "topics": [
+            "Politics"
+          ],
+          "entities": [
+            "Fortune 500 Companies"
+          ],
+          "events": [
+            "Policy Change"
+          ]
+        }
+      },
+      {
+        "id": "t1_track2",
+        "text": "In a small town, a storm hits. Small businesses close. Nature causes damage. People work together. They clean up debris. Small shops reopen slowly. Community support is strong. Nature's impact felt deeply.",
+        "track": 2,
+        "timepoint": 1,
+        "attributes": {
+          "topics": [
+            "Environment"
+          ],
+          "entities": [
+            "Small Businesses"
+          ],
+          "events": [
+            "Natural Disaster"
+          ]
+        }
+      },
+      {
+        "id": "t2_track1",
+        "text": "Yesterday, Fortune 500 companies announced policy changes. Today, a natural disaster affects technology. Major firms face disruptions. Networks go down. Employees struggle to work. Challenges ahead for big businesses. How will they adapt? Stay tuned for updates.",
+        "track": 1,
+        "timepoint": 2,
+        "attributes": {
+          "topics": [
+            "Technology"
+          ],
+          "entities": [
+            "Fortune 500 Companies"
+          ],
+          "events": [
+            "Natural Disaster"
+          ]
+        }
+      },
+      {
+        "id": "t2_track2",
+        "text": "Small businesses face challenges after disaster. Today, hope arises from education. Research finds new solutions for them. Small businesses may benefit from this. Education offers paths to recovery. Researchers share breakthrough findings. This news brings optimism for many.",
+        "track": 2,
+        "timepoint": 2,
+        "attributes": {
+          "topics": [
+            "Education"
+          ],
+          "entities": [
+            "Small Businesses"
+          ],
+          "events": [
+            "Research Breakthrough"
+          ]
+        }
+      }
+    ],
+    "edges": [
+      {
+        "from": "t1_track1",
+        "to": "t2_track1"
+      },
+      {
+        "from": "t1_track2",
+        "to": "t2_track2"
+      }
+    ]
+  }
+}
