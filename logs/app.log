@@ -647,3 +647,16 @@ IndexError: list index out of range
 2024-12-10 15:35:21,582 - src.web.app - INFO - Starting Flask application
 2024-12-10 15:35:21,636 - werkzeug - WARNING -  * Debugger is active!
 2024-12-10 15:35:21,659 - werkzeug - INFO -  * Debugger PIN: 717-597-659
+2024-12-10 22:54:14,372 - src.web.app - INFO - Starting Flask application
+2024-12-10 22:54:14,444 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-10 22:54:14,445 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-12-10 22:54:14,446 - werkzeug - INFO -  * Restarting with stat
+2024-12-10 22:54:15,016 - src.web.app - INFO - Starting Flask application
+2024-12-10 22:54:15,057 - werkzeug - WARNING -  * Debugger is active!
+2024-12-10 22:54:15,076 - werkzeug - INFO -  * Debugger PIN: 717-597-659
+2024-12-10 22:54:22,298 - src.web.app - INFO - Homepage accessed
+2024-12-10 22:54:22,320 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 22:54:22] "GET / HTTP/1.1" 200 -
+2024-12-10 22:54:22,393 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 22:54:22] "GET /static/css/style.css HTTP/1.1" 200 -
+2024-12-10 22:54:22,405 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 22:54:22] "GET /static/js/graph_visualizer.js HTTP/1.1" 200 -
+2024-12-10 22:54:22,407 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 22:54:22] "GET /static/js/main.js HTTP/1.1" 200 -

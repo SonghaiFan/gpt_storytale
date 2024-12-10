@@ -11,7 +11,6 @@ from .components import (
     StyleConfig,
     NarrativeContextManager,
     PromptManager,
-    GraphVisualizer
 )
 
 # Configure logging
@@ -84,13 +83,6 @@ class GraphToTextPipeline:
             logger.error(f"Error generating text: {str(e)}")
             raise
     
-    def visualize_story_graph(self, output_path: Optional[str] = None, show: bool = True) -> None:
-        """Visualize the story graph structure"""
-        GraphVisualizer.visualize(self.model, output_path, show)
-    
-    def export_graph_data(self, output_path: str) -> None:
-        """Export the graph data as JSON"""
-        GraphVisualizer.export_json(self.model, output_path)
     
     def _get_continuous_attributes(self, prev_node: str, context: Dict[str, List[str]]) -> Dict[str, List[str]]:
         """Get attributes maintaining continuity with previous node"""
