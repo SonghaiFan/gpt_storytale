@@ -61,14 +61,19 @@ document.addEventListener('DOMContentLoaded', () => {
         const timepoint = nodeTimepointSelect.value;
         const nodeId = `t${timepoint}_track${track}`;
         
+        // Split comma-separated values and trim whitespace
+        const entities = nodeEntityInput.value.split(',').map(s => s.trim()).filter(s => s);
+        const events = nodeEventInput.value.split(',').map(s => s.trim()).filter(s => s);
+        const topics = nodeTopicInput.value.split(',').map(s => s.trim()).filter(s => s);
+        
         const nodeData = {
             id: nodeId,
             track: parseInt(track),
             timepoint: parseInt(timepoint),
             attributes: {
-                entities: [nodeEntityInput.value],
-                events: [nodeEventInput.value],
-                topics: [nodeTopicInput.value]
+                entities: entities,
+                events: events,
+                topics: topics
             }
         };
         

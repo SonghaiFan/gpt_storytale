@@ -528,3 +528,82 @@ KeyError: 'source'
 2024-12-10 15:07:08,627 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:07:08] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
 2024-12-10 15:07:08,629 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:07:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
 2024-12-10 15:07:08,633 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:07:08] "[36mGET /static/css/graph.css HTTP/1.1[0m" 304 -
+2024-12-10 15:11:54,996 - src.web.app - INFO - Homepage accessed
+2024-12-10 15:11:55,000 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:11:55] "GET / HTTP/1.1" 200 -
+2024-12-10 15:11:55,077 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:11:55] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2024-12-10 15:11:55,085 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:11:55] "GET /static/css/style.css HTTP/1.1" 200 -
+2024-12-10 15:11:55,086 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:11:55] "[36mGET /static/css/graph.css HTTP/1.1[0m" 304 -
+2024-12-10 15:11:55,087 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:11:55] "[36mGET /static/js/graph_visualizer.js HTTP/1.1[0m" 304 -
+2024-12-10 15:12:45,236 - src.web.app - INFO - Homepage accessed
+2024-12-10 15:12:45,237 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:12:45] "GET / HTTP/1.1" 200 -
+2024-12-10 15:12:45,290 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:12:45] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-12-10 15:12:45,295 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:12:45] "[36mGET /static/css/graph.css HTTP/1.1[0m" 304 -
+2024-12-10 15:12:45,300 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:12:45] "[36mGET /static/js/graph_visualizer.js HTTP/1.1[0m" 304 -
+2024-12-10 15:12:45,302 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:12:45] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-12-10 15:14:19,877 - src.web.app - INFO - Homepage accessed
+2024-12-10 15:14:19,896 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:14:19] "GET / HTTP/1.1" 200 -
+2024-12-10 15:14:19,958 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:14:19] "[36mGET /static/css/graph.css HTTP/1.1[0m" 304 -
+2024-12-10 15:14:19,964 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:14:19] "GET /static/js/graph_visualizer.js HTTP/1.1" 200 -
+2024-12-10 15:14:19,971 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:14:19] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-12-10 15:14:19,976 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:14:19] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2024-12-10 15:15:19,323 - src.web.app - INFO - Homepage accessed
+2024-12-10 15:15:19,324 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:15:19] "GET / HTTP/1.1" 200 -
+2024-12-10 15:15:19,381 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:15:19] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-12-10 15:15:19,384 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:15:19] "[36mGET /static/css/graph.css HTTP/1.1[0m" 304 -
+2024-12-10 15:15:19,387 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:15:19] "[36mGET /static/js/graph_visualizer.js HTTP/1.1[0m" 304 -
+2024-12-10 15:15:19,391 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:15:19] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2024-12-10 15:16:03,012 - src.web.app - INFO - Homepage accessed
+2024-12-10 15:16:03,013 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:16:03] "GET / HTTP/1.1" 200 -
+2024-12-10 15:16:03,064 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:16:03] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-12-10 15:16:03,070 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:16:03] "[36mGET /static/js/graph_visualizer.js HTTP/1.1[0m" 304 -
+2024-12-10 15:16:03,070 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:16:03] "[36mGET /static/css/graph.css HTTP/1.1[0m" 304 -
+2024-12-10 15:16:03,072 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:16:03] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-12-10 15:17:28,857 - src.web.app - INFO - Homepage accessed
+2024-12-10 15:17:28,864 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:17:28] "GET / HTTP/1.1" 200 -
+2024-12-10 15:17:28,921 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:17:28] "GET /static/css/style.css HTTP/1.1" 200 -
+2024-12-10 15:17:28,922 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:17:28] "[36mGET /static/css/graph.css HTTP/1.1[0m" 304 -
+2024-12-10 15:17:28,927 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:17:28] "GET /static/js/graph_visualizer.js HTTP/1.1" 200 -
+2024-12-10 15:17:28,931 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:17:28] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-12-10 15:18:17,870 - src.web.app - INFO - Homepage accessed
+2024-12-10 15:18:17,871 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:18:17] "GET / HTTP/1.1" 200 -
+2024-12-10 15:18:17,913 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:18:17] "GET /static/css/style.css HTTP/1.1" 200 -
+2024-12-10 15:18:17,919 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:18:17] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2024-12-10 15:18:17,923 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:18:17] "[36mGET /static/js/graph_visualizer.js HTTP/1.1[0m" 304 -
+2024-12-10 15:18:17,925 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:18:17] "[36mGET /static/css/graph.css HTTP/1.1[0m" 304 -
+2024-12-10 15:19:05,631 - src.web.app - INFO - Homepage accessed
+2024-12-10 15:19:05,638 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:19:05] "GET / HTTP/1.1" 200 -
+2024-12-10 15:19:05,708 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:19:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-12-10 15:19:05,709 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:19:05] "[36mGET /static/js/graph_visualizer.js HTTP/1.1[0m" 304 -
+2024-12-10 15:19:05,712 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:19:05] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2024-12-10 15:19:31,380 - src.web.app - INFO - Homepage accessed
+2024-12-10 15:19:31,381 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:19:31] "GET / HTTP/1.1" 200 -
+2024-12-10 15:19:31,451 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:19:31] "[36mGET /static/js/graph_visualizer.js HTTP/1.1[0m" 304 -
+2024-12-10 15:19:31,452 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:19:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-12-10 15:19:31,453 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:19:31] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2024-12-10 15:20:36,049 - src.web.app - INFO - Homepage accessed
+2024-12-10 15:20:36,051 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:20:36] "GET / HTTP/1.1" 200 -
+2024-12-10 15:20:36,108 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:20:36] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-12-10 15:20:36,112 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:20:36] "[36mGET /static/js/graph_visualizer.js HTTP/1.1[0m" 304 -
+2024-12-10 15:20:36,115 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:20:36] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2024-12-10 15:20:57,359 - src.web.app - INFO - Homepage accessed
+2024-12-10 15:20:57,364 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:20:57] "GET / HTTP/1.1" 200 -
+2024-12-10 15:20:57,402 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:20:57] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-12-10 15:20:57,440 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:20:57] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2024-12-10 15:20:57,441 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:20:57] "[36mGET /static/js/graph_visualizer.js HTTP/1.1[0m" 304 -
+2024-12-10 15:23:58,223 - src.web.app - INFO - Generating story for provided graph with 1 nodes
+2024-12-10 15:23:58,224 - src.web.app - INFO - Using organizing attribute: entity
+2024-12-10 15:23:58,246 - src.web.app - INFO - Successfully initialized model and pipeline
+2024-12-10 15:24:01,222 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-10 15:24:01,225 - src.web.app - INFO - Story saved to story_1tracks_1timepoints_20241210_152401.json
+2024-12-10 15:24:01,225 - src.web.app - INFO - Successfully generated complete story
+2024-12-10 15:24:01,225 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:24:01] "POST /generate_story HTTP/1.1" 200 -
+2024-12-10 15:24:20,150 - src.web.app - INFO - Homepage accessed
+2024-12-10 15:24:20,154 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:24:20] "GET / HTTP/1.1" 200 -
+2024-12-10 15:24:20,207 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:24:20] "GET /static/css/style.css HTTP/1.1" 200 -
+2024-12-10 15:24:20,212 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:24:20] "[36mGET /static/js/graph_visualizer.js HTTP/1.1[0m" 304 -
+2024-12-10 15:24:20,214 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:24:20] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2024-12-10 15:25:40,054 - src.web.app - INFO - Homepage accessed
+2024-12-10 15:25:40,056 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:25:40] "GET / HTTP/1.1" 200 -
+2024-12-10 15:25:40,134 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:25:40] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-12-10 15:25:40,154 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:25:40] "[36mGET /static/js/graph_visualizer.js HTTP/1.1[0m" 304 -
+2024-12-10 15:25:40,161 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:25:40] "GET /static/js/main.js HTTP/1.1" 200 -

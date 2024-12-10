@@ -5,19 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TTNG Story Generator</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/graph.css') }}">
-    <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
 <body>
     <div class="app-container">
         <header class="app-header">
             <h1>TTNG Story Generator</h1>
         </header>
-
+        
         <div class="main-content">
             <aside class="editor-panel">
                 <section class="panel-section">
-                    <h2>Graph Settings</h2>
+                    <h2 data-step="1">Graph Settings</h2>
                     <div class="input-group">
                         <label for="num_tracks">Number of Tracks</label>
                         <input type="number" id="num_tracks" min="1" max="10" value="3">
@@ -38,7 +36,7 @@
                 </section>
 
                 <section class="panel-section">
-                    <h2>Node Editor</h2>
+                    <h2 data-step="2">Node Editor</h2>
                     <div class="input-group">
                         <label for="node_track">Track</label>
                         <select id="node_track"></select>
@@ -49,21 +47,24 @@
                     </div>
                     <div class="input-group">
                         <label for="node_entity">Entity</label>
-                        <input type="text" id="node_entity" placeholder="Enter entity">
+                        <input type="text" id="node_entity" placeholder="e.g. Apple, Developers, App Store">
+                        <span class="helper-text">Separate multiple entities with commas</span>
                     </div>
                     <div class="input-group">
                         <label for="node_event">Event</label>
-                        <input type="text" id="node_event" placeholder="Enter event">
+                        <input type="text" id="node_event" placeholder="e.g. Product Launch, Market Entry">
+                        <span class="helper-text">Separate multiple events with commas</span>
                     </div>
                     <div class="input-group">
                         <label for="node_topic">Topic</label>
-                        <input type="text" id="node_topic" placeholder="Enter topic">
+                        <input type="text" id="node_topic" placeholder="e.g. Technology, Business">
+                        <span class="helper-text">Separate multiple topics with commas</span>
                     </div>
                     <button id="add_node_btn" class="secondary-btn">Add/Update Node</button>
                 </section>
 
                 <section class="panel-section">
-                    <h2>Edge Editor</h2>
+                    <h2 data-step="3">Edge Editor</h2>
                     <div class="input-group">
                         <label for="edge_from">From Node</label>
                         <select id="edge_from"></select>
@@ -79,6 +80,7 @@
                 </section>
 
                 <section class="panel-section">
+                    <h2 data-step="4">Generate Story</h2>
                     <div class="button-group">
                         <button id="generate_btn" class="primary-btn">Generate Story</button>
                         <button id="clear_graph_btn" class="danger-btn">Clear Graph</button>
@@ -86,13 +88,14 @@
                 </section>
             </aside>
 
-            <main class="content-area">
+            <div class="content-area">
                 <div class="graph-container" id="graph-container"></div>
                 <div class="story-container" id="story-content"></div>
-            </main>
+            </div>
         </div>
     </div>
 
+    <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="{{ url_for('static', filename='js/graph_visualizer.js') }}"></script>
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
