@@ -41,7 +41,9 @@
                         </select>
                         <span class="helper-text" id="genre_description"></span>
                     </div>
-                    <button id="init_grid_btn" class="primary-btn">Initialize Grid</button>
+                    <div class="button-group">
+                        <button id="init_grid_btn" class="primary-btn">Initialize Grid</button>
+                    </div>
                 </section>
 
                 <section class="panel-section">
@@ -69,7 +71,10 @@
                         <input type="text" id="node_topic" placeholder="e.g. Technology, Business">
                         <span class="helper-text">Separate multiple topics with commas</span>
                     </div>
-                    <button id="add_node_btn" class="secondary-btn">Add/Update Node</button>
+                    <div class="node-editor-buttons">
+                        <button id="add_node_btn" class="secondary-btn">Add Node</button>
+                        <button id="clear_node_btn" class="secondary-btn">Clear Selection</button>
+                    </div>
                 </section>
 
                 <section class="panel-section">
@@ -82,13 +87,13 @@
                         <label for="edge_to">To Node</label>
                         <select id="edge_to"></select>
                     </div>
-                    <div class="button-group">
+                    <div class="edge-buttons">
                         <button id="add_edge_btn" class="secondary-btn">Add Edge</button>
                         <button id="remove_edge_btn" class="danger-btn">Remove Edge</button>
                     </div>
                 </section>
 
-                <section class="panel-section">
+                <section class="panel-section generate-section">
                     <h2 data-step="4">Generate Story</h2>
                     <div class="button-group">
                         <button id="generate_btn" class="primary-btn">Generate Story</button>

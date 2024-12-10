@@ -21,34 +21,104 @@ document.addEventListener('DOMContentLoaded', () => {
         nodes: new Map(),
         edges: new Set(),
         gridInitialized: false,
-        genre: 'THREAD'  // Default genre
+        genre: 'THREAD',  // Default genre
+        selectedNodeId: null,  // Track currently selected node
+        selectedEdge: null     // Track currently selected edge
     };
     
-    // Get DOM elements
-    const initGridBtn = document.getElementById('init_grid_btn');
-    const addNodeBtn = document.getElementById('add_node_btn');
-    const addEdgeBtn = document.getElementById('add_edge_btn');
-    const removeEdgeBtn = document.getElementById('remove_edge_btn');
-    const generateBtn = document.getElementById('generate_btn');
-    const clearGraphBtn = document.getElementById('clear_graph_btn');
+    // Button configuration
+    const buttonConfig = {
+        init_grid_btn: {
+            text: 'Initialize Grid',
+            className: 'primary-btn',
+            onClick: initializeGrid
+        },
+        add_node_btn: {
+            text: 'Add Node',
+            className: 'secondary-btn',
+            onClick: updateNode
+        },
+        clear_node_btn: {
+            text: 'Clear Selection',
+            className: 'secondary-btn',
+            onClick: clearNodeEditor,
+            insertAfter: 'add_node_btn'
+        },
+        add_edge_btn: {
+            text: 'Add Edge',
+            className: 'secondary-btn',
+            onClick: addEdge
+        },
+        remove_edge_btn: {
+            text: 'Remove Edge',
+            className: 'danger-btn',
+            onClick: removeEdge
+        },
+        generate_btn: {
+            text: 'Generate Story',
+            className: 'primary-btn',
+            onClick: generateStory
+        },
+        clear_graph_btn: {
+            text: 'Clear Graph',
+            className: 'danger-btn',
+            onClick: () => {
+                if (confirm('Are you sure you want to clear the graph?')) {
+                    initializeGrid();
+                }
+            }
+        }
+    };
     
-    // Node editor elements
+    // Helper function to create or setup buttons
+    function setupButton(id, config) {
+        let button = document.getElementById(id);
+        if (!button) {
+            // Create button if it doesn't exist
+            button = document.createElement('button');
+            button.id = id;
+            
+            // Insert after specified element or at the end of its section
+            if (config.insertAfter) {
+                const referenceBtn = document.getElementById(config.insertAfter);
+                referenceBtn.parentNode.insertBefore(button, referenceBtn.nextSibling);
+            }
+        }
+        
+        // Setup button properties
+        button.textContent = config.text;
+        button.className = config.className;
+        button.onclick = config.onClick;
+        if (config.disabled) {
+            button.disabled = true;
+        }
+        
+        return button;
+    }
+    
+    // Initialize all buttons
+    const buttons = {};
+    for (const [id, config] of Object.entries(buttonConfig)) {
+        buttons[id] = setupButton(id, config);
+    }
+    
+    // Get DOM elements
     const nodeTrackSelect = document.getElementById('node_track');
     const nodeTimepointSelect = document.getElementById('node_timepoint');
     const nodeEntityInput = document.getElementById('node_entity');
     const nodeEventInput = document.getElementById('node_event');
     const nodeTopicInput = document.getElementById('node_topic');
-    
-    // Edge editor elements
     const edgeFromSelect = document.getElementById('edge_from');
     const edgeToSelect = document.getElementById('edge_to');
-    
-    // Grid settings elements
     const numTracksInput = document.getElementById('num_tracks');
     const numTimepointsInput = document.getElementById('num_timepoints');
     const organizingAttributeSelect = document.getElementById('organizing_attribute');
     const graphGenreSelect = document.getElementById('graph_genre');
     const genreDescription = document.getElementById('genre_description');
+    
+    // Disable edge buttons initially
+    buttons.add_edge_btn.disabled = true;
+    buttons.remove_edge_btn.disabled = true;
     
     // Update genre description when selection changes
     graphGenreSelect.addEventListener('change', () => {
@@ -65,135 +135,93 @@ document.addEventListener('DOMContentLoaded', () => {
         genreDescription.textContent = descriptions[graphState.genre];
     }
     
-    // Initialize grid
-    function initializeGrid() {
-        const numTracks = parseInt(numTracksInput.value);
-        const numTimepoints = parseInt(numTimepointsInput.value);
-        
-        // Clear previous state
-        graphState.nodes.clear();
-        graphState.edges.clear();
-        graphState.genre = graphGenreSelect.value;
-        
-        // Initialize visualization
-        visualizer.initializeGrid(numTracks, numTimepoints, graphState.nodes);
-        graphState.gridInitialized = true;
-        
-        // Update track and timepoint selectors
-        updateTrackSelector(numTracks);
-        updateTimepointSelector(numTimepoints);
-        updateNodeSelectors();
-        
-        // Enable node editing
-        addNodeBtn.disabled = false;
+    // Add node selection handler to visualizer
+    function handleNodeClick(nodeId) {
+        // Deselect if clicking the same node
+        if (graphState.selectedNodeId === nodeId) {
+            graphState.selectedNodeId = null;
+            clearNodeEditor();
+            visualizer.setSelectedNode(null);
+        } else {
+            graphState.selectedNodeId = nodeId;
+            const nodeData = graphState.nodes.get(nodeId);
+            
+            // Extract track and timepoint from nodeId (format: t{timepoint}_track{track})
+            const [timepoint, track] = nodeId.match(/t(\d+)_track(\d+)/).slice(1).map(Number);
+            
+            // If node is empty, populate editor with position only
+            if (!nodeData || nodeData.isEmpty) {
+                nodeTrackSelect.value = track;
+                nodeTimepointSelect.value = timepoint;
+                nodeEntityInput.value = '';
+                nodeEventInput.value = '';
+                nodeTopicInput.value = '';
+                buttons.add_node_btn.textContent = 'Add Node';
+                buttons.clear_node_btn.disabled = false;
+            } else {
+                // Populate with existing node data
+                populateNodeEditor(nodeData);
+            }
+            
+            visualizer.setSelectedNode(nodeId);
+        }
     }
     
-    // Centralized constraint checker
-    const GraphConstraints = {
-        // Get node's connection counts
-        getConnectionCounts(nodeId) {
-            const outgoing = Array.from(graphState.edges).filter(edge => {
-                const [src] = edge.split('->');
-                return src === nodeId;
-            }).length;
-            
-            const incoming = Array.from(graphState.edges).filter(edge => {
-                const [, tgt] = edge.split('->');
-                return tgt === nodeId;
-            }).length;
-            
-            return { outgoing, incoming };
-        },
-
-        // Check if adding an edge would create a cycle
-        wouldCreateCycle(fromId, toId) {
-            const visited = new Set();
-            const stack = [toId];
-            
-            while (stack.length > 0) {
-                const currentId = stack.pop();
-                if (currentId === fromId) return true;
-                
-                if (!visited.has(currentId)) {
-                    visited.add(currentId);
-                    Array.from(graphState.edges)
-                        .filter(edge => edge.startsWith(`${currentId}->`))
-                        .forEach(edge => {
-                            const [, nextId] = edge.split('->');
-                            stack.push(nextId);
-                        });
-                }
-            }
-            return false;
-        },
-
-        // Check temporal order
-        isValidTemporalOrder(fromNode, toNode) {
-            return fromNode.timepoint < toNode.timepoint;
-        },
-
-        // Check track adjacency
-        isValidTrackDistance(fromNode, toNode) {
-            return Math.abs(fromNode.track - toNode.track) <= 1;
-        },
-
-        // Get constraint violation reason for source node
-        getSourceViolation(nodeId) {
-            const counts = this.getConnectionCounts(nodeId);
-            
-            if (graphState.genre === 'THREAD' && counts.outgoing > 0) {
-                return 'Thread genre: node already has an outgoing connection';
-            }
-            
-            return null;
-        },
-
-        // Get constraint violation reason for target node
-        getTargetViolation(fromId, toId) {
-            if (!fromId) return null;
-            
-            const fromNode = graphState.nodes.get(fromId);
-            const toNode = graphState.nodes.get(toId);
-            const counts = this.getConnectionCounts(toId);
-
-            if (fromId === toId) {
-                return 'Cannot connect a node to itself';
-            }
-
-            if (!this.isValidTemporalOrder(fromNode, toNode)) {
-                return 'Can only connect to later timepoints';
-            }
-
-            if (!this.isValidTrackDistance(fromNode, toNode)) {
-                return 'Can only connect to adjacent tracks';
-            }
-
-            switch (graphState.genre) {
-                case 'THREAD':
-                    if (counts.incoming > 0) {
-                        return 'Thread genre: node already has an incoming connection';
-                    }
-                    break;
-                    
-                case 'TREE':
-                    if (counts.incoming > 0) {
-                        return 'Tree genre: node already has a parent';
-                    }
-                    if (this.wouldCreateCycle(fromId, toId)) {
-                        return 'Tree genre: this would create a cycle';
-                    }
-                    break;
-            }
-            
-            return null;
+    // Add edge selection handler
+    function handleEdgeClick(edgeString) {
+        const [fromId, toId] = edgeString.split('->');
+        if (graphState.selectedEdge === edgeString) {
+            graphState.selectedEdge = null;
+            clearEdgeEditor();
+            visualizer.setSelectedEdge(null);
+        } else {
+            graphState.selectedEdge = edgeString;
+            edgeFromSelect.value = fromId;
+            edgeToSelect.value = toId;
+            visualizer.setSelectedEdge(edgeString);
         }
-    };
+    }
+    
+    // Populate node editor with node data
+    function populateNodeEditor(nodeData) {
+        if (!nodeData) {
+            clearNodeEditor();
+            return;
+        }
+        
+        nodeTrackSelect.value = nodeData.track;
+        nodeTimepointSelect.value = nodeData.timepoint;
+        nodeEntityInput.value = nodeData.attributes?.entities?.join(', ') || '';
+        nodeEventInput.value = nodeData.attributes?.events?.join(', ') || '';
+        nodeTopicInput.value = nodeData.attributes?.topics?.join(', ') || '';
+        
+        // Update button states
+        buttons.add_node_btn.textContent = nodeData.isEmpty ? 'Add Node' : 'Update Node';
+        buttons.clear_node_btn.disabled = false;
+    }
+    
+    // Clear node editor
+    function clearNodeEditor() {
+        nodeEntityInput.value = '';
+        nodeEventInput.value = '';
+        nodeTopicInput.value = '';
+        buttons.add_node_btn.textContent = 'Add Node';
+        buttons.clear_node_btn.disabled = true;
+        graphState.selectedNodeId = null;
+    }
+    
+    // Clear edge editor
+    function clearEdgeEditor() {
+        edgeFromSelect.value = '';
+        edgeToSelect.value = '';
+        graphState.selectedEdge = null;
+    }
     
     // Update node in graph
     function updateNode() {
         const track = nodeTrackSelect.value;
         const timepoint = nodeTimepointSelect.value;
-        const nodeId = `t${timepoint}_track${track}`;
+        const nodeId = graphState.selectedNodeId || `t${timepoint}_track${track}`;
         
         // Split comma-separated values and trim whitespace
         const entities = nodeEntityInput.value ? nodeEntityInput.value.split(',').map(s => s.trim()).filter(s => s) : [];
@@ -221,6 +249,7 @@ document.addEventListener('DOMContentLoaded', () => {
         graphState.nodes.set(nodeId, nodeData);
         visualizer.updateNode(nodeId, nodeData);
         updateNodeSelectors();
+        clearNodeEditor();
     }
     
     // Show tooltip for node
@@ -228,8 +257,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!node) return;
         
         const rect = event.target.getBoundingClientRect();
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+        const scrollTop =  document.documentElement.scrollTop;
+        const scrollLeft = document.documentElement.scrollLeft;
         
         tooltip.innerHTML = `
             <h4>Node ${node.id}</h4>
@@ -268,39 +297,27 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Add edge between nodes
     function addEdge() {
-        const fromId = edgeFromSelect.value;
-        const toId = edgeToSelect.value;
+        const fromNode = edgeFromSelect.value;
+        const toNode = edgeToSelect.value;
         
-        if (fromId && toId && fromId !== toId) {
-            const edge = `${fromId}->${toId}`;
-            if (!graphState.edges.has(edge)) {
-                // Check if the edge would violate any constraints
-                const violation = GraphConstraints.getTargetViolation(fromId, toId);
-                if (!violation) {
-                    graphState.edges.add(edge);
-                    visualizer.addEdge(fromId, toId);
-                    // Update node selectors to reflect new edge constraints
-                    updateNodeSelectors();
-                } else {
-                    alert(violation);
-                }
+        if (fromNode && toNode && fromNode !== toNode) {
+            if (validateEdge(fromNode, toNode)) {
+                const edge = `${fromNode}->${toNode}`;
+                graphState.edges.add(edge);
+                visualizer.addEdge(fromNode, toNode);
             }
         }
     }
     
     // Remove edge between nodes
     function removeEdge() {
-        const fromId = edgeFromSelect.value;
-        const toId = edgeToSelect.value;
+        const fromNode = edgeFromSelect.value;
+        const toNode = edgeToSelect.value;
         
-        if (fromId && toId) {
-            const edge = `${fromId}->${toId}`;
-            if (graphState.edges.has(edge)) {
-                graphState.edges.delete(edge);
-                visualizer.removeEdge(fromId, toId);
-                // Update node selectors to reflect removed edge
-                updateNodeSelectors();
-            }
+        if (fromNode && toNode) {
+            const edge = `${fromNode}->${toNode}`;
+            graphState.edges.delete(edge);
+            visualizer.removeEdge(fromNode, toNode);
         }
     }
     
@@ -328,55 +345,33 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Update node selectors for edges
     function updateNodeSelectors() {
-        const nodes = Array.from(graphState.nodes.entries());
+        const nodes = Array.from(graphState.nodes.keys());
         
-        // Update source node selector
-        edgeFromSelect.innerHTML = '<option value="">Select source node</option>';
-        nodes.forEach(([nodeId, data]) => {
-            const option = document.createElement('option');
-            option.value = nodeId;
-            option.textContent = nodeId;
+        [edgeFromSelect, edgeToSelect].forEach(select => {
+            const currentValue = select.value;
+            select.innerHTML = '';
             
-            const violation = GraphConstraints.getSourceViolation(nodeId);
-            if (violation) {
-                option.disabled = true;
-                option.title = violation;
-            }
+            const defaultOption = document.createElement('option');
+            defaultOption.value = '';
+            defaultOption.textContent = 'Select a node';
+            select.appendChild(defaultOption);
             
-            edgeFromSelect.appendChild(option);
-        });
-
-        // Update target node selector based on selected source
-        function updateTargetSelector() {
-            const selectedSource = edgeFromSelect.value;
-            
-            edgeToSelect.innerHTML = '<option value="">Select target node</option>';
-            nodes.forEach(([nodeId, data]) => {
+            nodes.forEach(nodeId => {
                 const option = document.createElement('option');
                 option.value = nodeId;
                 option.textContent = nodeId;
-                
-                const violation = GraphConstraints.getTargetViolation(selectedSource, nodeId);
-                if (violation) {
-                    option.disabled = true;
-                    option.title = violation;
-                }
-                
-                edgeToSelect.appendChild(option);
+                select.appendChild(option);
             });
-        }
-
-        // Add change listener to source selector
-        edgeFromSelect.addEventListener('change', updateTargetSelector);
+            
+            if (nodes.includes(currentValue)) {
+                select.value = currentValue;
+            }
+        });
         
-        // Initial update of target selector
-        updateTargetSelector();
-        
-        // Enable/disable edge buttons based on available options
-        const hasValidSourceOptions = Array.from(edgeFromSelect.options).some(opt => !opt.disabled && opt.value);
-        const hasValidTargetOptions = Array.from(edgeToSelect.options).some(opt => !opt.disabled && opt.value);
-        addEdgeBtn.disabled = !hasValidSourceOptions || !hasValidTargetOptions;
-        removeEdgeBtn.disabled = !hasValidSourceOptions || !hasValidTargetOptions;
+        // Enable/disable edge buttons based on node count
+        const hasNodes = nodes.length >= 2;
+        buttons.add_edge_btn.disabled = !hasNodes;
+        buttons.remove_edge_btn.disabled = !hasNodes;
     }
     
     // Generate story from graph
@@ -391,8 +386,8 @@ document.addEventListener('DOMContentLoaded', () => {
             };
             
             // Disable button and show loading state
-            generateBtn.disabled = true;
-            generateBtn.textContent = 'Generating...';
+            buttons.generate_btn.disabled = true;
+            buttons.generate_btn.textContent = 'Generating...';
             
             // Make API request
             const response = await fetch('/generate_story', {
@@ -438,8 +433,8 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Failed to generate story. Please try again.');
         } finally {
             // Reset button state
-            generateBtn.disabled = false;
-            generateBtn.textContent = 'Generate Story';
+            buttons.generate_btn.disabled = false;
+            buttons.generate_btn.textContent = 'Generate Story';
         }
     }
     
@@ -466,23 +461,153 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('story-content').innerHTML = '';
         
         // Disable buttons
-        addNodeBtn.disabled = true;
-        addEdgeBtn.disabled = true;
-        removeEdgeBtn.disabled = true;
+        buttons.add_node_btn.disabled = true;
+        buttons.add_edge_btn.disabled = true;
+        buttons.remove_edge_btn.disabled = true;
+    }
+    
+    // Initialize grid
+    function initializeGrid() {
+        const numTracks = parseInt(numTracksInput.value);
+        const numTimepoints = parseInt(numTimepointsInput.value);
+        
+        // Clear previous state
+        graphState.nodes.clear();
+        graphState.edges.clear();
+        graphState.selectedNodeId = null;
+        graphState.selectedEdge = null;
+        graphState.genre = graphGenreSelect.value;
+        
+        // Initialize visualization
+        visualizer.initializeGrid(numTracks, numTimepoints, graphState.nodes);
+        visualizer.setNodeClickHandler(handleNodeClick);
+        visualizer.setEdgeClickHandler(handleEdgeClick);
+        graphState.gridInitialized = true;
+        
+        // Update selectors and clear editors
+        updateTrackSelector(numTracks);
+        updateTimepointSelector(numTimepoints);
+        updateNodeSelectors();
+        clearNodeEditor();
+        clearEdgeEditor();
+        
+        // Enable node editing
+        buttons.add_node_btn.disabled = false;
+    }
+    
+    // Validate edge based on genre constraints
+    function validateEdge(fromId, toId) {
+        // Get nodes involved in the edge
+        const fromNode = graphState.nodes.get(fromId);
+        const toNode = graphState.nodes.get(toId);
+        
+        if (!fromNode || !toNode) return false;
+        
+        // Check temporal order
+        if (fromNode.timepoint >= toNode.timepoint) {
+            alert('Edges must follow temporal order (earlier to later timepoints)');
+            return false;
+        }
+        
+        // Check track adjacency
+        const trackDiff = Math.abs(fromNode.track - toNode.track);
+        if (trackDiff > 1) {
+            alert('Can only connect nodes in adjacent tracks');
+            return false;
+        }
+        
+        // Count incoming and outgoing connections for both nodes
+        const fromOutgoing = Array.from(graphState.edges).filter(edge => {
+            const [src] = edge.split('->');
+            return src === fromId;
+        }).length;
+        
+        const fromIncoming = Array.from(graphState.edges).filter(edge => {
+            const [, tgt] = edge.split('->');
+            return tgt === fromId;
+        }).length;
+        
+        const toOutgoing = Array.from(graphState.edges).filter(edge => {
+            const [src] = edge.split('->');
+            return src === toId;
+        }).length;
+        
+        const toIncoming = Array.from(graphState.edges).filter(edge => {
+            const [, tgt] = edge.split('->');
+            return tgt === toId;
+        }).length;
+        
+        // Apply genre-specific constraints
+        switch (graphState.genre) {
+            case 'THREAD':
+                if (fromOutgoing >= 1) {
+                    alert('Thread genre: source node already has an outgoing connection');
+                    return false;
+                }
+                if (fromIncoming >= 1) {
+                    alert('Thread genre: source node already has an incoming connection');
+                    return false;
+                }
+                if (toOutgoing >= 1) {
+                    alert('Thread genre: target node already has an outgoing connection');
+                    return false;
+                }
+                if (toIncoming >= 1) {
+                    alert('Thread genre: target node already has an incoming connection');
+                    return false;
+                }
+                break;
+                
+            case 'TREE':
+                if (toIncoming >= 1) {
+                    alert('Tree genre: target node already has a parent (only one incoming connection allowed)');
+                    return false;
+                }
+                
+                // Check for cycles
+                const visited = new Set();
+                const stack = [toId];
+                
+                while (stack.length > 0) {
+                    const currentId = stack.pop();
+                    if (currentId === fromId) {
+                        alert('Tree genre: this connection would create a cycle');
+                        return false;
+                    }
+                    
+                    if (!visited.has(currentId)) {
+                        visited.add(currentId);
+                        // Add all nodes that this node connects to
+                        Array.from(graphState.edges)
+                            .filter(edge => edge.startsWith(`${currentId}->`))
+                            .forEach(edge => {
+                                const [, nextId] = edge.split('->');
+                                stack.push(nextId);
+                            });
+                    }
+                }
+                break;
+                
+            case 'MAP':
+                // No additional constraints
+                break;
+        }
+        
+        return true;
     }
     
     // Event listeners
-    initGridBtn.addEventListener('click', initializeGrid);
-    addNodeBtn.addEventListener('click', updateNode);
-    addEdgeBtn.addEventListener('click', addEdge);
-    removeEdgeBtn.addEventListener('click', removeEdge);
-    generateBtn.addEventListener('click', generateStory);
-    clearGraphBtn.addEventListener('click', clearGraph);
+    buttons.init_grid_btn.addEventListener('click', initializeGrid);
+    buttons.add_node_btn.addEventListener('click', updateNode);
+    buttons.add_edge_btn.addEventListener('click', addEdge);
+    buttons.remove_edge_btn.addEventListener('click', removeEdge);
+    buttons.generate_btn.addEventListener('click', generateStory);
+    buttons.clear_graph_btn.addEventListener('click', clearGraph);
     
     // Initialize button states
-    addNodeBtn.disabled = true;
-    addEdgeBtn.disabled = true;
-    removeEdgeBtn.disabled = true;
+    buttons.add_node_btn.disabled = true;
+    buttons.add_edge_btn.disabled = true;
+    buttons.remove_edge_btn.disabled = true;
     
     // Initialize genre description
     updateGenreDescription();

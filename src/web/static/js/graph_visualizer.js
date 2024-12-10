@@ -10,10 +10,107 @@ class TTNGVisualizer {
             .attr('width', '100%')
             .attr('height', '100%')
             .attr('viewBox', [0, 0, this.width, this.height]);
-            
-        // Add arrow marker definition
-        this.svg.append('defs')
-            .append('marker')
+        
+        // Initialize all groups in correct order (back to front)
+        this.gridGroup = this.svg.append('g').attr('class', 'grid');
+        this.axisGroup = this.svg.append('g').attr('class', 'axes');
+        this.zoomGroup = this.svg.append('g').attr('class', 'zoom-group');
+        
+        // Create groups in correct order within zoom group
+        this.trackGroup = this.zoomGroup.append('g').attr('class', 'tracks');
+        this.edgeGroup = this.zoomGroup.append('g')
+            .attr('class', 'edges')
+            .style('pointer-events', 'all');  // Enable pointer events
+        this.nodeGroup = this.zoomGroup.append('g').attr('class', 'nodes');
+        
+        // Initialize axis groups
+        this.xAxisGroup = this.axisGroup.append('g').attr('class', 'x-axis');
+        this.yAxisGroup = this.axisGroup.append('g').attr('class', 'y-axis');
+        
+        // Define style constants
+        this.styles = {
+            node: {
+                empty: {
+                    fill: '#fff',
+                    stroke: '#adb5bd',
+                    strokeWidth: 2,
+                    strokeDasharray: '5,5'  // Add dashed border for empty nodes
+                },
+                filled: {
+                    fill: '#fff',
+                    stroke: '#000',
+                    strokeWidth: 2,
+                    strokeDasharray: null  // Solid border for filled nodes
+                },
+                hover: {
+                    stroke: '#339af0',
+                    strokeWidth: 3,
+                    strokeDasharray: null  // Keep solid border on hover
+                },
+                selected: {
+                    stroke: '#1c7ed6',
+                    strokeWidth: 3,
+                    shadow: true,
+                    strokeDasharray: null  // Keep solid border when selected
+                }
+            },
+            edge: {
+                default: {
+                    stroke: '#000',
+                    strokeWidth: 2,
+                    markerEnd: 'url(#arrow)'
+                },
+                hover: {
+                    stroke: '#339af0',
+                    strokeWidth: 2,
+                    markerEnd: 'url(#arrow-hover)'
+                },
+                selected: {
+                    stroke: '#1c7ed6',
+                    strokeWidth: 3,
+                    markerEnd: 'url(#arrow-selected)'
+                }
+            }
+        };
+
+        // Add drop shadow filter for selected nodes
+        const defs = this.svg.append('defs');
+        
+        // Add drop shadow filter
+        const filter = defs.append('filter')
+            .attr('id', 'drop-shadow')
+            .attr('x', '-50%')
+            .attr('y', '-50%')
+            .attr('width', '200%')
+            .attr('height', '200%');  // Increased filter area
+
+        filter.append('feGaussianBlur')
+            .attr('in', 'SourceAlpha')
+            .attr('stdDeviation', 2)  // Reduced blur for softer edge
+            .attr('result', 'blur');
+
+        filter.append('feOffset')
+            .attr('in', 'blur')
+            .attr('dx', 0)  // Removed horizontal offset
+            .attr('dy', 1)  // Slight vertical offset
+            .attr('result', 'offsetBlur');
+
+        // Add color matrix to make shadow more transparent
+        filter.append('feColorMatrix')
+            .attr('in', 'offsetBlur')
+            .attr('type', 'matrix')
+            .attr('values', '0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.3 0')  // Last value controls opacity
+            .attr('result', 'coloredBlur');
+
+        const feMerge = filter.append('feMerge');
+        feMerge.append('feMergeNode')
+            .attr('in', 'coloredBlur');
+        feMerge.append('feMergeNode')
+            .attr('in', 'SourceGraphic');
+
+        // Add arrow markers
+        // Default arrow
+        defs.append('marker')
             .attr('id', 'arrow')
             .attr('viewBox', '0 -5 10 10')
             .attr('refX', 8)
@@ -23,19 +120,33 @@ class TTNGVisualizer {
             .attr('orient', 'auto')
             .append('path')
             .attr('d', 'M0,-5L10,0L0,5')
-            .attr('fill', '#adb5bd');
-        
-        // Initialize all groups
-        this.gridGroup = this.svg.append('g').attr('class', 'grid');
-        this.axisGroup = this.svg.append('g').attr('class', 'axes');
-        this.zoomGroup = this.svg.append('g').attr('class', 'zoom-group');
-        this.trackGroup = this.zoomGroup.append('g').attr('class', 'tracks');
-        this.edgeGroup = this.zoomGroup.append('g').attr('class', 'edges');
-        this.nodeGroup = this.zoomGroup.append('g').attr('class', 'nodes');
-        
-        // Initialize axis groups
-        this.xAxisGroup = this.axisGroup.append('g').attr('class', 'x-axis');
-        this.yAxisGroup = this.axisGroup.append('g').attr('class', 'y-axis');
+            .attr('fill', this.styles.edge.default.stroke);
+
+        // Hover arrow
+        defs.append('marker')
+            .attr('id', 'arrow-hover')
+            .attr('viewBox', '0 -5 10 10')
+            .attr('refX', 8)
+            .attr('refY', 0)
+            .attr('markerWidth', 6)
+            .attr('markerHeight', 6)
+            .attr('orient', 'auto')
+            .append('path')
+            .attr('d', 'M0,-5L10,0L0,5')
+            .attr('fill', this.styles.edge.hover.stroke);
+
+        // Selected arrow
+        defs.append('marker')
+            .attr('id', 'arrow-selected')
+            .attr('viewBox', '0 -5 10 10')
+            .attr('refX', 8)
+            .attr('refY', 0)
+            .attr('markerWidth', 6)
+            .attr('markerHeight', 6)
+            .attr('orient', 'auto')
+            .append('path')
+            .attr('d', 'M0,-5L10,0L0,5')
+            .attr('fill', this.styles.edge.selected.stroke);
         
         this.nodes = new Map();
         this.edges = new Set();
@@ -46,6 +157,11 @@ class TTNGVisualizer {
             .on('zoom', (event) => this._handleZoom(event));
         
         this.svg.call(zoom);
+        
+        this.nodeClickHandler = null;
+        this.edgeClickHandler = null;
+        this.selectedNodeId = null;
+        this.selectedEdge = null;
     }
     
     _handleZoom(event) {
@@ -208,45 +324,89 @@ class TTNGVisualizer {
         this._updateVisualization();
     }
     
+    setNodeClickHandler(handler) {
+        this.nodeClickHandler = handler;
+    }
+
+    setEdgeClickHandler(handler) {
+        this.edgeClickHandler = handler;
+    }
+
+    setSelectedNode(nodeId) {
+        this.selectedNodeId = nodeId;
+        this._updateVisualization();
+    }
+
+    setSelectedEdge(edgeString) {
+        this.selectedEdge = edgeString;
+        this._updateVisualization();
+    }
+    
+    _calculateEdgePath(source, target) {
+        // Calculate the angle between nodes
+        const dx = target.x - source.x;
+        const dy = target.y - source.y;
+        const angle = Math.atan2(dy, dx);
+        
+        // Calculate where the edge should start and end considering node radius
+        const startX = source.x + (this.nodeRadius * Math.cos(angle));
+        const startY = source.y + (this.nodeRadius * Math.sin(angle));
+        const endX = target.x - (this.nodeRadius * Math.cos(angle));
+        const endY = target.y - (this.nodeRadius * Math.sin(angle));
+        
+        return `M${startX},${startY}L${endX},${endY}`;
+    }
+    
     _updateVisualization() {
+        console.log('Updating visualization');
+        
         // Update edges
         const edgeElements = this.edgeGroup
-            .selectAll('path')
+            .selectAll('.edge')
             .data(Array.from(this.edges), d => d);
         
         edgeElements.exit().remove();
         
+        // Create new edges
         const edgeEnter = edgeElements.enter()
             .append('path')
             .attr('class', 'edge')
-            .attr('stroke', '#adb5bd')
-            .attr('stroke-width', 2)
             .attr('fill', 'none')
-            .attr('marker-end', 'url(#arrow)');
-        
-        edgeElements.merge(edgeEnter)
+            .style('cursor', 'pointer')
+            .style('pointer-events', 'all');
+
+        // Update all edges
+        const allEdges = edgeElements.merge(edgeEnter)
             .attr('d', edge => {
                 const [fromId, toId] = edge.split('->');
                 const source = this.nodes.get(fromId);
                 const target = this.nodes.get(toId);
-                
-                // Calculate the angle between nodes
-                const dx = target.x - source.x;
-                const dy = target.y - source.y;
-                const angle = Math.atan2(dy, dx);
-                
-                // Calculate where the edge should stop (node radius + some padding)
-                const padding = 5;
-                const endX = target.x - (this.nodeRadius + padding) * Math.cos(angle);
-                const endY = target.y - (this.nodeRadius + padding) * Math.sin(angle);
-                
-                // Calculate where the edge should start
-                const startX = source.x + this.nodeRadius * Math.cos(angle);
-                const startY = source.y + this.nodeRadius * Math.sin(angle);
-                
-                return `M${startX},${startY} L${endX},${endY}`;
+                return this._calculateEdgePath(source, target);
             });
-        
+
+        // Apply edge styles
+        this._applyEdgeStyles(allEdges);
+
+        // Add edge interactions
+        allEdges
+            .on('mouseenter', (event, d) => {
+                if (d !== this.selectedEdge) {
+                    const edge = d3.select(event.currentTarget);
+                    this._applyEdgeState(edge, 'hover');
+                }
+            })
+            .on('mouseleave', (event, d) => {
+                if (d !== this.selectedEdge) {
+                    const edge = d3.select(event.currentTarget);
+                    this._applyEdgeState(edge, 'default');
+                }
+            })
+            .on('click', (event, d) => {
+                if (this.edgeClickHandler) {
+                    this.edgeClickHandler(d);
+                }
+            });
+
         // Update nodes
         const nodeElements = this.nodeGroup
             .selectAll('.node')
@@ -257,22 +417,74 @@ class TTNGVisualizer {
         const nodeEnter = nodeElements.enter()
             .append('g')
             .attr('class', 'node')
-            .attr('data-node-id', d => d[0]);
-        
+            .attr('data-node-id', d => d[0])
+            .style('cursor', 'pointer');
+
         nodeEnter.append('circle')
-            .attr('r', this.nodeRadius)
-            .attr('fill', '#fff')
-            .attr('stroke', '#1c7ed6')
-            .attr('stroke-width', 2);
-        
+            .attr('r', this.nodeRadius);
+
         const allNodes = nodeElements.merge(nodeEnter)
             .attr('transform', d => `translate(${d[1].x},${d[1].y})`);
+
+        // Apply node styles
+        this._applyNodeStyles(allNodes);
+
+        // Add node interactions
+        allNodes
+            .on('mouseenter', (event, d) => {
+                if (d[0] !== this.selectedNodeId) {
+                    const node = d3.select(event.currentTarget);
+                    this._applyNodeState(node, d[1], 'hover');
+                }
+            })
+            .on('mouseleave', (event, d) => {
+                if (d[0] !== this.selectedNodeId) {
+                    const node = d3.select(event.currentTarget);
+                    this._applyNodeState(node, d[1], d[1].isEmpty ? 'empty' : 'filled');
+                }
+            })
+            .on('click', (event, d) => {
+                if (this.nodeClickHandler) {
+                    this.nodeClickHandler(d[0]);
+                }
+            });
+    }
+
+    _applyNodeStyles(nodes) {
+        nodes.each((d, i, elements) => {
+            const node = d3.select(elements[i]);
+            const state = d[0] === this.selectedNodeId ? 'selected' : 
+                         d[1].isEmpty ? 'empty' : 'filled';
+            this._applyNodeState(node, d[1], state);
+        });
+    }
+
+    _applyNodeState(node, data, state) {
+        const circle = node.select('circle');
+        const style = this.styles.node[state];
         
-        allNodes.select('circle')
-            .attr('class', d => d[1].isEmpty ? 'node-empty' : '')
-            .attr('fill', d => d[1].isEmpty ? '#fff' : '#4dabf7')
-            .attr('stroke', '#1c7ed6')
-            .attr('stroke-width', 2);
+        circle
+            .attr('fill', style.fill || (data.isEmpty ? '#fff' : '#fff'))
+            .attr('stroke', style.stroke)
+            .attr('stroke-width', style.strokeWidth)
+            .attr('stroke-dasharray', style.strokeDasharray)  // Apply dash array
+            .style('filter', style.shadow ? 'url(#drop-shadow)' : null);
+    }
+
+    _applyEdgeStyles(edges) {
+        edges.each((d, i, elements) => {
+            const edge = d3.select(elements[i]);
+            const state = d === this.selectedEdge ? 'selected' : 'default';
+            this._applyEdgeState(edge, state);
+        });
+    }
+
+    _applyEdgeState(edge, state) {
+        const style = this.styles.edge[state];
+        edge
+            .attr('stroke', style.stroke)
+            .attr('stroke-width', style.strokeWidth)
+            .attr('marker-end', style.markerEnd);
     }
 }
 
