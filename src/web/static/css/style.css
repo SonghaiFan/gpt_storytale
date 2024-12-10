@@ -406,4 +406,18 @@ button:disabled {
     stroke-dasharray: 4;
     pointer-events: none;
 }
+
+.helper-text {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.75rem;
+    color: #5f6368;
+    font-style: italic;
+}
+
+#genre_description {
+    color: #1a73e8;
+    font-weight: 500;
+    margin-top: 0.5rem;
+}
  

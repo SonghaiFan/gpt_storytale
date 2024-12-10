@@ -32,7 +32,16 @@
                             <option value="TOPIC">Topic</option>
                         </select>
                     </div>
-                    <button id="init_grid_btn" class="primary-btn">Initialize Narrative Space</button>
+                    <div class="input-group">
+                        <label for="graph_genre">Narrative Visual Idiom</label>
+                        <select id="graph_genre">
+                            <option value="THREAD">Thread (max 2 connections per node)</option>
+                            <option value="TREE">Tree (max 1 incoming edge per node)</option>
+                            <option value="MAP">Map (unrestricted)</option>
+                        </select>
+                        <span class="helper-text" id="genre_description"></span>
+                    </div>
+                    <button id="init_grid_btn" class="primary-btn">Initialize Grid</button>
                 </section>
 
                 <section class="panel-section">

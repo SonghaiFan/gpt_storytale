@@ -10,6 +10,20 @@ class TTNGVisualizer {
             .attr('width', '100%')
             .attr('height', '100%')
             .attr('viewBox', [0, 0, this.width, this.height]);
+            
+        // Add arrow marker definition
+        this.svg.append('defs')
+            .append('marker')
+            .attr('id', 'arrow')
+            .attr('viewBox', '0 -5 10 10')
+            .attr('refX', 8)
+            .attr('refY', 0)
+            .attr('markerWidth', 6)
+            .attr('markerHeight', 6)
+            .attr('orient', 'auto')
+            .append('path')
+            .attr('d', 'M0,-5L10,0L0,5')
+            .attr('fill', '#adb5bd');
         
         // Initialize all groups
         this.gridGroup = this.svg.append('g').attr('class', 'grid');
@@ -153,7 +167,7 @@ class TTNGVisualizer {
             for (let timepoint = 1; timepoint <= numTimepoints; timepoint++) {
                 const x = this.xScale(timepoint);
                 const nodeId = `t${timepoint}_track${track}`;
-                const nodeData = nodes.get(nodeId);
+                const nodeData = nodes.get(nodeId) || { isEmpty: true };
                 
                 this.nodes.set(nodeId, { x, y, ...nodeData });
             }
@@ -215,7 +229,22 @@ class TTNGVisualizer {
                 const [fromId, toId] = edge.split('->');
                 const source = this.nodes.get(fromId);
                 const target = this.nodes.get(toId);
-                return `M${source.x},${source.y} L${target.x},${target.y}`;
+                
+                // Calculate the angle between nodes
+                const dx = target.x - source.x;
+                const dy = target.y - source.y;
+                const angle = Math.atan2(dy, dx);
+                
+                // Calculate where the edge should stop (node radius + some padding)
+                const padding = 5;
+                const endX = target.x - (this.nodeRadius + padding) * Math.cos(angle);
+                const endY = target.y - (this.nodeRadius + padding) * Math.sin(angle);
+                
+                // Calculate where the edge should start
+                const startX = source.x + this.nodeRadius * Math.cos(angle);
+                const startY = source.y + this.nodeRadius * Math.sin(angle);
+                
+                return `M${startX},${startY} L${endX},${endY}`;
             });
         
         // Update nodes
@@ -231,7 +260,10 @@ class TTNGVisualizer {
             .attr('data-node-id', d => d[0]);
         
         nodeEnter.append('circle')
-            .attr('r', this.nodeRadius);  // Use class property for consistency
+            .attr('r', this.nodeRadius)
+            .attr('fill', '#fff')
+            .attr('stroke', '#1c7ed6')
+            .attr('stroke-width', 2);
         
         const allNodes = nodeElements.merge(nodeEnter)
             .attr('transform', d => `translate(${d[1].x},${d[1].y})`);
