@@ -201,13 +201,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     // Clear node editor
-    function clearNodeEditor() {
-        nodeEntityInput.value = '';
-        nodeEventInput.value = '';
-        nodeTopicInput.value = '';
+    function clearNodeEditor(keepValues = false) {
+        if (!keepValues) {
+            nodeEntityInput.value = '';
+            nodeEventInput.value = '';
+            nodeTopicInput.value = '';
+        }
         buttons.add_node_btn.textContent = 'Add Node';
         buttons.clear_node_btn.disabled = true;
         graphState.selectedNodeId = null;
+        visualizer.setSelectedNode(null);
     }
     
     // Clear edge editor
@@ -223,17 +226,22 @@ document.addEventListener('DOMContentLoaded', () => {
         const timepoint = nodeTimepointSelect.value;
         const nodeId = graphState.selectedNodeId || `t${timepoint}_track${track}`;
         
-        // Split comma-separated values and trim whitespace
-        const entities = nodeEntityInput.value ? nodeEntityInput.value.split(',').map(s => s.trim()).filter(s => s) : [];
-        const events = nodeEventInput.value ? nodeEventInput.value.split(',').map(s => s.trim()).filter(s => s) : [];
-        const topics = nodeTopicInput.value ? nodeTopicInput.value.split(',').map(s => s.trim()).filter(s => s) : [];
-        
+        // Get raw input values first
+        const entityValue = nodeEntityInput.value.trim();
+        const eventValue = nodeEventInput.value.trim();
+        const topicValue = nodeTopicInput.value.trim();
+
         // Ensure at least one value for each attribute
-        if (!entities.length || !events.length || !topics.length) {
+        if (!entityValue || !eventValue || !topicValue) {
             alert('Please provide at least one value for each of: Entity, Event, and Topic');
             return;
         }
-        
+
+        // Split comma-separated values and trim whitespace
+        const entities = entityValue ? entityValue.split(',').map(s => s.trim()).filter(Boolean) : [];
+        const events = eventValue ? eventValue.split(',').map(s => s.trim()).filter(Boolean) : [];
+        const topics = topicValue ? topicValue.split(',').map(s => s.trim()).filter(Boolean) : [];
+
         const nodeData = {
             id: nodeId,
             track: parseInt(track),
@@ -249,7 +257,9 @@ document.addEventListener('DOMContentLoaded', () => {
         graphState.nodes.set(nodeId, nodeData);
         visualizer.updateNode(nodeId, nodeData);
         updateNodeSelectors();
-        clearNodeEditor();
+        
+        // Pass true to keep the input values
+        clearNodeEditor(true);
     }
     
     // Show tooltip for node
@@ -501,99 +511,96 @@ document.addEventListener('DOMContentLoaded', () => {
         const fromNode = graphState.nodes.get(fromId);
         const toNode = graphState.nodes.get(toId);
         
-        if (!fromNode || !toNode) return false;
-        
+        if (!fromNode || !toNode) {
+            alert('Invalid nodes selected');
+            return false;
+        }
+
+        // Check if edge already exists
+        if (graphState.edges.has(`${fromId}->${toId}`)) {
+            alert('This edge already exists');
+            return false;
+        }
+
         // Check temporal order
         if (fromNode.timepoint >= toNode.timepoint) {
-            alert('Edges must follow temporal order (earlier to later timepoints)');
+            alert('Invalid connection: Edges must flow forward in time (from earlier to later timepoints)');
             return false;
         }
-        
-        // Check track adjacency
-        const trackDiff = Math.abs(fromNode.track - toNode.track);
-        if (trackDiff > 1) {
-            alert('Can only connect nodes in adjacent tracks');
-            return false;
-        }
-        
-        // Count incoming and outgoing connections for both nodes
-        const fromOutgoing = Array.from(graphState.edges).filter(edge => {
-            const [src] = edge.split('->');
-            return src === fromId;
-        }).length;
-        
-        const fromIncoming = Array.from(graphState.edges).filter(edge => {
-            const [, tgt] = edge.split('->');
-            return tgt === fromId;
-        }).length;
-        
-        const toOutgoing = Array.from(graphState.edges).filter(edge => {
-            const [src] = edge.split('->');
-            return src === toId;
-        }).length;
-        
-        const toIncoming = Array.from(graphState.edges).filter(edge => {
-            const [, tgt] = edge.split('->');
-            return tgt === toId;
-        }).length;
-        
+
+        // Count existing connections
+        const getNodeConnections = (nodeId) => {
+            const outgoing = Array.from(graphState.edges)
+                .filter(edge => edge.startsWith(`${nodeId}->`)).length;
+            const incoming = Array.from(graphState.edges)
+                .filter(edge => edge.endsWith(`->${nodeId}`)).length;
+            return { outgoing, incoming };
+        };
+
+        const fromConnections = getNodeConnections(fromId);
+        const toConnections = getNodeConnections(toId);
+
         // Apply genre-specific constraints
         switch (graphState.genre) {
             case 'THREAD':
-                if (fromOutgoing >= 1) {
-                    alert('Thread genre: source node already has an outgoing connection');
+                // In THREAD genre, each node can only have one incoming and one outgoing connection
+                if (fromConnections.outgoing > 0) {
+                    alert('Thread genre: The source node already has an outgoing connection. In Thread genre, each node can only have one outgoing connection.');
                     return false;
                 }
-                if (fromIncoming >= 1) {
-                    alert('Thread genre: source node already has an incoming connection');
-                    return false;
-                }
-                if (toOutgoing >= 1) {
-                    alert('Thread genre: target node already has an outgoing connection');
-                    return false;
-                }
-                if (toIncoming >= 1) {
-                    alert('Thread genre: target node already has an incoming connection');
+                if (toConnections.incoming > 0) {
+                    alert('Thread genre: The target node already has an incoming connection. In Thread genre, each node can only have one incoming connection.');
                     return false;
                 }
                 break;
-                
+
             case 'TREE':
-                if (toIncoming >= 1) {
-                    alert('Tree genre: target node already has a parent (only one incoming connection allowed)');
+                // In TREE genre, each node can have multiple outgoing but only one incoming connection
+                if (toConnections.incoming > 0) {
+                    alert('Tree genre: The target node already has an incoming connection. In Tree genre, each node can only have one parent (incoming connection).');
                     return false;
                 }
-                
+
                 // Check for cycles
-                const visited = new Set();
-                const stack = [toId];
-                
-                while (stack.length > 0) {
-                    const currentId = stack.pop();
-                    if (currentId === fromId) {
-                        alert('Tree genre: this connection would create a cycle');
-                        return false;
-                    }
-                    
-                    if (!visited.has(currentId)) {
-                        visited.add(currentId);
-                        // Add all nodes that this node connects to
-                        Array.from(graphState.edges)
-                            .filter(edge => edge.startsWith(`${currentId}->`))
-                            .forEach(edge => {
-                                const [, nextId] = edge.split('->');
-                                stack.push(nextId);
-                            });
-                    }
+                if (wouldCreateCycle(fromId, toId)) {
+                    alert('Tree genre: This connection would create a cycle, which is not allowed in a tree structure.');
+                    return false;
                 }
                 break;
-                
+
             case 'MAP':
-                // No additional constraints
+                // MAP genre has no additional connection constraints
                 break;
         }
-        
+
         return true;
+    }
+
+    // Helper function to check if adding an edge would create a cycle
+    function wouldCreateCycle(fromId, toId) {
+        const visited = new Set();
+        const stack = [toId];
+        
+        while (stack.length > 0) {
+            const currentId = stack.pop();
+            
+            if (currentId === fromId) {
+                return true; // Would create a cycle
+            }
+            
+            if (!visited.has(currentId)) {
+                visited.add(currentId);
+                // Add all nodes that this node connects to
+                Array.from(graphState.edges)
+                    .filter(edge => edge.startsWith(`${currentId}->`))
+                    .forEach(edge => {
+                        const [, nextId] = edge.split('->');
+                        stack.push(nextId);
+                    });
+            }
+        }
+        
+        return false;
     }
     
     // Event listeners

@@ -34,12 +34,7 @@
     stroke-opacity: 0.6;
 }
 
-.node:hover circle {
-    fill: #4a90e2;
-    stroke-width: 3px;
-    stroke-opacity: 1;
-    filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.2));
-}
+
 
 .node text {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
