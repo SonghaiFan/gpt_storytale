@@ -348,10 +348,13 @@ button:disabled {
 
 .node {
     cursor: pointer;
+    z-index: 10;
 }
 
 .node circle {
     transition: all 0.2s ease-in-out;
+    fill-opacity: 1;
+    stroke-opacity: 1;
 }
 
 .node:hover circle {
@@ -395,5 +398,12 @@ button:disabled {
 
 .zoom-group {
     pointer-events: all;
+}
+
+.grid line {
+    stroke: #e9ecef;
+    stroke-width: 1px;
+    stroke-dasharray: 4;
+    pointer-events: none;
 }
  

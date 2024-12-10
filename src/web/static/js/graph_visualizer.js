@@ -4,24 +4,24 @@ class TTNGVisualizer {
         this.width = this.container.node().getBoundingClientRect().width;
         this.height = this.container.node().getBoundingClientRect().height;
         this.margin = { top: 60, right: 40, bottom: 60, left: 80 };
-        this.nodeRadius = 20;  // Define node radius as a class property
+        this.nodeRadius = 20;
         
         this.svg = this.container.append('svg')
             .attr('width', '100%')
             .attr('height', '100%')
             .attr('viewBox', [0, 0, this.width, this.height]);
         
-        // Create a group for zoomable content
+        // Initialize all groups
+        this.gridGroup = this.svg.append('g').attr('class', 'grid');
+        this.axisGroup = this.svg.append('g').attr('class', 'axes');
         this.zoomGroup = this.svg.append('g').attr('class', 'zoom-group');
-        
-        // Add layers in correct order
         this.trackGroup = this.zoomGroup.append('g').attr('class', 'tracks');
         this.edgeGroup = this.zoomGroup.append('g').attr('class', 'edges');
         this.nodeGroup = this.zoomGroup.append('g').attr('class', 'nodes');
         
-        // Axes groups (outside zoom group)
-        this.xAxisGroup = this.svg.append('g').attr('class', 'x-axis');
-        this.yAxisGroup = this.svg.append('g').attr('class', 'y-axis');
+        // Initialize axis groups
+        this.xAxisGroup = this.axisGroup.append('g').attr('class', 'x-axis');
+        this.yAxisGroup = this.axisGroup.append('g').attr('class', 'y-axis');
         
         this.nodes = new Map();
         this.edges = new Set();
@@ -40,16 +40,56 @@ class TTNGVisualizer {
         // Transform the main content
         this.zoomGroup.attr('transform', transform);
         
-        // Update axes
+        // Update axes and grid
         if (this.xScale && this.yScale) {
-            // Create new scaled axes
             const newXScale = transform.rescaleX(this.xScale);
             const newYScale = transform.rescaleY(this.yScale);
             
-            // Update axes with new scales
+            // Update axes
             this.xAxisGroup.call(this.xAxis.scale(newXScale));
             this.yAxisGroup.call(this.yAxis.scale(newYScale));
+            
+            // Update grid lines
+            this.gridGroup.call(this.updateGrid.bind(this, newXScale, newYScale));
         }
+    }
+    
+    updateGrid(xScale, yScale) {
+        // Update vertical grid lines
+        const verticalGrid = this.gridGroup.selectAll('.vertical-grid')
+            .data(xScale.ticks());
+            
+        verticalGrid.exit().remove();
+        
+        verticalGrid.enter()
+            .append('line')
+            .attr('class', 'vertical-grid')
+            .merge(verticalGrid)
+            .attr('x1', d => xScale(d))
+            .attr('x2', d => xScale(d))
+            .attr('y1', this.margin.top)
+            .attr('y2', this.height - this.margin.bottom)
+            .attr('stroke', '#e9ecef')
+            .attr('stroke-width', 1)
+            .attr('stroke-dasharray', '4');
+            
+        // Update horizontal grid lines
+        const horizontalGrid = this.gridGroup.selectAll('.horizontal-grid')
+            .data(yScale.ticks());
+            
+        horizontalGrid.exit().remove();
+        
+        horizontalGrid.enter()
+            .append('line')
+            .attr('class', 'horizontal-grid')
+            .merge(horizontalGrid)
+            .attr('x1', this.margin.left)
+            .attr('x2', this.width - this.margin.right)
+            .attr('y1', d => yScale(d))
+            .attr('y2', d => yScale(d))
+            .attr('stroke', '#e9ecef')
+            .attr('stroke-width', 1)
+            .attr('stroke-dasharray', '4');
     }
     
     initializeGrid(numTracks, numTimepoints, nodes) {
@@ -59,9 +99,9 @@ class TTNGVisualizer {
         const contentHeight = this.height - this.margin.top - this.margin.bottom;
         
         // Calculate track dimensions
-        const nodeSpacing = 20;  // Space between node and track edge
-        const trackHeight = this.nodeRadius * 2 + nodeSpacing * 2;  // Height to wrap node with padding
-        const trackPadding = 40;  // Space between tracks
+        const nodeSpacing = 20;
+        const trackHeight = this.nodeRadius * 2 + nodeSpacing * 2;
+        const trackPadding = 40;
         
         // Create base scales
         this.xScale = d3.scaleLinear()
@@ -75,13 +115,11 @@ class TTNGVisualizer {
         // Create axes
         this.xAxis = d3.axisTop(this.xScale)
             .ticks(numTimepoints)
-            .tickFormat(d => Number.isInteger(d) ? `T${d}` : '')
-            .tickSize(-contentHeight);
+            .tickFormat(d => Number.isInteger(d) ? `T${d}` : '');
             
         this.yAxis = d3.axisLeft(this.yScale)
             .ticks(numTracks)
-            .tickFormat(d => Number.isInteger(d) ? `Track ${d}` : '')
-            .tickSize(-contentWidth);
+            .tickFormat(d => Number.isInteger(d) ? `Track ${d}` : '');
         
         // Add axes
         this.xAxisGroup
@@ -92,6 +130,9 @@ class TTNGVisualizer {
             .attr('transform', `translate(${this.margin.left},0)`)
             .call(this.yAxis);
         
+        // Add initial grid
+        this.updateGrid(this.xScale, this.yScale);
+        
         // Draw tracks
         for (let track = 1; track <= numTracks; track++) {
             const y = this.yScale(track);
@@ -99,11 +140,11 @@ class TTNGVisualizer {
             // Draw track background
             this.trackGroup.append('rect')
                 .attr('class', 'track-bg')
-                .attr('x', this.margin.left + nodeSpacing)  // Add padding from left
-                .attr('y', y - trackHeight/2)  // Center around track position
-                .attr('width', contentWidth - nodeSpacing * 2)  // Subtract padding from both sides
+                .attr('x', this.margin.left + nodeSpacing)
+                .attr('y', y - trackHeight/2)
+                .attr('width', contentWidth - nodeSpacing * 2)
                 .attr('height', trackHeight)
-                .attr('rx', trackHeight/2)  // Make corners fully rounded
+                .attr('rx', trackHeight/2)
                 .attr('ry', trackHeight/2)
                 .attr('fill', '#f8f9fa')
                 .attr('stroke', '#e9ecef');
@@ -122,13 +163,17 @@ class TTNGVisualizer {
     }
     
     clear() {
+        // Clear data structures
         this.nodes.clear();
         this.edges.clear();
-        this.trackGroup.selectAll('*').remove();
-        this.edgeGroup.selectAll('*').remove();
-        this.nodeGroup.selectAll('*').remove();
-        this.xAxisGroup.selectAll('*').remove();
-        this.yAxisGroup.selectAll('*').remove();
+        
+        // Clear all group contents
+        if (this.gridGroup) this.gridGroup.selectAll('*').remove();
+        if (this.trackGroup) this.trackGroup.selectAll('*').remove();
+        if (this.edgeGroup) this.edgeGroup.selectAll('*').remove();
+        if (this.nodeGroup) this.nodeGroup.selectAll('*').remove();
+        if (this.xAxisGroup) this.xAxisGroup.selectAll('*').remove();
+        if (this.yAxisGroup) this.yAxisGroup.selectAll('*').remove();
     }
     
     updateNode(nodeId, nodeData) {
