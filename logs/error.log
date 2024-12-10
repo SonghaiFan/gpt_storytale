@@ -6,3 +6,24 @@ Traceback (most recent call last):
   File "/Users/songhaifan/Documents/GitHub/gpt_storytale/src/models/ttng.py", line 62, in add_edge
     raise ValueError("Edges must follow temporal order")
 ValueError: Edges must follow temporal order
+2024-12-10 14:35:00,371 - src.web.app - ERROR - Error processing node t1_track1: GraphToTextPipeline.map_attributes() takes from 3 to 4 positional arguments but 5 were given
+Traceback (most recent call last):
+  File "/Users/songhaifan/Documents/GitHub/gpt_storytale/src/web/app.py", line 175, in generate_story
+    node_context = pipeline.map_attributes(
+        node_id,
+    ...<2 lines>...
+        node.get('attributes', {})  # Use provided attributes if available
+    )
+TypeError: GraphToTextPipeline.map_attributes() takes from 3 to 4 positional arguments but 5 were given
+2024-12-10 14:53:56,709 - src.web.app - ERROR - Unexpected error: 'source'
+Traceback (most recent call last):
+  File "/Users/songhaifan/Documents/GitHub/gpt_storytale/src/web/app.py", line 217, in generate_story
+    from_node = edge['source']
+                ~~~~^^^^^^^^^^
+KeyError: 'source'
+2024-12-10 14:55:15,131 - src.web.app - ERROR - Unexpected error: 'source'
+Traceback (most recent call last):
+  File "/Users/songhaifan/Documents/GitHub/gpt_storytale/src/web/app.py", line 217, in generate_story
+    from_node = edge['source']
+                ~~~~^^^^^^^^^^
+KeyError: 'source'

@@ -118,103 +118,119 @@ def index():
 def generate_story():
     try:
         data = request.get_json()
-        num_tracks = int(data.get('num_tracks', 3))
-        num_timepoints = int(data.get('num_timepoints', 2))
+        graph_data = data.get('graph', {})
         organizing_attribute = data.get('organizing_attribute', 'entity')
-        graph_genre = data.get('graph_genre', 'thread')
-        custom_attributes = data.get('custom_attributes', {})
         style = data.get('style', {})
         
-        logger.info(f"Generating story with {num_tracks} tracks and {num_timepoints} timepoints")
-        logger.info(f"Using organizing attribute: {organizing_attribute}, genre: {graph_genre}")
+        if not graph_data or not graph_data.get('nodes'):
+            return jsonify({'success': False, 'error': 'No graph data provided'})
+        
+        logger.info(f"Generating story for provided graph with {len(graph_data['nodes'])} nodes")
+        logger.info(f"Using organizing attribute: {organizing_attribute}")
         
         # Initialize the model and pipeline
         try:
             # Convert string parameters to enums
             org_attr = OrganizingAttribute(organizing_attribute)
-            genre = GraphGenre(graph_genre)
+            genre = GraphGenre('thread')  # Fixed as thread for now
             
             model = TTNGModel(genre=genre, organizing_attribute=org_attr)
             pipeline = GraphToTextPipeline(model)
             
-            # Initialize context with custom attributes if provided
+            # Initialize context
             context = pipeline.craft_narrative_context(org_attr)
-            if custom_attributes:
-                if custom_attributes.get('entities'):
-                    context['entities'].extend(custom_attributes['entities'])
-                if custom_attributes.get('events'):
-                    context['events'].extend(custom_attributes['events'])
-                if custom_attributes.get('topics'):
-                    context['topics'].extend(custom_attributes['topics'])
+            
+            # Add custom attributes from graph nodes
+            for node in graph_data['nodes']:
+                if node.get('attributes'):
+                    attrs = node['attributes']
+                    if attrs.get('entities'):
+                        context['entities'].extend(attrs['entities'])
+                    if attrs.get('events'):
+                        context['events'].extend(attrs['events'])
+                    if attrs.get('topics'):
+                        context['topics'].extend(attrs['topics'])
+            
+            # Remove duplicates and empty values
+            context = {k: list(set(filter(None, v))) for k, v in context.items()}
             
             logger.info("Successfully initialized model and pipeline")
         except Exception as e:
             logger.error(f"Error initializing model: {str(e)}", exc_info=True)
             return jsonify({'success': False, 'error': f"Failed to initialize model: {str(e)}"})
         
-        # Calculate time periods
-        time_periods = pipeline.calculate_time_periods(num_timepoints)
+        # Calculate time periods based on max timepoint
+        max_timepoint = max(node['timepoint'] for node in graph_data['nodes'])
+        time_periods = pipeline.calculate_time_periods(max_timepoint)
+        
         story_data = {'nodes': [], 'edges': []}
         
-        # Generate nodes for each timepoint and track
-        for t in range(num_timepoints):
-            for track in range(1, num_tracks + 1):
-                try:
-                    node_id = f"t{t+1}_track{track}"
-                    logger.debug(f"Generating node {node_id}")
-                    
-                    # Get previous node in the same track
-                    prev_node = None
-                    if t > 0:
-                        prev_node = f"t{t}_track{track}"
-                    
-                    # Create node context with continuity
-                    node_context = pipeline.map_attributes(node_id, context, prev_node)
-                    model.add_node(node_id, time_periods[t], node_context, str(track))
-                    logger.debug(f"Added node {node_id} to model")
-                    
-                    # Generate text for the node with style preferences
-                    text = pipeline.generate_text(
-                        model.nodes[node_id],
-                        style=style
-                    )
-                    if not text:
-                        raise ValueError(f"Generated text is empty for node {node_id}")
-                    logger.debug(f"Generated text for node {node_id}: {text[:50]}...")
-                    
-                    story_data['nodes'].append({
-                        'id': node_id,
-                        'text': text,
-                        'track': track,
-                        'timepoint': t+1,
-                        'attributes': {
-                            'topics': node_context.topics,
-                            'entities': node_context.entities,
-                            'events': node_context.events
-                        }
-                    })
-                except Exception as e:
-                    logger.error(f"Error generating node {node_id}: {str(e)}", exc_info=True)
-                    return jsonify({
-                        'success': False, 
-                        'error': f"Failed to generate text for node {node_id}: {str(e)}"
-                    })
+        # Add nodes to model and generate text
+        for node in graph_data['nodes']:
+            try:
+                node_id = node['id']
+                logger.debug(f"Processing node {node_id}")
+                
+                # Create node context from attributes
+                node_context = pipeline.map_attributes(
+                    node_id,
+                    context,
+                    None,  # No previous node needed as we're using provided structure
+                    node.get('attributes')  # Pass attributes directly
+                )
+                
+                # Add node to model
+                model.add_node(
+                    node_id,
+                    time_periods[node['timepoint'] - 1],
+                    node_context,
+                    str(node['track'])
+                )
+                
+                # Generate text
+                text = pipeline.generate_text(
+                    model.nodes[node_id],
+                    style=style
+                )
+                
+                if not text:
+                    raise ValueError(f"Generated text is empty for node {node_id}")
+                
+                story_data['nodes'].append({
+                    'id': node_id,
+                    'text': text,
+                    'track': node['track'],
+                    'timepoint': node['timepoint'],
+                    'attributes': node_context.__dict__
+                })
+                
+            except Exception as e:
+                logger.error(f"Error processing node {node_id}: {str(e)}", exc_info=True)
+                return jsonify({
+                    'success': False,
+                    'error': f"Failed to process node {node_id}: {str(e)}"
+                })
         
-        # Add edges between consecutive timepoints
-        for t in range(num_timepoints - 1):
-            for track in range(1, num_tracks + 1):
-                from_node = f"t{t+1}_track{track}"
-                to_node = f"t{t+2}_track{track}"
-                try:
-                    model.add_edge(from_node, to_node)
-                    story_data['edges'].append({
-                        'from': from_node,
-                        'to': to_node
-                    })
-                    logger.debug(f"Added edge from {from_node} to {to_node}")
-                except ValueError as e:
-                    logger.warning(f"Could not add edge: {str(e)}")
-                    # Continue even if edge can't be added due to constraints
+        # Add edges from input graph
+        for edge in graph_data.get('edges', []):
+            try:
+                # Check if edge uses from/to or source/target format
+                from_node = edge.get('from') or edge.get('source')
+                to_node = edge.get('to') or edge.get('target')
+                
+                if not from_node or not to_node:
+                    logger.warning(f"Invalid edge format: {edge}")
+                    continue
+                    
+                model.add_edge(from_node, to_node)
+                story_data['edges'].append({
+                    'from': from_node,
+                    'to': to_node
+                })
+                logger.debug(f"Added edge from {from_node} to {to_node}")
+            except ValueError as e:
+                logger.warning(f"Could not add edge: {str(e)}")
+                # Continue even if edge can't be added due to constraints
         
         # Save the generated story
         try:

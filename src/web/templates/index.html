@@ -3,148 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GPT Storytale - Story Generator</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/style.css">
+    <title>TTNG Story Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/graph.css') }}">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
-<body class="bg-gray-100 min-h-screen">
-    <div class="container mx-auto px-4 py-8">
-        <header class="text-center mb-12">
-            <h1 class="text-4xl font-bold text-gray-800 mb-2">GPT Storytale</h1>
-            <p class="text-gray-600">Generate controllable story sequences with AI</p>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1>TTNG Story Generator</h1>
         </header>
 
-        <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
-            <!-- Basic Configuration -->
-            <div class="mb-8">
-                <h3 class="text-lg font-semibold text-gray-800 mb-4">Basic Configuration</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <div>
-                        <label class="block text-gray-700 text-sm font-bold mb-2" for="num-tracks">
-                            Number of Tracks
-                        </label>
-                        <input type="number" id="num-tracks" min="1" max="5" value="3" 
-                               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        <div class="main-content">
+            <aside class="editor-panel">
+                <section class="panel-section">
+                    <h2>Graph Settings</h2>
+                    <div class="input-group">
+                        <label for="num_tracks">Number of Tracks</label>
+                        <input type="number" id="num_tracks" min="1" max="10" value="3">
                     </div>
-                    <div>
-                        <label class="block text-gray-700 text-sm font-bold mb-2" for="num-timepoints">
-                            Number of Timepoints
-                        </label>
-                        <input type="number" id="num-timepoints" min="2" max="5" value="2"
-                               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    <div class="input-group">
+                        <label for="num_timepoints">Number of Timepoints</label>
+                        <input type="number" id="num_timepoints" min="1" max="10" value="3">
                     </div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <div>
-                        <label class="block text-gray-700 text-sm font-bold mb-2" for="organizing-attribute">
-                            Organizing Attribute
-                        </label>
-                        <select id="organizing-attribute" 
-                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                            <option value="entity">Entity</option>
-                            <option value="event">Event</option>
-                            <option value="topic">Topic</option>
+                    <div class="input-group">
+                        <label for="organizing_attribute">Organizing Attribute</label>
+                        <select id="organizing_attribute">
+                            <option value="ENTITY">Entity</option>
+                            <option value="EVENT">Event</option>
+                            <option value="TOPIC">Topic</option>
                         </select>
                     </div>
-                    <div>
-                        <label class="block text-gray-700 text-sm font-bold mb-2" for="graph-genre">
-                            Graph Genre
-                        </label>
-                        <select id="graph-genre" 
-                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                            <option value="thread">Thread (deg ≤ 2)</option>
-                            <option value="tree">Tree (in-deg ≤ 1)</option>
-                            <option value="map">Map (unrestricted)</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
+                    <button id="init_grid_btn" class="primary-btn">Initialize Grid</button>
+                </section>
 
-            <!-- Story Attributes -->
-            <div class="mb-8">
-                <h3 class="text-lg font-semibold text-gray-800 mb-4">Story Attributes</h3>
-                <div class="grid grid-cols-1 gap-6">
-                    <!-- Entities -->
-                    <div>
-                        <label class="block text-gray-700 text-sm font-bold mb-2">
-                            Custom Entities
-                            <span class="text-sm font-normal text-gray-500">(comma-separated)</span>
-                        </label>
-                        <input type="text" id="custom-entities" placeholder="e.g., Tech Companies, Environmental Groups, Research Labs"
-                               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                <section class="panel-section">
+                    <h2>Node Editor</h2>
+                    <div class="input-group">
+                        <label for="node_track">Track</label>
+                        <select id="node_track"></select>
                     </div>
-                    <!-- Events -->
-                    <div>
-                        <label class="block text-gray-700 text-sm font-bold mb-2">
-                            Custom Events
-                            <span class="text-sm font-normal text-gray-500">(comma-separated)</span>
-                        </label>
-                        <input type="text" id="custom-events" placeholder="e.g., Technology Breakthrough, Global Summit, Market Disruption"
-                               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    <div class="input-group">
+                        <label for="node_timepoint">Timepoint</label>
+                        <select id="node_timepoint"></select>
                     </div>
-                    <!-- Topics -->
-                    <div>
-                        <label class="block text-gray-700 text-sm font-bold mb-2">
-                            Custom Topics
-                            <span class="text-sm font-normal text-gray-500">(comma-separated)</span>
-                        </label>
-                        <input type="text" id="custom-topics" placeholder="e.g., AI Ethics, Climate Innovation, Digital Privacy"
-                               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    <div class="input-group">
+                        <label for="node_entity">Entity</label>
+                        <input type="text" id="node_entity" placeholder="Enter entity">
                     </div>
-                </div>
-            </div>
+                    <div class="input-group">
+                        <label for="node_event">Event</label>
+                        <input type="text" id="node_event" placeholder="Enter event">
+                    </div>
+                    <div class="input-group">
+                        <label for="node_topic">Topic</label>
+                        <input type="text" id="node_topic" placeholder="Enter topic">
+                    </div>
+                    <button id="add_node_btn" class="secondary-btn">Add/Update Node</button>
+                </section>
 
-            <!-- Story Style -->
-            <div class="mb-8">
-                <h3 class="text-lg font-semibold text-gray-800 mb-4">Story Style</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-gray-700 text-sm font-bold mb-2" for="cefr-level">
-                            Language Level (CEFR)
-                        </label>
-                        <select id="cefr-level" 
-                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                            <option value="A1">A1 (Beginner)</option>
-                            <option value="A2">A2 (Elementary)</option>
-                            <option value="B1">B1 (Intermediate)</option>
-                            <option value="B2">B2 (Upper Intermediate)</option>
-                            <option value="C1">C1 (Advanced)</option>
-                        </select>
-                        <p class="text-sm text-gray-500 mt-1">Select the target reading level for the generated story</p>
+                <section class="panel-section">
+                    <h2>Edge Editor</h2>
+                    <div class="input-group">
+                        <label for="edge_from">From Node</label>
+                        <select id="edge_from"></select>
                     </div>
-                    <div>
-                        <label class="block text-gray-700 text-sm font-bold mb-2" for="tone">
-                            Tone
-                        </label>
-                        <select id="tone" 
-                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                            <option value="neutral">Neutral</option>
-                            <option value="optimistic">Optimistic</option>
-                            <option value="critical">Critical</option>
-                            <option value="balanced">Balanced</option>
-                        </select>
+                    <div class="input-group">
+                        <label for="edge_to">To Node</label>
+                        <select id="edge_to"></select>
                     </div>
-                </div>
-            </div>
+                    <div class="button-group">
+                        <button id="add_edge_btn" class="secondary-btn">Add Edge</button>
+                        <button id="remove_edge_btn" class="danger-btn">Remove Edge</button>
+                    </div>
+                </section>
 
-            <button id="generate-btn" 
-                    class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300">
-                Generate Story
-            </button>
-        </div>
+                <section class="panel-section">
+                    <div class="button-group">
+                        <button id="generate_btn" class="primary-btn">Generate Story</button>
+                        <button id="clear_graph_btn" class="danger-btn">Clear Graph</button>
+                    </div>
+                </section>
+            </aside>
 
-        <div id="loading" class="hidden text-center py-8">
-            <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto"></div>
-            <p class="mt-4 text-gray-600">Generating your story...</p>
-        </div>
-
-        <div id="storyOutput" class="hidden">
-            <h2 class="text-2xl font-bold text-gray-800 mb-4">Generated Story</h2>
-            <div id="storyGrid" class="grid grid-cols-1 gap-8"></div>
+            <main class="content-area">
+                <div class="graph-container" id="graph-container"></div>
+                <div class="story-container" id="story-content"></div>
+            </main>
         </div>
     </div>
 
-    <script src="/static/js/main.js"></script>
+    <script src="{{ url_for('static', filename='js/graph_visualizer.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 </html> 
