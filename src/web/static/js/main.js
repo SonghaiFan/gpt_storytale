@@ -33,6 +33,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const numTimepointsInput = document.getElementById('num_timepoints');
     const organizingAttributeSelect = document.getElementById('organizing_attribute');
     
+    // Create tooltip element
+    const tooltip = document.createElement('div');
+    tooltip.className = 'node-tooltip';
+    tooltip.style.display = 'none';
+    document.body.appendChild(tooltip);
+    
     // Initialize grid
     function initializeGrid() {
         const numTracks = parseInt(numTracksInput.value);
@@ -42,8 +48,26 @@ document.addEventListener('DOMContentLoaded', () => {
         graphState.nodes.clear();
         graphState.edges.clear();
         
-        // Initialize empty grid visualization
-        visualizer.initializeGrid(numTracks, numTimepoints);
+        // Initialize empty grid with placeholder nodes
+        for (let track = 1; track <= numTracks; track++) {
+            for (let timepoint = 1; timepoint <= numTimepoints; timepoint++) {
+                const nodeId = `t${timepoint}_track${track}`;
+                graphState.nodes.set(nodeId, {
+                    id: nodeId,
+                    track: track,
+                    timepoint: timepoint,
+                    attributes: {
+                        entities: [],
+                        events: [],
+                        topics: []
+                    },
+                    isEmpty: true
+                });
+            }
+        }
+        
+        // Initialize visualization
+        visualizer.initializeGrid(numTracks, numTimepoints, graphState.nodes);
         graphState.gridInitialized = true;
         
         // Update track and timepoint selectors
@@ -80,13 +104,57 @@ document.addEventListener('DOMContentLoaded', () => {
                 entities: entities,
                 events: events,
                 topics: topics
-            }
+            },
+            isEmpty: false
         };
         
         graphState.nodes.set(nodeId, nodeData);
-        visualizer.updateNode(nodeId, nodeData.attributes);
+        visualizer.updateNode(nodeId, nodeData);
         updateNodeSelectors();
     }
+    
+    // Show tooltip for node
+    function showTooltip(event, node) {
+        if (!node) return;
+        
+        const rect = event.target.getBoundingClientRect();
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+        
+        tooltip.innerHTML = `
+            <h4>Node ${node.id}</h4>
+            ${node.isEmpty ? '<p>Empty Node</p>' : `
+                <p><span class="attribute-label">Entities:</span> ${node.attributes.entities.join(', ') || 'None'}</p>
+                <p><span class="attribute-label">Events:</span> ${node.attributes.events.join(', ') || 'None'}</p>
+                <p><span class="attribute-label">Topics:</span> ${node.attributes.topics.join(', ') || 'None'}</p>
+            `}
+        `;
+        
+        tooltip.style.display = 'block';
+        tooltip.style.left = rect.left + scrollLeft + 'px';
+        tooltip.style.top = rect.bottom + scrollTop + 5 + 'px';
+    }
+    
+    // Hide tooltip
+    function hideTooltip() {
+        tooltip.style.display = 'none';
+    }
+    
+    // Add event listeners for tooltip
+    document.addEventListener('mouseover', (e) => {
+        const nodeElement = e.target.closest('.node');
+        if (nodeElement) {
+            const nodeId = nodeElement.getAttribute('data-node-id');
+            const nodeData = graphState.nodes.get(nodeId);
+            showTooltip(e, nodeData);
+        }
+    });
+    
+    document.addEventListener('mouseout', (e) => {
+        if (!e.target.closest('.node')) {
+            hideTooltip();
+        }
+    });
     
     // Add edge between nodes
     function addEdge() {
