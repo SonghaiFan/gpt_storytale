@@ -47,13 +47,18 @@ class PromptManager:
         """Create narrative prompt for text generation"""
         time_period = node.time.strftime("%B %d, %Y")
         
+        # Get first value from each attribute list or use default
+        primary_topic = node.attributes.topics[0] if node.attributes.topics else "General"
+        key_entity = node.attributes.entities[0] if node.attributes.entities else "Unknown Entity"
+        main_event = node.attributes.events[0] if node.attributes.events else "General Event"
+        
         prompt = f"""Write a hard news article with the following specifications:
         
         KEY INFORMATION:
         Date: {time_period}
-        Primary Topic: {node.attributes.topics[0]}
-        Key Entity: {node.attributes.entities[0]}
-        Main Event: {node.attributes.events[0]}
+        Primary Topic: {primary_topic}
+        Key Entity: {key_entity}
+        Main Event: {main_event}
         Language Level: CEFR {style.cefr_level}
         """
         
@@ -69,11 +74,15 @@ class PromptManager:
     @staticmethod
     def _add_previous_context(prev_node: Node) -> str:
         """Add context from previous node to prompt"""
+        # Get first value from each attribute list or use default
+        prev_entity = prev_node.attributes.entities[0] if prev_node.attributes.entities else "Unknown Entity"
+        prev_event = prev_node.attributes.events[0] if prev_node.attributes.events else "General Event"
+        
         return f"""
         PREVIOUS COVERAGE:
         Date: {prev_node.time.strftime("%B %d, %Y")}
-        Related Entity: {prev_node.attributes.entities[0]}
-        Previous Event: {prev_node.attributes.events[0]}
+        Related Entity: {prev_entity}
+        Previous Event: {prev_event}
         """
     
     @staticmethod

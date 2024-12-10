@@ -124,7 +124,23 @@ class GraphToTextPipeline:
         }
     
     def _get_previous_node(self, node: Node) -> Optional[Node]:
-        """Get previous node in the same track"""
+        """Get previous node based on graph edges or temporal order in same track"""
+        node_id = None
+        # Find the node ID from the model
+        for nid, n in self.model.nodes.items():
+            if n == node:
+                node_id = nid
+                break
+        
+        if not node_id:
+            return None
+        
+        # First try to find parent node through edges
+        for from_node, to_node in self.model.edges:
+            if to_node == node_id:
+                return self.model.nodes[from_node]
+        
+        # If no parent found through edges, fallback to temporal order in same track
         track_nodes = [n for n in self.model.nodes.values() if n.track_id == node.track_id]
         track_nodes.sort(key=lambda x: x.time)
         prev_node_idx = track_nodes.index(node) - 1 if node in track_nodes else -1

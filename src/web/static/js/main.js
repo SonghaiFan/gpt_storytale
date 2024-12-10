@@ -62,9 +62,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const nodeId = `t${timepoint}_track${track}`;
         
         // Split comma-separated values and trim whitespace
-        const entities = nodeEntityInput.value.split(',').map(s => s.trim()).filter(s => s);
-        const events = nodeEventInput.value.split(',').map(s => s.trim()).filter(s => s);
-        const topics = nodeTopicInput.value.split(',').map(s => s.trim()).filter(s => s);
+        const entities = nodeEntityInput.value ? nodeEntityInput.value.split(',').map(s => s.trim()).filter(s => s) : [];
+        const events = nodeEventInput.value ? nodeEventInput.value.split(',').map(s => s.trim()).filter(s => s) : [];
+        const topics = nodeTopicInput.value ? nodeTopicInput.value.split(',').map(s => s.trim()).filter(s => s) : [];
+        
+        // Ensure at least one value for each attribute
+        if (!entities.length || !events.length || !topics.length) {
+            alert('Please provide at least one value for each of: Entity, Event, and Topic');
+            return;
+        }
         
         const nodeData = {
             id: nodeId,

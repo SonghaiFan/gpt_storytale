@@ -607,3 +607,43 @@ KeyError: 'source'
 2024-12-10 15:25:40,134 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:25:40] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
 2024-12-10 15:25:40,154 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:25:40] "[36mGET /static/js/graph_visualizer.js HTTP/1.1[0m" 304 -
 2024-12-10 15:25:40,161 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:25:40] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-12-10 15:26:31,099 - src.web.app - INFO - Homepage accessed
+2024-12-10 15:26:31,101 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:26:31] "GET / HTTP/1.1" 200 -
+2024-12-10 15:26:31,158 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:26:31] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2024-12-10 15:26:31,160 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:26:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-12-10 15:26:31,163 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:26:31] "[36mGET /static/js/graph_visualizer.js HTTP/1.1[0m" 304 -
+2024-12-10 15:30:49,201 - src.web.app - INFO - Generating story for provided graph with 1 nodes
+2024-12-10 15:30:49,201 - src.web.app - INFO - Using organizing attribute: entity
+2024-12-10 15:30:49,228 - src.web.app - INFO - Successfully initialized model and pipeline
+2024-12-10 15:30:49,228 - src.pipeline.graph_to_text - ERROR - Error generating text: list index out of range
+2024-12-10 15:30:49,229 - src.web.app - ERROR - Error processing node t1_track1: list index out of range
+Traceback (most recent call last):
+  File "/Users/songhaifan/Documents/GitHub/gpt_storytale/src/web/app.py", line 191, in generate_story
+    text = pipeline.generate_text(
+        model.nodes[node_id],
+        style=style
+    )
+  File "/Users/songhaifan/Documents/GitHub/gpt_storytale/src/pipeline/graph_to_text.py", line 79, in generate_text
+    user_prompt = self.prompt_manager.create_narrative_prompt(node, prev_node, style_config)
+  File "/Users/songhaifan/Documents/GitHub/gpt_storytale/src/pipeline/components/prompt_manager.py", line 54, in create_narrative_prompt
+    Primary Topic: {node.attributes.topics[0]}
+                    ~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+2024-12-10 15:30:49,236 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:30:49] "POST /generate_story HTTP/1.1" 200 -
+2024-12-10 15:32:19,920 - werkzeug - INFO -  * Detected change in '/Users/songhaifan/Documents/GitHub/gpt_storytale/src/pipeline/components/prompt_manager.py', reloading
+2024-12-10 15:32:20,211 - werkzeug - INFO -  * Restarting with stat
+2024-12-10 15:32:22,316 - src.web.app - INFO - Starting Flask application
+2024-12-10 15:32:22,367 - werkzeug - WARNING -  * Debugger is active!
+2024-12-10 15:32:22,388 - werkzeug - INFO -  * Debugger PIN: 717-597-659
+2024-12-10 15:32:26,980 - src.web.app - INFO - Generating story for provided graph with 1 nodes
+2024-12-10 15:32:26,981 - src.web.app - INFO - Using organizing attribute: entity
+2024-12-10 15:32:27,079 - src.web.app - INFO - Successfully initialized model and pipeline
+2024-12-10 15:32:29,384 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-10 15:32:29,393 - src.web.app - INFO - Story saved to story_1tracks_1timepoints_20241210_153229.json
+2024-12-10 15:32:29,393 - src.web.app - INFO - Successfully generated complete story
+2024-12-10 15:32:29,394 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 15:32:29] "POST /generate_story HTTP/1.1" 200 -
+2024-12-10 15:35:19,460 - werkzeug - INFO -  * Detected change in '/Users/songhaifan/Documents/GitHub/gpt_storytale/src/pipeline/graph_to_text.py', reloading
+2024-12-10 15:35:19,692 - werkzeug - INFO -  * Restarting with stat
+2024-12-10 15:35:21,582 - src.web.app - INFO - Starting Flask application
+2024-12-10 15:35:21,636 - werkzeug - WARNING -  * Debugger is active!
+2024-12-10 15:35:21,659 - werkzeug - INFO -  * Debugger PIN: 717-597-659
