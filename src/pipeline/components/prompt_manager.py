@@ -1,9 +1,13 @@
-from typing import Optional
-from ...models.ttng import Node
+"""
+Prompt management for the story generation pipeline.
+"""
+
+from typing import Dict, List, Optional
+from src.models.ttng import Node
 from .config import StyleConfig
 
 class PromptManager:
-    """Manages prompt generation and formatting"""
+    """Manages prompt generation and templates in the pipeline"""
     
     @staticmethod
     def create_system_prompt(style: StyleConfig) -> str:
@@ -25,22 +29,40 @@ class PromptManager:
         - Impact on stakeholders and broader community
         - Direct quotes or statements (when available)"""
         
-        cefr_guidelines = {
-            'A1': "Use basic subject-verb-object structure...",
-            'A2': "Use simple but varied sentence structures...",
-            'B1': "Use clear chronological sequences...",
-            'B2': "Include multiple perspectives and sources...",
-            'C1': "Use full range of journalistic techniques..."
-        }
-        
         tone_guidelines = {
-            'neutral': "Maintain strict journalistic objectivity...",
-            'optimistic': "While maintaining objectivity, include relevant positive developments...",
-            'critical': "Maintain objectivity while thoroughly examining challenges...",
-            'balanced': "Present multiple perspectives with equal weight..."
+            'neutral': "Maintain strict journalistic objectivity and balanced reporting.",
+            'optimistic': "While maintaining objectivity, highlight constructive developments and potential solutions.",
+            'critical': "Maintain objectivity while thoroughly examining challenges and implications.",
+            'balanced': "Present multiple perspectives with equal weight and thorough analysis."
         }
         
-        return f"{base_prompt}\n{cefr_guidelines[style.cefr_level]}\n{tone_guidelines[style.tone]}"
+        # Add CEFR-specific guidelines
+        cefr_guidelines = PromptManager._get_cefr_guidelines(style.cefr_level)
+        
+        return f"{base_prompt}\n\n{tone_guidelines[style.tone]}\n\n{cefr_guidelines}"
+    
+    @staticmethod
+    def create_narrative_space_prompt(structure: Dict[str, int]) -> List[Dict[str, str]]:
+        """Create prompt for narrative space generation"""
+        prompt = f"""Given a story structure with:
+- {structure['timepoints']} timepoints
+- {structure['tracks']} parallel tracks
+- {structure['total_nodes']} total story nodes
+
+Generate a narrative space with entities, events, and topics that could form a narrative news focuses on timely and consequential events or incidents that impact people locally, regionally, nationally, or internationally. The content should reflect journalistic style and genre, covering topics such as politics, international affairs, economics, and science.
+
+The response should be a JSON object with three lists:
+1. entities: a list of key individuals, organizations, or institutions involved in the news
+2. events: a list of significant and timely incidents or actions
+3. topics: a list of themes or subjects relevant to news
+
+Each track should maintain coherence through shared entities, while events and topics can vary.
+Format the response as a valid JSON object."""
+
+        return [
+            {"role": "system", "content": "You are a narrative designer creating story elements."},
+            {"role": "user", "content": prompt}
+        ]
     
     @staticmethod
     def create_narrative_prompt(node: Node, prev_node: Optional[Node], style: StyleConfig) -> str:
@@ -52,11 +74,10 @@ class PromptManager:
         events = node.attributes.events if node.attributes else []
         topics = node.attributes.topics if node.attributes else []
         
-        prompt = f"""Write a news article about the following event:
+        prompt = f"""Write a news article based on the following attributes:
 
 KEY INFORMATION:
 Time: {time_period}
-Track: {node.track_id}
 Key Entities: {', '.join(entities)}
 Current Events: {', '.join(events)}
 Topics: {', '.join(topics)}
@@ -72,7 +93,6 @@ Language Level: CEFR {style.cefr_level}
             prompt += f"""
 PREVIOUS CONTEXT:
 Time: {prev_time}
-Track: {prev_node.track_id}
 Related Entities: {', '.join(prev_entities)}
 Previous Events: {', '.join(prev_events)}
 """
@@ -94,46 +114,44 @@ WRITING GUIDELINES:
     
     @staticmethod
     def _get_cefr_guidelines(cefr_level: str) -> str:
-        """Get writing guidelines for CEFR level"""
+        """Get language guidelines based on CEFR level"""
         guidelines = {
             'A1': """
-            Writing Guidelines:
-            - Use simple present and past tense
-            - Focus on basic factual statements
-            - Keep sentences very short (5-7 words)
-            - Use only the most common news vocabulary
-            - Avoid complex explanations""",
-            
+LANGUAGE GUIDELINES:
+- Use very simple present tense sentences
+- Focus on concrete, everyday topics
+- Use basic, high-frequency vocabulary
+- Keep sentences short and direct
+""",
             'A2': """
-            Writing Guidelines:
-            - Use simple but clear sentence structures
-            - Include basic time expressions
-            - Keep sentences short (7-10 words)
-            - Use common journalistic phrases
-            - Add simple supporting details""",
-            
+LANGUAGE GUIDELINES:
+- Use simple present and past tense
+- Connect ideas with basic conjunctions
+- Use common vocabulary and phrases
+- Keep paragraphs short and focused
+""",
             'B1': """
-            Writing Guidelines:
-            - Use clear chronological markers
-            - Include cause and effect relationships
-            - Write moderate length sentences (10-15 words)
-            - Use standard news terminology
-            - Add relevant context""",
-            
+LANGUAGE GUIDELINES:
+- Use a mix of simple and compound sentences
+- Include some idiomatic expressions
+- Maintain clear chronological order
+- Express opinions with simple justifications
+""",
             'B2': """
-            Writing Guidelines:
-            - Use varied sentence structures
-            - Include multiple perspectives
-            - Write varied length sentences (10-20 words)
-            - Use professional news vocabulary
-            - Add detailed background""",
-            
+LANGUAGE GUIDELINES:
+- Use varied sentence structures
+- Include topic-specific vocabulary
+- Express clear cause and effect
+- Provide detailed descriptions
+- Use appropriate register
+""",
             'C1': """
-            Writing Guidelines:
-            - Use sophisticated news writing techniques
-            - Include nuanced analysis
-            - Write natural length sentences
-            - Use advanced journalistic vocabulary
-            - Provide comprehensive context"""
+LANGUAGE GUIDELINES:
+- Use complex sentence structures
+- Include sophisticated vocabulary
+- Express nuanced viewpoints
+- Use advanced cohesive devices
+- Maintain formal academic style
+"""
         }
         return guidelines[cefr_level] 

@@ -1,0 +1,17 @@
+README.md
+setup.py
+gpt_storytale.egg-info/PKG-INFO
+gpt_storytale.egg-info/SOURCES.txt
+gpt_storytale.egg-info/dependency_links.txt
+gpt_storytale.egg-info/requires.txt
+gpt_storytale.egg-info/top_level.txt
+src/__init__.py
+src/models/__init__.py
+src/models/ttng.py
+src/pipeline/__init__.py
+src/pipeline/graph_to_text.py
+src/pipeline/components/__init__.py
+src/pipeline/components/config.py
+src/pipeline/components/logger_config.py
+src/pipeline/components/narrative_space.py
+src/pipeline/components/prompt_manager.py

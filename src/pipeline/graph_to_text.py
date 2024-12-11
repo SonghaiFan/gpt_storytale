@@ -1,33 +1,28 @@
 from typing import Dict, List, Optional, Any, Set
 from openai import OpenAI
-from ..models.ttng import TTNGModel, Node, OrganizingAttribute
-from ..models.narrative_context import NarrativeContext
+from ..models.ttng import TTNGModel, Node, OrganizingAttribute, NarrativeSpace
 import os
 from dotenv import load_dotenv
 from datetime import datetime, timedelta
 import random
-import logging
 from .components import (
     StyleConfig,
-    NarrativeContextManager,
     PromptManager,
+    NarrativeSpaceManager
 )
+import json
+from .components.logger_config import setup_logger
 
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-)
-logger = logging.getLogger(__name__)
+logger = setup_logger(__name__)
 
 class GraphToTextPipeline:
     """Pipeline for generating narrative text from TTNG"""
     
     def __init__(self, model: TTNGModel):
+        """Initialize pipeline with TTNG model and components"""
         self.model = model
-        self.context_manager = NarrativeContextManager()
+        self.context_manager = NarrativeSpaceManager()
         self.prompt_manager = PromptManager()
-        self.previous_nodes: Dict[str, str] = {}
         
         # Initialize OpenAI client
         load_dotenv()
@@ -35,10 +30,21 @@ class GraphToTextPipeline:
         if not api_key:
             raise ValueError("OpenAI API key not found in environment variables")
         self.client = OpenAI(api_key=api_key)
-    
-    def craft_narrative_context(self, organizing_attribute: Optional[OrganizingAttribute] = None) -> Dict[str, List[str]]:
-        """Initialize narrative space with available attributes"""
-        return self.context_manager.get_context(organizing_attribute)
+        
+        # Use TTNG's built-in validation
+        self.model.validate_graph()
+        
+        logger.info("Initialized GraphToTextPipeline with model settings:")
+        logger.info("Idiom: %s", model.idiom.value)
+        logger.info("Organizing Attribute: %s", model.organizing_attribute.value)
+
+    def initialize_story_attributes(self) -> Dict[str, List[str]]:
+        """Initialize story attributes by generating narrative space"""
+        # Get graph dimensions
+        structure = self.model.get_graph_dimensions()
+        
+        # Generate narrative space using the manager
+        return self.context_manager.initialize_story_attributes(structure)
     
     def calculate_time_periods(self, num_timepoints: int, base_time: Optional[datetime] = None) -> List[datetime]:
         """Calculate time intervals for narrative segments"""
@@ -47,53 +53,68 @@ class GraphToTextPipeline:
     
     def map_attributes(self, node_id: str, context: Dict[str, List[str]], 
                       previous_node: Optional[str] = None,
-                      provided_attributes: Optional[Dict[str, List[str]]] = None) -> NarrativeContext:
-        """Enhanced attribute mapping with coherence rules"""
-        track_id = int(node_id.split('_')[1].replace('track', ''))
-        
+                      provided_attributes: Optional[Dict[str, List[str]]] = None) -> NarrativeSpace:
+        """Map attributes using TTNG's coherence rules"""
         if provided_attributes:
-            return NarrativeContext(**provided_attributes)
+            return NarrativeSpace(**provided_attributes)
         
-        # Get track's existing attributes
-        track_attrs = self.model.get_track_attributes(str(track_id))
+        # Use TTNG's direct track access instead of string manipulation
+        node = self.model.nodes[node_id]
+        track_id = node.track_id
+        connected_tracks = self.model.get_track_connections(track_id)
         
-        # Get connected tracks' attributes
-        connected_tracks = self.model.get_track_connections(str(track_id))
-        connected_attrs = set()
-        for t in connected_tracks:
-            connected_attrs.update(self.model.get_track_attributes(t))
-        
-        # Select attributes ensuring track coherence and cross-track diversity
-        attrs = {
-            'entities': self._select_coherent_attributes('entities', track_attrs, connected_attrs, context),
-            'events': self._select_coherent_attributes('events', track_attrs, connected_attrs, context),
-            'topics': self._select_coherent_attributes('topics', track_attrs, connected_attrs, context)
+        # Create mapping between uppercase and lowercase attribute names
+        attr_mapping = {
+            'ENTITY': 'entities',
+            'EVENT': 'events',
+            'TOPIC': 'topics'
         }
         
-        return NarrativeContext(**attrs)
+        attrs = {}
+        for attr_type in ['entities', 'events', 'topics']:
+            # Skip if the key doesn't exist in context
+            if attr_type not in context:
+                continue
+                
+            available = set(context[attr_type])
+            organizing_attr = self.model.organizing_attribute.value
+            if organizing_attr == attr_type.upper():
+                # Use TTNG's track attribute management
+                attrs[attr_type] = list(self.model.get_track_attributes(track_id))
+            else:
+                # Leverage TTNG's coherence validation
+                for connected_track in connected_tracks:
+                    track_nodes = self.model.tracks[connected_track]
+                    for connected_node in track_nodes:
+                        if self.model.validate_coherence(node_id, connected_node):
+                            connected_attrs = self.model.get_track_attributes(connected_track)
+                            available -= set(connected_attrs)
+                attrs[attr_type] = [random.choice(list(available) or context[attr_type])]
+        
+        return NarrativeSpace(**attrs)
     
     def generate_text(self, node: Node, style: Optional[Dict[str, str]] = None) -> str:
-        """Generate text with enhanced context awareness"""
+        """Generate text with enhanced TTNG context awareness"""
         try:
             style_config = StyleConfig(**style) if style else StyleConfig()
             
-            # Get previous node for context
-            prev_node = self._get_previous_node(node)
+            # Get node context from TTNG
+            node_id = next(nid for nid, n in self.model.nodes.items() if n == node)
+            track_id = node.track_id
             
-            # Create prompts
+            # Get structural context
+            in_degree, out_degree = self.model.get_node_degree(node_id)
+            connected_tracks = self.model.get_track_connections(track_id)
+            track_attributes = self.model.get_track_attributes(track_id)
+            
+            # Create prompts without the extra context parameter
             system_prompt = self.prompt_manager.create_system_prompt(style_config)
             user_prompt = self.prompt_manager.create_narrative_prompt(
                 node=node,
-                prev_node=prev_node,
+                prev_node=self.model.get_previous_node_in_track(node_id),
                 style=style_config
             )
             
-            # Log prompts
-            logger.info("Generating text for node %s:", node.track_id)
-            logger.info("System prompt: %s", system_prompt)
-            logger.info("User prompt: %s", user_prompt)
-            
-            # Generate text
             return self._generate_completion(system_prompt, user_prompt)
             
         except Exception as e:
@@ -101,59 +122,15 @@ class GraphToTextPipeline:
             raise
     
     
-    def _get_continuous_attributes(self, prev_node: str, context: Dict[str, List[str]]) -> Dict[str, List[str]]:
-        """Get attributes maintaining continuity with previous node"""
-        prev_attrs = self.model.nodes[prev_node].attributes
-        
-        if self.model.organizing_attribute == OrganizingAttribute.ENTITY:
-            return {
-                'entities': [random.choice(prev_attrs.entities)],
-                'events': [random.choice(context['events'])],
-                'topics': [random.choice(context['topics'])]
-            }
-        elif self.model.organizing_attribute == OrganizingAttribute.EVENT:
-            return {
-                'entities': [random.choice(context['entities'])],
-                'events': [random.choice(prev_attrs.events)],
-                'topics': [random.choice(context['topics'])]
-            }
-        else:  # TOPIC
-            return {
-                'entities': [random.choice(context['entities'])],
-                'events': [random.choice(context['events'])],
-                'topics': [random.choice(prev_attrs.topics)]
-            }
-    
-    def _get_new_attributes(self, track_id: int, context: Dict[str, List[str]]) -> Dict[str, List[str]]:
-        """Get new attributes based on track"""
-        return {
-            'entities': [context['entities'][track_id % len(context['entities'])]],
-            'events': [context['events'][track_id % len(context['events'])]],
-            'topics': [context['topics'][track_id % len(context['topics'])]]
-        }
-    
     def _get_previous_node(self, node: Node) -> Optional[Node]:
-        """Get previous node based on graph edges or temporal order in same track"""
-        node_id = None
-        # Find the node ID from the model
-        for nid, n in self.model.nodes.items():
-            if n == node:
-                node_id = nid
-                break
-        
+        """Get previous node using TTNG's graph structure"""
+        node_id = next((nid for nid, n in self.model.nodes.items() if n == node), None)
         if not node_id:
             return None
         
-        # First try to find parent node through edges
-        for from_node, to_node in self.model.edges:
-            if to_node == node_id:
-                return self.model.nodes[from_node]
-        
-        # If no parent found through edges, fallback to temporal order in same track
-        track_nodes = [n for n in self.model.nodes.values() if n.track_id == node.track_id]
-        track_nodes.sort(key=lambda x: x.time)
-        prev_node_idx = track_nodes.index(node) - 1 if node in track_nodes else -1
-        return track_nodes[prev_node_idx] if prev_node_idx >= 0 else None
+        # Use TTNG's edge information directly
+        incoming_edges = [edge[0] for edge in self.model.edges if edge[1] == node_id]
+        return self.model.nodes[incoming_edges[0]] if incoming_edges else self.model.get_previous_node_in_track(node_id)
     
     def _generate_completion(self, system_prompt: str, user_prompt: str) -> str:
         """Generate text completion using OpenAI API"""
@@ -162,11 +139,6 @@ class GraphToTextPipeline:
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_prompt}
             ]
-            
-            # Log the prompts
-            logger.info("Sending prompts to OpenAI for text generation:")
-            logger.info("System prompt: %s", system_prompt)
-            logger.info("User prompt: %s", user_prompt)
             
             completion = self.client.chat.completions.create(
                 model="gpt-3.5-turbo",
@@ -178,12 +150,13 @@ class GraphToTextPipeline:
                 response_format={"type": "text"}
             )
             
-            # Log the response
             response_text = completion.choices[0].message.content.strip()
-            logger.info("Received response from OpenAI:")
-            logger.info(response_text)
+            # Log prompts sent to OpenAI
+            logger.info("\nPrompts sent to OpenAI:")
+            logger.info("System prompt:\n%s", system_prompt)
+            logger.info("User prompt:\n%s", user_prompt)
+            logger.info("\nOpenAI Response:\n%s", response_text)
             
-            # Process and return the text
             words = response_text.split()
             return ' '.join(words[:120]) + ('...' if len(words) > 120 else '')
             
@@ -191,44 +164,54 @@ class GraphToTextPipeline:
             logger.error(f"OpenAI API error: {str(e)}")
             raise
     
-    def _select_coherent_attributes(self, attr_type: str, 
-                                  track_attrs: Set[str],
-                                  connected_attrs: Set[str],
-                                  context: Dict[str, List[str]]) -> List[str]:
-        """Select attributes maintaining coherence rules"""
-        if not track_attrs:  # If no existing attributes
-            if self.model.organizing_attribute.value == attr_type:
-                # For organizing attribute, select a new one
-                return [random.choice(context[attr_type])]
-            else:
-                # For other attributes, can share with connected tracks
-                available = set(context[attr_type]) - connected_attrs
-                return [random.choice(list(available) or context[attr_type])]
-                
-        # If we have existing attributes
-        if self.model.organizing_attribute.value == attr_type:
-            # Must maintain track coherence for organizing attribute
-            return list(track_attrs)
-        else:
-            # Can share with connected tracks but prefer diversity
-            available = set(context[attr_type]) - connected_attrs
-            return [random.choice(list(available) or context[attr_type])]
-    
     def generate_node_attributes(self) -> None:
         """Generate attributes for all nodes in the graph using LLM"""
-        # Get base narrative context
-        context = self.context_manager.get_context(self.model.organizing_attribute)
+        # Initialize context if not already done
+        if not hasattr(self, '_context'):
+            self._context = self.initialize_story_attributes()
         
-        # Process nodes in temporal order
-        sorted_nodes = sorted(self.model.nodes.items(), key=lambda x: x[1].time)
+        # Use TTNG's temporal ordering
+        sorted_nodes = sorted(
+            self.model.nodes.items(), 
+            key=lambda x: (x[1].time_index, int(x[1].track_id))
+        )
         
         for node_id, node in sorted_nodes:
-            # Find previous node in same track
-            prev_node = self._get_previous_node(node)
-            
-            # Generate attributes maintaining coherence
-            attributes = self.map_attributes(node_id, context, 
-                                          prev_node.track_id if prev_node else None)
-            
-            # Update node with generated attributes
+            prev_node = self.model.get_previous_node_in_track(node_id)
+            attributes = self.map_attributes(
+                node_id, 
+                self._context,
+                prev_node.track_id if prev_node else None
+            )
             node.attributes = attributes
+    
+    def analyze_narrative_structure(self) -> Dict[str, Any]:
+        """Analyze narrative structure using TTNG's graph features"""
+        dimensions = self.model.get_graph_dimensions()
+        structure = {
+            "dimensions": dimensions,
+            "tracks": len(self.model.tracks),
+            "connections": {}
+        }
+        
+        # Analyze track connections
+        for track_id in self.model.tracks:
+            connections = self.model.get_track_connections(track_id)
+            structure["connections"][track_id] = {
+                "connected_tracks": connections,
+                "attributes": list(self.model.get_track_attributes(track_id))
+            }
+        
+        return structure
+    
+    def validate_narrative_coherence(self) -> bool:
+        """Validate narrative coherence using TTNG's coherence rules"""
+        try:
+            for from_node, to_node in self.model.edges:
+                if not self.model.validate_coherence(from_node, to_node):
+                    logger.warning(f"Coherence violation between {from_node} and {to_node}")
+                    return False
+            return True
+        except Exception as e:
+            logger.error(f"Error validating coherence: {str(e)}")
+            return False

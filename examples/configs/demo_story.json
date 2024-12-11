@@ -1,32 +1,23 @@
 {
-    "graph_settings": {
-        "idiom": "THREAD",
-        "organizing_attribute": "ENTITY"
+  "graph_settings": {
+    "idiom": "THREAD",
+    "organizing_attribute": "ENTITY",
+    "time_settings": {
+      "start_date": "2024-01-01",
+      "time_step_days": 7
+    }
+  },
+  "nodes": [
+    {
+      "id": "n_1_1",
+      "t": 1,
+      "h": 1
     },
-    "nodes": [
-        {
-            "id": "n_1_1",
-            "x": 1,
-            "y": 1
-        },
-        {
-            "id": "n_1_2",
-            "x": 1,
-            "y": 2
-        },
-        {
-            "id": "n_2_1",
-            "x": 2,
-            "y": 1
-        },
-        {
-            "id": "n_2_2",
-            "x": 2,
-            "y": 2
-        }
-    ],
-    "edges": [
-        {"from": "n_1_1", "to": "n_2_1"},
-        {"from": "n_1_2", "to": "n_2_2"}
-    ]
-} 
+    {
+      "id": "n_2_1",
+      "t": 2,
+      "h": 1
+    }
+  ],
+  "edges": [{ "from": "n_1_1", "to": "n_2_1" }]
+}

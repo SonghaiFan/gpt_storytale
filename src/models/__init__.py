@@ -2,7 +2,6 @@
 Models package initialization.
 """
 
-from .ttng import TTNGModel, GraphIdiom, OrganizingAttribute, Node
-from .narrative_context import NarrativeContext
+from .ttng import TTNGModel, GraphIdiom, OrganizingAttribute, Node, NarrativeSpace
 
-__all__ = ['TTNGModel', 'GraphIdiom', 'OrganizingAttribute', 'Node', 'NarrativeContext'] 
+__all__ = ['TTNGModel', 'GraphIdiom', 'OrganizingAttribute', 'Node', 'NarrativeSpace'] 

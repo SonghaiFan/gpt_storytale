@@ -1,20 +1,17 @@
 {
     "entities": [
-        "President",
-        "United Nations",
-        "Global Corporation",
-        "Activist Group"
+        "President of the United States",
+        "World Health Organization",
+        "Green Party"
     ],
     "events": [
-        "International Climate Change Summit",
-        "Trade War negotiations",
-        "Corporate Scandal Investigation",
-        "Protest against Government Policies"
+        "Global Climate Summit",
+        "Trade negotiations between major economies",
+        "Coronavirus vaccine distribution plan"
     ],
     "topics": [
-        "Environmental Policies",
-        "Trade Relations",
-        "Corporate Ethics",
-        "Social Justice Movements"
+        "Environmental policy",
+        "Global trade relations",
+        "Public health crisis management"
     ]
 }

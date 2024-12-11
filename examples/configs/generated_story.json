@@ -2,85 +2,43 @@
     "graph_config": {
         "graph_settings": {
             "idiom": "THREAD",
-            "organizing_attribute": "ENTITY"
+            "organizing_attribute": "ENTITY",
+            "time_settings": {
+                "start_date": "2024-01-01",
+                "time_step_days": 7
+            }
         },
         "nodes": [
             {
                 "id": "n_1_1",
-                "x": 1,
-                "y": 1
-            },
-            {
-                "id": "n_1_2",
-                "x": 1,
-                "y": 2
+                "t": 1,
+                "h": 1
             },
             {
                 "id": "n_2_1",
-                "x": 2,
-                "y": 1
-            },
-            {
-                "id": "n_2_2",
-                "x": 2,
-                "y": 2
+                "t": 2,
+                "h": 1
             }
         ],
         "edges": [
             {
                 "from": "n_1_1",
                 "to": "n_2_1"
-            },
-            {
-                "from": "n_1_2",
-                "to": "n_2_2"
             }
-        ]
-    },
-    "narrative_space": {
-        "entities": [
-            "President Johnson",
-            "United Nations",
-            "Global Health Organization",
-            "Prime Minister Smith"
-        ],
-        "events": [
-            "Climate Change Summit",
-            "Economic Summit",
-            "Vaccine Distribution Plan",
-            "Trade Agreement Negotiations"
-        ],
-        "topics": [
-            "Climate change",
-            "Global economy",
-            "Public health",
-            "International relations"
         ]
     },
     "story_segments": [
         {
             "node_id": "n_1_1",
-            "time": "1970-01-01T10:00:01",
+            "time": "2024-01-01T00:00:00",
             "track": "1",
-            "text": "WASHINGTON, January 01, 1970 - President Johnson convened a Climate Change Summit at 10:00 today on Track 1 to address the pressing issue of climate change. The summit is a pivotal moment as world leaders come together to discuss strategies and policies aimed at combating the global environmental crisis. The summit, hosted by the White House, brings together key stakeholders from various nations, environmental organizations, and scientific experts. The goal of the meeting is to foster international cooperation and develop concrete actions to mitigate the impact of climate change. President Johnson emphasized the urgency of the situation, stating, \"We stand at a critical juncture in our planet's history. The effects of climate change are becoming increasingly evident, and we must..."
-        },
-        {
-            "node_id": "n_1_2",
-            "time": "1970-01-01T10:00:01",
-            "track": "2",
-            "text": "NEW YORK - The United Nations convened an Economic Summit on Track 2 at 10:00 on January 01, 1970, to address pressing issues in the global economy. The summit brought together key stakeholders from various countries to discuss strategies for promoting economic growth and stability worldwide. The Economic Summit, organized by the United Nations, aimed to tackle challenges such as trade disputes, currency fluctuations, and income inequality that have been affecting economies across the globe. Participants included representatives from government agencies, international organizations, and private sector leaders. The discussions at the summit focused on fostering cooperation among nations to stimulate economic development, enhance trade relations, and address financial vulnerabilities. Key topics on the agenda included strengthening regulatory frameworks, promoting sustainable..."
+            "text": "On January 1, 2024, at 00:00, the Global Health Organization spearheaded a pivotal discussion at the Global Summit on Climate Change, delving into Economic Resilience Strategies to combat the escalating environmental challenges. The summit convened world leaders, experts, and stakeholders from various sectors to address the pressing need for sustainable economic practices in the face of climate change. The Global Health Organization, a leading authority in public health and environmental issues, emphasized the urgency of implementing robust economic resilience strategies to mitigate the adverse effects of climate change on global economies. Dr. Jane Smith, spokesperson for the organization, highlighted that \"effective economic resilience strategies are essential to ensure long-term sustainability and prosperity in a rapidly changing climate landscape.\" The summit..."
         },
         {
             "node_id": "n_2_1",
-            "time": "1970-01-01T10:00:02",
+            "time": "2024-01-08T00:00:00",
             "track": "1",
-            "text": "President Johnson convened a Climate Change Summit at 10:00 on January 01, 1970, at Track 1. The summit aimed to address the pressing issue of climate change through global cooperation and policy initiatives. This event marked a crucial effort by world leaders to tackle the growing threat of climate change. The summit brought together key stakeholders, including government officials, scientists, and environmental activists, to discuss strategies for mitigating the impacts of climate change. President Johnson emphasized the urgency of taking decisive action to combat rising global temperatures and their devastating consequences on the environment. In his opening remarks, President Johnson stated, \"Climate change is a global challenge that requires collective action. We must work together to protect our planet for..."
-        },
-        {
-            "node_id": "n_2_2",
-            "time": "1970-01-01T10:00:02",
-            "track": "2",
-            "text": "In a continuation of the Economic Summit organized by the United Nations, global leaders convened at Track 2 at 10:00 on January 01, 1970, to address pressing issues affecting the global economy. The summit served as a platform for nations to discuss strategies to promote economic growth and stability amidst a backdrop of uncertainty and volatility in financial markets. The United Nations spearheaded the summit, bringing together representatives from various countries to engage in dialogue and collaboration on key economic matters. The focus of the discussions centered on exploring innovative solutions to address challenges such as trade imbalances, inflation, and unemployment that have ramifications on economies worldwide. Previous coverage of the Economic Summit highlighted the importance of international cooperation in..."
+            "text": "President Smith addressed the nation on January 8, 2024, unveiling a series of new economic policies aimed at tackling the pressing issue of climate change. The President's speech, delivered at 00:00, outlined a comprehensive plan that seeks to balance environmental concerns with economic growth and stability. The address comes in the wake of the recent Global Summit on Climate Change held on January 1, 2024, where world leaders discussed similar issues. In his speech, President Smith emphasized the importance of taking decisive action to combat climate change while also ensuring that the economy remains strong and competitive. The proposed policies include significant investments in renewable energy sources, incentives for businesses to reduce their carbon footprint, and stricter regulations on emissions..."
         }
     ]
 }

@@ -1,0 +1,6 @@
+Metadata-Version: 2.1
+Name: gpt_storytale
+Version: 0.1
+Requires-Dist: openai
+Requires-Dist: python-dotenv
+Requires-Dist: pathlib
