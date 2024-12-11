@@ -77,21 +77,23 @@ class GraphToTextPipeline:
         try:
             style_config = StyleConfig(**style) if style else StyleConfig()
             
-            # Get narrative context
+            # Get previous node for context
             prev_node = self._get_previous_node(node)
-            track_context = self._get_track_context(node)
-            temporal_context = self._get_temporal_context(node)
             
-            # Create enhanced prompts
+            # Create prompts
             system_prompt = self.prompt_manager.create_system_prompt(style_config)
             user_prompt = self.prompt_manager.create_narrative_prompt(
-                node, 
-                prev_node,
-                style_config,
-                track_context=track_context,
-                temporal_context=temporal_context
+                node=node,
+                prev_node=prev_node,
+                style=style_config
             )
             
+            # Log prompts
+            logger.info("Generating text for node %s:", node.track_id)
+            logger.info("System prompt: %s", system_prompt)
+            logger.info("User prompt: %s", user_prompt)
+            
+            # Generate text
             return self._generate_completion(system_prompt, user_prompt)
             
         except Exception as e:

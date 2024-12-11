@@ -45,45 +45,52 @@ class PromptManager:
     @staticmethod
     def create_narrative_prompt(node: Node, prev_node: Optional[Node], style: StyleConfig) -> str:
         """Create narrative prompt for text generation"""
-        time_period = node.time.strftime("%B %d, %Y")
+        time_period = node.time.strftime("%B %d, %Y %H:%M")
         
-        # Get first value from each attribute list or use default
-        primary_topic = node.attributes.topics[0] if node.attributes.topics else "General"
-        key_entity = node.attributes.entities[0] if node.attributes.entities else "Unknown Entity"
-        main_event = node.attributes.events[0] if node.attributes.events else "General Event"
+        # Get attributes from node
+        entities = node.attributes.entities if node.attributes else []
+        events = node.attributes.events if node.attributes else []
+        topics = node.attributes.topics if node.attributes else []
         
-        prompt = f"""Write a hard news article with the following specifications:
-        
-        KEY INFORMATION:
-        Date: {time_period}
-        Primary Topic: {primary_topic}
-        Key Entity: {key_entity}
-        Main Event: {main_event}
-        Language Level: CEFR {style.cefr_level}
-        """
+        prompt = f"""Write a news article about the following event:
+
+KEY INFORMATION:
+Time: {time_period}
+Track: {node.track_id}
+Key Entities: {', '.join(entities)}
+Current Events: {', '.join(events)}
+Topics: {', '.join(topics)}
+Style: {style.tone}
+Language Level: CEFR {style.cefr_level}
+"""
         
         # Add previous context if available
-        if prev_node:
-            prompt += PromptManager._add_previous_context(prev_node)
+        if prev_node and prev_node.attributes:
+            prev_time = prev_node.time.strftime("%B %d, %Y %H:%M")
+            prev_entities = prev_node.attributes.entities
+            prev_events = prev_node.attributes.events
+            prompt += f"""
+PREVIOUS CONTEXT:
+Time: {prev_time}
+Track: {prev_node.track_id}
+Related Entities: {', '.join(prev_entities)}
+Previous Events: {', '.join(prev_events)}
+"""
+        
+        # Add writing guidelines
+        prompt += """
+WRITING GUIDELINES:
+- Focus on factual reporting
+- Use clear and concise language
+- Include relevant context and background
+- Maintain journalistic objectivity
+- Connect to broader implications
+"""
         
         # Add CEFR-specific guidelines
         prompt += PromptManager._get_cefr_guidelines(style.cefr_level)
         
         return prompt
-    
-    @staticmethod
-    def _add_previous_context(prev_node: Node) -> str:
-        """Add context from previous node to prompt"""
-        # Get first value from each attribute list or use default
-        prev_entity = prev_node.attributes.entities[0] if prev_node.attributes.entities else "Unknown Entity"
-        prev_event = prev_node.attributes.events[0] if prev_node.attributes.events else "General Event"
-        
-        return f"""
-        PREVIOUS COVERAGE:
-        Date: {prev_node.time.strftime("%B %d, %Y")}
-        Related Entity: {prev_entity}
-        Previous Event: {prev_event}
-        """
     
     @staticmethod
     def _get_cefr_guidelines(cefr_level: str) -> str:
