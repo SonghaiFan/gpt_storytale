@@ -1,0 +1,32 @@
+{
+    "graph_settings": {
+        "idiom": "THREAD",
+        "organizing_attribute": "ENTITY"
+    },
+    "nodes": [
+        {
+            "id": "n_1_1",
+            "x": 1,
+            "y": 1
+        },
+        {
+            "id": "n_1_2",
+            "x": 1,
+            "y": 2
+        },
+        {
+            "id": "n_2_1",
+            "x": 2,
+            "y": 1
+        },
+        {
+            "id": "n_2_2",
+            "x": 2,
+            "y": 2
+        }
+    ],
+    "edges": [
+        {"from": "n_1_1", "to": "n_2_1"},
+        {"from": "n_1_2", "to": "n_2_2"}
+    ]
+} 

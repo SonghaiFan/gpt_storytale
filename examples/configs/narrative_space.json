@@ -1,0 +1,20 @@
+{
+    "entities": [
+        "President",
+        "United Nations",
+        "Global Corporation",
+        "Activist Group"
+    ],
+    "events": [
+        "International Climate Change Summit",
+        "Trade War negotiations",
+        "Corporate Scandal Investigation",
+        "Protest against Government Policies"
+    ],
+    "topics": [
+        "Environmental Policies",
+        "Trade Relations",
+        "Corporate Ethics",
+        "Social Justice Movements"
+    ]
+}

@@ -337,7 +337,7 @@ button:disabled {
     }
 } 
 
-.node-tooltip {
+.tooltip {
     position: absolute;
     padding: 10px;
     background: rgba(255, 255, 255, 0.95);
@@ -349,22 +349,23 @@ button:disabled {
     pointer-events: none;
     max-width: 300px;
     border: 1px solid #dadce0;
+    display: none;
 }
 
-.node-tooltip h4 {
+.tooltip h4 {
     margin: 0 0 5px;
     font-size: 0.9rem;
     color: #1a73e8;
     font-weight: 500;
 }
 
-.node-tooltip p {
+.tooltip p {
     margin: 3px 0;
     font-size: 0.8rem;
     color: #5f6368;
 }
 
-.node-tooltip .attribute-label {
+.tooltip .attribute-label {
     font-weight: 500;
     color: #3c4043;
 }
@@ -476,7 +477,7 @@ button:disabled {
     font-style: italic;
 }
 
-#genre_description {
+#idiom_description {
     color: #1a73e8;
     font-weight: 500;
     margin-top: 0.5rem;

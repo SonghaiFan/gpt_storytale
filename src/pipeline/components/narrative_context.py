@@ -1,4 +1,4 @@
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Any
 from ...models.ttng import OrganizingAttribute
 
 class NarrativeContextManager:
@@ -60,3 +60,35 @@ class NarrativeContextManager:
             "Environment": ["Climate Change", "Renewable Energy", "Conservation"]
         }
         return [exp for topic in base_topics for exp in expansions.get(topic, [topic])] 
+    
+    def initialize_narrative_space(self, story_config: Dict[str, Any]) -> Dict[str, List[str]]:
+        """Initialize narrative space from configuration or default values"""
+        # First try to use provided configuration
+        if story_config and 'timepoints' in story_config:
+            context = self._extract_context_from_config(story_config)
+        else:
+            # Fallback to base context
+            context = self._base_context.copy()
+            
+        # Ensure minimum required attributes
+        for key in ['topics', 'events', 'entities']:
+            if not context.get(key):
+                context[key] = self._base_context[key]
+                
+        return context
+        
+    def _extract_context_from_config(self, config: Dict[str, Any]) -> Dict[str, List[str]]:
+        """Extract unique attributes from story configuration"""
+        context = {
+            'topics': set(),
+            'events': set(),
+            'entities': set()
+        }
+        
+        for timepoint in config['timepoints']:
+            for track_data in timepoint['nodes'].values():
+                context['topics'].update(track_data.get('topics', []))
+                context['events'].update(track_data.get('events', []))
+                context['entities'].update(track_data.get('entities', []))
+                
+        return {k: list(v) for k, v in context.items()} 

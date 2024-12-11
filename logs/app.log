@@ -660,3 +660,75 @@ IndexError: list index out of range
 2024-12-10 22:54:22,393 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 22:54:22] "GET /static/css/style.css HTTP/1.1" 200 -
 2024-12-10 22:54:22,405 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 22:54:22] "GET /static/js/graph_visualizer.js HTTP/1.1" 200 -
 2024-12-10 22:54:22,407 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2024 22:54:22] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-12-11 12:35:59,505 - src.web.app - INFO - Starting Flask application
+2024-12-11 12:35:59,569 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-11 12:35:59,569 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-12-11 12:35:59,570 - werkzeug - INFO -  * Restarting with stat
+2024-12-11 12:36:00,135 - src.web.app - INFO - Starting Flask application
+2024-12-11 12:36:00,176 - werkzeug - WARNING -  * Debugger is active!
+2024-12-11 12:36:00,195 - werkzeug - INFO -  * Debugger PIN: 717-597-659
+2024-12-11 12:36:07,819 - src.web.app - INFO - Homepage accessed
+2024-12-11 12:36:07,845 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:36:07] "GET / HTTP/1.1" 200 -
+2024-12-11 12:36:07,894 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:36:07] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-12-11 12:36:07,897 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:36:07] "[36mGET /static/js/graph_visualizer.js HTTP/1.1[0m" 304 -
+2024-12-11 12:36:07,900 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:36:07] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2024-12-11 12:36:08,872 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:36:08] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-12-11 12:38:17,952 - src.web.app - INFO - Homepage accessed
+2024-12-11 12:38:17,960 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:38:17] "GET / HTTP/1.1" 200 -
+2024-12-11 12:38:17,991 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:38:17] "[36mGET /static/js/graph_visualizer.js HTTP/1.1[0m" 304 -
+2024-12-11 12:38:17,992 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:38:17] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-12-11 12:38:17,993 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:38:17] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-12-11 12:38:54,134 - src.web.app - INFO - Homepage accessed
+2024-12-11 12:38:54,136 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:38:54] "GET / HTTP/1.1" 200 -
+2024-12-11 12:38:54,170 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:38:54] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-12-11 12:38:54,173 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:38:54] "[36mGET /static/js/graph_visualizer.js HTTP/1.1[0m" 304 -
+2024-12-11 12:38:54,173 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:38:54] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-12-11 12:43:24,478 - src.web.app - INFO - Homepage accessed
+2024-12-11 12:43:24,479 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:43:24] "GET / HTTP/1.1" 200 -
+2024-12-11 12:43:24,513 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:43:24] "GET /static/css/style.css HTTP/1.1" 200 -
+2024-12-11 12:43:24,516 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:43:24] "[36mGET /static/js/graph_visualizer.js HTTP/1.1[0m" 304 -
+2024-12-11 12:43:24,518 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:43:24] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-12-11 12:43:59,489 - src.web.app - INFO - Homepage accessed
+2024-12-11 12:43:59,491 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:43:59] "GET / HTTP/1.1" 200 -
+2024-12-11 12:43:59,520 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:43:59] "GET /static/css/style.css HTTP/1.1" 200 -
+2024-12-11 12:43:59,525 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:43:59] "[36mGET /static/js/graph_visualizer.js HTTP/1.1[0m" 304 -
+2024-12-11 12:43:59,531 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:43:59] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2024-12-11 12:44:14,111 - src.web.app - INFO - Homepage accessed
+2024-12-11 12:44:14,111 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:44:14] "GET / HTTP/1.1" 200 -
+2024-12-11 12:44:14,148 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:44:14] "[36mGET /static/js/graph_visualizer.js HTTP/1.1[0m" 304 -
+2024-12-11 12:44:14,148 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:44:14] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-12-11 12:44:14,155 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:44:14] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2024-12-11 12:44:28,025 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:44:28] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-12-11 12:44:47,994 - src.web.app - INFO - Homepage accessed
+2024-12-11 12:44:47,999 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:44:47] "GET / HTTP/1.1" 200 -
+2024-12-11 12:44:48,034 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:44:48] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2024-12-11 12:44:48,034 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:44:48] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-12-11 12:44:48,035 - werkzeug - INFO - 127.0.0.1 - - [11/Dec/2024 12:44:48] "[36mGET /static/js/graph_visualizer.js HTTP/1.1[0m" 304 -
+2024-12-11 12:47:32,048 - werkzeug - INFO -  * Detected change in '/Users/songhaifan/Documents/GitHub/gpt_storytale/src/models/ttng.py', reloading
+2024-12-11 12:47:32,251 - werkzeug - INFO -  * Restarting with stat
+2024-12-11 12:47:33,353 - src.web.app - INFO - Starting Flask application
+2024-12-11 12:47:33,405 - werkzeug - WARNING -  * Debugger is active!
+2024-12-11 12:47:33,429 - werkzeug - INFO -  * Debugger PIN: 717-597-659
+2024-12-11 12:47:48,099 - werkzeug - INFO -  * Detected change in '/Users/songhaifan/Documents/GitHub/gpt_storytale/src/web/app.py', reloading
+2024-12-11 12:47:48,202 - werkzeug - INFO -  * Restarting with stat
+2024-12-11 12:47:48,913 - src.web.app - INFO - Starting Flask application
+2024-12-11 12:47:48,956 - werkzeug - WARNING -  * Debugger is active!
+2024-12-11 12:47:48,975 - werkzeug - INFO -  * Debugger PIN: 717-597-659
+2024-12-11 12:47:55,295 - werkzeug - INFO -  * Detected change in '/Users/songhaifan/Documents/GitHub/gpt_storytale/src/models/ttng.py', reloading
+2024-12-11 12:47:55,384 - werkzeug - INFO -  * Restarting with stat
+2024-12-11 12:47:55,975 - src.web.app - INFO - Starting Flask application
+2024-12-11 12:47:56,017 - werkzeug - WARNING -  * Debugger is active!
+2024-12-11 12:47:56,034 - werkzeug - INFO -  * Debugger PIN: 717-597-659
+2024-12-11 15:15:01,403 - werkzeug - INFO -  * Detected change in '/Users/songhaifan/Documents/GitHub/gpt_storytale/src/models/narrative_context.py', reloading
+2024-12-11 15:15:01,604 - werkzeug - INFO -  * Restarting with stat
+2024-12-11 15:15:02,783 - src.web.app - INFO - Starting Flask application
+2024-12-11 15:15:02,837 - werkzeug - WARNING -  * Debugger is active!
+2024-12-11 15:15:02,859 - werkzeug - INFO -  * Debugger PIN: 717-597-659
+2024-12-11 15:28:46,905 - werkzeug - INFO -  * Detected change in '/Users/songhaifan/Documents/GitHub/gpt_storytale/src/models/ttng.py', reloading
+2024-12-11 15:28:46,986 - werkzeug - INFO -  * Restarting with stat
+2024-12-11 15:28:47,820 - src.web.app - INFO - Starting Flask application
+2024-12-11 15:28:47,865 - werkzeug - WARNING -  * Debugger is active!
+2024-12-11 15:28:47,883 - werkzeug - INFO -  * Debugger PIN: 717-597-659
+2024-12-11 15:35:28,838 - werkzeug - INFO -  * Detected change in '/Users/songhaifan/Documents/GitHub/gpt_storytale/src/pipeline/components/narrative_context.py', reloading
+2024-12-11 15:35:28,930 - werkzeug - INFO -  * Restarting with stat

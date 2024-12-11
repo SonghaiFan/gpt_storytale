@@ -1,4 +1,4 @@
-from typing import Dict, List, Optional, Any
+from typing import Dict, List, Optional, Any, Set
 from openai import OpenAI
 from ..models.ttng import TTNGModel, Node, OrganizingAttribute
 from ..models.narrative_context import NarrativeContext
@@ -48,34 +48,49 @@ class GraphToTextPipeline:
     def map_attributes(self, node_id: str, context: Dict[str, List[str]], 
                       previous_node: Optional[str] = None,
                       provided_attributes: Optional[Dict[str, List[str]]] = None) -> NarrativeContext:
-        """Map attributes to nodes maintaining continuity"""
-        if provided_attributes:
-            # Use provided attributes if available
-            attrs = {
-                'entities': provided_attributes.get('entities', []),
-                'events': provided_attributes.get('events', []),
-                'topics': provided_attributes.get('topics', [])
-            }
-        else:
-            # Otherwise, generate attributes
-            track_id = int(node_id.split('_')[1].replace('track', ''))
-            
-            if previous_node and previous_node in self.model.nodes:
-                attrs = self._get_continuous_attributes(previous_node, context)
-            else:
-                attrs = self._get_new_attributes(track_id, context)
+        """Enhanced attribute mapping with coherence rules"""
+        track_id = int(node_id.split('_')[1].replace('track', ''))
         
-        self.previous_nodes[node_id] = previous_node or node_id
+        if provided_attributes:
+            return NarrativeContext(**provided_attributes)
+        
+        # Get track's existing attributes
+        track_attrs = self.model.get_track_attributes(str(track_id))
+        
+        # Get connected tracks' attributes
+        connected_tracks = self.model.get_track_connections(str(track_id))
+        connected_attrs = set()
+        for t in connected_tracks:
+            connected_attrs.update(self.model.get_track_attributes(t))
+        
+        # Select attributes ensuring track coherence and cross-track diversity
+        attrs = {
+            'entities': self._select_coherent_attributes('entities', track_attrs, connected_attrs, context),
+            'events': self._select_coherent_attributes('events', track_attrs, connected_attrs, context),
+            'topics': self._select_coherent_attributes('topics', track_attrs, connected_attrs, context)
+        }
+        
         return NarrativeContext(**attrs)
     
     def generate_text(self, node: Node, style: Optional[Dict[str, str]] = None) -> str:
-        """Generate coherent narrative text"""
+        """Generate text with enhanced context awareness"""
         try:
             style_config = StyleConfig(**style) if style else StyleConfig()
-            prev_node = self._get_previous_node(node)
             
+            # Get narrative context
+            prev_node = self._get_previous_node(node)
+            track_context = self._get_track_context(node)
+            temporal_context = self._get_temporal_context(node)
+            
+            # Create enhanced prompts
             system_prompt = self.prompt_manager.create_system_prompt(style_config)
-            user_prompt = self.prompt_manager.create_narrative_prompt(node, prev_node, style_config)
+            user_prompt = self.prompt_manager.create_narrative_prompt(
+                node, 
+                prev_node,
+                style_config,
+                track_context=track_context,
+                temporal_context=temporal_context
+            )
             
             return self._generate_completion(system_prompt, user_prompt)
             
@@ -141,12 +156,19 @@ class GraphToTextPipeline:
     def _generate_completion(self, system_prompt: str, user_prompt: str) -> str:
         """Generate text completion using OpenAI API"""
         try:
+            messages = [
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_prompt}
+            ]
+            
+            # Log the prompts
+            logger.info("Sending prompts to OpenAI for text generation:")
+            logger.info("System prompt: %s", system_prompt)
+            logger.info("User prompt: %s", user_prompt)
+            
             completion = self.client.chat.completions.create(
                 model="gpt-3.5-turbo",
-                messages=[
-                    {"role": "system", "content": system_prompt},
-                    {"role": "user", "content": user_prompt}
-                ],
+                messages=messages,
                 max_tokens=200,
                 temperature=0.7,
                 presence_penalty=0.3,
@@ -154,10 +176,57 @@ class GraphToTextPipeline:
                 response_format={"type": "text"}
             )
             
-            text = completion.choices[0].message.content.strip()
-            words = text.split()
+            # Log the response
+            response_text = completion.choices[0].message.content.strip()
+            logger.info("Received response from OpenAI:")
+            logger.info(response_text)
+            
+            # Process and return the text
+            words = response_text.split()
             return ' '.join(words[:120]) + ('...' if len(words) > 120 else '')
             
         except Exception as e:
             logger.error(f"OpenAI API error: {str(e)}")
             raise
+    
+    def _select_coherent_attributes(self, attr_type: str, 
+                                  track_attrs: Set[str],
+                                  connected_attrs: Set[str],
+                                  context: Dict[str, List[str]]) -> List[str]:
+        """Select attributes maintaining coherence rules"""
+        if not track_attrs:  # If no existing attributes
+            if self.model.organizing_attribute.value == attr_type:
+                # For organizing attribute, select a new one
+                return [random.choice(context[attr_type])]
+            else:
+                # For other attributes, can share with connected tracks
+                available = set(context[attr_type]) - connected_attrs
+                return [random.choice(list(available) or context[attr_type])]
+                
+        # If we have existing attributes
+        if self.model.organizing_attribute.value == attr_type:
+            # Must maintain track coherence for organizing attribute
+            return list(track_attrs)
+        else:
+            # Can share with connected tracks but prefer diversity
+            available = set(context[attr_type]) - connected_attrs
+            return [random.choice(list(available) or context[attr_type])]
+    
+    def generate_node_attributes(self) -> None:
+        """Generate attributes for all nodes in the graph using LLM"""
+        # Get base narrative context
+        context = self.context_manager.get_context(self.model.organizing_attribute)
+        
+        # Process nodes in temporal order
+        sorted_nodes = sorted(self.model.nodes.items(), key=lambda x: x[1].time)
+        
+        for node_id, node in sorted_nodes:
+            # Find previous node in same track
+            prev_node = self._get_previous_node(node)
+            
+            # Generate attributes maintaining coherence
+            attributes = self.map_attributes(node_id, context, 
+                                          prev_node.track_id if prev_node else None)
+            
+            # Update node with generated attributes
+            node.attributes = attributes

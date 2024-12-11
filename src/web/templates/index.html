@@ -33,13 +33,13 @@
                         </select>
                     </div>
                     <div class="input-group">
-                        <label for="graph_genre">Narrative Visual Idiom</label>
-                        <select id="graph_genre">
+                        <label for="graph_idiom">Narrative Visual Idiom</label>
+                        <select id="graph_idiom">
                             <option value="THREAD">Thread (max 2 connections per node)</option>
                             <option value="TREE">Tree (max 1 incoming edge per node)</option>
                             <option value="MAP">Map (unrestricted)</option>
                         </select>
-                        <span class="helper-text" id="genre_description"></span>
+                        <span class="helper-text" id="idiom_description"></span>
                     </div>
                     <div class="button-group">
                         <button id="init_grid_btn" class="primary-btn">Initialize Grid</button>
@@ -103,7 +103,9 @@
             </aside>
 
             <div class="content-area">
-                <div class="graph-container" id="graph-container"></div>
+                <div class="graph-container" id="graph-container">
+                    <div class="tooltip" id="node-tooltip"></div>
+                </div>
                 <div class="story-container" id="story-content"></div>
             </div>
         </div>

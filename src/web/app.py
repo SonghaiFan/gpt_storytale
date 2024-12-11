@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, jsonify
-from ..models.ttng import TTNGModel, OrganizingAttribute, GraphGenre
+from ..models.ttng import TTNGModel, OrganizingAttribute, GraphIdiom
 from ..pipeline.graph_to_text import GraphToTextPipeline
 import logging
 import os
@@ -132,9 +132,9 @@ def generate_story():
         try:
             # Convert string parameters to enums
             org_attr = OrganizingAttribute(organizing_attribute)
-            genre = GraphGenre('thread')  # Fixed as thread for now
+            idiom = GraphIdiom('thread')  # Fixed as thread for now
             
-            model = TTNGModel(genre=genre, organizing_attribute=org_attr)
+            model = TTNGModel(idiom=idiom, organizing_attribute=org_attr)
             pipeline = GraphToTextPipeline(model)
             
             # Initialize context

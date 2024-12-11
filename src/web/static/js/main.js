@@ -2,26 +2,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize graph visualizer
     const visualizer = new TTNGVisualizer('graph-container');
     
-    // Create tooltip element
-    const tooltip = document.createElement('div');
-    tooltip.id = 'node-tooltip';
-    tooltip.className = 'tooltip';
-    tooltip.style.display = 'none';
-    tooltip.style.position = 'absolute';
-    tooltip.style.backgroundColor = 'white';
-    tooltip.style.border = '1px solid #ddd';
-    tooltip.style.borderRadius = '4px';
-    tooltip.style.padding = '10px';
-    tooltip.style.boxShadow = '0 2px 5px rgba(0,0,0,0.2)';
-    tooltip.style.zIndex = '1000';
-    document.body.appendChild(tooltip);
     
     // Graph state
     let graphState = {
         nodes: new Map(),
         edges: new Set(),
         gridInitialized: false,
-        genre: 'THREAD',  // Default genre
+        idiom: 'THREAD',  // Default idiom
         selectedNodeId: null,  // Track currently selected node
         selectedEdge: null     // Track currently selected edge
     };
@@ -113,26 +100,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const numTracksInput = document.getElementById('num_tracks');
     const numTimepointsInput = document.getElementById('num_timepoints');
     const organizingAttributeSelect = document.getElementById('organizing_attribute');
-    const graphGenreSelect = document.getElementById('graph_genre');
-    const genreDescription = document.getElementById('genre_description');
+    const graphIdiomSelect = document.getElementById('graph_idiom');
+    const idiomDescription = document.getElementById('idiom_description');
+    const tooltip = document.getElementById('node-tooltip')
     
     // Disable edge buttons initially
     buttons.add_edge_btn.disabled = true;
     buttons.remove_edge_btn.disabled = true;
     
-    // Update genre description when selection changes
-    graphGenreSelect.addEventListener('change', () => {
-        graphState.genre = graphGenreSelect.value;
-        updateGenreDescription();
+    // Update idiom description when selection changes
+    graphIdiomSelect.addEventListener('change', () => {
+        graphState.idiom = graphIdiomSelect.value;
+        updateIdiomDescription();
     });
     
-    function updateGenreDescription() {
+    function updateIdiomDescription() {
         const descriptions = {
             'THREAD': 'Each node can have at most 2 connections (1 in, 1 out)',
             'TREE': 'Each node can have at most 1 incoming connection',
             'MAP': 'No restrictions on connections between nodes'
         };
-        genreDescription.textContent = descriptions[graphState.genre];
+        idiomDescription.textContent = descriptions[graphState.idiom];
     }
     
     // Add node selection handler to visualizer
@@ -486,7 +474,7 @@ document.addEventListener('DOMContentLoaded', () => {
         graphState.edges.clear();
         graphState.selectedNodeId = null;
         graphState.selectedEdge = null;
-        graphState.genre = graphGenreSelect.value;
+        graphState.idiom = graphIdiomSelect.value;
         
         // Initialize visualization
         visualizer.initializeGrid(numTracks, numTimepoints, graphState.nodes);
@@ -505,7 +493,7 @@ document.addEventListener('DOMContentLoaded', () => {
         buttons.add_node_btn.disabled = false;
     }
     
-    // Validate edge based on genre constraints
+    // Validate edge based on idiom constraints
     function validateEdge(fromId, toId) {
         // Get nodes involved in the edge
         const fromNode = graphState.nodes.get(fromId);
@@ -540,36 +528,36 @@ document.addEventListener('DOMContentLoaded', () => {
         const fromConnections = getNodeConnections(fromId);
         const toConnections = getNodeConnections(toId);
 
-        // Apply genre-specific constraints
-        switch (graphState.genre) {
+        // Apply idiom-specific constraints
+        switch (graphState.idiom) {
             case 'THREAD':
-                // In THREAD genre, each node can only have one incoming and one outgoing connection
+                // In THREAD idiom, each node can only have one incoming and one outgoing connection
                 if (fromConnections.outgoing > 0) {
-                    alert('Thread genre: The source node already has an outgoing connection. In Thread genre, each node can only have one outgoing connection.');
+                    alert('Thread idiom: The source node already has an outgoing connection. In Thread idiom, each node can only have one outgoing connection.');
                     return false;
                 }
                 if (toConnections.incoming > 0) {
-                    alert('Thread genre: The target node already has an incoming connection. In Thread genre, each node can only have one incoming connection.');
+                    alert('Thread idiom: The target node already has an incoming connection. In Thread idiom, each node can only have one incoming connection.');
                     return false;
                 }
                 break;
 
             case 'TREE':
-                // In TREE genre, each node can have multiple outgoing but only one incoming connection
+                // In TREE idiom, each node can have multiple outgoing but only one incoming connection
                 if (toConnections.incoming > 0) {
-                    alert('Tree genre: The target node already has an incoming connection. In Tree genre, each node can only have one parent (incoming connection).');
+                    alert('Tree idiom: The target node already has an incoming connection. In Tree idiom, each node can only have one parent (incoming connection).');
                     return false;
                 }
 
                 // Check for cycles
                 if (wouldCreateCycle(fromId, toId)) {
-                    alert('Tree genre: This connection would create a cycle, which is not allowed in a tree structure.');
+                    alert('Tree idiom: This connection would create a cycle, which is not allowed in a tree structure.');
                     return false;
                 }
                 break;
 
             case 'MAP':
-                // MAP genre has no additional connection constraints
+                // MAP idiom has no additional connection constraints
                 break;
         }
 
@@ -616,6 +604,6 @@ document.addEventListener('DOMContentLoaded', () => {
     buttons.add_edge_btn.disabled = true;
     buttons.remove_edge_btn.disabled = true;
     
-    // Initialize genre description
-    updateGenreDescription();
+    // Initialize idiom description
+    updateIdiomDescription();
 }); 
