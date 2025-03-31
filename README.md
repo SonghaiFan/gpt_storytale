@@ -2,9 +2,6 @@
 
 Create controllable story sequences with transformers that can be used in user-evaluation studies of text-to-visualisation pipelines.
 
-&#x1F4D3; Accompanying paper: _<paper title; link to arXiv >_
-
-&#x1F58B; By: [Add author names and affiliations here]
 
 ![Overview of the Graph-to-Text-Pipeline](figs/overview.png)
 
